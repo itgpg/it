@@ -1,0 +1,129 @@
+/* Global Styles */
+body {
+    margin: 0; /* Remove default body margin */
+    background-color: #f0f2f5; /* Light gray background for a modern look */
+    font-family: 'Roboto', sans-serif; /* Clean sans-serif font */
+    color: #333; /* Darker text for better readability */
+    line-height: 1.6; /* Improved line height for readability */
+}
+
+/* Header and Footer */
+header, footer {
+    background-color: #343a40; /* Dark background for header and footer */
+    color: #ffffff; /* White text color */
+}
+
+/* Navbar Styles */
+/* Navbar Styles */
+.navbar {
+    background-color: #ffffff; /* White background for a clean look */
+    padding: 10px; /* Some padding */
+    box-shadow: none; /* No shadow for a minimal look */
+}
+
+.navbar-brand img {
+    height: 50px; /* Maintain logo height */
+}
+
+.nav-link {
+    color: #333; /* Dark text color for readability */
+    transition: color 0.3s; /* Transition effect for links */
+}
+
+.nav-link:hover {
+    color: #007bff; /* Change color on hover */
+    border-bottom: 2px solid #007bff; /* Optional: Add a bottom border on hover */
+}
+
+/* Dropdown Styles */
+.dropdown-menu {
+    background-color: #ffffff; /* Match the navbar background */
+}
+
+.dropdown-item {
+    color: #333; /* Dark text color for dropdown items */
+}
+
+.dropdown-item:hover {
+    background-color: #007bff; /* Blue background on hover for dropdown items */
+    color: white; /* Keep text color white */
+}
+
+/* Prevent Bootstrap default styles from overriding */
+.navbar-nav .nav-link {
+    background: none; /* Remove default Bootstrap background */
+    padding: 0; /* Remove Bootstrap padding */
+}
+
+/* Prevent Bootstrap styles from overriding */
+.navbar .navbar-nav {
+    margin: 0; /* Remove default Bootstrap margin */
+}
+
+
+/* Navbar Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 15px; /* Reduce padding on smaller screens */
+    }
+}
+
+/* Banner Section */
+#banner {
+    background-size: cover; /* Cover the entire section */
+    height: 100vh; /* Full viewport height */
+    display: flex; /* Flexbox for centering content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    color: #ffffff; /* White text for contrast */
+    text-align: center; /* Centered text */
+    position: relative;
+    overflow: hidden; /* Hide overflow for particles */
+    background-color: black; /* Set the background color to black */
+    color: white; /* Ensure text is white for contrast */
+}
+
+/* Remove margin from section to blend navbar and hero section */
+section {
+    margin-top: 0; /* Remove top margin to eliminate gap */
+    padding: 60px 0; /* Vertical padding for sections */
+}
+
+h1, h2, h3, h4 {
+    margin-bottom: 1rem; /* Spacing below headings */
+}
+
+h2 {
+    color: #007bff; /* Blue color for section headings */
+}
+
+/* Card Styles */
+.card {
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions for cards */
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* Form Styles */
+.form-control {
+    border-radius: 8px; /* Rounded corners for form fields */
+}
+
+button {
+    border-radius: 8px; /* Rounded corners for buttons */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Footer Styles */
+footer p {
+    margin: 0;
+    color: black;
+    background-color: white; /* Remove default margin */
+}
