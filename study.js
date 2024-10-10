@@ -53,6 +53,8 @@ function loadSubjects() {
             option.textContent = subject;
             subjectSelect.appendChild(option);
         });
+    } else {
+        document.getElementById('subject-selection').style.display = 'none';
     }
 }
 
@@ -62,7 +64,7 @@ function loadModules() {
     const moduleSelect = document.getElementById('module');
     moduleSelect.innerHTML = `<option value="" selected disabled>Select Module</option>`;
 
-    if (studyData[semester][subject]) {
+    if (studyData[semester] && studyData[semester][subject]) {
         document.getElementById('module-selection').style.display = 'block';
 
         studyData[semester][subject].modules.forEach(module => {
@@ -71,6 +73,8 @@ function loadModules() {
             option.textContent = module.name;
             moduleSelect.appendChild(option);
         });
+    } else {
+        document.getElementById('module-selection').style.display = 'none';
     }
 }
 
@@ -114,7 +118,7 @@ function playVideo(videoId, index) {
     currentModule = studyData[semester][subject].modules.find(mod => mod.name === module);
 
     const videoFrame = document.getElementById('videoFrame');
-    videoFrame.src = `https://www.youtube.com/embed/${videoId}`;
+    videoFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
 
     const videoModal = new bootstrap.Modal(document.getElementById('videoModal'));
     videoModal.show();
@@ -130,4 +134,11 @@ document.getElementById('nextVideoBtn').addEventListener('click', () => {
     if (currentVideoIndex < currentModule.videos.length - 1) {
         playVideo(currentModule.videos[currentVideoIndex + 1].videoId, currentVideoIndex + 1);
     }
+});
+
+// Stop video playback when the modal is closed
+const videoModalElement = document.getElementById('videoModal');
+videoModalElement.addEventListener('hidden.bs.modal', () => {
+    const videoFrame = document.getElementById('videoFrame');
+    videoFrame.src = ""; // Clear the video source to stop playback
 });
