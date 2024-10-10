@@ -13,8 +13,8 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg container">
-        <a class="navbar-brand" href="index.html">
-            <img src="gpg-logo.png" alt="Govt. Polytechnic Gandhinagar Logo" style="height: 50px;">
+        <a class="navbar-brand" href="#">
+            <img src="gpg-logo.png" alt="Govt. Polytechnic Gandhinagar Logo" class="d-inline-block align-top" style="height: 50px;"> 
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,14 +22,44 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="faculty.html">Faculty</a></li>
-                <li class="nav-item"><a class="nav-link" href="study-materials.html">Study Materials</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html#programs">Programs</a></li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="faculty.html">Faculty</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="study-materials.html">Study-Materials</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#programs">Programs</a>
+                </li>
+                <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="activitiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Activities
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="activitiesDropdown">
+                        <li><a class="dropdown-item" href="#">Expert Lecture</a></li>
+                        <li><a class="dropdown-item" href="#">Industrial Visit</a></li>
+                        <li><a class="dropdown-item" href="#">FDPs</a></li>
+                        <li><a class="dropdown-item" href="#">RUSA</a></li>
+                        <li><a class="dropdown-item" href="#">Committees</a></li>
+                    </ul>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#hod">HOD's Desk</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#contact">Contact Us</a>
+                </li>
             </ul>
         </div>
     </nav>
+
 
     <!-- Main Content -->
     <div class="container my-4">
@@ -71,26 +101,10 @@
         </div>
     </div>
 
-    <!-- Video Modal -->
-    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="videoModalLabel">Video Playback</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe id="videoFrame" class="embed-responsive-item" src="" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" id="prevVideoBtn" class="btn btn-secondary">Previous</button>
-                    <button type="button" id="nextVideoBtn" class="btn btn-primary">Next</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Footer -->
+    <footer class="text-center text-light py-3 bg-dark">
+        <p>&copy; 2024 Government Polytechnic Gandhinagar. All rights reserved.</p>
+    </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>

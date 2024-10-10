@@ -2,9 +2,6 @@ const apiKey = 'AIzaSyBgRGDCTkDdBdrYqxht2oFYRTeucUmAfFg'; // Your YouTube API Ke
 const pythonPlaylistId = 'PL5hA7O8RI2bPOSoX7l8zZIIuDQrc9b9wO';
 const itPlaylistId = 'PLZ3xYAWT5a-nskfWOvHd_Fvh4RZsedu7G';
 
-let selectedSemester = null;
-let selectedSubject = null;
-
 const studyData = {
     semester1: {
         'Python': {
@@ -43,59 +40,28 @@ const studyData = {
         }
     },
     semester2: {
-        'Dummy Subject 1': {
-            modules: [
-                {
-                    name: 'Module 1',
-                    videos: [{ title: 'Video 1', videoId: 'dummyVideo1' }]
-                },
-                {
-                    name: 'Module 2',
-                    videos: [{ title: 'Video 2', videoId: 'dummyVideo2' }]
-                }
-            ]
-        },
-        // Add more subjects here as placeholders
+        'Dummy Subject': {
+            modules: [{ name: 'Module 1', videos: [] }]
+        }
     },
     semester3: {
-        'Dummy Subject 2': {
-            modules: [
-                {
-                    name: 'Module 1',
-                    videos: [{ title: 'Video 1', videoId: 'dummyVideo3' }]
-                },
-                // Add more modules as placeholders
-            ]
+        'Dummy Subject': {
+            modules: [{ name: 'Module 1', videos: [] }]
         }
     },
     semester4: {
-        'Dummy Subject 3': {
-            modules: [
-                {
-                    name: 'Module 1',
-                    videos: [{ title: 'Video 1', videoId: 'dummyVideo4' }]
-                }
-            ]
+        'Dummy Subject': {
+            modules: [{ name: 'Module 1', videos: [] }]
         }
     },
     semester5: {
-        'Dummy Subject 4': {
-            modules: [
-                {
-                    name: 'Module 1',
-                    videos: [{ title: 'Video 1', videoId: 'dummyVideo5' }]
-                }
-            ]
+        'Dummy Subject': {
+            modules: [{ name: 'Module 1', videos: [] }]
         }
     },
     semester6: {
-        'Dummy Subject 5': {
-            modules: [
-                {
-                    name: 'Module 1',
-                    videos: [{ title: 'Video 1', videoId: 'dummyVideo6' }]
-                }
-            ]
+        'Dummy Subject': {
+            modules: [{ name: 'Module 1', videos: [] }]
         }
     }
 };
@@ -122,74 +88,55 @@ function loadSubjects() {
             option.textContent = subject;
             subjectSelect.appendChild(option);
         });
-        selectedSemester = semester;
+    } else {
+        document.getElementById('subject-selection').style.display = 'none';
     }
 }
 
 function loadModules() {
+    const semester = document.getElementById('semester').value;
     const subject = document.getElementById('subject').value;
     const moduleSelect = document.getElementById('module');
     moduleSelect.innerHTML = `<option value="" selected disabled>Select Module</option>`;
 
-    if (studyData[selectedSemester][subject]) {
+    if (studyData[semester] && studyData[semester][subject]) {
         document.getElementById('module-selection').style.display = 'block';
-        studyData[selectedSemester][subject].modules.forEach((module, index) => {
+        studyData[semester][subject].modules.forEach(module => {
             const option = document.createElement('option');
-            option.value = index;
+            option.value = module.name;
             option.textContent = module.name;
             moduleSelect.appendChild(option);
         });
-        selectedSubject = subject;
+    } else {
+        document.getElementById('module-selection').style.display = 'none';
     }
 }
 
 async function showMaterials() {
-    const moduleIndex = document.getElementById('module').value;
-    const module = studyData[selectedSemester][selectedSubject].modules[moduleIndex];
+    const semester = document.getElementById('semester').value;
+    const subject = document.getElementById('subject').value;
+    const module = document.getElementById('module').value;
     const videosGrid = document.getElementById('videosGrid');
     videosGrid.innerHTML = '';
 
-    if (module.playlistId) {
-        module.videos = await fetchPlaylistVideos(module.playlistId);
+    document.getElementById('materials-section').style.display = 'block';
+
+    const selectedModule = studyData[semester][subject].modules.find(mod => mod.name === module);
+    if (selectedModule.videos.length === 0 && selectedModule.playlistId) {
+        selectedModule.videos = await fetchPlaylistVideos(selectedModule.playlistId);
     }
 
-    module.videos.forEach((video, index) => {
+    selectedModule.videos.forEach(video => {
         const card = document.createElement('div');
-        card.className = 'col-md-4 mb-3';
+        card.classList.add('col-md-4', 'col-sm-6', 'mb-4');
         card.innerHTML = `
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">${video.title}</h5>
-                    <button class="btn btn-primary" onclick="playVideo('${video.videoId}', ${index}, ${moduleIndex})">Watch</button>
+                    <a href="https://www.youtube.com/watch?v=${video.videoId}" class="btn btn-primary" target="_blank">Watch</a>
                 </div>
             </div>
         `;
         videosGrid.appendChild(card);
     });
-
-    document.getElementById('materials-section').style.display = 'block';
 }
-
-let currentVideoIndex = null;
-let currentModuleIndex = null;
-
-function playVideo(videoId, index, moduleIndex) {
-    currentVideoIndex = index;
-    currentModuleIndex = moduleIndex;
-    const videoFrame = document.getElementById('videoFrame');
-    videoFrame.src = `https://www.youtube.com/embed/${videoId}`;
-    const videoModal = new bootstrap.Modal(document.getElementById('videoModal'));
-    videoModal.show();
-}
-
-document.getElementById('nextVideoBtn').addEventListener('click', () => {
-    const module = studyData[selectedSemester][selectedSubject].modules[currentModuleIndex];
-    currentVideoIndex = (currentVideoIndex + 1) % module.videos.length;
-    playVideo(module.videos[currentVideoIndex].videoId, currentVideoIndex, currentModuleIndex);
-});
-
-document.getElementById('prevVideoBtn').addEventListener('click', () => {
-    const module = studyData[selectedSemester][selectedSubject].modules[currentModuleIndex];
-    currentVideoIndex = (currentVideoIndex - 1 + module.videos.length) % module.videos.length;
-    playVideo(module.videos[currentVideoIndex].videoId, currentVideoIndex, currentModuleIndex);
-});
