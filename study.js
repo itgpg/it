@@ -1,10 +1,35 @@
-const apiKey = 'AIzaSyBgRGDCTkDdBdrYqxht2oFYRTeucUmAfFg'; // Replace with your YouTube API Key
-const pythonPlaylistId = 'PL5hA7O8RI2bPOSoX7l8zZIIuDQrc9b9wO'; // Python Playlist
-const itPlaylistId = 'PLZ3xYAWT5a-nskfWOvHd_Fvh4RZsedu7G'; // IT Systems Playlist
-let currentVideoIndex = 0;
-let currentPlaylistVideos = [];
+const apiKey = 'AIzaSyBgRGDCTkDdBdrYqxht2oFYRTeucUmAfFg'; // Your YouTube API Key
+const pythonPlaylistId = 'PL5hA7O8RI2bPOSoX7l8zZIIuDQrc9b9wO';
+const itPlaylistId = 'PLZ3xYAWT5a-nskfWOvHd_Fvh4RZsedu7G';
 
-// Function to fetch playlist videos from YouTube
+let selectedSemester = null;
+let selectedSubject = null;
+
+const studyData = {
+    semester1: {
+        'Python': {
+            modules: [
+                {
+                    name: 'Python Playlist',
+                    videos: [],
+                    playlistId: pythonPlaylistId,
+                    files: ['https://drive.google.com/file1', 'https://drive.google.com/file2']
+                }
+            ]
+        },
+        'IT Systems': {
+            modules: [
+                {
+                    name: 'IT Systems Playlist',
+                    videos: [],
+                    playlistId: itPlaylistId,
+                    files: ['https://drive.google.com/file5', 'https://drive.google.com/file6']
+                }
+            ]
+        }
+    }
+};
+
 async function fetchPlaylistVideos(playlistId) {
     const response = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&key=${apiKey}&maxResults=50`);
     const data = await response.json();
@@ -14,72 +39,95 @@ async function fetchPlaylistVideos(playlistId) {
     }));
 }
 
-// Function to display videos in a grid
-function displayVideos(videos) {
+function loadSubjects() {
+    const semester = document.getElementById('semester').value;
+    const subjectSelect = document.getElementById('subject');
+    subjectSelect.innerHTML = `<option value="" selected disabled>Select Subject</option>`;
+
+    if (studyData[semester]) {
+        document.getElementById('subject-selection').style.display = 'block';
+
+        Object.keys(studyData[semester]).forEach(subject => {
+            const option = document.createElement('option');
+            option.value = subject;
+            option.textContent = subject;
+            subjectSelect.appendChild(option);
+        });
+    }
+}
+
+function loadModules() {
+    const semester = document.getElementById('semester').value;
+    const subject = document.getElementById('subject').value;
+    const moduleSelect = document.getElementById('module');
+    moduleSelect.innerHTML = `<option value="" selected disabled>Select Module</option>`;
+
+    if (studyData[semester][subject]) {
+        document.getElementById('module-selection').style.display = 'block';
+
+        studyData[semester][subject].modules.forEach(module => {
+            const option = document.createElement('option');
+            option.value = module.name;
+            option.textContent = module.name;
+            moduleSelect.appendChild(option);
+        });
+    }
+}
+
+async function showMaterials() {
+    const semester = document.getElementById('semester').value;
+    const subject = document.getElementById('subject').value;
+    const module = document.getElementById('module').value;
     const videosGrid = document.getElementById('videosGrid');
-    videosGrid.innerHTML = ''; // Clear previous videos
-    videos.forEach((video, index) => {
-        const col = document.createElement('div');
-        col.className = 'col-md-4';
-        col.innerHTML = `
-            <div class="card">
-                <img src="https://img.youtube.com/vi/${video.videoId}/0.jpg" class="card-img-top" alt="${video.title}">
+    videosGrid.innerHTML = '';
+
+    document.getElementById('materials-section').style.display = 'block';
+
+    const selectedModule = studyData[semester][subject].modules.find(mod => mod.name === module);
+    if (selectedModule.videos.length === 0) {
+        selectedModule.videos = await fetchPlaylistVideos(selectedModule.playlistId);
+    }
+
+    selectedModule.videos.forEach((video, index) => {
+        const card = document.createElement('div');
+        card.classList.add('col-md-4', 'col-sm-6');
+        card.innerHTML = `
+            <div class="card" onclick="playVideo('${video.videoId}', ${index})">
+                <img src="https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg" class="card-img-top" alt="${video.title}">
                 <div class="card-body">
                     <h5 class="card-title">${video.title}</h5>
                 </div>
-            </div>
-        `;
-        col.onclick = () => openVideo(index); // Open video on click
-        videosGrid.appendChild(col);
+            </div>`;
+        videosGrid.appendChild(card);
     });
 }
 
-// Function to open video in modal
-function openVideo(index) {
+let currentVideoIndex = null;
+let currentModule = null;
+
+function playVideo(videoId, index) {
     currentVideoIndex = index;
-    const video = currentPlaylistVideos[index];
+    const semester = document.getElementById('semester').value;
+    const subject = document.getElementById('subject').value;
+    const module = document.getElementById('module').value;
+
+    currentModule = studyData[semester][subject].modules.find(mod => mod.name === module);
+
     const videoFrame = document.getElementById('videoFrame');
-    videoFrame.src = `https://www.youtube.com/embed/${video.videoId}?autoplay=1`;
+    videoFrame.src = `https://www.youtube.com/embed/${videoId}`;
+
     const videoModal = new bootstrap.Modal(document.getElementById('videoModal'));
     videoModal.show();
 }
 
-// Function to show next video
-function showNextVideo() {
-    if (currentVideoIndex < currentPlaylistVideos.length - 1) {
-        openVideo(currentVideoIndex + 1);
-    }
-}
-
-// Function to show previous video
-function showPreviousVideo() {
+document.getElementById('prevVideoBtn').addEventListener('click', () => {
     if (currentVideoIndex > 0) {
-        openVideo(currentVideoIndex - 1);
+        playVideo(currentModule.videos[currentVideoIndex - 1].videoId, currentVideoIndex - 1);
     }
-}
-
-// Event listeners for buttons
-document.getElementById('showPythonVideos').onclick = async () => {
-    currentPlaylistVideos = await fetchPlaylistVideos(pythonPlaylistId);
-    displayVideos(currentPlaylistVideos);
-};
-
-document.getElementById('showITSystemsVideos').onclick = async () => {
-    currentPlaylistVideos = await fetchPlaylistVideos(itPlaylistId);
-    displayVideos(currentPlaylistVideos);
-};
-
-document.getElementById('nextVideoBtn').onclick = showNextVideo;
-document.getElementById('prevVideoBtn').onclick = showPreviousVideo;
-
-// Close video modal and stop video from playing
-document.getElementById('videoModal').addEventListener('hidden.bs.modal', function () {
-    const videoFrame = document.getElementById('videoFrame');
-    videoFrame.src = ''; // Stop the video by resetting the source
 });
 
-// Optionally, load a default playlist on page load
-window.onload = async () => {
-    currentPlaylistVideos = await fetchPlaylistVideos(pythonPlaylistId); // Default to Python on load
-    displayVideos(currentPlaylistVideos);
-};
+document.getElementById('nextVideoBtn').addEventListener('click', () => {
+    if (currentVideoIndex < currentModule.videos.length - 1) {
+        playVideo(currentModule.videos[currentVideoIndex + 1].videoId, currentVideoIndex + 1);
+    }
+});
