@@ -24,6 +24,76 @@ const studyData = {
                     videos: [],
                     playlistId: itPlaylistId,
                     files: ['https://drive.google.com/file5', 'https://drive.google.com/file6']
+                },
+                {
+                    name: 'Unit I: Basics of Information System',
+                    videos: [
+                        { title: 'Importance of IT', videoId: 'Hbg7QsmPNCY' },
+                        { title: 'Google Search Engine', videoId: 'ZyC59OE1f-4' }
+                    ]
+                },
+                {
+                    name: 'Unit II: Digital Logic',
+                    videos: [
+                        { title: 'Number Systems', videoId: 'V8FG6u17clQ' },
+                        { title: 'Logic Gates', videoId: '47u7b2yh7s8' }
+                    ]
+                }
+            ]
+        }
+    },
+    semester2: {
+        'Dummy Subject 1': {
+            modules: [
+                {
+                    name: 'Module 1',
+                    videos: [{ title: 'Video 1', videoId: 'dummyVideo1' }]
+                },
+                {
+                    name: 'Module 2',
+                    videos: [{ title: 'Video 2', videoId: 'dummyVideo2' }]
+                }
+            ]
+        },
+        // Add more subjects here as placeholders
+    },
+    semester3: {
+        'Dummy Subject 2': {
+            modules: [
+                {
+                    name: 'Module 1',
+                    videos: [{ title: 'Video 1', videoId: 'dummyVideo3' }]
+                },
+                // Add more modules as placeholders
+            ]
+        }
+    },
+    semester4: {
+        'Dummy Subject 3': {
+            modules: [
+                {
+                    name: 'Module 1',
+                    videos: [{ title: 'Video 1', videoId: 'dummyVideo4' }]
+                }
+            ]
+        }
+    },
+    semester5: {
+        'Dummy Subject 4': {
+            modules: [
+                {
+                    name: 'Module 1',
+                    videos: [{ title: 'Video 1', videoId: 'dummyVideo5' }]
+                }
+            ]
+        }
+    },
+    semester6: {
+        'Dummy Subject 5': {
+            modules: [
+                {
+                    name: 'Module 1',
+                    videos: [{ title: 'Video 1', videoId: 'dummyVideo6' }]
                 }
             ]
         }
@@ -46,99 +116,80 @@ function loadSubjects() {
 
     if (studyData[semester]) {
         document.getElementById('subject-selection').style.display = 'block';
-
         Object.keys(studyData[semester]).forEach(subject => {
             const option = document.createElement('option');
             option.value = subject;
             option.textContent = subject;
             subjectSelect.appendChild(option);
         });
-    } else {
-        document.getElementById('subject-selection').style.display = 'none';
+        selectedSemester = semester;
     }
 }
 
 function loadModules() {
-    const semester = document.getElementById('semester').value;
     const subject = document.getElementById('subject').value;
     const moduleSelect = document.getElementById('module');
     moduleSelect.innerHTML = `<option value="" selected disabled>Select Module</option>`;
 
-    if (studyData[semester] && studyData[semester][subject]) {
+    if (studyData[selectedSemester][subject]) {
         document.getElementById('module-selection').style.display = 'block';
-
-        studyData[semester][subject].modules.forEach(module => {
+        studyData[selectedSemester][subject].modules.forEach((module, index) => {
             const option = document.createElement('option');
-            option.value = module.name;
+            option.value = index;
             option.textContent = module.name;
             moduleSelect.appendChild(option);
         });
-    } else {
-        document.getElementById('module-selection').style.display = 'none';
+        selectedSubject = subject;
     }
 }
 
 async function showMaterials() {
-    const semester = document.getElementById('semester').value;
-    const subject = document.getElementById('subject').value;
-    const module = document.getElementById('module').value;
+    const moduleIndex = document.getElementById('module').value;
+    const module = studyData[selectedSemester][selectedSubject].modules[moduleIndex];
     const videosGrid = document.getElementById('videosGrid');
     videosGrid.innerHTML = '';
 
-    document.getElementById('materials-section').style.display = 'block';
-
-    const selectedModule = studyData[semester][subject].modules.find(mod => mod.name === module);
-    if (selectedModule.videos.length === 0) {
-        selectedModule.videos = await fetchPlaylistVideos(selectedModule.playlistId);
+    if (module.playlistId) {
+        module.videos = await fetchPlaylistVideos(module.playlistId);
     }
 
-    selectedModule.videos.forEach((video, index) => {
+    module.videos.forEach((video, index) => {
         const card = document.createElement('div');
-        card.classList.add('col-md-4', 'col-sm-6');
+        card.className = 'col-md-4 mb-3';
         card.innerHTML = `
-            <div class="card" onclick="playVideo('${video.videoId}', ${index})">
-                <img src="https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg" class="card-img-top" alt="${video.title}">
+            <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">${video.title}</h5>
+                    <button class="btn btn-primary" onclick="playVideo('${video.videoId}', ${index}, ${moduleIndex})">Watch</button>
                 </div>
-            </div>`;
+            </div>
+        `;
         videosGrid.appendChild(card);
     });
+
+    document.getElementById('materials-section').style.display = 'block';
 }
 
 let currentVideoIndex = null;
-let currentModule = null;
+let currentModuleIndex = null;
 
-function playVideo(videoId, index) {
+function playVideo(videoId, index, moduleIndex) {
     currentVideoIndex = index;
-    const semester = document.getElementById('semester').value;
-    const subject = document.getElementById('subject').value;
-    const module = document.getElementById('module').value;
-
-    currentModule = studyData[semester][subject].modules.find(mod => mod.name === module);
-
+    currentModuleIndex = moduleIndex;
     const videoFrame = document.getElementById('videoFrame');
-    videoFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-
+    videoFrame.src = `https://www.youtube.com/embed/${videoId}`;
     const videoModal = new bootstrap.Modal(document.getElementById('videoModal'));
     videoModal.show();
 }
 
-document.getElementById('prevVideoBtn').addEventListener('click', () => {
-    if (currentVideoIndex > 0) {
-        playVideo(currentModule.videos[currentVideoIndex - 1].videoId, currentVideoIndex - 1);
-    }
-});
-
 document.getElementById('nextVideoBtn').addEventListener('click', () => {
-    if (currentVideoIndex < currentModule.videos.length - 1) {
-        playVideo(currentModule.videos[currentVideoIndex + 1].videoId, currentVideoIndex + 1);
-    }
+    const module = studyData[selectedSemester][selectedSubject].modules[currentModuleIndex];
+    currentVideoIndex = (currentVideoIndex + 1) % module.videos.length;
+    playVideo(module.videos[currentVideoIndex].videoId, currentVideoIndex, currentModuleIndex);
 });
 
-// Stop video playback when the modal is closed
-const videoModalElement = document.getElementById('videoModal');
-videoModalElement.addEventListener('hidden.bs.modal', () => {
-    const videoFrame = document.getElementById('videoFrame');
-    videoFrame.src = ""; // Clear the video source to stop playback
+document.getElementById('prevVideoBtn').addEventListener('click', () => {
+    const module = studyData[selectedSemester][selectedSubject].modules[currentModuleIndex];
+    currentVideoIndex = (currentVideoIndex - 1 + module.videos.length) % module.videos.length;
+    playVideo(module.videos[currentVideoIndex].videoId, currentVideoIndex, currentModuleIndex);
 });
