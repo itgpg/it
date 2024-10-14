@@ -23,18 +23,9 @@ const studyData = {
                     files: ['https://drive.google.com/file5', 'https://drive.google.com/file6']
                 },
                 {
-                    name: 'Unit I: Basics of Information System',
-                    videos: [
-                        { title: 'Importance of IT', videoId: 'Hbg7QsmPNCY' },
-                        { title: 'Google Search Engine', videoId: 'ZyC59OE1f-4' }
-                    ]
-                },
-                {
-                    name: 'Unit II: Digital Logic',
-                    videos: [
-                        { title: 'Number Systems', videoId: 'V8FG6u17clQ' },
-                        { title: 'Logic Gates', videoId: '47u7b2yh7s8' }
-                    ]
+                    name:'IT system Chapter wise playlist',
+                    videos: [],
+                    files:['https://drive.google.com/file/d/1Y-ISBbZla_wMdcuGb11Eo03sboCf5V0p/view?usp=sharing']
                 }
             ]
         }
@@ -117,15 +108,23 @@ async function showMaterials() {
     const subject = document.getElementById('subject').value;
     const module = document.getElementById('module').value;
     const videosGrid = document.getElementById('videosGrid');
-    videosGrid.innerHTML = '';
+    videosGrid.innerHTML = ''; // Clear previous content
 
-    document.getElementById('materials-section').style.display = 'block';
+    if (!semester || !subject || !module) {
+        return; // Don't proceed if no valid selection
+    }
 
+    document.getElementById('materials-section').style.display = 'block'; // Show the materials section
+
+    // Find the selected module in the data
     const selectedModule = studyData[semester][subject].modules.find(mod => mod.name === module);
+
+    // Fetch videos if there's a playlist and no videos are loaded
     if (selectedModule.videos.length === 0 && selectedModule.playlistId) {
         selectedModule.videos = await fetchPlaylistVideos(selectedModule.playlistId);
     }
 
+    // Add YouTube videos as cards
     selectedModule.videos.forEach(video => {
         const card = document.createElement('div');
         card.classList.add('col-md-4', 'col-sm-6', 'mb-4');
@@ -139,4 +138,21 @@ async function showMaterials() {
         `;
         videosGrid.appendChild(card);
     });
+
+    // Add Google Drive links as cards
+    if (selectedModule.files && selectedModule.files.length > 0) {
+        selectedModule.files.forEach(file => {
+            const fileCard = document.createElement('div');
+            fileCard.classList.add('col-md-4', 'col-sm-6', 'mb-4');
+            fileCard.innerHTML = `
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Resource Link</h5>
+                        <a href="${file}" class="btn btn-secondary" target="_blank">View Resource</a>
+                    </div>
+                </div>
+            `;
+            videosGrid.appendChild(fileCard);
+        });
+    }
 }
