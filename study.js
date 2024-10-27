@@ -58,7 +58,7 @@ const studyData = {
 };
 
 async function fetchPlaylistVideos(playlistId) {
-    const response = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&key=${apiKey}&maxResults=50`);
+    const response = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&key=${apiKey}&maxResults=100`);
     const data = await response.json();
     return data.items.map(item => ({
         title: item.snippet.title,
