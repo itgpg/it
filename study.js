@@ -1,6 +1,7 @@
 const apiKey = 'AIzaSyBgRGDCTkDdBdrYqxht2oFYRTeucUmAfFg'; // Your YouTube API Key
 const pythonPlaylistId = 'PL5hA7O8RI2bPOSoX7l8zZIIuDQrc9b9wO';
 const itPlaylistId = 'PLZ3xYAWT5a-nskfWOvHd_Fvh4RZsedu7G';
+const NetworkingPlaylistId = 'PL5hA7O8RI2bMBGjSduDQRYUCrNViAEee1'
 
 const studyData = {
     semester1: {
@@ -23,10 +24,16 @@ const studyData = {
                     files: ['https://drive.google.com/file5', 'https://drive.google.com/file6']
                 },
                 {
-                    name:'IT system Chapter wise playlist',
+                    name:'IT system Chapter wise video doc link ',
                     videos: [],
                     files:['https://drive.google.com/file/d/1Y-ISBbZla_wMdcuGb11Eo03sboCf5V0p/view?usp=sharing']
+                },
+                {
+                    name:'IT system networking  playlist',
+                    videos: [],
+                    playlistId:NetworkingPlaylistId,
                 }
+
             ]
         }
     },
