@@ -11,7 +11,7 @@ const studyData = {
                     name: 'Python Playlist',
                     videos: [],
                     playlistId: pythonPlaylistId,
-                    files: ['https://drive.google.com/file1', 'https://drive.google.com/file2']
+                    
                 }
             ]
         },
@@ -21,7 +21,7 @@ const studyData = {
                     name: 'IT Systems Playlist',
                     videos: [],
                     playlistId: itPlaylistId,
-                    files: ['https://drive.google.com/file5', 'https://drive.google.com/file6']
+                    
                 },
                 {
                     name:'IT system Chapter wise video doc link ',
