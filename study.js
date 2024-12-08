@@ -1,4 +1,9 @@
 const apiKey = 'AIzaSyBgRGDCTkDdBdrYqxht2oFYRTeucUmAfFg'; // Your YouTube API Key
+const pythonFolderId = '1SPAJ_Azd-kVEc7l7rrerpmeQOeZJO2Xw'; // Parent Folder ID for Python
+const itFolderId = '1QvTM_Z80mrP7dTu9g9-dgGOdgtSzid-c'; // Parent Folder ID for IT Systems
+const mathsFolderId = '1xIFEVMpiB2wZvJL3KVRQKEdcecfUskLs'; // Parent Folder ID for Maths
+const cseFolderId = '1O7ToNX0DIfhrB3K1ytSbPBxm8GhMNpqR'; // Parent Folder ID for CSE
+
 const pythonPlaylistId = 'PL5hA7O8RI2bPOSoX7l8zZIIuDQrc9b9wO';
 const itPlaylistId = 'PLZ3xYAWT5a-nskfWOvHd_Fvh4RZsedu7G';
 const NetworkingPlaylistId = 'PL5hA7O8RI2bMBGjSduDQRYUCrNViAEee1';
@@ -24,7 +29,7 @@ const studyData = {
                 {
                     name: 'IT System Chapter Wise Video Doc Link',
                     videos: [],
-                    files: ['https://drive.google.com/file/d/1Y-ISBbZla_wMdcuGb11Eo03sboCf5V0p/view?usp=sharing']
+                    files: [`https://drive.google.com/drive/folders/${itFolderId}`]
                 },
                 {
                     name: 'IT System Networking Playlist',
@@ -38,42 +43,22 @@ const studyData = {
                 {
                     name: 'CSE PYQ',
                     videos: [],
-                    files: [
-                        { fileId: '1Jvg6zTEkK72gXL7khiQX0kJ6hd2ETrAT', fileName: 'CSE PYQ 1' },
-                        { fileId: '1l64u7hRYDqGqonHsEeaShEY9fyl52-r9', fileName: 'CSE PYQ 2' },
-                        { fileId: '1mt4COljKJAPTzWraOWwkRwmXg52p5EGG', fileName: 'CSE PYQ 3' },
-                        { fileId: '13hxYZ7MxTQ7HYrpx9Na-deDhjfTX8_04', fileName: 'CSE PYQ 4' }
-                    ]
+                    files: [`https://drive.google.com/drive/folders/${cseFolderId}`]
                 },
                 {
                     name: 'Python Programming PYQ',
                     videos: [],
-                    files: [
-                        { fileId: '1WWgNbYq6PEbweve9rtdjy1XDzbQ_ti9B', fileName: 'Python PYQ 1' },
-                        { fileId: '1Sj4ncm28YKEVeBBAPUp-GdZtqmVuicC-', fileName: 'Python PYQ 2' },
-                        { fileId: '1mXMha8rrlUBdKuOIPWdokaFhAfdLdc8C', fileName: 'Python PYQ 3' },
-                        { fileId: '1ak506XD0UUqEixTzB_EZJlWk5la3-1uy', fileName: 'Python PYQ 4' }
-                    ]
+                    files: [`https://drive.google.com/drive/folders/${pythonFolderId}`]
                 },
                 {
                     name: 'Introduction to IT System PYQ',
                     videos: [],
-                    files: [
-                        { fileId: '1icLk_hiX_gOoYmnfuWvv50gSsQkD1xwc', fileName: 'IT System PYQ 1' },
-                        { fileId: '1BGhLUBIs4epya3dtDhkDp5jARViH6rIu', fileName: 'IT System PYQ 2' },
-                        { fileId: '1R1GQngfDcTMMrEwfZvuO9NfTpA6pS7tB', fileName: 'IT System PYQ 3' },
-                        { fileId: '1KA-4eBKLAzCa4UuSBbGEeIgGtoWGYBJf', fileName: 'IT System PYQ 4' }
-                    ]
+                    files: [`https://drive.google.com/drive/folders/${itFolderId}`]
                 },
                 {
                     name: 'Mathematics PYQ',
                     videos: [],
-                    files: [
-                        { fileId: '1O5jtqxuoKIPVsKuVEQ9oOu6ODplEJXqx', fileName: 'Math PYQ 1' },
-                        { fileId: '1BkLaHZVNHV3PUcODUYmFU9pS0Fu4KTqm', fileName: 'Math PYQ 2' },
-                        { fileId: '1_WJ01FEX9uLrKUttd6UG6FuZuTje0b0j', fileName: 'Math PYQ 3' },
-                        { fileId: '1cJQdSJQbQHWYOFA0QRsOrDK6C6OKCdhR', fileName: 'Math PYQ 4' }
-                    ]
+                    files: [`https://drive.google.com/drive/folders/${mathsFolderId}`]
                 }
             ]
         }
@@ -114,14 +99,18 @@ async function fetchPlaylistVideos(playlistId) {
     }));
 }
 
-async function fetchFileName(fileId) {
+async function fetchFileName(folderId) {
     try {
-        const response = await fetch(`https://www.googleapis.com/drive/v3/files/${fileId}?key=${apiKey}`);
+        const response = await fetch(`https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${apiKey}`);
         const fileData = await response.json();
-        return fileData.name || ''; // Return the file name if available, else an empty string
+        return fileData.files.map(file => ({
+            fileName: file.name,
+            fileId: file.id, // Include file ID for download link
+            fileUrl: `https://drive.google.com/file/d/${file.id}/view`
+        }));
     } catch (error) {
-        console.error("Error fetching file name from Google Drive:", error);
-        return ''; // Return an empty string in case of error
+        console.error("Error fetching file names from Google Drive:", error);
+        return []; // Return an empty array in case of error
     }
 }
 
@@ -198,25 +187,24 @@ async function showMaterials() {
         videosGrid.appendChild(card);
     });
 
-    // Add Files as cards
+    // Add Files as cards from the parent folder
     if (selectedModule.files) {
-        selectedModule.files.forEach(async file => {
-            let fileName = await fetchFileName(file.fileId); // First try to get the file name from Google Drive
-            if (!fileName) {
-                fileName = file.fileName; // If no name from Drive, use the name provided in the code
-            }
-            const fileCard = document.createElement('div');
-            fileCard.classList.add('col-md-4', 'col-sm-6', 'mb-4');
-            fileCard.innerHTML = `
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">${fileName}</h5>
-                        <a href="https://drive.google.com/file/d/${file.fileId}/view" class="btn btn-primary" target="_blank">Open File</a>
-                        <a href="https://drive.google.com/uc?id=${file.fileId}&export=download" class="btn btn-success" target="_blank">Download</a>
+        for (const folderLink of selectedModule.files) {
+            const files = await fetchFileName(folderLink.split('/').pop());
+            files.forEach(file => {
+                const fileCard = document.createElement('div');
+                fileCard.classList.add('col-md-4', 'col-sm-6', 'mb-4');
+                fileCard.innerHTML = `
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">${file.fileName}</h5>
+                            <a href="${file.fileUrl}" class="btn btn-primary" target="_blank">Open File</a>
+                            <a href="https://drive.google.com/uc?export=download&id=${file.fileId}" class="btn btn-success" target="_blank">Download</a>
+                        </div>
                     </div>
-                </div>
-            `;
-            videosGrid.appendChild(fileCard);
-        });
+                `;
+                videosGrid.appendChild(fileCard);
+            });
+        }
     }
 }
