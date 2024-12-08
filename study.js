@@ -212,6 +212,7 @@ async function showMaterials() {
                     <div class="card-body">
                         <h5 class="card-title">${fileName}</h5>
                         <a href="https://drive.google.com/file/d/${file.fileId}/view" class="btn btn-primary" target="_blank">Open File</a>
+                        <a href="https://drive.google.com/uc?id=${file.fileId}&export=download" class="btn btn-success" target="_blank">Download</a>
                     </div>
                 </div>
             `;
