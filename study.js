@@ -1,8 +1,9 @@
-const apiKey = 'AIzaSyBgRGDCTkDdBdrYqxht2oFYRTeucUmAfFg'; // Your YouTube API Key
-const pythonFolderId = '1SPAJ_Azd-kVEc7l7rrerpmeQOeZJO2Xw'; // Parent Folder ID for Python
-const itFolderId = '1QvTM_Z80mrP7dTu9g9-dgGOdgtSzid-c'; // Parent Folder ID for IT Systems
-const mathsFolderId = '1xIFEVMpiB2wZvJL3KVRQKEdcecfUskLs'; // Parent Folder ID for Maths
-const cseFolderId = '1O7ToNX0DIfhrB3K1ytSbPBxm8GhMNpqR'; // Parent Folder ID for CSE
+const apiKey = 'AIzaSyBgRGDCTkDdBdrYqxht2oFYRTeucUmAfFg'; 
+const pythonFolderId = '1SPAJ_Azd-kVEc7l7rrerpmeQOeZJO2Xw'; 
+const itFolderId = '1QvTM_Z80mrP7dTu9g9-dgGOdgtSzid-c'; 
+const mathsFolderId = '1xIFEVMpiB2wZvJL3KVRQKEdcecfUskLs'; 
+const cseFolderId = '1O7ToNX0DIfhrB3K1ytSbPBxm8GhMNpqR'; 
+const echFolderId = '1JM5fS8mss8ViwNaO7sLpn4QF5btEX9WB'; 
 
 const pythonPlaylistId = 'PL5hA7O8RI2bPOSoX7l8zZIIuDQrc9b9wO';
 const itPlaylistId = 'PLZ3xYAWT5a-nskfWOvHd_Fvh4RZsedu7G';
@@ -59,6 +60,11 @@ const studyData = {
                     name: 'Mathematics PYQ',
                     videos: [],
                     files: [`https://drive.google.com/drive/folders/${mathsFolderId}`]
+                },
+                {
+                    name: 'Ech PYQ',
+                    videos: [],
+                    files: [`https://drive.google.com/drive/folders/${echFolderId}`]
                 }
             ]
         }
@@ -105,12 +111,12 @@ async function fetchFileName(folderId) {
         const fileData = await response.json();
         return fileData.files.map(file => ({
             fileName: file.name,
-            fileId: file.id, // Include file ID for download link
+            fileId: file.id,
             fileUrl: `https://drive.google.com/file/d/${file.id}/view`
         }));
     } catch (error) {
         console.error("Error fetching file names from Google Drive:", error);
-        return []; // Return an empty array in case of error
+        return [];
     }
 }
 
@@ -156,23 +162,20 @@ async function showMaterials() {
     const subject = document.getElementById('subject').value;
     const module = document.getElementById('module').value;
     const videosGrid = document.getElementById('videosGrid');
-    videosGrid.innerHTML = ''; // Clear previous content
+    videosGrid.innerHTML = '';
 
     if (!semester || !subject || !module) {
-        return; // Don't proceed if no valid selection
+        return;
     }
 
-    document.getElementById('materials-section').style.display = 'block'; // Show the materials section
+    document.getElementById('materials-section').style.display = 'block';
 
-    // Find the selected module in the data
     const selectedModule = studyData[semester][subject].modules.find(mod => mod.name === module);
 
-    // Fetch videos if there's a playlist and no videos are loaded
     if (selectedModule.videos.length === 0 && selectedModule.playlistId) {
         selectedModule.videos = await fetchPlaylistVideos(selectedModule.playlistId);
     }
 
-    // Add YouTube videos as cards
     selectedModule.videos.forEach(video => {
         const card = document.createElement('div');
         card.classList.add('col-md-4', 'col-sm-6', 'mb-4');
@@ -187,7 +190,6 @@ async function showMaterials() {
         videosGrid.appendChild(card);
     });
 
-    // Add Files as cards from the parent folder
     if (selectedModule.files) {
         for (const folderLink of selectedModule.files) {
             const files = await fetchFileName(folderLink.split('/').pop());
