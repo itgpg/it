@@ -30,7 +30,7 @@ const studyData = {
                 {
                     name: 'IT System Chapter Wise Video Doc Link',
                     videos: [],
-                    files: [`https://drive.google.com/drive/folders/${itFolderId}`]
+                    files:['https://drive.google.com/file/d/1Y-ISBbZla_wMdcuGb11Eo03sboCf5V0p/view?usp=sharing']
                 },
                 {
                     name: 'IT System Networking Playlist',
