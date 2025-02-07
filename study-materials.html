@@ -4,110 +4,143 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Study Materials - Government Polytechnic Gandhinagar</title>
+    <title>Study Materials - IT Department | GP Gandhinagar</title>
+
     <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="study.css">
-    <link rel="stylesheet" href="nav.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/pages/study-materials.css">
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg container">
-        <a class="navbar-brand" href="#">
-            <img src="gpg-logo.png" alt="Govt. Polytechnic Gandhinagar Logo" class="d-inline-block align-top" style="height: 50px;"> 
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="faculty.html">Faculty</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="study-materials.html">Study-Materials</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html#about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html#programs">Programs</a>
-                </li>
-                <!-- <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="activitiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Activities
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="activitiesDropdown">
-                        <li><a class="dropdown-item" href="#">Expert Lecture</a></li>
-                        <li><a class="dropdown-item" href="#">Industrial Visit</a></li>
-                        <li><a class="dropdown-item" href="#">FDPs</a></li>
-                        <li><a class="dropdown-item" href="#">RUSA</a></li>
-                        <li><a class="dropdown-item" href="#">Committees</a></li>
-                    </ul>
-                </li> -->
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html#hod">HOD's Desk</a>
-                </li>
+    <nav class="navbar navbar-expand-lg fixed-top bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/gpg-logo-mini.png" alt="GP Gandhinagar" class="brand-logo">
+            </a>
+            
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <i class="fas fa-bars"></i>
+            </button>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html#contact">Contact Us</a>
-                </li>
-            </ul>
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Academics
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="syllabus.html">Syllabus</a></li>
+                            <li><a class="dropdown-item active" href="study-materials.html">Study Materials</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pyq.html">PYQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-
-    <!-- Main Content -->
-    <div class="container my-4">
-        <h1 class="text-center mb-4">Study Materials</h1>
-
-        <!-- Semester Selection -->
-        <div class="text-center mb-4">
-            <label for="semester">Select Semester:</label>
-            <select id="semester" class="form-select w-auto d-inline-block" onchange="loadSubjects()">
-                <option value="" selected disabled>Select Semester</option>
-                <option value="semester1">Semester 1</option>
-                <option value="semester2">Semester 2</option>
-                <option value="semester3">Semester 3</option>
-                <option value="semester4">Semester 4</option>
-                <option value="semester5">Semester 5</option>
-                <option value="semester6">Semester 6</option>
-            </select>
+    <!-- Study Materials Header -->
+    <section class="materials-header">
+        <div class="container">
+            <div class="dept-badge">
+                <img src="assets/images/gpg-logo.png" alt="GPG Logo" class="dept-logo">
+                <div class="dept-info">
+                    <span class="institute">Government Polytechnic Gandhinagar</span>
+                    <span class="university">Gujarat Technological University</span>
+                </div>
+            </div>
+            <h1 class="section-title">Study Materials</h1>
         </div>
+    </section>
 
-        <!-- Subject Selection -->
-        <div class="text-center mb-4" id="subject-selection" style="display:none;">
-            <label for="subject">Select Subject:</label>
-            <select id="subject" class="form-select w-auto d-inline-block" onchange="loadModules()">
-                <option value="" selected disabled>Select Subject</option>
-            </select>
-        </div>
+    <!-- Study Materials Content -->
+    <section class="materials-section">
+        <div class="container">
+            <!-- Semester Cards -->
+            <div class="semester-cards">
+                <div class="semester-card active" data-semester="semester1">
+                    <div class="card-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Semester 1</h3>
+                    <span class="subject-count">3 Subjects</span>
+                </div>
+                <div class="semester-card" data-semester="semester2">
+                    <div class="card-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Semester 2</h3>
+                    <span class="subject-count">2 Subjects</span>
+                </div>
+                <!-- Add other semesters similarly -->
+            </div>
 
-        <!-- Module Selection -->
-        <div class="text-center mb-4" id="module-selection" style="display:none;">
-            <label for="module">Select Module:</label>
-            <select id="module" class="form-select w-auto d-inline-block" onchange="showMaterials()">
-                <option value="" selected disabled>Select Module</option>
-            </select>
-        </div>
+            <!-- Subject Navigation -->
+            <div class="subject-navigation">
+                <div class="subject-tabs">
+                    <!-- Tabs will be populated by JavaScript -->
+                </div>
+                
+                <div class="subject-content">
+                    <!-- Module cards will be populated here -->
+                </div>
+            </div>
 
-        <!-- Materials Section -->
-        <div id="materials-section" style="display:none;">
-            <div class="row" id="videosGrid"></div>
+            <!-- Materials Display -->
+            <div id="materials-section" style="display: none;">
+                <div class="row" id="videosGrid">
+                    <!-- Materials will be loaded here -->
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="text-center text-light py-3 bg-dark">
+    <footer class="footer">
         <p>&copy; 2024 Government Polytechnic Gandhinagar. All rights reserved.</p>
     </footer>
 
-    <!-- Bootstrap JS -->
+    <!-- Scripts in correct order -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script src="study.js"></script>
+    <!-- Your config file with API keys must come first -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/components/StudyData.js"></script>
+    <script src="assets/js/components/YouTubeHandler.js"></script>
+    <script src="assets/js/components/UIManager.js"></script>
+    <script src="assets/js/pages/study-materials.js"></script>
+    <script>
+        console.log('StudyData loaded:', !!StudyData);
+        console.log('YouTubeHandler loaded:', !!YouTubeHandler);
+        console.log('UIManager loaded:', !!UIManager);
+        console.log('StudyMaterialsPage loaded:', !!StudyMaterialsPage);
+    </script>
+
+    <!-- Debug Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Page loaded');
+            // Add click event logging
+            document.querySelectorAll('.semester-card').forEach(card => {
+                console.log('Found semester card:', card.dataset.semester);
+                card.addEventListener('click', (e) => {
+                    console.log('Semester clicked:', e.currentTarget.dataset.semester);
+                });
+            });
+        });
+    </script>
 </body>
 </html>

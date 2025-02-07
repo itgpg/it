@@ -4,295 +4,129 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Faculty - Information Technology Department</title>
+    <title>Faculty - IT Department | GP Gandhinagar</title>
 
     <!-- Bootstrap CSS -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/main.css" />
   </head>
 
   <body>
-    <!-- Header and Navbar -->
-<!-- Navbar -->    
-<nav class="navbar navbar-expand-lg container">
-  <a class="navbar-brand" href="#">
-      <img src="gpg-logo.png" alt="Govt. Polytechnic Gandhinagar Logo" class="d-inline-block align-top" style="height: 50px;"> 
-  </a>
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-              <a class="nav-link active" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="faculty.html">Faculty</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="study-materials.html">Study-Materials</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="index.html#about">About</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="index.html#programs">Programs</a>
-          </li>
-          <!-- <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="activitiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Activities
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="activitiesDropdown">
-                  <li><a class="dropdown-item" href="#">Expert Lecture</a></li>
-                  <li><a class="dropdown-item" href="#">Industrial Visit</a></li>
-                  <li><a class="dropdown-item" href="#">FDPs</a></li>
-                  <li><a class="dropdown-item" href="#">RUSA</a></li>
-                  <li><a class="dropdown-item" href="#">Committees</a></li>
-              </ul>
-          </li> -->
-          <li class="nav-item">
-              <a class="nav-link" href="index.html#hod">HOD's Desk</a>
-          </li>
-
-          <li class="nav-item">
-              <a class="nav-link" href="index.html#contact">Contact Us</a>
-          </li>
-      </ul>
-  </div>
-</nav>
-
-
-
-    <!-- Faculty Section -->
-    <section id="faculty" class="py-5 glassmorphism">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top bg-white">
       <div class="container">
-        <h2 class="text-center">Faculty Members</h2>
-        <div class="row text-center">
-          <!-- Faculty Member 1 - Hiralben -->
-          <div class="col-md-4 mb-4">
-            <div class="card shadow-sm p-3">
-              <div class="card-body">
-                <h5 class="card-title">Ms. Hiralben Ravindrakumar Patel</h5>
-                <p class="card-text">
-                  I/C HOD<br />Post. Graduation<br />E-Mail: hiralit@gmail.com
-                </p>
-              </div>
-            </div>
-          </div>
+        <a class="navbar-brand" href="#">
+          <img src="assets/images/gpg-logo.png" alt="GPG Logo" class="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="faculty.html">Faculty</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="study-materials.html">Study Materials</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="events.html">Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-          <!-- Faculty Member 2 - Vipul -->
-          <div class="col-md-4 mb-4">
-            <div class="card shadow-sm p-3">
-              <div class="card-body">
-                <h5 class="card-title">Mr. Vipul Harshadray Punasanwala</h5>
-                <p class="card-text">
-                  Lecturer<br />Post Graduation<br />E-Mail:
-                  vhpunasanwala@yahoo.com
-                </p>
-              </div>
-            </div>
+    <!-- Faculty Header Section -->
+    <section class="faculty-header">
+      <div class="container">
+        <div class="dept-badge">
+          <img src="assets/images/gpg-logo.png" alt="GPG Logo" class="dept-logo">
+          <div class="dept-info">
+            <span class="institute">Government Polytechnic Gandhinagar</span>
+            <span class="university">Gujarat Technological University</span>
           </div>
+        </div>
+        <h1 class="section-title">Faculty Members</h1>
+      </div>
+    </section>
 
-          <!-- Faculty Member 3 - Anshuman -->
-          <div class="col-md-4 mb-4">
-            <div class="card shadow-sm p-3">
-              <div class="card-body">
-                <h5 class="card-title">Mr. ANSHUMAN Satishkumar PATEL</h5>
-                <p class="card-text">
-                  Lecturer<br />Post. Graduation<br />E-Mail:
-                  anshu_info@yahoo.co.in
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Faculty Member 4 - Hardik -->
-          <div class="col-md-4 mb-4">
-            <div class="card shadow-sm p-3">
-              <div class="card-body">
-                <h5 class="card-title">Mr. Hardik Jaswantbhai Patel</h5>
-                <p class="card-text">
-                  Lecturer<br />Post. Graduation<br />E-Mail:
-                  hardik_patel1984@yahoo.co.in
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Faculty Member 5 - Harishchandrasinh -->
-          <div class="col-md-4 mb-4">
-            <div class="card shadow-sm p-3">
-              <div class="card-body">
-                <h5 class="card-title">Mr. Harishchandrasinh Anopsinh Jhala</h5>
-                <p class="card-text">
-                  Lecturer<br />Graduation<br />E-Mail:
-                  harish.polytech@gmail.com
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Faculty Member 6 - Lataben -->
-          <div class="col-md-4 mb-4">
-            <div class="card shadow-sm p-3">
-              <div class="card-body">
-                <h5 class="card-title">Ms. Lataben Jasvantdanji Gadhavi</h5>
-                <p class="card-text">
-                  Lecturer<br />Post. Graduation<br />E-Mail: latagpg@gmail.com
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Faculty Member 7 - Ankit -->
-          <div class="col-md-4 mb-4">
-            <div class="card shadow-sm p-3">
-              <div class="card-body">
-                <h5 class="card-title">Mr. Ankit Subhash Didwania</h5>
-                <p class="card-text">
-                  Lecturer<br />Post. Graduation<br />E-Mail:
-                  ankitdidwania.office@gmail.com
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Faculty Member 8 - Nareshkumar -->
-          <div class="col-md-4 mb-4">
-            <div class="card shadow-sm p-3">
-              <div class="card-body">
-                <h5 class="card-title">Mr. Nareshkumar Dayabhai Sosa</h5>
-                <p class="card-text">
-                  Lecturer<br />Post. Graduation<br />E-Mail:
-                  ndsosa.gp@gmail.com
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Faculty Member 9 - Keyurbhai -->
-          <div class="col-md-4 mb-4">
-            <div class="card shadow-sm p-3">
-              <div class="card-body">
-                <h5 class="card-title">Mr. Keyurbhai Arvindbhai Jani</h5>
-                <p class="card-text">
-                  Lecturer<br />Post Graduate<br />E-Mail:
-                  keyurjani.office@gmail.com
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Faculty Member 10 - Pramod -->
-          <div class="col-md-4 mb-4">
-            <div class="card shadow-sm p-3">
-              <div class="card-body">
-                <h5 class="card-title">Mr. Pramod Tripathi</h5>
-                <p class="card-text">
-                  Lecturer<br />Post Graduate<br />E-Mail:
-                  csharp.pramod@gmail.com
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Faculty Member 11 - Rahul -->
-          <div class="col-md-4 mb-4">
-            <div class="card shadow-sm p-3">
-              <div class="card-body">
-                <h5 class="card-title">Mr. Rahul P Joshi</h5>
-                <p class="card-text">
-                  Lecturer<br />Post Graduate<br />E-Mail: rah1985@gmail.com
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Faculty Member 12 - Panchal -->
-          <div class="col-md-4 mb-4">
-            <div class="card shadow-sm p-3">
-              <div class="card-body">
-                <h5 class="card-title">Mr. Panchal Esan Pramodbhai</h5>
-                <p class="card-text">
-                  Lecturer<br />Doctorate<br />E-Mail: panchal.esan@gmail.com
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Faculty Member 13 - Tushar -->
-          <div class="col-md-4 mb-4">
-            <div class="card shadow-sm p-3">
-              <div class="card-body">
-                <h5 class="card-title">MR. TUSHAR PARMAR</h5>
-                <p class="card-text">
-                  Lecturer<br />Graduation<br />E-Mail: trparmar07@gmail.com
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Faculty Member 14 - Chahan -->
-          <div class="col-md-4 mb-4">
-            <div class="card shadow-sm p-3">
-              <div class="card-body">
-                <h5 class="card-title">Chahan Rashikbhai Katara</h5>
-                <p class="card-text">
-                  Lecturer<br />Post Graduation<br />E-Mail: chahan88@gmail.com
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Faculty Member 15 - Archit -->
-          <div class="col-md-4 mb-4">
-            <div class="card shadow-sm p-3">
-              <div class="card-body">
-                <h5 class="card-title">Mr. ARCHIT NARESHBHAI MEHTA</h5>
-                <p class="card-text">
-                  Lecturer<br />Graduation<br />E-Mail: ar_1810@yahoo.com
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Faculty Member 16 - Kirtibhai -->
-          <div class="col-md-4 mb-4">
-            <div class="card shadow-sm p-3">
-              <div class="card-body">
-                <h5 class="card-title">Mr. KIRTIBHAI BABUBHAI JETHVA</h5>
-                <p class="card-text">
-                  Lecturer<br />Graduation<br />E-Mail: jethva_kirti@yahoo.co.in
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Faculty Member 17 - Mohammad -->
-          <div class="col-md-4 mb-4">
-            <div class="card shadow-sm p-3">
-              <div class="card-body">
-                <h5 class="card-title">Mr. MOHAMMAD JUNED ABDULLABHAI JHULAHA</h5>
-                <p class="card-text">
-                  Lecturer<br />Graduation<br />E-Mail: agate.1984@gmail.com
-                </p>
-              </div>
-            </div>
-          </div>
-
+    <!-- Faculty Grid Section -->
+    <section class="faculty-grid">
+      <div class="container">
+        <div class="faculty-members">
+          <!-- Faculty cards will be rendered here dynamically -->
         </div>
       </div>
     </section>
 
-    <footer class="bg-dark text-white py-3 text-center">
-      <p>&copy; 2024 - Government Polytechnic Gandhinagar - IT Department</p>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="faculty.html">Faculty</a></li>
+              <li><a href="study-materials.html">Study Materials</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h4>Contact Information</h4>
+            <ul class="footer-links">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                Sector 26, Gandhinagar, Gujarat
+              </li>
+              <li>
+                <i class="fas fa-phone"></i>
+                +91 79 23245534
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                gp-gandhinagar@gujarat.gov.in
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h4>Connect With Us</h4>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 IT Department - Govt. Polytechnic Gandhinagar. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
-    <!-- Bootstrap JS -->
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/pages/faculty.js"></script>
   </body>
 </html>
