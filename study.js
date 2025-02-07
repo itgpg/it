@@ -1,174 +1,95 @@
 const apiKey = 'AIzaSyBgRGDCTkDdBdrYqxht2oFYRTeucUmAfFg';
-const pythonFolderId = '1SPAJ_Azd-kVEc7l7rrerpmeQOeZJO2Xw';
-const itFolderId = '1QvTM_Z80mrP7dTu9g9-dgGOdgtSzid-c';
-const mathsFolderId = '1xIFEVMpiB2wZvJL3KVRQKEdcecfUskLs';
-const cseFolderId = '1O7ToNX0DIfhrB3K1ytSbPBxm8GhMNpqR';
-const echFolderId = '1JM5fS8mss8ViwNaO7sLpn4QF5btEX9WB';
 
-const syllabusS2FolderId = '1qzlAm8Zi9RC11iwD2V2T0uU_8DMSlemE'; // Semester 2 Syllabus Folder
+const folderIds = {
+    python: '1SPAJ_Azd-kVEc7l7rrerpmeQOeZJO2Xw',
+    it: '1QvTM_Z80mrP7dTu9g9-dgGOdgtSzid-c',
+    maths: '1xIFEVMpiB2wZvJL3KVRQKEdcecfUskLs',
+    cse: '1O7ToNX0DIfhrB3K1ytSbPBxm8GhMNpqR',
+    ech: '1JM5fS8mss8ViwNaO7sLpn4QF5btEX9WB',
+    syllabusS2: '1qzlAm8Zi9RC11iwD2V2T0uU_8DMSlemE'
+};
+const pythonPlaylistId = 'PL5hA7O8RI2bPOSoX7l8zZIIuDQrc9b9wO';
+const adv_pythonPlaylistId = 'PL5hA7O8RI2bMd6FrVKDz-VhKXNVezg_Ly';
+const itPlaylistId = 'PLZ3xYAWT5a-nskfWOvHd_Fvh4RZsedu7G';
+const NetworkingPlaylistId = 'PL5hA7O8RI2bMBGjSduDQRYUCrNViAEee1';
 
 const studyData = {
     semester1: {
-        'Python': {
-            modules: [
-                {
-                    name: 'Python Playlist',
-                    videos: [],
-                    playlistId: pythonPlaylistId,
-                }
-            ]
-        },
-        'IT Systems': {
-            modules: [
-                {
-                    name: 'IT Systems Playlist',
-                    videos: [],
-                    playlistId: itPlaylistId,
-                },
-                {
-                    name: 'IT System Chapter Wise Video Doc Link',
-                    videos: [],
-                    files:['https://drive.google.com/file/d/1Y-ISBbZla_wMdcuGb11Eo03sboCf5V0p/view?usp=sharing']
-                },
-                {
-                    name: 'IT System Networking Playlist',
-                    videos: [],
-                    playlistId: NetworkingPlaylistId,
-                }
-            ]
-        },
-        'PYQ': {
-            modules: [
-                {
-                    name: 'CSE PYQ',
-                    videos: [],
-                    files: [`https://drive.google.com/drive/folders/${cseFolderId}`]
-                },
-                {
-                    name: 'Python Programming PYQ',
-                    videos: [],
-                    files: [`https://drive.google.com/drive/folders/${pythonFolderId}`]
-                },
-                {
-                    name: 'Introduction to IT System PYQ',
-                    videos: [],
-                    files: [`https://drive.google.com/drive/folders/${itFolderId}`]
-                },
-                {
-                    name: 'Mathematics PYQ',
-                    videos: [],
-                    files: [`https://drive.google.com/drive/folders/${mathsFolderId}`]
-                },
-                {
-                    name: 'Ech PYQ',
-                    videos: [],
-                    files: [`https://drive.google.com/drive/folders/${echFolderId}`]
-                }
-            ]
-        }
+        'Python': { modules: [{ name: 'Python Playlist', playlistId: pythonPlaylistId }] },
+        'IT Systems': { modules: [
+            { name: 'IT Systems Playlist', playlistId: itPlaylistId },
+            { name: 'IT System Chapter Wise Video Doc Link', files: ['https://drive.google.com/file/d/1Y-ISBbZla_wMdcuGb11Eo03sboCf5V0p/view?usp=sharing'] }
+        ] },
+        'PYQ': { modules: [
+            { name: 'CSE PYQ', files: [`https://drive.google.com/drive/folders/${folderIds.cse}`] },
+            { name: 'Python Programming PYQ', files: [`https://drive.google.com/drive/folders/${folderIds.python}`] },
+            { name: 'its PYQ', files: [`https://drive.google.com/drive/folders/${folderIds.it}`] },
+            { name: 'ECH PYQ', files: [`https://drive.google.com/drive/folders/${folderIds.ech}`] },
+            { name: 'maths PYQ', files: [`https://drive.google.com/drive/folders/${folderIds.maths}`] },
+
+        ] }
     },
     semester2: {
-        'Syllabus': {
-            modules: [
-                { name: 'Syllabus', files: [`https://drive.google.com/drive/folders/${syllabusS2FolderId}`] }
-            ]
-        }
-    },
-    semester3: {
-
-    },
-    semester4: {
-    
-    },
-    semester5: {
-       
-    },
-    semester5: {
-      
-    },
-    semester6: {
-      
-    },
+        'Syllabus': { modules: [{ name: 'Syllabus', files: [`https://drive.google.com/drive/folders/${folderIds.syllabusS2}`] }] },
+        'Advance Python': { modules: [{ name: 'Advance Python Playlist', playlistId: adv_pythonPlaylistId }] },
+    }
 };
 
-// Fetch videos from YouTube playlist
 async function fetchPlaylistVideos(playlistId) {
-    const response = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&key=${apiKey}&maxResults=100`);
+    const response = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&key=${apiKey}&maxResults=50`);
     const data = await response.json();
-    return data.items.map(item => ({
+    return data.items?.map(item => ({
         title: item.snippet.title,
         videoId: item.snippet.resourceId.videoId
-    }));
+    })) || [];
 }
 
-// Fetch file names from Google Drive folder
 async function fetchFileName(folderId) {
     try {
         const response = await fetch(`https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${apiKey}`);
         const fileData = await response.json();
-        return fileData.files.map(file => ({
+        return fileData.files?.map(file => ({
             fileName: file.name,
             fileId: file.id,
             fileUrl: `https://drive.google.com/file/d/${file.id}/view`
-        }));
+        })) || [];
     } catch (error) {
-        console.error("Error fetching file names from Google Drive:", error);
+        console.error("Error fetching Google Drive files:", error);
         return [];
     }
 }
 
-// Load subjects when semester is selected
 function loadSubjects() {
     const semester = document.getElementById('semester').value;
     const subjectSelect = document.getElementById('subject');
-    subjectSelect.innerHTML = `<option value="" selected disabled>Select Subject</option>`;
-
+    subjectSelect.innerHTML = '<option value="" selected disabled>Select Subject</option>';
+    
     if (studyData[semester]) {
         document.getElementById('subject-selection').style.display = 'block';
         Object.keys(studyData[semester]).forEach(subject => {
-            const option = document.createElement('option');
-            option.value = subject;
-            option.textContent = subject;
-            subjectSelect.appendChild(option);
+            subjectSelect.innerHTML += `<option value="${subject}">${subject}</option>`;
         });
     } else {
         document.getElementById('subject-selection').style.display = 'none';
     }
 }
 
-// Load modules when subject is selected
 function loadModules() {
     const semester = document.getElementById('semester').value;
     const subject = document.getElementById('subject').value;
     const moduleSelect = document.getElementById('module');
-
-    moduleSelect.innerHTML = `<option value="" selected disabled>Select Module</option>`;
-
-    if (studyData[semester] && studyData[semester][subject]) {
-        const modules = studyData[semester][subject].modules;
-
-        // If "Syllabus" is selected, auto-select and hide the module dropdown
-        if (subject === 'Syllabus' && semester === 'semester2') {
-            moduleSelect.innerHTML = `<option value="Syllabus" selected>Syllabus</option>`;
-            document.getElementById('module-selection').style.display = 'none';
-            showMaterials(); // Automatically show syllabus materials
-        } else {
-            document.getElementById('module-selection').style.display = 'block';
-
-            modules.forEach(module => {
-                const option = document.createElement('option');
-                option.value = module.name;
-                option.textContent = module.name;
-                moduleSelect.appendChild(option);
-            });
-        }
+    moduleSelect.innerHTML = '<option value="" selected disabled>Select Module</option>';
+    
+    if (studyData[semester]?.[subject]) {
+        document.getElementById('module-selection').style.display = 'block';
+        studyData[semester][subject].modules.forEach(module => {
+            moduleSelect.innerHTML += `<option value="${module.name}">${module.name}</option>`;
+        });
     } else {
         document.getElementById('module-selection').style.display = 'none';
     }
 }
 
-
-// Show materials (videos or syllabus files)
 async function showMaterials() {
     const semester = document.getElementById('semester').value;
     const subject = document.getElementById('subject').value;
@@ -176,50 +97,41 @@ async function showMaterials() {
     const videosGrid = document.getElementById('videosGrid');
     videosGrid.innerHTML = '';
 
-    if (!semester || !subject || !module) {
-        return;
-    }
+    if (!semester || !subject || !module) return;
 
     document.getElementById('materials-section').style.display = 'block';
-    const selectedModule = studyData[semester][subject].modules.find(mod => mod.name === module);
+    const selectedModule = studyData[semester][subject].modules.find(m => m.name === module);
 
-    // Fetch and display videos
-    if (selectedModule.videos && selectedModule.videos.length === 0 && selectedModule.playlistId) {
+    if (selectedModule?.playlistId) {
         selectedModule.videos = await fetchPlaylistVideos(selectedModule.playlistId);
+        selectedModule.videos.forEach(video => {
+            videosGrid.innerHTML += `
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">${video.title}</h5>
+                            <a href="https://www.youtube.com/watch?v=${video.videoId}" class="btn btn-primary" target="_blank">Watch Video</a>
+                        </div>
+                    </div>
+                </div>`;
+        });
     }
 
-    selectedModule.videos?.forEach(video => {
-        const card = document.createElement('div');
-        card.classList.add('col-md-4', 'col-sm-6', 'mb-4');
-        card.innerHTML = `
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">${video.title}</h5>
-                    <a href="https://www.youtube.com/watch?v=${video.videoId}" class="btn btn-primary" target="_blank">Watch Video</a>
-                </div>
-            </div>
-        `;
-        videosGrid.appendChild(card);
-    });
-
-    // Fetch and display files
-    if (selectedModule.files) {
+    if (selectedModule?.files) { 
         for (const folderLink of selectedModule.files) {
             const folderId = folderLink.split('/').pop();
             const files = await fetchFileName(folderId);
             files.forEach(file => {
-                const fileCard = document.createElement('div');
-                fileCard.classList.add('col-md-4', 'col-sm-6', 'mb-4');
-                fileCard.innerHTML = `
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">${file.fileName}</h5>
-                            <a href="${file.fileUrl}" class="btn btn-primary" target="_blank">View</a>
-                            <a href="https://drive.google.com/uc?export=download&id=${file.fileId}" class="btn btn-success" target="_blank">Download</a>
+                videosGrid.innerHTML += `
+                    <div class="col-md-4 col-sm-6 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">${file.fileName}</h5>
+                                <a href="${file.fileUrl}" class="btn btn-primary" target="_blank">View</a>
+                                <a href="https://drive.google.com/uc?export=download&id=${file.fileId}" class="btn btn-success" target="_blank">Download</a>
+                            </div>
                         </div>
-                    </div>
-                `;
-                videosGrid.appendChild(fileCard);
+                    </div>`;
             });
         }
     }
