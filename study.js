@@ -9,13 +9,61 @@ const syllabusS2FolderId = '1qzlAm8Zi9RC11iwD2V2T0uU_8DMSlemE'; // Semester 2 Sy
 
 const studyData = {
     semester1: {
+        'Python': {
+            modules: [
+                {
+                    name: 'Python Playlist',
+                    videos: [],
+                    playlistId: pythonPlaylistId,
+                }
+            ]
+        },
+        'IT Systems': {
+            modules: [
+                {
+                    name: 'IT Systems Playlist',
+                    videos: [],
+                    playlistId: itPlaylistId,
+                },
+                {
+                    name: 'IT System Chapter Wise Video Doc Link',
+                    videos: [],
+                    files:['https://drive.google.com/file/d/1Y-ISBbZla_wMdcuGb11Eo03sboCf5V0p/view?usp=sharing']
+                },
+                {
+                    name: 'IT System Networking Playlist',
+                    videos: [],
+                    playlistId: NetworkingPlaylistId,
+                }
+            ]
+        },
         'PYQ': {
             modules: [
-                { name: 'CSE PYQ', files: [`https://drive.google.com/drive/folders/${cseFolderId}`] },
-                { name: 'Python Programming PYQ', files: [`https://drive.google.com/drive/folders/${pythonFolderId}`] },
-                { name: 'Introduction to IT System PYQ', files: [`https://drive.google.com/drive/folders/${itFolderId}`] },
-                { name: 'Mathematics PYQ', files: [`https://drive.google.com/drive/folders/${mathsFolderId}`] },
-                { name: 'Ech PYQ', files: [`https://drive.google.com/drive/folders/${echFolderId}`] }
+                {
+                    name: 'CSE PYQ',
+                    videos: [],
+                    files: [`https://drive.google.com/drive/folders/${cseFolderId}`]
+                },
+                {
+                    name: 'Python Programming PYQ',
+                    videos: [],
+                    files: [`https://drive.google.com/drive/folders/${pythonFolderId}`]
+                },
+                {
+                    name: 'Introduction to IT System PYQ',
+                    videos: [],
+                    files: [`https://drive.google.com/drive/folders/${itFolderId}`]
+                },
+                {
+                    name: 'Mathematics PYQ',
+                    videos: [],
+                    files: [`https://drive.google.com/drive/folders/${mathsFolderId}`]
+                },
+                {
+                    name: 'Ech PYQ',
+                    videos: [],
+                    files: [`https://drive.google.com/drive/folders/${echFolderId}`]
+                }
             ]
         }
     },
