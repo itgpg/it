@@ -10,7 +10,7 @@ const CONFIG = {
     },
     PLAYLIST_IDS: {
         python: 'PL5hA7O8RI2bPOSoX7l8zZIIuDQrc9b9wO',
-        advPython: 'PL5hA7O8RI2bMd6FrVKDz-VhKXNViAEee1',
+        advPython: 'PL5hA7O8RI2bMd6FrVKDz-VhKXNVezg_Ly',
         it: 'PLZ3xYAWT5a-nskfWOvHd_Fvh4RZsedu7G',
         networking: 'PL5hA7O8RI2bMBGjSduDQRYUCrNViAEee1'
     }

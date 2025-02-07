@@ -4,7 +4,18 @@ class YouTubeHandler {
             const response = await fetch(
                 `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${playlistId}&key=${CONFIG.API_KEY}`
             );
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
             const data = await response.json();
+            
+            if (!data.items) {
+                console.warn(`No videos found for playlist: ${playlistId}`);
+                return [];
+            }
+            
             return data.items.map(item => ({
                 title: item.snippet.title,
                 videoId: item.snippet.resourceId.videoId
