@@ -14,67 +14,164 @@ title: Events
 </section>
 
 <div class="container mb-5">
-    <div class="row g-4 mb-4">
-        <div class="col-12">
-            <div class="row g-3">
-                <div class="col-md-4">
-                    <select class="form-select" id="filterYear">
-                        <option value="all">All Years</option>
-                        <option>2024</option>
-                        <option>2023</option>
-                    </select>
+    <!-- Mobile Filter Toggle -->
+    <div class="d-lg-none mb-4">
+        <button class="btn btn-primary w-100" type="button" 
+                data-bs-toggle="offcanvas" data-bs-target="#filterSidebar">
+            <i class="fas fa-filter me-2"></i>Filter & Sort Events
+        </button>
+    </div>
+
+    <div class="row">
+        <!-- Desktop Filters -->
+        <div class="col-lg-3 d-none d-lg-block">
+            <div class="card shadow-sm sticky-top" style="top: 80px;">
+                <div class="card-body">
+                    <h5 class="mb-3"><i class="fas fa-sliders me-2"></i>Filters</h5>
+                    <input type="text" class="form-control mb-3" placeholder="Search events..." id="searchInput">
+                    
+                    <div class="mb-4">
+                        <label class="form-label">Event Type</label>
+                        <select class="form-select" id="filterType">
+                            <option value="all">All Events</option>
+                            <option value="upcoming">Upcoming</option>
+                            <option value="past">Past</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">Sort By</label>
+                        <div class="btn-group-vertical w-100">
+                            <button type="button" class="btn btn-outline-primary active" 
+                                    data-sort="upcoming">
+                                Upcoming First
+                            </button>
+                            <button type="button" class="btn btn-outline-primary" 
+                                    data-sort="past">
+                                Recent Past First
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <select class="form-select" id="filterType">
-                        <option value="all">All Events</option>
-                        <option value="upcoming">Upcoming</option>
-                        <option value="past">Past</option>
-                    </select>
+            </div>
+        </div>
+
+        <!-- Event Cards Grid -->
+        <div class="col-lg-9">
+            <div class="row g-4" id="eventsContainer">
+                {% assign now = site.time | date: '%s' %}
+                {% assign upcoming_events = site.events | where_exp: "event", "event.date > site.time" | sort: 'date' %}
+                {% assign past_events = site.events | where_exp: "event", "event.date <= site.time" | sort: 'date' | reverse %}
+                
+                {% for event in past_events %}
+                <div class="col-12" data-date="{{ event.date | date: '%s' }}" data-type="past">
+                    <div class="event-card past-event">
+                        <div class="event-badge past-badge bg-secondary">
+                            <i class="fas fa-calendar-check me-2"></i>
+                            Completed
+                        </div>
+                        {% if event.image %}
+                        <img src="{{ event.image | relative_url }}" class="event-image card-img-top" alt="{{ event.title }}">
+                        {% endif %}
+                        <div class="event-card-body">
+                            <h3 class="event-card-title">{{ event.title }}</h3>
+                            <div class="event-meta mb-3">
+                                <span class="badge bg-primary me-2">
+                                    <i class="fas fa-users"></i> {{ event.participants }}+ Participants
+                                </span>
+                                {% if event.certificates %}
+                                <span class="badge bg-success">
+                                    <i class="fas fa-certificate"></i> {{ event.certificates }} Certificates
+                                </span>
+                                {% endif %}
+                            </div>
+                            <div class="event-dates text-muted">
+                                <i class="fas fa-calendar-day me-2"></i>
+                                {{ event.date | date: "%d %B %Y" }}
+                            </div>
+                            <div class="event-cta mt-3">
+                                <a href="{{ event.url | relative_url }}" class="btn btn-outline-primary">
+                                    <i class="fas fa-scroll me-2"></i>
+                                    View Full Recap
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <input type="text" class="form-control" placeholder="Search events..." id="searchInput">
+                {% endfor %}
+
+                {% for event in upcoming_events %}
+                <div class="col-12" data-date="{{ event.date | date: '%s' }}" data-type="upcoming">
+                    <div class="event-card upcoming-event">
+                        <div class="event-badge upcoming-badge bg-warning">
+                            <i class="fas fa-calendar-plus me-2"></i>
+                            Upcoming
+                        </div>
+                        {% if event.image %}
+                        <img src="{{ event.image | relative_url }}" class="event-image card-img-top" alt="{{ event.title }}">
+                        {% endif %}
+                        <div class="event-card-body">
+                            <h3 class="event-card-title">{{ event.title }}</h3>
+                            <div class="event-meta mb-3">
+                                <span class="badge bg-primary me-2">
+                                    <i class="fas fa-users"></i> {{ event.participants }}+ Participants
+                                </span>
+                                {% if event.certificates %}
+                                <span class="badge bg-success">
+                                    <i class="fas fa-certificate"></i> {{ event.certificates }} Certificates
+                                </span>
+                                {% endif %}
+                            </div>
+                            <div class="event-dates text-muted">
+                                <i class="fas fa-calendar-day me-2"></i>
+                                {{ event.date | date: "%d %B %Y" }}
+                            </div>
+                            <div class="event-cta mt-3">
+                                <a href="{{ event.url | relative_url }}" class="btn btn-outline-primary">
+                                    <i class="fas fa-info-circle me-2"></i>
+                                    More Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                {% endfor %}
             </div>
         </div>
     </div>
+</div>
 
-    <div class="row g-4">
-        {% for event in site.events %}
-        <div class="col-lg-4 col-md-6">
-            <div class="event-card {% if event.date > site.time %}upcoming-event{% else %}past-event{% endif %}">
-                <div class="event-badge {% if event.date > site.time %}upcoming-badge bg-warning{% else %}past-badge bg-secondary{% endif %}">
-                    <i class="fas fa-calendar-{% if event.date > site.time %}plus{% else %}check{% endif %} me-2"></i>
-                    {% if event.date > site.time %}Upcoming{% else %}Completed{% endif %}
-                </div>
-                {% if event.image %}
-                <img src="{{ event.image | relative_url }}" class="event-image card-img-top" alt="{{ event.title }}">
-                {% endif %}
-                <div class="event-card-body">
-                    <h3 class="event-card-title">{{ event.title }}</h3>
-                    <div class="event-meta mb-3">
-                        <span class="badge bg-primary me-2">
-                            <i class="fas fa-users"></i> {{ event.participants }}+ Participants
-                        </span>
-                        {% if event.certificates %}
-                        <span class="badge bg-success">
-                            <i class="fas fa-certificate"></i> {{ event.certificates }} Certificates
-                        </span>
-                        {% endif %}
-                    </div>
-                    <div class="event-dates text-muted">
-                        <i class="fas fa-calendar-day me-2"></i>
-                        {{ event.date | date: "%d %B %Y" }}
-                    </div>
-                    <div class="event-cta mt-3">
-                        <a href="{{ event.url | relative_url }}" class="btn btn-outline-primary">
-                            <i class="fas fa-{% if event.date > site.time %}info-circle{% else %}scroll{% endif %} me-2"></i>
-                            {% if event.date > site.time %}More Details{% else %}View Full Recap{% endif %}
-                        </a>
-                    </div>
-                </div>
+<!-- Mobile Filter Sidebar -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="filterSidebar">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Filter & Sort</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+        <input type="text" class="form-control mb-3" placeholder="Search events..." id="mobileSearch">
+        
+        <div class="mb-4">
+            <label class="form-label">Event Type</label>
+            <select class="form-select" id="mobileType">
+                <option value="all">All Events</option>
+                <option value="upcoming">Upcoming</option>
+                <option value="past">Past</option>
+            </select>
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label">Sort By</label>
+            <div class="btn-group-vertical w-100">
+                <button type="button" class="btn btn-outline-primary" 
+                        data-sort="upcoming">
+                    Upcoming First
+                </button>
+                <button type="button" class="btn btn-outline-primary active" 
+                        data-sort="past">
+                    Recent Past First
+                </button>
             </div>
         </div>
-        {% endfor %}
     </div>
 </div>
 
