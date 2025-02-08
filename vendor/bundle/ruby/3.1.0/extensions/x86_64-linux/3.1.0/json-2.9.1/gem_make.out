@@ -1,0 +1,24 @@
+current directory: /media/legion/secondary/github-projects/it/vendor/bundle/ruby/3.1.0/gems/json-2.9.1/ext/json/ext/parser
+/usr/bin/ruby3.1 -I/usr/lib/ruby/vendor_ruby extconf.rb
+checking for rb_enc_interned_str() in ruby.h... yes
+checking for rb_hash_new_capa() in ruby.h... no
+checking for rb_hash_bulk_insert() in ruby.h... yes
+checking for rb_category_warn() in ruby.h... yes
+checking for strnlen() in string.h... yes
+checking for whether -std=c99 is accepted as CFLAGS... yes
+creating Makefile
+
+current directory: /media/legion/secondary/github-projects/it/vendor/bundle/ruby/3.1.0/gems/json-2.9.1/ext/json/ext/parser
+make DESTDIR\= sitearchdir\=./.gem.20250209-110366-x6fr9u sitelibdir\=./.gem.20250209-110366-x6fr9u clean
+
+current directory: /media/legion/secondary/github-projects/it/vendor/bundle/ruby/3.1.0/gems/json-2.9.1/ext/json/ext/parser
+make DESTDIR\= sitearchdir\=./.gem.20250209-110366-x6fr9u sitelibdir\=./.gem.20250209-110366-x6fr9u
+compiling parser.c
+linking shared-object json/ext/parser.so
+
+current directory: /media/legion/secondary/github-projects/it/vendor/bundle/ruby/3.1.0/gems/json-2.9.1/ext/json/ext/parser
+make DESTDIR\= sitearchdir\=./.gem.20250209-110366-x6fr9u sitelibdir\=./.gem.20250209-110366-x6fr9u install
+/usr/bin/install -c -m 0755 parser.so ./.gem.20250209-110366-x6fr9u/json/ext
+
+current directory: /media/legion/secondary/github-projects/it/vendor/bundle/ruby/3.1.0/gems/json-2.9.1/ext/json/ext/parser
+make DESTDIR\= sitearchdir\=./.gem.20250209-110366-x6fr9u sitelibdir\=./.gem.20250209-110366-x6fr9u clean

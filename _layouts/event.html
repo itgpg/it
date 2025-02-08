@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<main class="event-detail container py-5">
+    <article>
+        <h1 class="display-4 mb-4">{{ page.title }}</h1>
+        <div class="event-meta mb-4">
+            <span class="badge bg-primary me-2">
+                <i class="fas fa-calendar-day"></i> 
+                {{ page.date | date: "%d %B %Y" }}
+            </span>
+            <span class="badge bg-success">
+                <i class="fas fa-users"></i> 
+                {{ page.participants }} Participants
+            </span>
+        </div>
+        <div class="lead">
+            {{ content }}
+        </div>
+    </article>
+</main> 
