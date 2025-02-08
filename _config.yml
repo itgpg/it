@@ -1,5 +1,6 @@
 title: GPG IT Department
-baseurl: "/"
+baseurl: "/it"
+url: "https://yourusername.github.io"
 plugins:
   - jekyll-feed
   - jekyll-seo-tag

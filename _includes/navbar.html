@@ -1,7 +1,7 @@
 <!-- From events.html lines 79-84 -->
 <nav class="navbar navbar-expand-lg container">
-    <a class="navbar-brand" href="/">
-        <img src="/assets/images/gpg-logo-mini.png" alt="GP Gandhinagar" 
+    <a class="navbar-brand" href="{{ '/' | relative_url }}">
+        <img src="{{ '/assets/images/gpg-logo-mini.png' | relative_url }}" alt="GP Gandhinagar" 
              class="d-inline-block align-top" style="height: 50px;">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
@@ -12,28 +12,28 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/it">Home</a>
+                <a class="nav-link" href="{{ '/' | relative_url }}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/it/faculty.html">Faculty</a>
+                <a class="nav-link" href="{{ '/faculty.html' | relative_url }}">Faculty</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/it/study-materials.html">Study Materials</a>
+                <a class="nav-link" href="{{ '/study-materials.html' | relative_url }}">Study Materials</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="/it/events.html">Events</a>
+                <a class="nav-link active" href="{{ '/events.html' | relative_url }}">Events</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/it/#about">About</a>
+                <a class="nav-link" href="{{ '/#about' | relative_url }}">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/it/#programs">Programs</a>
+                <a class="nav-link" href="{{ '/#programs' | relative_url }}">Programs</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="  ">HOD's Desk</a>
+                <a class="nav-link" href="{{ '/hod-desk.html' | relative_url }}">HOD's Desk</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/it/#contact">Contact Us</a>
+                <a class="nav-link" href="{{ '/#contact' | relative_url }}">Contact Us</a>
             </li>
         </ul>
     </div>
