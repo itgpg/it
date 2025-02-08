@@ -64,6 +64,7 @@ title: Events
                 {% assign past_events = site.events | where_exp: "event", "event.date <= site.time" | sort: 'date' | reverse %}
                 
                 {% for event in past_events %}
+                {% if event.title == "AI Skills Workshop 2025" %}
                 <div class="col-12" data-date="{{ event.date | date: '%s' }}" data-type="past">
                     <div class="event-card past-event">
                         <div class="event-badge past-badge bg-secondary">
@@ -98,6 +99,7 @@ title: Events
                         </div>
                     </div>
                 </div>
+                {% endif %}
                 {% endfor %}
 
                 {% for event in upcoming_events %}
@@ -186,13 +188,13 @@ title: Events
     // Event data structure (can be moved to separate JSON file)
     const events = [
         {
-            id: "ai-workshop-2024",
-            title: "AI Skills Workshop 2024",
-            date: "5-6 February 2024",
+            id: "ai-workshop-2025",
+            title: "AI Skills Workshop 2025",
+            date: "5-6 February 2025",
             participants: 125,
             certificates: 87,
             status: "past",
-            image: "assets/images/events/ai-workshop.jpg",
+            // image: "assets/images/events/ai-workshop.jpg",
             recapLink: "event-ai-workshop.html"
         },
         // Add new events here
