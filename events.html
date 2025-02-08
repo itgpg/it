@@ -12,6 +12,28 @@ layout: default
     </div>
 </section>
 
+<div class="container mb-5">
+    <div class="row g-3">
+        <div class="col-md-4">
+            <select class="form-select" id="filterYear">
+                <option value="all">All Years</option>
+                <option>2024</option>
+                <option>2023</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <select class="form-select" id="filterType">
+                <option value="all">All Events</option>
+                <option value="upcoming">Upcoming</option>
+                <option value="past">Past</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <input type="text" class="form-control" placeholder="Search events..." id="searchInput">
+        </div>
+    </div>
+</div>
+
 <div class="container">
     <div class="row g-4">
         {% for event in site.events %}
