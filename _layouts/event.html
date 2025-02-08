@@ -2,6 +2,9 @@
 layout: default
 ---
 
+<!-- Same navbar as events.html -->
+{% include navbar.html %}
+
 <main class="event-detail container py-5">
     <div class="mb-4">
         <a href="/events.html" class="btn btn-outline-primary">
@@ -15,7 +18,7 @@ layout: default
         {% endif %}
         
         <div class="card-body p-4">
-            <h1 class="display-4 mb-4">{{ page.title }}</h1>
+            <h1 class="display-4 mb-4 neo-title">{{ page.title }}</h1>
             
             <div class="event-meta mb-4">
                 <span class="badge bg-primary me-2">
@@ -33,4 +36,7 @@ layout: default
             </div>
         </div>
     </article>
-</main> 
+</main>
+
+<!-- Same footer as events.html -->
+{% include footer.html %} 
