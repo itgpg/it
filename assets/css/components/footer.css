@@ -1,8 +1,9 @@
 /* Footer Styles */
 .footer {
-    background: #1f2937;
-    color: #f3f4f6;
-    padding: 80px 0 0;
+    background: var(--text-primary) !important;
+    color: white;
+    padding: 2rem 0;
+    margin-top: auto;
 }
 
 .footer h4 {
@@ -35,15 +36,16 @@
 }
 
 .footer-links a {
-    color: #e5e7eb;
+    color: rgba(255,255,255,0.8);
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease;
     display: inline-block;
 }
 
 .footer-links a:hover {
     color: white;
-    transform: translateX(5px);
+    text-decoration: none;
+    opacity: 0.9;
 }
 
 .social-links {

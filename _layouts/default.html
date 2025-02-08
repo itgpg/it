@@ -5,27 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} | GP Gandhinagar</title>
     
-    <!-- From events.html lines 86-93 -->
+    <!-- Add all theme styles -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/pages/events.css' | relative_url }}">
-    
-    <!-- Add any other global styles/scripts here -->
+    <link rel="stylesheet" href="{{ '/assets/css/components/navbar.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/components/footer.css' | relative_url }}">
 </head>
-<body>
-    <!-- Navbar -->
+<body class="d-flex flex-column min-vh-100">
     {% include navbar.html %}
-
-    <!-- Content -->
-    <main class="main-content">
+    
+    <main class="flex-grow-1">
         {{ content }}
     </main>
 
-    <!-- Footer -->
     {% include footer.html %}
 
-    <!-- Scripts -->
+    <!-- Theme scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
     {% if page.url contains '/events/' %}

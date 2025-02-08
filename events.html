@@ -14,31 +14,33 @@ title: Events
 </section>
 
 <div class="container mb-5">
-    <div class="row g-3">
-        <div class="col-md-4">
-            <select class="form-select" id="filterYear">
-                <option value="all">All Years</option>
-                <option>2024</option>
-                <option>2023</option>
-            </select>
-        </div>
-        <div class="col-md-4">
-            <select class="form-select" id="filterType">
-                <option value="all">All Events</option>
-                <option value="upcoming">Upcoming</option>
-                <option value="past">Past</option>
-            </select>
-        </div>
-        <div class="col-md-4">
-            <input type="text" class="form-control" placeholder="Search events..." id="searchInput">
+    <div class="row g-4 mb-4">
+        <div class="col-12">
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <select class="form-select" id="filterYear">
+                        <option value="all">All Years</option>
+                        <option>2024</option>
+                        <option>2023</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <select class="form-select" id="filterType">
+                        <option value="all">All Events</option>
+                        <option value="upcoming">Upcoming</option>
+                        <option value="past">Past</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" placeholder="Search events..." id="searchInput">
+                </div>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="container">
     <div class="row g-4">
         {% for event in site.events %}
-        <div class="col-lg-6">
+        <div class="col-lg-4 col-md-6">
             <div class="event-card {% if event.date > site.time %}upcoming-event{% else %}past-event{% endif %}">
                 <div class="event-badge {% if event.date > site.time %}upcoming-badge bg-warning{% else %}past-badge bg-secondary{% endif %}">
                     <i class="fas fa-calendar-{% if event.date > site.time %}plus{% else %}check{% endif %} me-2"></i>
