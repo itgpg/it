@@ -1,4 +1,5 @@
 ---
+layout: event
 title: "AI Skills Workshop 2024"
 date: 2024-02-05
 participants: 125

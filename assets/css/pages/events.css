@@ -633,3 +633,41 @@
         height: 200px;
     }
 }
+
+/* Event Detail Page */
+.event-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.event-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 2rem 0;
+    box-shadow: var(--shadow-md);
+}
+
+.event-content h2,
+.event-content h3 {
+    color: var(--primary-color);
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.event-content ul {
+    list-style: none;
+    padding-left: 1.5rem;
+}
+
+.event-content li {
+    position: relative;
+    margin-bottom: 0.8rem;
+}
+
+.event-content li::before {
+    content: "▹";
+    color: var(--primary-color);
+    position: absolute;
+    left: -1.3rem;
+}
