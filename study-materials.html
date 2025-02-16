@@ -1,110 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Study Materials - IT Department | GP Gandhinagar</title>
+---
+layout: default
+title: Study Materials
+custom_css:
+  - assets/css/pages/study-materials.css
+---
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/pages/study-materials.css">
-</head>
-<body>
-    <!-- Navbar -->
-    {% include components/navbar.html %}
-
-    <!-- Study Materials Header -->
-    <section class="materials-header">
-        <div class="container">
-            <div class="dept-badge">
-                <img src="assets/images/gpg-logo.png" alt="GPG Logo" class="dept-logo">
-                <div class="dept-info">
-                    <span class="institute">Government Polytechnic Gandhinagar</span>
-                    <span class="university">Gujarat Technological University</span>
-                </div>
-            </div>
-            <h1 class="section-title">Study Materials</h1>
-        </div>
-    </section>
-
-    <!-- Study Materials Content -->
-    <section class="materials-section">
-        <div class="container">
-            <!-- Semester Cards -->
-            <div class="semester-cards">
-                <div class="semester-card active" data-semester="semester1">
-                    <div class="card-icon">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <h3>Semester 1</h3>
-                    <span class="subject-count">3 Subjects</span>
-                </div>
-                <div class="semester-card" data-semester="semester2">
-                    <div class="card-icon">
-                        <i class="fas fa-book-open"></i>
-                    </div>
-                    <h3>Semester 2</h3>
-                    <span class="subject-count">2 Subjects</span>
-                </div>
-                <!-- Add other semesters similarly -->
-            </div>
-
-            <!-- Subject Navigation -->
-            <div class="subject-navigation">
-                <div class="subject-tabs">
-                    <!-- Tabs will be populated by JavaScript -->
-                </div>
-                
-                <div class="subject-content">
-                    <!-- Module cards will be populated here -->
-                </div>
-            </div>
-
-            <!-- Materials Display -->
-            <div id="materials-section" style="display: none;">
-                <div class="row" id="videosGrid">
-                    <!-- Materials will be loaded here -->
-                </div>
+<section class="materials-header">
+    <div class="container">
+        <div class="dept-badge">
+            <img src="/assets/images/gpg-logo.png" alt="GPG Logo" class="dept-logo">
+            <div class="dept-info">
+                <span class="institute">Government Polytechnic Gandhinagar</span>
+                <span class="university">Gujarat Technological University</span>
             </div>
         </div>
-    </section>
+        <h1 class="section-title">Study Materials</h1>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2024 Government Polytechnic Gandhinagar. All rights reserved.</p>
-    </footer>
+<section class="materials-section">
+    <div class="container">
+        <!-- Semester Cards -->
+        <div class="semester-cards">
+            <div class="semester-card active" data-semester="semester1">
+                <div class="card-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3>Semester 1</h3>
+                <span class="subject-count">3 Subjects</span>
+            </div>
+            <div class="semester-card" data-semester="semester2">
+                <div class="card-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h3>Semester 2</h3>
+                <span class="subject-count">2 Subjects</span>
+            </div>
+            <!-- Add other semesters similarly -->
+        </div>
 
-    <!-- Scripts in correct order -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/config.js"></script>
-    <script src="assets/js/components/StudyData.js"></script>
-    <script src="assets/js/components/YouTubeHandler.js"></script>
-    <script src="assets/js/components/UIManager.js"></script>
-    <script src="assets/js/pages/study-materials.js"></script>
-    <script>
-        console.log('StudyData loaded:', !!StudyData);
-        console.log('YouTubeHandler loaded:', !!YouTubeHandler);
-        console.log('UIManager loaded:', !!UIManager);
-        console.log('StudyMaterialsPage loaded:', !!StudyMaterialsPage);
-    </script>
+        <!-- Subject Navigation -->
+        <div class="subject-navigation">
+            <div class="subject-tabs">
+                <!-- Tabs will be populated by JavaScript -->
+            </div>
+            
+            <div class="subject-content">
+                <!-- Module cards will be populated here -->
+            </div>
+        </div>
 
-    <!-- Debug Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log('Page loaded');
-            // Add click event logging
-            document.querySelectorAll('.semester-card').forEach(card => {
-                console.log('Found semester card:', card.dataset.semester);
-                card.addEventListener('click', (e) => {
-                    console.log('Semester clicked:', e.currentTarget.dataset.semester);
-                });
+        <!-- Materials Display -->
+        <div id="materials-section" style="display: none;">
+            <div class="row" id="videosGrid">
+                <!-- Materials will be loaded here -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    console.log('StudyData loaded:', !!StudyData);
+    console.log('YouTubeHandler loaded:', !!YouTubeHandler);
+    console.log('UIManager loaded:', !!UIManager);
+    console.log('StudyMaterialsPage loaded:', !!StudyMaterialsPage);
+</script>
+
+<!-- Debug Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log('Page loaded');
+        // Add click event logging
+        document.querySelectorAll('.semester-card').forEach(card => {
+            console.log('Found semester card:', card.dataset.semester);
+            card.addEventListener('click', (e) => {
+                console.log('Semester clicked:', e.currentTarget.dataset.semester);
             });
         });
-    </script>
-</body>
-</html>
+    });
+</script>

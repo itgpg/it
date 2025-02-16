@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} | GP Gandhinagar</title>
-    
-    <!-- Add all theme styles -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="{{ 'assets/css/main.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    {% if page.custom_css %}
+        {% for css in page.custom_css %}
+            <link rel="stylesheet" href="{{ css | relative_url }}">
+        {% endfor %}
+    {% endif %}
 </head>
 <body class="d-flex flex-column min-vh-100">
     {% include components/navbar.html %}
@@ -19,11 +22,12 @@
 
     {% include components/footer.html %}
 
-    <!-- Theme scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
-    {% if page.url contains '/events/' %}
-    <script src="{{ '/assets/js/pages/events.js' | relative_url }}"></script>
+    {% if page.custom_js %}
+        {% for js in page.custom_js %}
+            <script src="{{ js | relative_url }}"></script>
+        {% endfor %}
     {% endif %}
 </body>
 </html> 
