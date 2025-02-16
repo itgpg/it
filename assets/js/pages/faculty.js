@@ -12,9 +12,9 @@ const facultyMembers = [
         email: "vhpunasanwala@yahoo.com"
     },
     {
-        name: "Mr. ANSHUMAN Satishkumar PATEL",
+        name: "Dr. ANSHUMAN Satishkumar PATEL",
         designation: "Lecturer",
-        qualification: "Post. Graduation",
+        qualification: "Doctorate",
         email: "anshu_info@yahoo.co.in"
     },
     {
@@ -30,9 +30,9 @@ const facultyMembers = [
         email: "harish.polytech@gmail.com"
     },
     {
-        name: "Ms. Lataben Jasvantdanji Gadhavi",
+        name: "Dr. Lataben Jasvantdanji Gadhavi",
         designation: "Lecturer",
-        qualification: "Post. Graduation",
+        qualification: "Doctorate",
         email: "latagpg@gmail.com"
     },
     {
@@ -48,9 +48,9 @@ const facultyMembers = [
         email: "ndsosa.gp@gmail.com"
     },
     {
-        name: "Mr. Keyurbhai Arvindbhai Jani",
+        name: "Dr. Keyurbhai Arvindbhai Jani",
         designation: "Lecturer",
-        qualification: "Post Graduate",
+        qualification: "Doctorate",
         email: "keyurjani.office@gmail.com"
     },
     {
@@ -66,7 +66,7 @@ const facultyMembers = [
         email: "rah1985@gmail.com"
     },
     {
-        name: "Mr. Panchal Esan Pramodbhai",
+        name: "Dr. Panchal Esan Pramodbhai",
         designation: "Lecturer",
         qualification: "Doctorate",
         email: "panchal.esan@gmail.com"
