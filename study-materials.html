@@ -4,6 +4,10 @@ title: Study Materials
 custom_css:
   - assets/css/pages/study-materials.css
 custom_js:
+  - assets/js/config.js
+  - assets/js/components/StudyData.js
+  - assets/js/components/YouTubeHandler.js
+  - assets/js/components/UIManager.js
   - assets/js/pages/study-materials.js
 ---
 
@@ -81,4 +85,12 @@ custom_js:
         });
     });
 </script>
-<script src="{{ '/assets/js/pages/study-materials.js' | relative_url }}"></script>
+
+<!-- Scripts in correct order -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<!-- Your config file with API keys must come first -->
+<script src="assets/js/config.js"></script>
+<script src="assets/js/components/StudyData.js"></script>
+<script src="assets/js/components/YouTubeHandler.js"></script>
+<script src="assets/js/components/UIManager.js"></script>
+<script src="assets/js/pages/study-materials.js"></script>
