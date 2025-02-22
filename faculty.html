@@ -1,132 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Faculty - IT Department | GP Gandhinagar</title>
+---
+layout: default
+title: Faculty Members
+custom_css:
+  - assets/css/pages/faculty.css
+custom_js:
+  - assets/js/pages/faculty.js 
+---
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="assets/css/main.css" />
-  </head>
-
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top bg-white">
-      <div class="container">
-        <a class="navbar-brand" href="#">
-          <img src="assets/images/gpg-logo.png" alt="GPG Logo" class="logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="faculty.html">Faculty</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="study-materials.html">Study Materials</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="events.html">Events</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.html#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Faculty Header Section -->
-    <section class="faculty-header">
-      <div class="container">
+<section class="faculty-header">
+    <div class="container">
         <div class="dept-badge">
-          <img src="assets/images/gpg-logo.png" alt="GPG Logo" class="dept-logo">
-          <div class="dept-info">
-            <span class="institute">Government Polytechnic Gandhinagar</span>
-            <span class="university">Gujarat Technological University</span>
-          </div>
+            <img src="/assets/images/gpg-logo.png" alt="GPG Logo" class="dept-logo">
+            <div class="dept-info">
+                <span class="institute">Government Polytechnic Gandhinagar</span>
+                <span class="university">Gujarat Technological University</span>
+            </div>
         </div>
         <h1 class="section-title">Faculty Members</h1>
-      </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Faculty Grid Section -->
-    <section class="faculty-grid">
-      <div class="container">
+<section class="faculty-grid">
+    <div class="container">
         <div class="faculty-members">
-          <!-- Faculty cards will be rendered here dynamically -->
+            <!-- Faculty cards content -->
         </div>
-      </div>
-    </section>
+    </div>
+</section>
+<script src="{{ '/assets/js/pages/faculty.js' | relative_url }}"></script>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <h4>Quick Links</h4>
-            <ul class="footer-links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="faculty.html">Faculty</a></li>
-              <li><a href="study-materials.html">Study Materials</a></li>
-              <li><a href="events.html">Events</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <h4>Contact Information</h4>
-            <ul class="footer-links">
-              <li>
-                <i class="fas fa-map-marker-alt"></i>
-                Sector 26, Gandhinagar, Gujarat
-              </li>
-              <li>
-                <i class="fas fa-phone"></i>
-                +91 79 23245534
-              </li>
-              <li>
-                <i class="fas fa-envelope"></i>
-                gp-gandhinagar@gujarat.gov.in
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <h4>Connect With Us</h4>
-            <div class="social-links">
-              <a href="#"><i class="fab fa-facebook"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-linkedin"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; 2024 IT Department - Govt. Polytechnic Gandhinagar. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/config.js"></script>
-    <script src="assets/js/utils.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/pages/faculty.js"></script>
-  </body>
-</html>

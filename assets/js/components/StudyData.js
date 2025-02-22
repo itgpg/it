@@ -47,7 +47,13 @@ class StudyData {
                         name: 'Advance Python Playlist', 
                         playlistId: CONFIG.PLAYLIST_IDS.advPython 
                     }] 
-                }
+                },
+                'appled-maths': {
+                    modules: [{ 
+                        name: 'Applied Maths Playlist', 
+                        playlistId: CONFIG.PLAYLIST_IDS.enginnering_maths 
+                    }]
+                },
             }
         };
         // console.log('Available semesters:', this.getSemesters());  // Commented out
