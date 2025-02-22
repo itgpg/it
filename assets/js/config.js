@@ -12,6 +12,7 @@ const CONFIG = {
         python: 'PL5hA7O8RI2bPOSoX7l8zZIIuDQrc9b9wO',
         advPython: 'PL5hA7O8RI2bMd6FrVKDz-VhKXNVezg_Ly',
         it: 'PLZ3xYAWT5a-nskfWOvHd_Fvh4RZsedu7G',
-        networking: 'PL5hA7O8RI2bMBGjSduDQRYUCrNViAEee1'
+        networking: 'PL5hA7O8RI2bMBGjSduDQRYUCrNViAEee1',
+        enginnering_maths: 'PLs6nv4Vuoj-szyhRqc8PcTFTdFzDIJrfj',
     }
 };
