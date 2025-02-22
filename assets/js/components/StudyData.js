@@ -48,7 +48,7 @@ class StudyData {
                         playlistId: CONFIG.PLAYLIST_IDS.advPython 
                     }] 
                 },
-                'applied-maths': {
+                'Applied-maths': {
                     modules: [{ 
                         name: 'Applied Maths Playlist', 
                         playlistId: CONFIG.PLAYLIST_IDS.enginnering_maths 
