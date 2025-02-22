@@ -3,6 +3,7 @@ layout: default
 title: Information Technology Department
 custom_css:
   - assets/css/components/hero.css
+
 ---
 
 <section class="hero-section">
@@ -10,7 +11,7 @@ custom_css:
         <div class="row align-items-center">
             <div class="col-lg-6 hero-content">
                 <div class="dept-badge">
-                    <img src="/assets/images/gpg-logo.png" alt="GPG Logo" class="dept-logo">
+                    <img src="{{ '/assets/images/gpg-logo.png' | relative_url }}" alt="GPG Logo" class="dept-logo">
                     <div class="dept-info">
                         <span class="institute">Government Polytechnic Gandhinagar</span>
                         <span class="university">Gujarat Technological University</span>
@@ -118,7 +119,7 @@ class ITDepartment:
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
-                <img src="assets/images/about-image.svg" alt="About Us" class="about-image">
+                <img src="{{ 'assets/images/about-image.svg' | relative_url }}" alt="About Us" class="about-image">
             </div>
             <div class="col-lg-6">
                 <h2 class="section-title">About Our Department</h2>
