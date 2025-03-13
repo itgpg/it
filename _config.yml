@@ -3,6 +3,16 @@ description: Information Technology Department at Government Polytechnic Gandhin
 baseurl: "/it"
 url: "https://itgpg.github.io"
 
+# Force using GitHub Pages URL
+github:
+  url: "https://itgpg.github.io"
+  baseurl: "/it"
+
+# Prevent redirects
+permalink: pretty
+include: [".htaccess"]
+exclude: ["CNAME"]
+
 # SEO settings
 tagline: Excellence in IT Education
 author: IT Department, GP Gandhinagar
@@ -21,6 +31,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 # Collections
 collections:
