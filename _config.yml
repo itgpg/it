@@ -3,15 +3,38 @@ description: Information Technology Department at Government Polytechnic Gandhin
 baseurl: "/it"
 url: "https://itgpg.github.io"
 
-# Force using GitHub Pages URL
-github:
-  url: "https://itgpg.github.io"
-  baseurl: "/it"
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# GitHub Pages settings
+remote_theme: pages-themes/primer@v0.6.0
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jekyll-github-metadata
+  - jekyll-relative-links
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+  - jekyll-default-layout
+  - jekyll-titles-from-headings
+  - jekyll-remote-theme
 
 # Prevent redirects
 permalink: pretty
-include: [".htaccess"]
-exclude: ["CNAME"]
+exclude: 
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - node_modules/
 
 # SEO settings
 tagline: Excellence in IT Education
@@ -26,13 +49,6 @@ social:
     - https://twitter.com/gpgit
     - https://www.linkedin.com/school/gpgit
 
-# Jekyll SEO Tag
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-redirect-from
-
 # Collections
 collections:
   events:
@@ -45,5 +61,6 @@ defaults:
     scope:
       path: ""
     values:
+      layout: default
       image: /assets/images/gpg-logo.png
       lang: en_IN 
