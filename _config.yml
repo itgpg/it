@@ -11,7 +11,19 @@ github:
 # Prevent redirects
 permalink: pretty
 include: [".htaccess"]
-exclude: ["CNAME"]
+exclude: 
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
 
 # SEO settings
 tagline: Excellence in IT Education
