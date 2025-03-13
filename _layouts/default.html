@@ -3,7 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
     <title>{{ page.title }} | GP Gandhinagar</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <meta name="keywords" content="{{ page.keywords }}">
+    <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:description" content="{{ page.description | default: site.description }}">
+    <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}{{ page.image | default: site.defaults[0].values.image }}">
+    <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:locale" content="en_IN">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@{{ site.twitter.username }}">
+    <meta name="twitter:title" content="{{ page.title }}">
+    <meta name="twitter:description" content="{{ page.description | default: site.description }}">
+    <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}{{ page.image | default: site.defaults[0].values.image }}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}">
+    <link rel="apple-touch-icon" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}">
+    
+    <!-- CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
@@ -12,6 +39,26 @@
             <link rel="stylesheet" href="{{ css | relative_url }}">
         {% endfor %}
     {% endif %}
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "{{ page.title }}",
+      "description": "{{ page.description | default: site.description }}",
+      "publisher": {
+        "@type": "EducationalOrganization",
+        "name": "Government Polytechnic Gandhinagar",
+        "department": "Information Technology Department",
+        "sameAs": [
+          "{{ site.social.links[0] }}",
+          "{{ site.social.links[1] }}",
+          "{{ site.social.links[2] }}"
+        ]
+      }
+    }
+    </script>
 </head>
 <body class="d-flex flex-column min-vh-100">
     {% include components/navbar.html %}
@@ -22,6 +69,7 @@
 
     {% include components/footer.html %}
 
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
     {% if page.custom_js %}
@@ -29,5 +77,14 @@
             <script src="{{ js | relative_url }}"></script>
         {% endfor %}
     {% endif %}
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
 </body>
 </html> 
