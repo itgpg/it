@@ -5,6 +5,11 @@ url: "https://itgpg.github.io"
 
 # Build settings
 markdown: kramdown
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Prevent redirects
 exclude: 
   - CNAME
   - Gemfile
@@ -27,4 +32,6 @@ defaults:
     scope:
       path: ""
     values:
-      layout: default 
+      layout: default
+      image: /assets/images/gpg-logo.png
+      lang: en_IN 
