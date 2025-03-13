@@ -1,13 +1,30 @@
+# Allow all web crawlers
 User-agent: *
 Allow: /
+
+# Sitemap location
 Sitemap: https://itgpg.github.io/it/sitemap.xml
 
-# Allow all bots to index the content
+# Specific search engine configurations
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
+
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
+
 User-agent: Slurp
 Allow: /
+Crawl-delay: 1
+
 User-agent: DuckDuckBot
-Allow: / 
+Allow: /
+Crawl-delay: 1
+
+# Block specific paths
+Disallow: /assets/js/
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /vendor/
+Disallow: /.bundle/ 
