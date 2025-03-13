@@ -1,0 +1,60 @@
+---
+layout: default
+title: Newsletters
+---
+
+<div class="container py-5">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="text-center mb-4">Institution Newsletters</h1>
+            <p class="text-center lead">Stay updated with the latest news and announcements from GP Gandhinagar.</p>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <!-- Newsletter Card Template -->
+        {% for year in (2024..2020) reversed %}
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">{{ year }} Newsletters</h5>
+                    <div class="list-group list-group-flush">
+                        <!-- Example newsletters - Replace with actual data -->
+                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            January {{ year }}
+                            <i class="fas fa-download text-primary"></i>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            February {{ year }}
+                            <i class="fas fa-download text-primary"></i>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            March {{ year }}
+                            <i class="fas fa-download text-primary"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Newsletter Subscription Form -->
+    <div class="row mt-5">
+        <div class="col-md-8 mx-auto">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title text-center mb-4">Subscribe to Our Newsletter</h3>
+                    <form>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Enter your email address">
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
