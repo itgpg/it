@@ -1,16 +1,38 @@
 ---
 layout: default
-title: Information Technology Department
+title: Information Technology Department | Government Polytechnic Gandhinagar
+description: Welcome to the Information Technology Department at Government Polytechnic Gandhinagar
+keywords: GPG IT Department, Government Polytechnic Gandhinagar, IT diploma, polytechnic college Gandhinagar, GTU affiliated college, best IT college Gujarat
 custom_css:
-  - assets/css/components/hero.css
-
+  - /assets/css/components/hero.css
 ---
+
+<!-- Structured Data for Educational Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Government Polytechnic Gandhinagar",
+  "department": "Information Technology Department",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Gandhinagar",
+    "addressRegion": "Gujarat",
+    "addressCountry": "IN"
+  },
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "Gujarat Technological University"
+  }
+}
+</script>
 
 <section class="hero-section">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 hero-content">
                 <div class="dept-badge">
+                    <img src="{{ '/assets/images/gpg-logo.png' | relative_url }}" alt="GPG Logo" class="dept-logo">
                     <img src="{{ '/assets/images/gpg-logo.png' | relative_url }}" alt="GPG Logo" class="dept-logo">
                     <div class="dept-info">
                         <span class="institute">Government Polytechnic Gandhinagar</span>

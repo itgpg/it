@@ -1,11 +1,37 @@
 title: GPG IT Department
+description: Information Technology Department at Government Polytechnic Gandhinagar
 baseurl: "/it"
 url: "https://itgpg.github.io"
+
+# Build settings
+markdown: kramdown
 plugins:
-  - jekyll-feed
+  - jekyll-sitemap
   - jekyll-seo-tag
 
+# Prevent redirects
+exclude: 
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - node_modules/
+
+# Collections
 collections:
   events:
     output: true
-    permalink: /events/:path/ 
+    permalink: /events/:path/
+
+# Default front matter
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: default
+      image: /assets/images/gpg-logo.png
+      lang: en_IN 
