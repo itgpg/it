@@ -32,6 +32,7 @@ body {
     font-family: 'Inter', sans-serif;
     color: var(--text-primary);
     line-height: 1.6;
+    padding-top: 76px; /* Add padding for fixed navbar */
 }
 
 /* Typography */

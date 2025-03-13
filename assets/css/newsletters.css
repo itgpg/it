@@ -1,0 +1,51 @@
+.newsletter-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.newsletter-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+.list-group-item {
+    border: none;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem !important;
+    background-color: #f8f9fa;
+    transition: background-color 0.3s ease;
+}
+
+.list-group-item:hover {
+    background-color: #e9ecef;
+}
+
+.list-group-item h6 {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.list-group-item small {
+    color: var(--text-secondary);
+}
+
+.badge {
+    font-weight: 500;
+    padding: 0.5em 0.8em;
+}
+
+.badge.bg-success {
+    background-color: #10b981 !important;
+}
+
+.badge.bg-primary {
+    background-color: #3b82f6 !important;
+}
+
+.fa-download {
+    transition: transform 0.3s ease;
+}
+
+.list-group-item:hover .fa-download {
+    transform: translateY(2px);
+} 

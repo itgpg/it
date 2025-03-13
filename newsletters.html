@@ -1,44 +1,68 @@
 ---
 layout: default
 title: Newsletters
+custom_css:
+  - /assets/css/newsletters.css
 ---
 
 <div class="container py-5">
     <div class="row mb-4">
         <div class="col-12">
-            <h1 class="text-center mb-4">Institution Newsletters</h1>
-            <p class="text-center lead">Stay updated with the latest news and announcements from GP Gandhinagar.</p>
+            <h1 class="text-center mb-4">IT Department Newsletters</h1>
+            <p class="text-center lead">Stay updated with the latest news and announcements from GP Gandhinagar IT Department.</p>
         </div>
     </div>
 
     <div class="row g-4">
-        <!-- Newsletter Card Template -->
-        {% for year in (2024..2020) reversed %}
-        <div class="col-md-6 col-lg-4">
-            <div class="card h-100 shadow-sm">
+        <div class="col-md-6">
+            <div class="card h-100 shadow-sm newsletter-card">
                 <div class="card-body">
-                    <h5 class="card-title">{{ year }} Newsletters</h5>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="card-title mb-0">2023-2024 Newsletters</h5>
+                        <span class="badge bg-success">Latest</span>
+                    </div>
                     <div class="list-group list-group-flush">
-                        <!-- Example newsletters - Replace with actual data -->
-                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                            January {{ year }}
-                            <i class="fas fa-download text-primary"></i>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                            February {{ year }}
-                            <i class="fas fa-download text-primary"></i>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                            March {{ year }}
-                            <i class="fas fa-download text-primary"></i>
+                        <a href="https://drive.google.com/file/d/100NdZ3fbZM70NzCNapGo7MyJH50jDvXf/view?usp=sharing" 
+                           class="list-group-item list-group-item-action"
+                           target="_blank">
+                            <div class="d-flex w-100 justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="mb-1">IT Department Newsletter</h6>
+                                    <small class="text-muted">Published: February 2024</small>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <span class="badge bg-primary rounded-pill me-2">5 MB</span>
+                                    <i class="fas fa-download text-primary"></i>
+                                </div>
+                            </div>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-        {% endfor %}
+
+        <div class="col-md-6">
+            <div class="card h-100 shadow-sm newsletter-card">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">Previous Newsletters</h5>
+                    <div class="list-group list-group-flush">
+                        <a href="https://drive.google.com/file/d/100NdZ3fbZM70NzCNapGo7MyJH50jDvXf/view?usp=sharing" 
+                           class="list-group-item list-group-item-action"
+                           target="_blank">
+                            <div class="d-flex w-100 justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="mb-1">Final Newsletter</h6>
+                                    <small class="text-muted">Published: December 2023</small>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <span class="badge bg-primary rounded-pill me-2">387 KB</span>
+                                    <i class="fas fa-download text-primary"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-         
-
 </div> 
