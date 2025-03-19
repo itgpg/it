@@ -1,7 +1,10 @@
 // assets/js/newsletters.js
 
+// Import the CONFIG object
+import { CONFIG } from './config.js';
+
 async function fetchNewsletters() {
-  // Read API key and file ID from config.js
+  // Read API key and folder ID from config.js
   const apiKey = CONFIG.API_KEY;
   const folderId = CONFIG.FOLDER_IDS.newsletters;
 
@@ -45,18 +48,28 @@ function displayNewsletters(newsletters) {
 
   newsletters.forEach(newsletter => {
     const newsletterItem = document.createElement('div');
-    newsletterItem.classList.add('newsletter-item');
+    newsletterItem.classList.add('newsletter-item', 'col-md-4', 'mb-4');
 
-    const titleElement = document.createElement('h2');
+    const card = document.createElement('div');
+    card.classList.add('card', 'h-100');
+
+    const cardBody = document.createElement('div');
+    cardBody.classList.add('card-body');
+
+    const titleElement = document.createElement('h5');
+    titleElement.classList.add('card-title');
     titleElement.textContent = newsletter.name;
 
     const linkElement = document.createElement('a');
     linkElement.href = `https://drive.google.com/uc?export=download&id=${newsletter.id}`;
     linkElement.textContent = 'Download Newsletter';
     linkElement.target = '_blank';
+    linkElement.classList.add('btn', 'btn-primary');
 
-    newsletterItem.appendChild(titleElement);
-    newsletterItem.appendChild(linkElement);
+    cardBody.appendChild(titleElement);
+    cardBody.appendChild(linkElement);
+    card.appendChild(cardBody);
+    newsletterItem.appendChild(card);
 
     newsletterContainer.appendChild(newsletterItem);
   });
