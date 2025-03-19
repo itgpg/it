@@ -6,6 +6,7 @@ async function fetchNewsletters() {
   const folderId = CONFIG.FOLDER_IDS.newsletters;
 
   try {
+    console.log('Fetching newsletters...');
     const response = await fetch(`https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&fields=files(id,name,webViewLink)`, {
       headers: {
         'Authorization': `Bearer ${apiKey}`
@@ -17,7 +18,10 @@ async function fetchNewsletters() {
     }
 
     const data = await response.json();
+    console.log('API response received:', response);
+    console.log('Data fetched:', data);
     displayNewsletters(data.files);
+    console.log('Displaying newsletters:', data.files);
 
   } catch (error) {
     console.error('Error fetching newsletters:', error);
@@ -30,15 +34,14 @@ async function fetchNewsletters() {
 }
 
 function displayNewsletters(newsletters) {
-  // Assuming newsletters is an array of objects with id, name, and webViewLink properties
-  const newsletterContainer = document.getElementById('newsletter-container'); // Assuming you have a container element in your HTML
+  const newsletterContainer = document.getElementById('newsletter-container');
 
   if (!newsletterContainer) {
     console.error('Newsletter container not found!');
     return;
   }
 
-  newsletterContainer.innerHTML = ''; // Clear any existing content
+  newsletterContainer.innerHTML = '';
 
   newsletters.forEach(newsletter => {
     const newsletterItem = document.createElement('div');
@@ -48,8 +51,8 @@ function displayNewsletters(newsletters) {
     titleElement.textContent = newsletter.name;
 
     const linkElement = document.createElement('a');
-    linkElement.href = newsletter.webViewLink;
-    linkElement.textContent = 'View Newsletter';
+    linkElement.href = `https://drive.google.com/uc?export=download&id=${newsletter.id}`;
+    linkElement.textContent = 'Download Newsletter';
     linkElement.target = '_blank';
 
     newsletterItem.appendChild(titleElement);
