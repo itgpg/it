@@ -1,31 +1,36 @@
 ---
 layout: default
-title: Newsletters | IT Department | Government Polytechnic Gandhinagar
-description: Access the latest newsletters from the IT Department of Government Polytechnic Gandhinagar.
-keywords: GPG IT newsletters, polytechnic IT news, Government Polytechnic Gandhinagar newsletters, IT department news
+title: Study Materials | IT Department | Government Polytechnic Gandhinagar
+description: Access comprehensive study materials for IT diploma courses at Government Polytechnic Gandhinagar. Find lecture notes, presentations, and resources for all semesters.
+keywords: GPG IT study materials, polytechnic IT notes, Government Polytechnic Gandhinagar resources, IT diploma materials, GTU study materials, IT course content
 custom_css:
-  - assets/css/pages/newsletters.css
+  - assets/css/pages/study-materials.css
 custom_js:
   - assets/js/config.js
-  - assets/js/newsletters.js
+  - assets/js/components/StudyData.js
+  - assets/js/components/YouTubeHandler.js
+  - assets/js/components/UIManager.js
+  - assets/js/pages/study-materials.js
 ---
 
-<!-- Structured Data for Newsletters -->
+<!-- Structured Data for Course Materials -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "NewsArticle",
-  "name": "IT Department Newsletters",
-  "description": "Latest newsletters from the IT Department of Government Polytechnic Gandhinagar",
+  "@type": "Course",
+  "name": "Information Technology Diploma",
+  "description": "Study materials and resources for Information Technology diploma program",
   "provider": {
     "@type": "EducationalOrganization",
     "name": "Government Polytechnic Gandhinagar",
     "department": "Information Technology Department"
-  }
+  },
+  "educationalLevel": "Diploma",
+  "teaches": "Information Technology"
 }
 </script>
 
-<section class="newsletters-header">
+<section class="materials-header">
     <div class="container">
         <div class="dept-badge">
             <img src="{{ '/assets/images/gpg-logo.png' | relative_url }}" alt="GPG Logo" class="dept-logo">
@@ -34,21 +39,56 @@ custom_js:
                 <span class="university">Gujarat Technological University</span>
             </div>
         </div>
-        <h1 class="section-title">Newsletters</h1>
+        <h1 class="section-title">Study Materials</h1>
     </div>
 </section>
 
-<section class="newsletters-section">
+<section class="materials-section">
     <div class="container">
-        <div id="newsletter-container" class="row">
-            <!-- Newsletters will be dynamically added here -->
+        <!-- Semester Cards -->
+        <div class="semester-cards">
+            <div class="semester-card active" data-semester="semester1">
+                <div class="card-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3>Semester 1</h3>
+                <span class="subject-count">3 Subjects</span>
+            </div>
+            <div class="semester-card" data-semester="semester2">
+                <div class="card-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h3>Semester 2</h3>
+                <span class="subject-count">2 Subjects</span>
+            </div>
+            <!-- Add other semesters similarly -->
+        </div>
+
+        <!-- Subject Navigation -->
+        <div class="subject-navigation">
+            <div class="subject-tabs">
+                <!-- Tabs will be populated by JavaScript -->
+            </div>
+            
+            <div class="subject-content">
+                <!-- Module cards will be populated here -->
+            </div>
+        </div>
+
+        <!-- Materials Display -->
+        <div id="materials-section" style="display: none;">
+            <div class="row" id="videosGrid">
+                <!-- Materials will be loaded here -->
+            </div>
         </div>
     </div>
 </section>
 
 <script>
-    console.log('Config loaded:', !!CONFIG);
-    console.log('Newsletters script loaded:', !!fetchNewsletters);
+    console.log('StudyData loaded:', !!StudyData);
+    console.log('YouTubeHandler loaded:', !!YouTubeHandler);
+    console.log('UIManager loaded:', !!UIManager);
+    console.log('StudyMaterialsPage loaded:', !!StudyMaterialsPage);
 </script>
 
 <!-- Debug Script -->
@@ -57,9 +97,9 @@ custom_js:
         console.log('Page loaded');
         // Add click event logging
         document.querySelectorAll('.semester-card').forEach(card => {
-            console.log('Found newsletter card:', card.dataset.newsletter);
+            console.log('Found semester card:', card.dataset.semester);
             card.addEventListener('click', (e) => {
-                console.log('Newsletter clicked:', e.currentTarget.dataset.newsletter);
+                console.log('Semester clicked:', e.currentTarget.dataset.semester);
             });
         });
     });
@@ -67,5 +107,9 @@ custom_js:
 
 <!-- Scripts in correct order -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-<script src="{{ '/assets/js/config.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/newsletters.js' | relative_url }}"></script>
+<!-- Your config file with API keys must come first -->
+<script src="assets/js/config.js"></script>
+<script src="assets/js/components/StudyData.js"></script>
+<script src="assets/js/components/YouTubeHandler.js"></script>
+<script src="assets/js/components/UIManager.js"></script>
+<script src="assets/js/pages/study-materials.js"></script>
