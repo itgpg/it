@@ -1,37 +1,52 @@
+console.log("✅ newsletter.js loaded");
+
 document.addEventListener("DOMContentLoaded", function () {
-    const container = document.getElementById("newsletter-container");
-    const folderId = CONFIG.FOLDER_IDS.newsletters;
-    const apiKey = CONFIG.API_KEY;
+  console.log("✅ DOM fully loaded");
 
-    const url = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents+and+mimeType='application/pdf'&key=${apiKey}&fields=files(id,name,webViewLink,webContentLink)&supportsAllDrives=true&includeItemsFromAllDrives=true`;
+  if (typeof CONFIG === 'undefined') {
+    console.error("❌ CONFIG is not defined");
+    return;
+  }
 
-    console.log("Fetching newsletters from:", url);
+  const container = document.getElementById("newsletter-container");
+  const folderId = CONFIG.FOLDER_IDS.newsletters;
+  const apiKey = CONFIG.API_KEY;
 
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            console.log("API Response:", data);
-            if (data.files && data.files.length > 0) {
-                data.files.forEach(file => {
-                    const downloadUrl = `https://drive.google.com/uc?export=download&id=${file.id}`;
+  const url = `https://www.googleapis.com/drive/v3/files?q='${encodeURIComponent(folderId)}'+in+parents+and+mimeType='application/pdf'&key=${apiKey}&fields=files(id,name,webViewLink,webContentLink)&supportsAllDrives=true&includeItemsFromAllDrives=true`;
 
-                    const cardItem = document.createElement("div");
-                    cardItem.classList.add("list-group-item", "d-flex", "justify-content-between", "align-items-center");
+  console.log("📡 Fetching newsletters from:", url);
 
-                    cardItem.innerHTML = `
-                        <div>
-                            <h5 class="mb-1">${file.name}</h5>
-                        </div>
-                        <a href="${downloadUrl}" class="btn btn-primary" target="_blank" download>Download</a>
-                    `;
-                    container.appendChild(cardItem);
-                });
-            } else {
-                container.innerHTML = `<p class="text-muted">No newsletters found.</p>`;
-            }
-        })
-        .catch(error => {
-            console.error("Error fetching newsletters:", error);
-            container.innerHTML = `<p class="text-danger">Failed to load newsletters. See console for details.</p>`;
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      console.log("✅ API Response received:", data);
+
+      if (data.files && data.files.length > 0) {
+        data.files.forEach(file => {
+          const downloadUrl = `https://drive.google.com/uc?export=download&id=${file.id}`;
+          const viewUrl = file.webViewLink;
+
+          const cardItem = document.createElement("div");
+          cardItem.classList.add("list-group-item", "d-flex", "justify-content-between", "align-items-center", "flex-wrap");
+
+          cardItem.innerHTML = `
+            <div class="mb-2 mb-md-0">
+              <h5 class="mb-1">${file.name}</h5>
+            </div>
+            <div>
+              <a href="${viewUrl}" class="btn btn-outline-secondary btn-sm me-2" target="_blank">View</a>
+              <a href="${downloadUrl}" class="btn btn-primary btn-sm" target="_blank" download>Download</a>
+            </div>
+          `;
+          container.appendChild(cardItem);
         });
+      } else {
+        console.warn("⚠️ No newsletters found");
+        container.innerHTML = `<p class="text-muted">No newsletters found.</p>`;
+      }
+    })
+    .catch(error => {
+      console.error("❌ Error fetching newsletters:", error);
+      container.innerHTML = `<p class="text-danger">Failed to load newsletters. Check console for details.</p>`;
+    });
 });
