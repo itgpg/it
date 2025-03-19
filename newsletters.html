@@ -32,6 +32,207 @@ custom_css:
     </div>
 
     <div class="row g-4">
+        <div class="col-md-12">
+            <div class="card h-100 shadow-sm newsletter-card">
+                <div class="card-body">
+                    <h3 class="card-title h5 mb-3">Newsletters</h3>
+                    <div class="list-group list-group-flush" id="newsletter-list">
+                    </div>
+                    <script>
+                        const apiKey = CONFIG.API_KEY;
+                        const folderId = CONFIG.FOLDER_IDS.newsletters;
+
+                        async function fetchNewsletters() {
+                            try {
+                                const response = await fetch(`https://www.googleapis.com/drive/v3/files?q='${folderId} in parents' and mimeType contains 'application/pdf' and trashed = false&fields=files(id,name,webViewLink)&key=${apiKey}`);
+                                const data = await response.json();
+
+                                const newsletterList = document.getElementById('newsletter-list');
+
+                                if (data.files && data.files.length > 0) {
+                                    data.files.forEach(file => {
+                                        const listItem = document.createElement('a');
+                                        listItem.classList.add('list-group-item', 'list-group-item-action');
+                                        listItem.href = file.webViewLink;
+                                        listItem.target = '_blank';
+                                        listItem.title = `Download ${file.name}`;
+                                        listItem.innerHTML = `
+                                            <div class="d-flex w-100 justify-content-between align-items-center">
+                                                <div>
+                                                    <h4 class="h6 mb-1">${file.name}</h4>
+                                                    <small class="text-muted">PDF Document</small>
+                                                </div>
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fas fa-download text-primary" aria-label="Download Newsletter"></i>
+                                                </div>
+                                            </div>
+                                        `;
+                                        newsletterList.appendChild(listItem);
+                                    });
+                                } else {
+                                    const listItem = document.createElement('p');
+                                    listItem.textContent = 'No newsletters found.';
+                                    newsletterList.appendChild(listItem);
+                                }
+                            } catch (error) {
+                                console.error('Error fetching newsletters:', error);
+                                const listItem = document.createElement('p');
+                                listItem.textContent = 'Error loading newsletters.';
+                                newsletterList.appendChild(listItem);
+                            }
+                        }
+
+                        fetchNewsletters();
+                    </script>
+---
+layout: default
+title: IT Department Newsletters | Government Polytechnic Gandhinagar (GPG)
+description: Access the latest IT Department newsletters from Government Polytechnic Gandhinagar (GPG). Stay updated with academic news, events, and announcements from the Information Technology department.
+keywords: GPG IT Department, Government Polytechnic Gandhinagar, IT newsletters, GPG newsletters, polytechnic updates, IT department news
+custom_css:
+  - /assets/css/newsletters.css
+---
+
+<!-- Structured Data for Newsletter Collection -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "IT Department Newsletters - Government Polytechnic Gandhinagar",
+  "description": "Collection of newsletters from the Information Technology Department at Government Polytechnic Gandhinagar (GPG)",
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "Government Polytechnic Gandhinagar",
+    "department": "Information Technology Department"
+  }
+}
+</script>
+
+<div class="container py-5">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="text-center mb-3">IT Department Newsletters</h1>
+            <h2 class="text-center h5 text-muted mb-4">Government Polytechnic Gandhinagar (GPG)</h2>
+            <p class="text-center lead">Stay updated with the latest news, events, and announcements from the Information Technology Department at GPG Gandhinagar.</p>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-12">
+            <div class="card h-100 shadow-sm newsletter-card">
+                <div class="card-body">
+                    <h3 class="card-title h5 mb-3">Newsletters</h3>
+---
+layout: default
+title: IT Department Newsletters | Government Polytechnic Gandhinagar (GPG)
+description: Access the latest IT Department newsletters from Government Polytechnic Gandhinagar (GPG). Stay updated with academic news, events, and announcements from the Information Technology department.
+keywords: GPG IT Department, Government Polytechnic Gandhinagar, IT newsletters, GPG newsletters, polytechnic updates, IT department news
+custom_css:
+  - /assets/css/newsletters.css
+---
+
+<!-- Structured Data for Newsletter Collection -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "IT Department Newsletters - Government Polytechnic Gandhinagar",
+  "description": "Collection of newsletters from the Information Technology Department at Government Polytechnic Gandhinagar (GPG)",
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "Government Polytechnic Gandhinagar",
+    "department": "Information Technology Department"
+  }
+}
+</script>
+
+<div class="container py-5">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="text-center mb-3">IT Department Newsletters</h1>
+            <h2 class="text-center h5 text-muted mb-4">Government Polytechnic Gandhinagar (GPG)</h2>
+            <p class="text-center lead">Stay updated with the latest news, events, and announcements from the Information Technology Department at GPG Gandhinagar.</p>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-12">
+            <div class="card h-100 shadow-sm newsletter-card">
+                <div class="card-body">
+                    <h3 class="card-title h5 mb-3">Newsletters</h3>
+                    <div class="list-group list-group-flush" id="newsletter-list">
+                    </div>
+                </div>
+            </div>
+        </div>
+---
+layout: default
+title: IT Department Newsletters | Government Polytechnic Gandhinagar (GPG)
+description: Access the latest IT Department newsletters from Government Polytechnic Gandhinagar (GPG). Stay updated with academic news, events, and announcements from the Information Technology department.
+keywords: GPG IT Department, Government Polytechnic Gandhinagar, IT newsletters, GPG newsletters, polytechnic updates, IT department news
+custom_css:
+  - /assets/css/newsletters.css
+---
+
+<!-- Structured Data for Newsletter Collection -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "IT Department Newsletters - Government Polytechnic Gandhinagar",
+  "description": "Collection of newsletters from the Information Technology Department at Government Polytechnic Gandhinagar (GPG)",
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "Government Polytechnic Gandhinagar",
+    "department": "Information Technology Department"
+  }
+}
+</script>
+
+<div class="container py-5">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="text-center mb-3">IT Department Newsletters</h1>
+            <h2 class="text-center h5 text-muted mb-4">Government Polytechnic Gandhinagar (GPG)</h2>
+            <p class="text-center lead">Stay updated with the latest news, events, and announcements from the Information Technology Department at GPG Gandhinagar.</p>
+        </div>
+    </div>
+
+    <div class="row g-4">
+---
+layout: default
+title: IT Department Newsletters | Government Polytechnic Gandhinagar (GPG)
+description: Access the latest IT Department newsletters from Government Polytechnic Gandhinagar (GPG). Stay updated with academic news, events, and announcements from the Information Technology department.
+keywords: GPG IT Department, Government Polytechnic Gandhinagar, IT newsletters, GPG newsletters, polytechnic updates, IT department news
+custom_css:
+  - /assets/css/newsletters.css
+---
+
+<!-- Structured Data for Newsletter Collection -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "IT Department Newsletters - Government Polytechnic Gandhinagar",
+  "description": "Collection of newsletters from the Information Technology Department at Government Polytechnic Gandhinagar (GPG)",
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "Government Polytechnic Gandhinagar",
+    "department": "Information Technology Department"
+  }
+}
+</script>
+
+<div class="container py-5">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="text-center mb-3">IT Department Newsletters</h1>
+            <h2 class="text-center h5 text-muted mb-4">Government Polytechnic Gandhinagar (GPG)</h2>
+            <p class="text-center lead">Stay updated with the latest news, events, and announcements from the Information Technology Department at GPG Gandhinagar.</p>
+        </div>
+    </div>
+
+    <div class="row g-4">
         <div class="col-md-6">
             <div class="card h-100 shadow-sm newsletter-card">
                 <div class="card-body">
@@ -104,4 +305,4 @@ custom_css:
             </div>
         </div>
     </div>
-</div> 
+</div>
