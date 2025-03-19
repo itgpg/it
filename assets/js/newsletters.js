@@ -1,7 +1,7 @@
 // assets/js/newsletters.js
 
 // Import the CONFIG object
-import { CONFIG } from './config.js';
+// import { CONFIG } from './config.js';
 
 async function fetchNewsletters() {
   // Read API key and folder ID from config.js
