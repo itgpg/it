@@ -15,5 +15,6 @@ const CONFIG = {
         it: 'PLZ3xYAWT5a-nskfWOvHd_Fvh4RZsedu7G',
         networking: 'PL5hA7O8RI2bMBGjSduDQRYUCrNViAEee1',
         enginnering_maths: 'PLs6nv4Vuoj-szyhRqc8PcTFTdFzDIJrfj',
+        FSD:'PLWPirh4EWFpG2b1L3CL-OAPYcM25jLjXH'
     }
 };
