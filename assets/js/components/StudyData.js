@@ -54,6 +54,13 @@ class StudyData {
                         playlistId: CONFIG.PLAYLIST_IDS.enginnering_maths 
                     }]
                 },
+                
+                'FSD': {
+                    modules: [{ 
+                        name: 'FSD', 
+                        playlistId: CONFIG.PLAYLIST_IDS.FSD
+                    }]
+                },
             }
         };
         // console.log('Available semesters:', this.getSemesters());  // Commented out
