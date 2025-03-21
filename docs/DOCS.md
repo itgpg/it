@@ -1,160 +1,70 @@
+# 📚 Technical Documentation - IT Department Website
 
-# GPG IT Website Documentation
+This document lists all the creative methods, techniques, and smart implementations used in the project.
 
-## Table of Contents
-1. [Adding New Events](#events)
-2. [Creating Blog Posts](#blogs)
-3. [Modifying Styles](#styles)
-4. [Updating Configurations](#config)
-5. [Troubleshooting](#troubleshoot)
+## 🔥 Dynamic & Modular Techniques
 
----
+### 1. Google Drive as a Simple CMS
+**Use-Case:** Syllabus PDFs, Study Materials, Circulars  
+**How it Works:** 
+- Public Google Drive folder contains the PDFs.
+- JS dynamically fetches file links and renders them.
+- Easy content update: just replace files on Drive — no need to change HTML.
+- Applied in `study-materials.html`
 
-## <a name="events"></a>1. Adding New Events
+### 2. Modular JS Component System
+- `/assets/js/components/` houses:
+  - `UIManager.js`: Manages UI updates dynamically
+  - `StudyData.js`: JSON-like structure of semesters → subjects → modules
+  - `YouTubeHandler.js`: Handles YouTube video embedding and play actions
 
-### File Structure
-```text
-/_events
-  YYYY-event-name.md
-```
+### 3. Jekyll for Templating and Component Reusability
+- `_includes/components/navbar.html`
+- `_includes/components/footer.html`
+- `_layouts/default.html` — Applied across all pages
+- Avoids repeating code, makes pages lighter and cleaner
 
-### Steps:
-1. Create new markdown file:
-```bash
-touch _events/2025-new-event.md
-```
+### 4. Dynamic Study Material Loader
+- Study Material structured hierarchically (Semester → Subject → Module → Materials)
+- Video cards swipeable (like YouTube), dynamically created using `StudyData.js`
+- `study-materials.js` handles interactions and UI changes
 
-2. Use this template:
-```markdown
----
-layout: event
-title: "Event Title"
-date: YYYY-MM-DD
-participants: 0
-certificates: 0  # optional
-image: /assets/images/events/your-image.jpg
----
+### 5. Markdown-based Event System
+- Future-proof `_events/` folder with `2025-ai-workshop.md`
+- Planned loop to render events dynamically via Jekyll
+- Makes event additions easy for non-developers
 
-![Banner]({{ page.image | relative_url }})
+### 6. SEO, Robots, and Sitemap Ready
+- `sitemap.xml` auto-generates important links
+- `robots.txt` restricts unwanted crawling
+- Helps search engines index the important content
 
-## Event Details
-Your content in markdown...
-```
+### 7. Reusable CSS Component System
+- `/assets/css/components/` contains:
+  - `navbar.css`
+  - `footer.css`
+  - `hero.css`
+- `/assets/css/pages/` for page-specific styles
+- Ensures clean separation of design concerns
 
-3. Add event image to:
-```text
-/assets/images/events/
-```
+### 8. Responsive Design + Future AOS/GSAP Integration
+- Pages designed mobile-first
+- Ready for animations like:
+  - Scroll reveal
+  - Typing effects
+  - Loading screens
 
-4. Commit changes:
-```bash
-git add _events/2025-new-event.md assets/images/events/your-image.jpg
-git commit -m "docs: Add new event YYYY-event-name"
-```
-
----
-
-## <a name="blogs"></a>2. Creating Blog Posts
-
-### File Structure
-```text
-/_posts
-  YYYY-MM-DD-post-title.md
-```
-
-### Template:
-```markdown
----
-layout: post
-title: "Blog Title"
-date: YYYY-MM-DD
-author: Author Name
-categories: [Category]
-image: /assets/images/blog/image.jpg
----
-
-Content in markdown...
-```
+## ✅ Additional Future Ready Techniques
+- Event-driven UI manipulation
+- JSON data-driven content rendering
+- Scalable to Firebase or Supabase integration if needed
 
 ---
 
-## <a name="styles"></a>3. Modifying Styles
+# 📈 Conclusion
+This project demonstrates **creative use of static web technologies** combined with dynamic JavaScript to achieve:
+- Low-cost hosting
+- Easy content management via Google Drive
+- Clean, maintainable, modular code
 
-Key style files:
-```css:assets/css/pages/events.css
-startLine: 1
-endLine: 403
-```
-
-Custom CSS rules:
-```css
-/* Add new styles at bottom of file */
-.new-element {
-    color: var(--primary-color);
-    margin: 2rem 0;
-}
-```
-
----
-
-## <a name="config"></a>4. Configuration
-
-Edit site settings:
-```yaml:_config.yml
-startLine: 1
-endLine: 11
-```
-
-Critical settings:
-```yaml
-baseurl: "/it"  # Must match GitHub repo name
-url: "https://itgpg.github.io"
-```
-
----
-
-## <a name="troubleshoot"></a>5. Troubleshooting
-
-### Common Issues
-
-1. Duplicate Events:
-```html:events.html
-startLine: 66
-endLine: 103
-```
-Check for multiple entries with same title
-
-2. Missing Images:
-```markdown
-# Wrong
-image: assets/images/event.jpg
-
-# Correct
-image: /assets/images/event.jpg
-```
-
-3. Date Formatting:
-```markdown
-# Valid format
-date: 2025-02-05
-
-# Invalid
-date: "5 February 2025"
-```
-
-4. Layout Issues:
-```html:_layouts/event.html
-startLine: 5
-endLine: 51
-```
-Verify content wrapper structure
-```
-
-**Commit the guide:**
-```bash
-git add MARKDOWN_GUIDE.md
-git commit -m "docs: Add project maintenance guide"
-git push origin jekyll-migration
-```
-
-
+⭐ A great foundation for any department or educational website looking for simplicity with extendability.
