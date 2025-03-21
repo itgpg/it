@@ -1,70 +1,72 @@
-# 📚 Technical Documentation - IT Department Website
+# 📚 Technical Documentation - IT Department Website (By Aayush Bankar)
 
-This document lists all the creative methods, techniques, and smart implementations used in the project.
-
-## 🔥 Dynamic & Modular Techniques
-
-### 1. Google Drive as a Simple CMS
-**Use-Case:** Syllabus PDFs, Study Materials, Circulars  
-**How it Works:** 
-- Public Google Drive folder contains the PDFs.
-- JS dynamically fetches file links and renders them.
-- Easy content update: just replace files on Drive — no need to change HTML.
-- Applied in `study-materials.html`
-
-### 2. Modular JS Component System
-- `/assets/js/components/` houses:
-  - `UIManager.js`: Manages UI updates dynamically
-  - `StudyData.js`: JSON-like structure of semesters → subjects → modules
-  - `YouTubeHandler.js`: Handles YouTube video embedding and play actions
-
-### 3. Jekyll for Templating and Component Reusability
-- `_includes/components/navbar.html`
-- `_includes/components/footer.html`
-- `_layouts/default.html` — Applied across all pages
-- Avoids repeating code, makes pages lighter and cleaner
-
-### 4. Dynamic Study Material Loader
-- Study Material structured hierarchically (Semester → Subject → Module → Materials)
-- Video cards swipeable (like YouTube), dynamically created using `StudyData.js`
-- `study-materials.js` handles interactions and UI changes
-
-### 5. Markdown-based Event System
-- Future-proof `_events/` folder with `2025-ai-workshop.md`
-- Planned loop to render events dynamically via Jekyll
-- Makes event additions easy for non-developers
-
-### 6. SEO, Robots, and Sitemap Ready
-- `sitemap.xml` auto-generates important links
-- `robots.txt` restricts unwanted crawling
-- Helps search engines index the important content
-
-### 7. Reusable CSS Component System
-- `/assets/css/components/` contains:
-  - `navbar.css`
-  - `footer.css`
-  - `hero.css`
-- `/assets/css/pages/` for page-specific styles
-- Ensures clean separation of design concerns
-
-### 8. Responsive Design + Future AOS/GSAP Integration
-- Pages designed mobile-first
-- Ready for animations like:
-  - Scroll reveal
-  - Typing effects
-  - Loading screens
-
-## ✅ Additional Future Ready Techniques
-- Event-driven UI manipulation
-- JSON data-driven content rendering
-- Scalable to Firebase or Supabase integration if needed
+## 👨‍💻 Developer:
+- **Name:** Aayush Bankar
+- **Role:** Solo Developer (Web Developer, Frontend Architect, API Integrator)
 
 ---
 
-# 📈 Conclusion
-This project demonstrates **creative use of static web technologies** combined with dynamic JavaScript to achieve:
-- Low-cost hosting
-- Easy content management via Google Drive
-- Clean, maintainable, modular code
+## 🚀 Advanced Techniques and Methods
 
-⭐ A great foundation for any department or educational website looking for simplicity with extendability.
+### ✅ 1. Google Drive as a Lightweight CMS
+- Dynamic PDF storage and retrieval
+- Direct links embedded from public Google Drive
+- Powers study materials and syllabus updates without code changes
+
+---
+
+### ✅ 2. Modular JavaScript System
+- `UIManager.js` for user interface controls
+- `StudyData.js` for hierarchical data mapping (Semester → Subject → Modules)
+- `YouTubeHandler.js` for video embedding and event handling
+- `utils.js` for helper functions
+
+---
+
+### ✅ 3. Jekyll for Clean Templating
+- Components (`navbar.html`, `footer.html`) used site-wide
+- Jekyll layouts for content separation and maintainability
+
+---
+
+### ✅ 4. Dynamic Study Material Renderer
+- JSON data drives material loading dynamically
+- Video + PDF structure mimics YouTube experience
+- Future-ready for adding filters and search
+
+---
+
+### ✅ 5. Events System (Markdown Ready)
+- `_events/` directory ready for Markdown-driven events
+- Future upgrade planned for Google Sheets or API-based event handling
+
+---
+
+### ✅ 6. SEO + Sitemap Integration
+- `sitemap.xml` helps search engine crawling
+- `robots.txt` manages crawler behavior
+- Meta tags planned for future enhancements
+
+---
+
+### ✅ 7. Scalable and Mobile-Ready CSS Design
+- Component CSS (`navbar.css`, `footer.css`)
+- Page-specific styles (`faculty.css`, `study-materials.css`)
+- Mobile-first design with future GSAP/AOS animation compatibility
+
+---
+
+## ✅ Full Contribution Acknowledgement:
+The complete project — from design, development, optimization to deployment — is created solely by **Aayush Bankar**, applying his skills in:
+- Web development
+- Modular JS architecture
+- API integration and CMS logic
+- Jekyll static site architecture
+- SEO, accessibility, and responsive design
+- GitHub Pages deployment
+
+---
+
+## 📌 Note:
+This project is open-source but requires proper credit to **Aayush Bankar** for any reuse, modification, or deployment.
+
