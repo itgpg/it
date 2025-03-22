@@ -15,13 +15,13 @@ The highly anticipated AI Skills Workshop was successfully conducted on February
 ### Event Schedule
 **Day 1 (5th February 2025):**  
 4th semester students engaged in:  
-- 30-minute orientation and registration  
-- 2.5-hour masterclass on "Getting Started with AI"  
-- 10-minute networking break  
+- Hands-on IBM WATSON  sessions  
+- Real-world AI case studies  
+- IBM SkillsBuild platform walkthrough  
 
 **Day 2 (6th February 2025):**  
 2nd semester students experienced:  
-- Hands-on TensorFlow sessions  
+- Hands-on IBM WATSON  sessions  
 - Real-world AI case studies  
 - IBM SkillsBuild platform walkthrough  
 
