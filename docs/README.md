@@ -21,19 +21,87 @@ This is the official website for the **Information Technology Department** of **
 
 ## 🏗️ Project Structure
 ```
-├── index.html                  # Homepage
-├── faculty.html                # Faculty listing
-├── study-materials.html        # Dynamic study materials
-├── events.html                 # Events section
-├── newsletters.html            # Newsletters archive
-├── assets/                     # CSS, JS, Images
-├── _includes/components/       # Navbar, footer
-├── _layouts/                   # Jekyll layouts
-├── _events/                    # Events (Markdown-based)
-├── sitemap.xml / robots.txt    # SEO setup
-```
+├── Gemfile
+├── _config.yml
+├── _events
+│   └── 2025-ai-workshop.md
+├── _includes
+│   └── components
+│       ├── footer.html
+│       └── navbar.html
+├── _layouts
+│   ├── default.html
+│   └── event.html
+├── accreditation
+│   ├── nba-2006
+│   └── nba-2022
+├── assets
+│   ├── css
+│   │   ├── components
+│   │   │   ├── footer.css
+│   │   │   ├── hero.css
+│   │   │   └── navbar.css
+│   │   ├── main.css
+│   │   ├── newsletters.css
+│   │   └── pages
+│   │       ├── academic-calendar.css
+│   │       ├── events.css
+│   │       ├── faculty.css
+│   │       ├── home.css
+│   │       └── study-materials.css
+│   ├── images
+│   │   ├── gpg-logo-mini.png
+│   │   └── gpg-logo.png
+│   └── js
+│       ├── components
+│       │   ├── StudyData.js
+│       │   ├── UIManager.js
+│       │   ├── YouTubeHandler.js
+│       │   └── hero.js
+│       ├── config.js
+│       ├── events.js
+│       ├── main.js
+│       ├── pages
+│       │   ├── academic-calendar.js
+│       │   ├── events.js
+│       │   ├── faculty.js
+│       │   ├── newsletter.js
+│       │   └── study-materials.js
+│       └── utils.js
+├── co-curricular
+│   ├── events
+│   │   └── index.html
+│   ├── expert-lecture
+│   │   └── index.html
+│   ├── faculty-development
+│   │   └── index.html
+│   └── industrial-visit
+│       └── index.html
+├── docs
+│   ├── DOCS.md
+│   └── README.md
+├── events.html
+├── faculty
+│   ├── faculty-achievements
+│   │   └── index.html
+│   └── faculty-info
+│       └── index.html
+├── index.html
+├── newsletter
+│   └── index.html
+├── robots.txt
+├── sitemap.xml
+├── student-corner
+│   ├── academic-calendar
+│   │   └── index.html
+│   ├── achievements
+│   │   └── index.html
+│   └── study-material
+│       └── index.html
+└── tree.txt
 
----
+30 directories, 49 files
+```
 
 ## 🛠 Technologies & Skills Used by Aayush Bankar
 - HTML5 / CSS3 / Responsive Design
