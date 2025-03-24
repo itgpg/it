@@ -18,3 +18,9 @@ const CONFIG = {
         FSD:'PLWPirh4EWFpG2b1L3CL-OAPYcM25jLjXH'
     }
 };
+window.CONFIG = {
+    API_KEY: "AIzaSyBd34cP4KHFKN0WyNNiqhlQ2HSM8j2tD_E", // ✅ Ensure this key is correct
+    FOLDER_IDS: {
+        academic_calendar: "16a58BgCLN8h0SnGxjnYFGDdkfWqcuS49"
+    }
+};

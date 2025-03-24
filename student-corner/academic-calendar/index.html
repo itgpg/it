@@ -4,9 +4,10 @@ title: Academic Calendar
 description: "Select a year to view the academic calendar."
 custom_css: ["/assets/css/pages/academic-calendar.css"]
 custom_js: 
-  - "/assets/js/config.js"
-  - "/assets/js/pages/academic-calendar.js"
+  - "/assets/js/config.js"  # ✅ Load config.js first
+  - "/assets/js/pages/academic-calendar.js"  # ✅ Then load academic-calendar.js
 ---
+
 
 <div class="container mt-5">
     <h1 class="mb-4 text-center">Academic Calendar</h1>
