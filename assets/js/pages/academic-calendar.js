@@ -1,11 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
-    if (!window.CONFIG || !window.CONFIG.API_KEY ) {
-        console.error("❌ API key or academic calendar folder ID is missing from config.js");
+    // Ensure CONFIG and API_KEY exist
+    if (!window.CONFIG || !CONFIG.API_KEY) {
+        console.error("❌ Google Drive API Key is missing in config.js");
         return;
     }
 
-    const API_KEY = window.CONFIG.API_KEY;
-    const PARENT_FOLDER_ID = "16a58BgCLN8h0SnGxjnYFGDdkfWqcuS49"; // Root folder containing year folders
+    const API_KEY = CONFIG.API_KEY; // ✅ Correct way to fetch the API key
+    const PARENT_FOLDER_ID = "16a58BgCLN8h0SnGxjnYFGDdkfWqcuS49"; // Root folder with year folders
 
     const yearDropdown = document.getElementById("yearDropdown");
     const yearList = document.getElementById("yearList");
