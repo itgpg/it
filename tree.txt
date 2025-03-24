@@ -10,6 +10,9 @@
 ├── _layouts
 │   ├── default.html
 │   └── event.html
+├── accreditation
+│   ├── nba-2006
+│   └── nba-2022
 ├── assets
 │   ├── css
 │   │   ├── components
@@ -41,19 +44,31 @@
 │       │   ├── newsletter.js
 │       │   └── study-materials.js
 │       └── utils.js
+├── co-curricular
+│   ├── events
+│   ├── expert-lecture
+│   ├── faculty-development
+│   └── industrial-visit
 ├── docs
 │   ├── DOCS.md
 │   └── README.md
 ├── events.html
-├── faculty-achievements.html
-├── faculty.html
+├── faculty
+│   ├── faculty-achievements
+│   │   └── index.html
+│   └── faculty-info
+│       └── index.html
 ├── index.html
-├── newsletters.html
+├── newsletter
+│   └── index.html
 ├── robots.txt
 ├── sitemap.xml
 ├── student-achievements.html
-├── study-materials.html
-├── tree.txt
-└──
+├── student-corner
+│   ├── academic-calendar
+│   ├── achievements
+│   └── study-material
+│       └── index.html
+└── tree.txt
 
-524 directories, 3404 files
+30 directories, 42 files
