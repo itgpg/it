@@ -2,13 +2,13 @@
     <div class="navbar-container">
         <a href="{{ '/' | relative_url }}" class="navbar-logo">
             <img src="{{ '/assets/images/gpg-logo-mini.png' | relative_url }}" alt="GPG Logo">
-            <span>Government Polytechnic Gandhinagar</span>
         </a>
         <ul class="navbar-menu">
             <li><a href="{{ '/' | relative_url }}">Home</a></li>
             <li><a href="{{ '/faculty.html' | relative_url }}">Faculty</a></li>
             <li><a href="{{ '/newsletters.html' | relative_url }}">Newsletter</a></li>
             <li><a href="{{ '/events.html' | relative_url }}">Events</a></li>
+
             <li class="dropdown">
                 <a href="#">Academics ▾</a>
                 <ul class="dropdown-menu">
@@ -17,11 +17,13 @@
                     <li><a href="{{ '/student-achievements.html' | relative_url }}">Student Achievements</a></li>
                 </ul>
             </li>
+
             <li><a href="{{ '/faculty.html#research' | relative_url }}">Research</a></li>
             <li><a href="{{ '/faculty.html#co-curricular' | relative_url }}">Co-Curricular</a></li>
             <li><a href="{{ '/faculty.html#accreditation' | relative_url }}">Accreditation</a></li>
             <li><a href="{{ '/student-corner.html' | relative_url }}">Student Corner</a></li>
         </ul>
+
         <button class="menu-toggle" aria-label="Toggle Navigation">&#9776;</button>
     </div>
 </nav>
