@@ -25,6 +25,19 @@ collections:
   events:
     output: true
     permalink: /events/:path/
+  faculty:
+    output: true
+  student-corner:
+    output: true
+  co-curricular:
+    output: true
+  accreditation:
+    output: true
+  newsletter:
+    output: true
+
+
+
 
 # Default front matter
 defaults:

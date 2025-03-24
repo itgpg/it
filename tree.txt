@@ -1,0 +1,59 @@
+.
+├── Gemfile
+├── _config.yml
+├── _events
+│   └── 2025-ai-workshop.md
+├── _includes
+│   └── components
+│       ├── footer.html
+│       └── navbar.html
+├── _layouts
+│   ├── default.html
+│   └── event.html
+├── assets
+│   ├── css
+│   │   ├── components
+│   │   │   ├── footer.css
+│   │   │   ├── hero.css
+│   │   │   └── navbar.css
+│   │   ├── main.css
+│   │   ├── newsletters.css
+│   │   └── pages
+│   │       ├── events.css
+│   │       ├── faculty.css
+│   │       ├── home.css
+│   │       └── study-materials.css
+│   ├── images
+│   │   ├── gpg-logo-mini.png
+│   │   └── gpg-logo.png
+│   └── js
+│       ├── components
+│       │   ├── StudyData.js
+│       │   ├── UIManager.js
+│       │   ├── YouTubeHandler.js
+│       │   └── hero.js
+│       ├── config.js
+│       ├── events.js
+│       ├── main.js
+│       ├── pages
+│       │   ├── events.js
+│       │   ├── faculty.js
+│       │   ├── newsletter.js
+│       │   └── study-materials.js
+│       └── utils.js
+├── docs
+│   ├── DOCS.md
+│   └── README.md
+├── events.html
+├── faculty-achievements.html
+├── faculty.html
+├── index.html
+├── newsletters.html
+├── robots.txt
+├── sitemap.xml
+├── student-achievements.html
+├── study-materials.html
+├── tree.txt
+└──
+
+524 directories, 3404 files
