@@ -1,78 +1,71 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Ensure CONFIG and API_KEY exist
-    if (!window.CONFIG || !window.CONFIG.API_KEY) {
-        console.error("Google Drive API Key is missing from config.js");
+    if (!window.CONFIG || !window.CONFIG.API_KEY ) {
+        console.error("❌ API key or academic calendar folder ID is missing from config.js");
         return;
     }
 
-    const API_KEY = window.CONFIG.API_KEY; // Fetch API key from config.js
-    const FOLDER_ID = "16a58BgCLN8h0SnGxjnYFGDdkfWqcuS49"; // Academic Calendar Folder ID
+    const API_KEY = window.CONFIG.API_KEY;
+    const PARENT_FOLDER_ID = "16a58BgCLN8h0SnGxjnYFGDdkfWqcuS49"; // Root folder containing year folders
 
-    async function fetchDriveFiles() {
-        const url = `https://www.googleapis.com/drive/v3/files?q='${FOLDER_ID}'+in+parents&key=${API_KEY}&fields=files(id,name,mimeType)`;
+    const yearDropdown = document.getElementById("yearDropdown");
+    const yearList = document.getElementById("yearList");
+    const calendarCards = document.getElementById("calendarCards");
+
+    async function fetchYears() {
+        const url = `https://www.googleapis.com/drive/v3/files?q='${PARENT_FOLDER_ID}'+in+parents+and+mimeType='application/vnd.google-apps.folder'&key=${API_KEY}&fields=files(id,name)`;
         try {
             const response = await fetch(url);
             const data = await response.json();
-            const files = data.files.filter(file => file.mimeType === "application/pdf");
-
-            organizeFilesByYear(files);
+            displayYearDropdown(data.files);
         } catch (error) {
-            console.error("Error fetching files:", error);
+            console.error("❌ Error fetching year folders:", error);
         }
     }
 
-    function organizeFilesByYear(files) {
-        const semesters = {};
-
-        files.forEach(file => {
-            const match = file.name.match(/(\d{4})_Semester_(\d+)/);
-            if (match) {
-                const year = match[1];
-                const sem = `Semester ${match[2]}`;
-                if (!semesters[year]) semesters[year] = [];
-                semesters[year].push({ sem, link: `https://drive.google.com/file/d/${file.id}/view` });
-            }
-        });
-
-        populateYearDropdown(semesters);
-    }
-
-    function populateYearDropdown(semesters) {
-        const yearDropdown = document.getElementById("yearDropdown");
-        const yearList = document.getElementById("yearList");
+    function displayYearDropdown(years) {
         yearList.innerHTML = "";
+        years.sort((a, b) => b.name.localeCompare(a.name)); // Sort years descending
 
-        Object.keys(semesters).sort().reverse().forEach(year => {
+        years.forEach(year => {
             const listItem = document.createElement("li");
             const link = document.createElement("a");
             link.className = "dropdown-item";
             link.href = "#";
-            link.textContent = year;
+            link.textContent = year.name;
+            link.setAttribute("data-id", year.id);
             link.addEventListener("click", function () {
-                yearDropdown.innerText = year;
-                displaySemesters(semesters[year]);
+                yearDropdown.innerText = year.name;
+                fetchCalendarFiles(year.id);
             });
 
             listItem.appendChild(link);
             yearList.appendChild(listItem);
         });
+    }
 
-        // Load latest year by default
-        if (Object.keys(semesters).length > 0) {
-            const latestYear = Object.keys(semesters).sort().reverse()[0];
-            yearDropdown.innerText = latestYear;
-            displaySemesters(semesters[latestYear]);
+    async function fetchCalendarFiles(folderId) {
+        const url = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents+and+mimeType='application/pdf'&key=${API_KEY}&fields=files(id,name)`;
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            displayCalendarFiles(data.files);
+        } catch (error) {
+            console.error("❌ Error fetching academic calendar PDFs:", error);
         }
     }
 
-    function displaySemesters(semesters) {
-        const semesterContainer = document.getElementById("semesterCards");
-        semesterContainer.innerHTML = "";
+    function displayCalendarFiles(files) {
+        calendarCards.innerHTML = ""; // Clear previous content
 
-        semesters.forEach(sem => {
+        if (files.length === 0) {
+            console.log("⚠️ No academic calendar found for this year.");
+            return;
+        }
+
+        files.forEach(file => {
             const col = document.createElement("div");
             col.className = "col-md-4 mb-3";
-            
+
             const card = document.createElement("div");
             card.className = "card shadow-sm text-center";
 
@@ -81,21 +74,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const title = document.createElement("h5");
             title.className = "card-title";
-            title.innerText = sem.sem;
+            title.innerText = file.name;
 
-            const linkBtn = document.createElement("a");
-            linkBtn.className = "btn btn-primary";
-            linkBtn.innerText = "View Calendar";
-            linkBtn.href = sem.link;
-            linkBtn.target = "_blank";
+            const viewBtn = document.createElement("a");
+            viewBtn.className = "btn btn-outline-secondary btn-sm me-2";
+            viewBtn.href = `https://drive.google.com/file/d/${file.id}/view`;
+            viewBtn.target = "_blank";
+            viewBtn.innerText = "View";
+
+            const downloadBtn = document.createElement("a");
+            downloadBtn.className = "btn btn-primary btn-sm";
+            downloadBtn.href = `https://drive.google.com/uc?export=download&id=${file.id}`;
+            downloadBtn.target = "_blank";
+            downloadBtn.innerText = "Download";
 
             cardBody.appendChild(title);
-            cardBody.appendChild(linkBtn);
+            cardBody.appendChild(viewBtn);
+            cardBody.appendChild(downloadBtn);
             card.appendChild(cardBody);
             col.appendChild(card);
-            semesterContainer.appendChild(col);
+            calendarCards.appendChild(col);
         });
     }
 
-    fetchDriveFiles();
+    fetchYears(); // Load available years on page load
 });

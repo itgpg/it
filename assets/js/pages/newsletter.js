@@ -9,6 +9,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   const container = document.getElementById("newsletter-container");
+
+  // ✅ Stop execution if container doesn't exist
+  if (!container) {
+    console.error("❌ newsletter-container not found in the DOM");
+    return;
+  }
+
   const folderId = CONFIG.FOLDER_IDS.newsletters;
   const apiKey = CONFIG.API_KEY;
 
@@ -22,6 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log("✅ API Response received:", data);
 
       if (data.files && data.files.length > 0) {
+        container.innerHTML = ""; // ✅ Clear loading text
+
         data.files.forEach(file => {
           const downloadUrl = `https://drive.google.com/uc?export=download&id=${file.id}`;
           const viewUrl = file.webViewLink;
