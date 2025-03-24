@@ -11,48 +11,56 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ '/' | relative_url }}">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ '/faculty.html' | relative_url }}">Faculty</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ '/study-materials.html' | relative_url }}">Study Materials</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ '/events.html' | relative_url }}">Events</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ '/newsletters.html' | relative_url }}">Newsletter</a>
-                </li>
+                
+                <!-- Faculty Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Achievements
+                        Faculty
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{ '/student-achievements.html' | relative_url }}">Student Achievements</a></li>
+                        <li><a class="dropdown-item" href="{{ '/faculty.html' | relative_url }}">Faculty Info</a></li>
                         <li><a class="dropdown-item" href="{{ '/faculty-achievements.html' | relative_url }}">Faculty Achievements</a></li>
                     </ul>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ '/newsletters.html' | relative_url }}">Newsletter</a>
+                </li>
+
+                <!-- Co-Curricular Activities Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Academics
+                        Co-Curricular Activities
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{ '/faculty.html#research' | relative_url }}">Research</a></li>
-                        <li><a class="dropdown-item" href="{{ '/faculty.html#co-curricular' | relative_url }}">Co-Curricular</a></li>
-                        <li><a class="dropdown-item" href="{{ '/faculty.html#accreditation' | relative_url }}">Accreditation</a></li>
+                        <li><a class="dropdown-item" href="{{ '/events.html' | relative_url }}">Events</a></li>
+                        <li><a class="dropdown-item" href="{{ '/expert-lectures.html' | relative_url }}">Expert Lectures</a></li>
+                        <li><a class="dropdown-item" href="{{ '/faculty-development.html' | relative_url }}">Faculty Development Program</a></li>
+                        <li><a class="dropdown-item" href="{{ '/industrial-visits.html' | relative_url }}">Industrial Visits</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ '/student-corner.html' | relative_url }}">Student Corner</a>
+
+                <!-- Accreditation Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Accreditation
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ '/accreditation-2022.html' | relative_url }}">2022 NBA</a></li>
+                        <li><a class="dropdown-item" href="{{ '/accreditation-2006.html' | relative_url }}">2006 NBA</a></li>
+                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ '/#about' | relative_url }}">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ '/#programs' | relative_url }}">Programs</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ '/#contact' | relative_url }}">Contact Us</a>
+
+                <!-- Student Corner Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Student Corner
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ '/study-materials.html' | relative_url }}">Study Material</a></li>
+                        <li><a class="dropdown-item" href="{{ '/academic-calendar.html' | relative_url }}">Academic Calendar</a></li>
+                        <li><a class="dropdown-item" href="{{ '/student-achievements.html' | relative_url }}">Achievements</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>
