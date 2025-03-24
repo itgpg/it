@@ -1,12 +1,26 @@
 ---
 layout: default
-title: academic-calendar
-description: 'Description of academic-calendar page.'
-custom_css: ['/assets/css/pages/academic-calendar.css']
-custom_js: ['/assets/js/pages/academic-calendar.js']
+title: Academic Calendar
+description: "Select an academic year and semester to view the calendar."
+custom_css: ["/assets/css/pages/academic-calendar.css"]
+custom_js: ["/assets/js/pages/academic-calendar.js"]
 ---
 
-<div class='container mt-5'>
-    <h1>academic-calendar</h1>
-    <p>Content coming soon...</p>
+<div class="container mt-5">
+    <h1 class="mb-4 text-center">Academic Calendar</h1>
+
+    <!-- Dropdown for Year Selection -->
+    <div class="dropdown mb-3 text-center">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="yearDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            Select Year
+        </button>
+        <ul class="dropdown-menu" id="yearList">
+            <li><a class="dropdown-item" href="#" data-year="2024">2024</a></li>
+        </ul>
+    </div>
+
+    <!-- Semester Selection Cards -->
+    <div id="semesterCards" class="row justify-content-center">
+        <!-- Cards will be inserted dynamically by JavaScript -->
+    </div>
 </div>

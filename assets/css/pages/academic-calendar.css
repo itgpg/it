@@ -1,0 +1,18 @@
+.dropdown {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+    text-align: center;
+}
