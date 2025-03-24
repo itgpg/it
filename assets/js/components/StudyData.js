@@ -23,7 +23,7 @@ class StudyData {
                 'Mathematics 1': {
                     modules: [{ 
                         name: 'Mathematics 1 Playlist', 
-                        playlistId: CONFIG.PLAYLIST_IDS.maths1 
+                        playlistId: CONFIG.PLAYLIST_IDS.maths 
                     }]
                 },
                 'Communication Skills': {
