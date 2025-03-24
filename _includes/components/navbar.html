@@ -1,23 +1,28 @@
 <nav class="navbar">
     <div class="container">
         <a href="{{ '/' | relative_url }}" class="logo">
-            <img src="{{ '/assets/images/gpg-logo-mini.png' | relative_url }}" alt="GPG Logo">
+            <img src="{{ '/assets/images/gpg-logo.png' | relative_url }}" alt="GPG Logo">
         </a>
 
-        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <button class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
 
         <ul class="nav-links">
             <li><a href="{{ '/' | relative_url }}">Home</a></li>
+
             <li class="dropdown">
-                <a href="#">Faculty ▼</a>
+                <a href="#">Faculty</a>
                 <ul class="dropdown-menu">
                     <li><a href="{{ '/faculty/faculty-info/' | relative_url }}">Faculty Info</a></li>
                     <li><a href="{{ '/faculty/faculty-achievements/' | relative_url }}">Faculty Achievements</a></li>
                 </ul>
             </li>
+
             <li><a href="{{ '/newsletter/' | relative_url }}">Newsletter</a></li>
+
             <li class="dropdown">
-                <a href="#">Co-Curricular ▼</a>
+                <a href="#">Co-Curricular</a>
                 <ul class="dropdown-menu">
                     <li><a href="{{ '/co-curricular/events/' | relative_url }}">Events</a></li>
                     <li><a href="{{ '/co-curricular/expert-lecture/' | relative_url }}">Expert Lecture</a></li>
@@ -25,15 +30,17 @@
                     <li><a href="{{ '/co-curricular/industrial-visit/' | relative_url }}">Industrial Visit</a></li>
                 </ul>
             </li>
+
             <li class="dropdown">
-                <a href="#">Accreditation ▼</a>
+                <a href="#">Accreditation</a>
                 <ul class="dropdown-menu">
                     <li><a href="{{ '/accreditation/nba-2022/' | relative_url }}">2022 NBA</a></li>
                     <li><a href="{{ '/accreditation/nba-2006/' | relative_url }}">2006 NBA</a></li>
                 </ul>
             </li>
+
             <li class="dropdown">
-                <a href="#">Student Corner ▼</a>
+                <a href="#">Student Corner</a>
                 <ul class="dropdown-menu">
                     <li><a href="{{ '/student-corner/study-material/' | relative_url }}">Study Material</a></li>
                     <li><a href="{{ '/student-corner/academic-calendar/' | relative_url }}">Academic Calendar</a></li>
@@ -48,4 +55,14 @@
 function toggleMenu() {
     document.querySelector('.nav-links').classList.toggle('active');
 }
+
+// Make navbar transparent until scrolled
+window.addEventListener('scroll', function() {
+    let navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
 </script>
