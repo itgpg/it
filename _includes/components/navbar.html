@@ -1,29 +1,60 @@
-<nav class="navbar">
-    <div class="navbar-container">
-        <a href="{{ '/' | relative_url }}" class="navbar-logo">
-            <img src="{{ '/assets/images/gpg-logo-mini.png' | relative_url }}" alt="GPG Logo">
+<nav class="navbar navbar-expand-lg fixed-top bg-white shadow-sm">
+    <div class="container">
+        <a class="navbar-brand" href="{{ '/' | relative_url }}">
+            <img src="{{ '/assets/images/gpg-logo-mini.png' | relative_url }}" alt="GP Gandhinagar" class="logo">
         </a>
-        <ul class="navbar-menu">
-            <li><a href="{{ '/' | relative_url }}">Home</a></li>
-            <li><a href="{{ '/faculty.html' | relative_url }}">Faculty</a></li>
-            <li><a href="{{ '/newsletters.html' | relative_url }}">Newsletter</a></li>
-            <li><a href="{{ '/events.html' | relative_url }}">Events</a></li>
-
-            <li class="dropdown">
-                <a href="#">Academics ▾</a>
-                <ul class="dropdown-menu">
-                    <li><a href="{{ '/study-materials.html' | relative_url }}">Study Materials</a></li>
-                    <li><a href="{{ '/faculty-achievements.html' | relative_url }}">Faculty Achievements</a></li>
-                    <li><a href="{{ '/student-achievements.html' | relative_url }}">Student Achievements</a></li>
-                </ul>
-            </li>
-
-            <li><a href="{{ '/faculty.html#research' | relative_url }}">Research</a></li>
-            <li><a href="{{ '/faculty.html#co-curricular' | relative_url }}">Co-Curricular</a></li>
-            <li><a href="{{ '/faculty.html#accreditation' | relative_url }}">Accreditation</a></li>
-            <li><a href="{{ '/student-corner.html' | relative_url }}">Student Corner</a></li>
-        </ul>
-
-        <button class="menu-toggle" aria-label="Toggle Navigation">&#9776;</button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ '/' | relative_url }}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ '/faculty.html' | relative_url }}">Faculty</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ '/study-materials.html' | relative_url }}">Study Materials</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ '/events.html' | relative_url }}">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ '/newsletters.html' | relative_url }}">Newsletter</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Achievements
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ '/student-achievements.html' | relative_url }}">Student Achievements</a></li>
+                        <li><a class="dropdown-item" href="{{ '/faculty-achievements.html' | relative_url }}">Faculty Achievements</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Academics
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ '/faculty.html#research' | relative_url }}">Research</a></li>
+                        <li><a class="dropdown-item" href="{{ '/faculty.html#co-curricular' | relative_url }}">Co-Curricular</a></li>
+                        <li><a class="dropdown-item" href="{{ '/faculty.html#accreditation' | relative_url }}">Accreditation</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ '/student-corner.html' | relative_url }}">Student Corner</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ '/#about' | relative_url }}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ '/#programs' | relative_url }}">Programs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ '/#contact' | relative_url }}">Contact Us</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
