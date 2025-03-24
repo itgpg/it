@@ -24,7 +24,7 @@ exclude:
 collections:
   events:
     output: true
-    permalink: /events/:path/
+    permalink: /events/:name/
   faculty:
     output: true
   student-corner:

@@ -46,9 +46,13 @@
 │       └── utils.js
 ├── co-curricular
 │   ├── events
+│   │   └── index.html
 │   ├── expert-lecture
+│   │   └── index.html
 │   ├── faculty-development
+│   │   └── index.html
 │   └── industrial-visit
+│       └── index.html
 ├── docs
 │   ├── DOCS.md
 │   └── README.md
@@ -63,12 +67,13 @@
 │   └── index.html
 ├── robots.txt
 ├── sitemap.xml
-├── student-achievements.html
 ├── student-corner
 │   ├── academic-calendar
+│   │   └── index.html
 │   ├── achievements
+│   │   └── index.html
 │   └── study-material
 │       └── index.html
 └── tree.txt
 
-30 directories, 42 files
+30 directories, 47 files
