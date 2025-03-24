@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg fixed-top bg-white shadow-sm">
     <div class="container">
-        <a class="navbar-brand" href="{{ '/' | relative_url }}">
-            <img src="{{ '/assets/images/gpg-logo-mini.png' | relative_url }}" alt="GP Gandhinagar" class="logo">
+        <a class="navbar-brand" href="{{ site.baseurl }}/">
+            <img src="{{ site.baseurl }}/assets/images/gpg-logo-mini.png" alt="GP Gandhinagar" class="logo">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ '/' | relative_url }}">Home</a>
+                    <a class="nav-link" href="{{ site.baseurl }}/">Home</a>
                 </li>
                 
                 <!-- Faculty Dropdown -->
@@ -18,13 +18,13 @@
                         Faculty
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{ '/faculty/faculty-info/' | relative_url }}">Faculty Info</a></li>
-                        <li><a class="dropdown-item" href="{{ '/faculty/faculty-achievements/' | relative_url }}">Faculty Achievements</a></li>
+                        <li><a class="dropdown-item" href="{{ site.baseurl }}/faculty/faculty-info/">Faculty Info</a></li>
+                        <li><a class="dropdown-item" href="{{ site.baseurl }}/faculty/faculty-achievements/">Faculty Achievements</a></li>
                     </ul>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ '/newsletter/' | relative_url }}">Newsletter</a>
+                    <a class="nav-link" href="{{ site.baseurl }}/newsletter/">Newsletter</a>
                 </li>
 
                 <!-- Co-Curricular Activities Dropdown -->
@@ -33,10 +33,10 @@
                         Co-Curricular Activities
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{ '/co-curricular/events/' | relative_url }}">Events</a></li>
-                        <li><a class="dropdown-item" href="{{ '/co-curricular/expert-lecture/' | relative_url }}">Expert Lectures</a></li>
-                        <li><a class="dropdown-item" href="{{ '/co-curricular/faculty-development/' | relative_url }}">Faculty Development Program</a></li>
-                        <li><a class="dropdown-item" href="{{ '/co-curricular/industrial-visit/' | relative_url }}">Industrial Visits</a></li>
+                        <li><a class="dropdown-item" href="{{ site.baseurl }}/co-curricular/events/">Events</a></li>
+                        <li><a class="dropdown-item" href="{{ site.baseurl }}/co-curricular/expert-lecture/">Expert Lectures</a></li>
+                        <li><a class="dropdown-item" href="{{ site.baseurl }}/co-curricular/faculty-development/">Faculty Development</a></li>
+                        <li><a class="dropdown-item" href="{{ site.baseurl }}/co-curricular/industrial-visit/">Industrial Visits</a></li>
                     </ul>
                 </li>
 
@@ -57,9 +57,9 @@
                         Student Corner
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{ '/student-corner/study-material/' | relative_url }}">Study Material</a></li>
-                        <li><a class="dropdown-item" href="{{ '/student-corner/academic-calendar/' | relative_url }}">Academic Calendar</a></li>
-                        <li><a class="dropdown-item" href="{{ '/student-corner/achievements/' | relative_url }}">Achievements</a></li>
+                        <li><a class="dropdown-item" href="{{ site.baseurl }}/student-corner/study-material/">Study Material</a></li>
+                        <li><a class="dropdown-item" href="{{ site.baseurl }}/student-corner/academic-calendar/">Academic Calendar</a></li>
+                        <li><a class="dropdown-item" href="{{ site.baseurl }}/student-corner/achievements/">Achievements</a></li>
                     </ul>
                 </li>
             </ul>
