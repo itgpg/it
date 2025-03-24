@@ -1,11 +1,17 @@
 ---
 layout: default
-title: newsletter
+title: Newsletter
+description: "Stay updated with the latest newsletters from the IT Department of Government Polytechnic Gandhinagar."
+custom_css: ["/assets/css/pages/newsletters.css"]
+custom_js: 
+  - "/assets/js/config.js"
+  - "/assets/js/pages/newsletter.js"
 ---
 
-{% include components/navbar.html %}
-<div class='container mt-5'>
-    <h1>newsletter</h1>
-    <p>Content coming soon...</p>
+<div class="container mt-5">
+    <h1 class="mb-4 text-center">Newsletters</h1>
+
+    <div id="newsletter-list" class="row justify-content-center">
+        <!-- Newsletters will be loaded dynamically from Google Drive -->
+    </div>
 </div>
-{% include components/footer.html %}
