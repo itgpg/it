@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg fixed-top bg-white shadow-sm">
     <div class="container">
-        <a class="navbar-brand" href="{{ '/' | relative_url }}">
-            <img src="{{ '/assets/images/gpg-logo-mini.png' | relative_url }}" alt="GP Gandhinagar" class="logo">
+        <a class="navbar-brand" href="{{ site.baseurl }}/">
+            <img src="{{ site.baseurl }}/assets/images/gpg-logo-mini.png" alt="GP Gandhinagar" class="logo">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -9,34 +9,58 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ '/' | relative_url }}">Home</a>
+                    <a class="nav-link" href="{{ site.baseurl }}/">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ '/faculty.html' | relative_url }}">Faculty</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ '/study-materials.html' | relative_url }}">Study Materials</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ '/events.html' | relative_url }}">Events</a>
-                </li>
+                
+                <!-- Faculty Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Achievements
+                        Faculty
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="student-achievements.html">Student Achievements</a></li>
-                        <li><a class="dropdown-item" href="faculty-achievements.html">Faculty Achievements</a></li>
+                        <li><a class="dropdown-item" href="{{ site.baseurl }}/faculty/faculty-info/">Faculty Info</a></li>
+                        <li><a class="dropdown-item" href="{{ site.baseurl }}/faculty/faculty-achievements/">Faculty Achievements</a></li>
                     </ul>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ '/#about' | relative_url }}">About</a>
+                    <a class="nav-link" href="{{ site.baseurl }}/newsletter/">Newsletter</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ '/#programs' | relative_url }}">Programs</a>
+
+                <!-- Co-Curricular Activities Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Co-Curricular Activities
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ site.baseurl }}/co-curricular/events/">Events</a></li>
+                        <li><a class="dropdown-item" href="{{ site.baseurl }}/co-curricular/expert-lecture/">Expert Lectures</a></li>
+                        <li><a class="dropdown-item" href="{{ site.baseurl }}/co-curricular/faculty-development/">Faculty Development</a></li>
+                        <li><a class="dropdown-item" href="{{ site.baseurl }}/co-curricular/industrial-visit/">Industrial Visits</a></li>
+                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ '/#contact' | relative_url }}">Contact Us</a>
+
+                <!-- Accreditation Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Accreditation
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="https://drive.google.com/file/d/1ztRRvA2KO_mWUWbCDCXxgU-CcwlucXsC/view" target="_blank">2022 NBA</a></li>
+                        <li><a class="dropdown-item" href="https://drive.google.com/file/d/13FZOyht9tcopuAkUrqyKplhSIlcGNWJ3/view" target="_blank">2006 NBA</a></li>
+                    </ul>
+                </li>
+
+                <!-- Student Corner Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Student Corner
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ site.baseurl }}/student-corner/study-material/">Study Material</a></li>
+                        <li><a class="dropdown-item" href="{{ site.baseurl }}/student-corner/academic-calendar/">Academic Calendar</a></li>
+                        <li><a class="dropdown-item" href="{{ site.baseurl }}/student-corner/achievements/">Achievements</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ '/newsletters.html' | relative_url }}">Newsletters</a>

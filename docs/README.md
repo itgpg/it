@@ -61,3 +61,5 @@ The entire project — from ideation, coding, UI/UX flow, data structures, and d
 
 ## 📜 License
 MIT License - Free to use with developer credit.
+
+**Note:** The study materials have been updated with new resources for various semesters and subjects as of `2025-03-24`.

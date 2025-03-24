@@ -1,0 +1,55 @@
+---
+layout: default
+title: Faculty Members | IT Department | Government Polytechnic Gandhinagar
+description: Meet our experienced faculty members at the IT Department of Government Polytechnic Gandhinagar. Our professors bring extensive academic and industry experience to the classroom.
+keywords: GPG IT faculty, IT professors Gandhinagar, Government Polytechnic Gandhinagar faculty, IT department staff, polytechnic teachers
+custom_css:
+  - assets/css/pages/faculty.css
+custom_js:
+  - assets/js/pages/faculty.js 
+---
+
+<!-- Structured Data for Faculty List -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Department",
+  "name": "Information Technology Department",
+  "parentOrganization": {
+    "@type": "EducationalOrganization",
+    "name": "Government Polytechnic Gandhinagar"
+  },
+  "employee": {
+    "@type": "Person",
+    "jobTitle": "Faculty Member",
+    "worksFor": {
+      "@type": "EducationalOrganization",
+      "name": "Government Polytechnic Gandhinagar",
+      "department": "Information Technology Department"
+    }
+  }
+}
+</script>
+
+<section class="faculty-header">
+    <div class="container">
+        <div class="dept-badge">
+            <!-- <img src="{{ '/assets/images/gpg-logo.png' | relative_url }}" alt="GPG Logo" class="dept-logo"> -->
+            <div class="dept-info">
+                <span class="institute">Government Polytechnic Gandhinagar</span>
+                <span class="university">Gujarat Technological University</span>
+            </div>
+        </div>
+        <h1 class="section-title">Faculty Members</h1>
+    </div>
+</section>
+
+<section class="faculty-grid">
+    <div class="container">
+        <div class="faculty-members">
+            <!-- Faculty cards content -->
+        </div>
+    </div>
+</section>
+<script src="{{ '/assets/js/pages/faculty.js' | relative_url }}"></script>
+

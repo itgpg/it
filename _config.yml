@@ -24,7 +24,20 @@ exclude:
 collections:
   events:
     output: true
-    permalink: /events/:path/
+    permalink: /events/:name/
+  faculty:
+    output: true
+  student-corner:
+    output: true
+  co-curricular:
+    output: true
+  accreditation:
+    output: true
+  newsletter:
+    output: true
+
+
+
 
 # Default front matter
 defaults:

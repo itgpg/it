@@ -26,6 +26,7 @@
 ### ✅ 3. Jekyll for Clean Templating
 - Components (`navbar.html`, `footer.html`) used site-wide
 - Jekyll layouts for content separation and maintainability
+- The `StudyData.js` file now includes data for more semesters and subjects, reflecting updates to the study materials.
 
 ---
 
@@ -69,4 +70,3 @@ The complete project — from design, development, optimization to deployment �
 
 ## 📌 Note:
 This project is open-source but requires proper credit to **Aayush Bankar** for any reuse, modification, or deployment.
-

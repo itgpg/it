@@ -1,0 +1,26 @@
+---
+layout: default
+title: Events
+description: "List of past and upcoming events."
+custom_css: ["/assets/css/pages/events.css"]
+custom_js: ["/assets/js/pages/events.js"]
+---
+
+<div class="container mt-5">
+    <h1 class="mb-4">Upcoming Events</h1>
+    
+    <div class="row">
+        {% for event in site.events %}
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">{{ event.title }}</h5>
+                    <p class="card-text"><strong>Date:</strong> {{ event.date | date: "%B %d, %Y" }}</p>
+                    <p class="card-text">{{ event.excerpt }}</p>
+                    <a href="{{ event.url | relative_url }}" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
