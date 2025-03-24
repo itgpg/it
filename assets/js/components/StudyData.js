@@ -66,12 +66,6 @@ class StudyData {
                         name: 'Full Stack Development', 
                         playlistId: CONFIG.PLAYLIST_IDS.FSD
                     }]
-                },
-                'Digital Electronics': {
-                    modules: [{ 
-                        name: 'Digital Electronics Playlist', 
-                        playlistId: CONFIG.PLAYLIST_IDS.digital_electronics 
-                    }]
                 }
             },
             semester3: {
