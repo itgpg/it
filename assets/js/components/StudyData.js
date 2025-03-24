@@ -23,7 +23,7 @@ class StudyData {
                 'Mathematics 1': {
                     modules: [{ 
                         name: 'Mathematics 1 Playlist', 
-                        playlistId: CONFIG.PLAYLIST_IDS.maths1 
+                        playlistId: CONFIG.PLAYLIST_IDS.maths 
                     }]
                 },
                 'Communication Skills': {
@@ -58,12 +58,12 @@ class StudyData {
                 'Applied Mathematics': {
                     modules: [{ 
                         name: 'Applied Mathematics Playlist', 
-                        playlistId: CONFIG.PLAYLIST_IDS.engineering_maths 
+                        playlistId: CONFIG.PLAYLIST_IDS.enginnering_maths 
                     }]
                 },
                 'FSD': {
                     modules: [{ 
-                        name: 'Full Stack Development', 
+                        name: 'fundamental of software development', 
                         playlistId: CONFIG.PLAYLIST_IDS.FSD
                     }]
                 }
