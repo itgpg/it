@@ -20,6 +20,7 @@ class StudyMaterialsPage {
         const semesterCards = document.querySelectorAll('.semester-card');
         semesterCards.forEach(card => {
             card.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent event bubbling
                 const semester = e.currentTarget.dataset.semester;
                 // console.log('Semester clicked:', semester);  // Commented out
                 this.handleSemesterChange(semester);
