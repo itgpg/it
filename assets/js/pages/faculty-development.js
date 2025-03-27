@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let folderStack = [CONFIG.FOLDER_IDS.faculty_development]; // Root folder stack
 
     async function fetchDriveFiles(folderId) {
-        const url = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${CONFIG.API_KEY}&fields=files(id,name,mimeType,webViewLink,webContentLink)`;
+        const url = `https://www.googleapis.com/drive/v3/files?q='${CONFIG.FOLDER_IDS.faculty_development}'+in+parents&key=${CONFIG.API_KEY}&fields=files(id,name,mimeType,webViewLink,webContentLink)`;
 
         try {
             const response = await fetch(url);
