@@ -1,0 +1,66 @@
+#file-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+}
+
+.file-card {
+    width: 150px;
+    padding: 10px;
+    border-radius: 8px;
+    background: #f8f9fa;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.file-card:hover {
+    background: #e2e6ea;
+}
+
+.file-icon {
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    background-size: cover;
+}
+
+.folder {
+    background-image: url("../icons/folder-icon.png");
+}
+
+.file {
+    background-image: url("../icons/file-icon.png");
+}
+
+.file-actions {
+    margin-top: 8px;
+}
+
+.view-btn, .download-btn {
+    text-decoration: none;
+    padding: 5px;
+    display: block;
+}
+
+.view-btn {
+    color: blue;
+}
+
+.download-btn {
+    color: green;
+}
+
+.back-btn {
+    padding: 8px;
+    background: #ffc107;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.breadcrumb {
+    margin-bottom: 10px;
+}

@@ -7,7 +7,8 @@ const CONFIG = {
         cse: '1O7ToNX0DIfhrB3K1ytSbPBxm8GhMNpqR',
         ech: '1JM5fS8mss8ViwNaO7sLpn4QF5btEX9WB',
         syllabusS2: '1qzlAm8Zi9RC11iwD2V2T0uU_8DMSlemE',
-        newsletters: '14OT-O9JooQKzKxxL2bhLUUZkdB3MOSf8'
+        newsletters: '14OT-O9JooQKzKxxL2bhLUUZkdB3MOSf8',
+        faculty_development: '1yB9N4DKyGc3AL1EhGiPTgtpyPOlq8cvV' // New entry
     },
     PLAYLIST_IDS: {
         python: 'PL5hA7O8RI2bPOSoX7l8zZIIuDQrc9b9wO',
