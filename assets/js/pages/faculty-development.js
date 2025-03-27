@@ -39,43 +39,60 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function displayFiles(files) {
         console.log("Displaying files:", files);
-
-        fileContainer.innerHTML = ""; // Clear previous content
-
-        // Filter only PDFs and images
-        const allowedFiles = files.filter(file =>
-            file.mimeType === "application/pdf" || file.mimeType.startsWith("image/")
-        );
         
-
-        console.log("Filtered files (PDFs & Images):", allowedFiles);
-
-        if (!allowedFiles.length) {
-            console.log("No valid files found, hiding folder.");
-            fileContainer.style.display = "none"; // Hide the folder if no PDFs or images
-            return;
-        } else {
-            fileContainer.style.display = "block"; // Show if there are valid files
-        }
-
-        allowedFiles.forEach(file => {
-            const fileCard = document.createElement("div");
-            fileCard.classList.add("file-card");
-
-            fileCard.innerHTML = `
-                <div class="file-icon ${file.mimeType.includes("image") ? "image" : "pdf"}"></div>
-                <p>${file.name}</p>
-                <div class="file-actions">
-                    <a href="${file.webViewLink}" target="_blank" class="view-btn">👁 View</a>
-                    <a href="${file.webContentLink}" target="_blank" class="download-btn" download>⬇ Download</a>
-                </div>
-            `;
-
-            fileContainer.appendChild(fileCard);
+        const fileContainer = document.getElementById("file-container");
+        fileContainer.innerHTML = "";  // Clear previous content
+    
+        // Categorize files manually based on extension
+        const categories = {
+            "PDFs": [],
+            "Images": [],
+            "Folders": [],
+            "Others": []
+        };
+    
+        files.forEach(file => {
+            const fileName = file.name.toLowerCase();
+    
+            if (file.mimeType === "application/vnd.google-apps.folder") {
+                categories["Folders"].push(file);
+            } else if (fileName.endsWith(".pdf")) {
+                categories["PDFs"].push(file);
+            } else if (fileName.endsWith(".jpg") || fileName.endsWith(".jpeg") || fileName.endsWith(".png")) {
+                categories["Images"].push(file);
+            } else {
+                categories["Others"].push(file);
+            }
         });
-
-        console.log("Files successfully displayed.");
+    
+        console.log("Categorized files:", categories);
+    
+        // Render categories
+        Object.entries(categories).forEach(([category, fileList]) => {
+            if (fileList.length > 0) {
+                const section = document.createElement("div");
+                section.classList.add("file-section");
+                section.innerHTML = `<h3>${category}</h3>`;
+                
+                fileList.forEach(file => {
+                    const fileElement = document.createElement("div");
+                    fileElement.classList.add("file-item");
+                    fileElement.innerHTML = `
+                        <a href="${file.webViewLink}" target="_blank">${file.name}</a>
+                    `;
+                    section.appendChild(fileElement);
+                });
+    
+                fileContainer.appendChild(section);
+            }
+        });
+    
+        // If no files, show message
+        if (fileContainer.innerHTML === "") {
+            fileContainer.innerHTML = `<p>No files available.</p>`;
+        }
     }
+    
 
     function updateBreadcrumb() {
         console.log("Updating breadcrumb...");
