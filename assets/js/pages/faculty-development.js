@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let folderStack = [CONFIG.FOLDER_IDS.faculty_development]; // Root folder stack
 
     async function fetchDriveFiles(folderId) {
+        console.log(`Fetching files for folder: ${folderId}`);
         const url = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${CONFIG.API_KEY}&fields=files(id,name,mimeType,webViewLink,webContentLink)`;
 
         try {
@@ -13,46 +14,36 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!response.ok) throw new Error(`Failed to fetch files`);
 
             const data = await response.json();
+            console.log("API Response:", data);
+
             if (!data.files || !Array.isArray(data.files)) throw new Error("Invalid API response");
 
-            const allowedFiles = data.files.filter(file =>
-                file.mimeType === "application/pdf" || file.mimeType.startsWith("image/")
-            );
+            fileContainer.innerHTML = "";
+            data.files.forEach(file => {
+                console.log("Processing file:", file.name);
+                const fileItem = document.createElement("div");
+                fileItem.classList.add("file-item");
 
-            if (allowedFiles.length === 0) {
-                fileContainer.style.display = "none"; // Hide section if no valid files
-                return;
-            }
+                fileItem.innerHTML = `
+                    <a href="${file.webViewLink}" target="_blank" class="file-link">
+                        <span class="${file.mimeType.includes("image") ? "file-image" : "file-pdf"}"></span>
+                        ${file.name}
+                    </a>
+                `;
 
-            displayFiles(allowedFiles);
+                fileContainer.appendChild(fileItem);
+            });
+
             updateBreadcrumb();
             updateBackButton();
         } catch (error) {
+            console.error("Error fetching files:", error);
             fileContainer.innerHTML = `<p class="error">Failed to load files. Please try again later.</p>`;
         }
     }
 
-    function displayFiles(files) {
-        fileContainer.innerHTML = ""; // Clear previous content
-        fileContainer.style.display = "grid"; // Ensure visibility
-
-        files.forEach(file => {
-            const fileItem = document.createElement("div");
-            fileItem.classList.add("file-item");
-
-            fileItem.innerHTML = `
-                <a href="${file.webViewLink}" target="_blank" class="file-link">
-                    <span class="${file.mimeType.includes("image") ? "file-image" : "file-pdf"}"></span>
-                    ${file.name}
-                </a>
-            `;
-
-            fileContainer.appendChild(fileItem);
-        });
-    }
-
     function updateBreadcrumb() {
-        breadcrumbContainer.innerHTML = ""; // Clear previous breadcrumbs
+        breadcrumbContainer.innerHTML = "";
         folderStack.forEach((folderId, index) => {
             const breadcrumb = document.createElement("span");
             breadcrumb.textContent = index === 0 ? "Home" : `Folder ${index}`;
@@ -76,6 +67,5 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Initial Fetch
     fetchDriveFiles(CONFIG.FOLDER_IDS.faculty_development);
 });
