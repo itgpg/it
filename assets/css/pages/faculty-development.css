@@ -1,3 +1,4 @@
+/* General Styling */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,6 +6,7 @@ body {
     background-color: #f5f5f5;
 }
 
+/* Navbar */
 .navbar {
     background-color: #333;
     color: white;
@@ -20,12 +22,14 @@ body {
     font-size: 1.5rem;
 }
 
+/* Main Content */
 .main-container {
     padding: 80px 20px 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
+/* Breadcrumb */
 #breadcrumb {
     font-size: 14px;
     margin-bottom: 15px;
@@ -40,6 +44,7 @@ body {
     text-decoration: underline;
 }
 
+/* File Container */
 #file-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -47,6 +52,7 @@ body {
     margin-top: 20px;
 }
 
+/* File Items */
 .file-item {
     background: white;
     padding: 15px;
@@ -77,6 +83,7 @@ body {
     content: "📄";
 }
 
+/* Back Button */
 #back-btn {
     display: none;
     background: #007bff;
