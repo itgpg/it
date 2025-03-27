@@ -1,37 +1,35 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const API_KEY = CONFIG.API_KEY;
-    const ROOT_FOLDER_ID = CONFIG.FOLDER_IDS.facultyDevelopment;
     const fileContainer = document.getElementById("file-container");
     const breadcrumbContainer = document.getElementById("breadcrumb");
 
-    let folderStack = [ROOT_FOLDER_ID];
+    let folderStack = [CONFIG.FOLDER_IDS.faculty_development]; // Root folder stack
 
     async function fetchDriveFiles(folderId) {
-        const url = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${API_KEY}&fields=files(id, name, mimeType, webViewLink, webContentLink)`;
+        const url = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${CONFIG.API_KEY}&fields=files(id,name,mimeType,webViewLink,webContentLink)`;
 
         try {
             const response = await fetch(url);
+            if (!response.ok) throw new Error(`HTTP Error! Status: ${response.status}`);
+
             const data = await response.json();
+            if (!data.files || !Array.isArray(data.files)) {
+                throw new Error("Invalid API response: 'files' missing.");
+            }
+
             displayFiles(data.files);
+            updateBreadcrumb();
         } catch (error) {
             console.error("Error fetching Drive files:", error);
-            fileContainer.innerHTML = `<p class="error">Failed to load files.</p>`;
+            fileContainer.innerHTML = `<p class="error">Failed to load files. Check API key, folder ID, and network.</p>`;
         }
     }
 
     function displayFiles(files) {
-        fileContainer.innerHTML = "";
+        fileContainer.innerHTML = ""; // Clear previous content
 
-        if (folderStack.length > 1) {
-            const backButton = document.createElement("button");
-            backButton.innerText = "🔙 Back";
-            backButton.classList.add("back-btn");
-            backButton.onclick = () => {
-                folderStack.pop();
-                fetchDriveFiles(folderStack[folderStack.length - 1]);
-                updateBreadcrumb();
-            };
-            fileContainer.appendChild(backButton);
+        if (!files.length) {
+            fileContainer.innerHTML = `<p class="no-files">No files found in this folder.</p>`;
+            return;
         }
 
         files.forEach(file => {
@@ -43,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 fileCard.onclick = () => {
                     folderStack.push(file.id);
                     fetchDriveFiles(file.id);
-                    updateBreadcrumb();
                 };
             } else {
                 fileCard.innerHTML = `
@@ -51,20 +48,27 @@ document.addEventListener("DOMContentLoaded", function () {
                     <p>${file.name}</p>
                     <div class="file-actions">
                         <a href="${file.webViewLink}" target="_blank" class="view-btn">👁 View</a>
-                        <a href="${file.webContentLink}" download class="download-btn">⬇ Download</a>
+                        <a href="${file.webContentLink}" target="_blank" class="download-btn" download>⬇ Download</a>
                     </div>
                 `;
             }
             fileContainer.appendChild(fileCard);
         });
-
-        updateBreadcrumb();
     }
 
     function updateBreadcrumb() {
-        breadcrumbContainer.innerHTML = "📂 ";
-        breadcrumbContainer.innerHTML += folderStack.length > 1 ? `<span class="breadcrumb-item">Faculty Development</span>` : `<span class="breadcrumb-item root">Home</span>`;
+        breadcrumbContainer.innerHTML = ""; // Clear previous breadcrumbs
+        folderStack.forEach((folderId, index) => {
+            const breadcrumb = document.createElement("span");
+            breadcrumb.textContent = index === 0 ? "Home" : `Folder ${index}`;
+            breadcrumb.onclick = () => {
+                folderStack = folderStack.slice(0, index + 1);
+                fetchDriveFiles(folderStack[index]);
+            };
+            breadcrumbContainer.appendChild(breadcrumb);
+            if (index < folderStack.length - 1) breadcrumbContainer.innerHTML += " / ";
+        });
     }
 
-    fetchDriveFiles(ROOT_FOLDER_ID);
+    fetchDriveFiles(CONFIG.DRIVE_FOLDER_ID);
 });

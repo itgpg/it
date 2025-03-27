@@ -8,8 +8,17 @@ custom_js:
   - assets/js/config.js
   - assets/js/pages/faculty-development.js
 ---
+
 <div class="container">
-    <h1>📂 Faculty Development Materials</h1>
-    <div id="breadcrumb" class="breadcrumb"></div>
-    <div id="file-container"></div>
+    <h1>📂Faculty Development Materials</h1>
+    
+    <div id="breadcrumb"></div> <!-- Breadcrumb Navigation -->
+    
+    <div id="file-container" class="file-list">
+        <p>Loading files...</p>
+    </div>
 </div>
+
+<script src="{{ '/assets/js/pages/faculty-development.js' | relative_url }}"></script>
+<link rel="stylesheet" href="{{ '/assets/css/pages/faculty-development.css' | relative_url }}">
+
