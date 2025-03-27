@@ -70,5 +70,5 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    fetchDriveFiles(CONFIG.DRIVE_FOLDER_ID);
+    fetchDriveFiles(CONFIG.FOLDER_IDS.faculty_development);
 });
