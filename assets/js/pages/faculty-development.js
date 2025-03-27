@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
     let folderStack = [CONFIG.FOLDER_IDS.faculty_development]; // Root folder stack
 
     async function fetchDriveFiles(folderId) {
+        console.log("All fetched files:", data.files);
+        data.files.forEach(file => console.log(`File: ${file.name}, MIME Type: ${file.mimeType}`));
+
         console.log(`Fetching files from folder ID: ${folderId}`);
 
         const url = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${CONFIG.API_KEY}&fields=files(id,name,mimeType,webViewLink,webContentLink)`;
@@ -41,8 +44,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Filter only PDFs and images
         const allowedFiles = files.filter(file =>
-            file.mimeType.includes("pdf") || file.mimeType.includes("image")
+            file.mimeType === "application/pdf" || file.mimeType.startsWith("image/")
         );
+        
 
         console.log("Filtered files (PDFs & Images):", allowedFiles);
 
