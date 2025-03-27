@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+    console.log("Script loaded and DOM ready.");
+
     const fileContainer = document.getElementById("file-container");
     const breadcrumbContainer = document.getElementById("breadcrumb");
     const backButton = document.getElementById("back-btn");
@@ -6,13 +8,19 @@ document.addEventListener("DOMContentLoaded", function () {
     let folderStack = [CONFIG.FOLDER_IDS.faculty_development]; // Root folder stack
 
     async function fetchDriveFiles(folderId) {
-        const url = `https://www.googleapis.com/drive/v3/files?q='${CONFIG.FOLDER_IDS.faculty_development}'+in+parents&key=${CONFIG.API_KEY}&fields=files(id,name,mimeType,webViewLink,webContentLink)`;
+        console.log(`Fetching files from folder ID: ${folderId}`);
+
+        const url = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${CONFIG.API_KEY}&fields=files(id,name,mimeType,webViewLink,webContentLink)`;
 
         try {
             const response = await fetch(url);
+            console.log(`API Response Status: ${response.status}`);
+
             if (!response.ok) throw new Error(`HTTP Error! Status: ${response.status}`);
 
             const data = await response.json();
+            console.log("Drive API Response Data:", data);
+
             if (!data.files || !Array.isArray(data.files)) {
                 throw new Error("Invalid API response: 'files' missing.");
             }
@@ -27,14 +35,19 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function displayFiles(files) {
+        console.log("Displaying files:", files);
+
         fileContainer.innerHTML = ""; // Clear previous content
 
-        // Filter only PDF and Image files
+        // Filter only PDFs and images
         const allowedFiles = files.filter(file =>
             file.mimeType.includes("pdf") || file.mimeType.includes("image")
         );
 
+        console.log("Filtered files (PDFs & Images):", allowedFiles);
+
         if (!allowedFiles.length) {
+            console.log("No valid files found, hiding folder.");
             fileContainer.style.display = "none"; // Hide the folder if no PDFs or images
             return;
         } else {
@@ -56,37 +69,51 @@ document.addEventListener("DOMContentLoaded", function () {
 
             fileContainer.appendChild(fileCard);
         });
+
+        console.log("Files successfully displayed.");
     }
 
     function updateBreadcrumb() {
+        console.log("Updating breadcrumb...");
+
         breadcrumbContainer.innerHTML = ""; // Clear previous breadcrumbs
         folderStack.forEach((folderId, index) => {
             const breadcrumb = document.createElement("span");
             breadcrumb.textContent = index === 0 ? "Home" : `Folder ${index}`;
             breadcrumb.onclick = () => {
+                console.log(`Breadcrumb clicked: Navigating to folder index ${index}`);
                 folderStack = folderStack.slice(0, index + 1);
                 fetchDriveFiles(folderStack[index]);
             };
             breadcrumbContainer.appendChild(breadcrumb);
             if (index < folderStack.length - 1) breadcrumbContainer.innerHTML += " / ";
         });
+
+        console.log("Breadcrumb updated:", breadcrumbContainer.innerHTML);
     }
 
     function updateBackButton() {
+        console.log("Updating Back Button Visibility. Current stack:", folderStack);
+
         if (folderStack.length > 1) {
             backButton.style.display = "block";
         } else {
             backButton.style.display = "none";
         }
+
+        console.log("Back Button visibility updated.");
     }
 
     backButton.addEventListener("click", function () {
+        console.log("Back button clicked.");
         if (folderStack.length > 1) {
             folderStack.pop(); // Go back one level
+            console.log("Navigating to previous folder:", folderStack[folderStack.length - 1]);
             fetchDriveFiles(folderStack[folderStack.length - 1]);
         }
     });
 
     // Initial Fetch
+    console.log("Fetching initial folder...");
     fetchDriveFiles(CONFIG.FOLDER_IDS.faculty_development);
 });
