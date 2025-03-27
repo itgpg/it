@@ -8,26 +8,25 @@ document.addEventListener("DOMContentLoaded", function () {
     let folderStack = [CONFIG.FOLDER_IDS.faculty_development]; // Root folder stack
 
     async function fetchDriveFiles(folderId) {
-        console.log("All fetched files:", data.files);
-        data.files.forEach(file => console.log(`File: ${file.name}, MIME Type: ${file.mimeType}`));
-
         console.log(`Fetching files from folder ID: ${folderId}`);
-
+        
         const url = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${CONFIG.API_KEY}&fields=files(id,name,mimeType,webViewLink,webContentLink)`;
-
+    
         try {
             const response = await fetch(url);
-            console.log(`API Response Status: ${response.status}`);
-
             if (!response.ok) throw new Error(`HTTP Error! Status: ${response.status}`);
-
-            const data = await response.json();
-            console.log("Drive API Response Data:", data);
-
+    
+            const data = await response.json();  // ✅ Correctly define `data` before using it
+            console.log("API Response Status:", response.status);
+            console.log("Drive API Response Data:", data);  // ✅ Log full response
+    
             if (!data.files || !Array.isArray(data.files)) {
                 throw new Error("Invalid API response: 'files' missing.");
             }
-
+    
+            console.log("All fetched files:", data.files);
+            data.files.forEach(file => console.log(`File: ${file.name}, MIME Type: ${file.mimeType}`));
+    
             displayFiles(data.files);
             updateBreadcrumb();
             updateBackButton();
@@ -36,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
             fileContainer.innerHTML = `<p class="error">Failed to load files. Check API key, folder ID, and network.</p>`;
         }
     }
+    
 
     function displayFiles(files) {
         console.log("Displaying files:", files);
