@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const fileContainer = document.getElementById("file-container");
     const breadcrumbContainer = document.getElementById("breadcrumb");
+    const backButton = document.getElementById("back-btn"); // Back button for navigation
 
     let folderStack = [CONFIG.FOLDER_IDS.faculty_development]; // Root folder stack
 
@@ -18,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             displayFiles(data.files);
             updateBreadcrumb();
+            updateBackButton();
         } catch (error) {
             console.error("Error fetching Drive files:", error);
             fileContainer.innerHTML = `<p class="error">Failed to load files. Check API key, folder ID, and network.</p>`;
@@ -42,7 +44,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     folderStack.push(file.id);
                     fetchDriveFiles(file.id);
                 };
-            } else {
+            } 
+            // Render only PDFs and images
+            else if (file.mimeType === "application/pdf" || file.mimeType.startsWith("image/")) {
                 fileCard.innerHTML = `
                     <div class="file-icon file"></div>
                     <p>${file.name}</p>
@@ -51,7 +55,12 @@ document.addEventListener("DOMContentLoaded", function () {
                         <a href="${file.webContentLink}" target="_blank" class="download-btn" download>⬇ Download</a>
                     </div>
                 `;
+            } 
+            // Exclude rendering other file types
+            else {
+                return;
             }
+
             fileContainer.appendChild(fileCard);
         });
     }
@@ -70,5 +79,18 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    function updateBackButton() {
+        if (folderStack.length > 1) {
+            backButton.style.display = "block";
+            backButton.onclick = () => {
+                folderStack.pop(); // Go back to the previous folder
+                fetchDriveFiles(folderStack[folderStack.length - 1]);
+            };
+        } else {
+            backButton.style.display = "none"; // Hide back button if at root
+        }
+    }
+
+    // Initial fetch
     fetchDriveFiles(CONFIG.FOLDER_IDS.faculty_development);
 });
