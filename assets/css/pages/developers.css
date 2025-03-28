@@ -1,15 +1,22 @@
-/* 🔹 Global Styling for the Developers Page */
+/* 🔹 Global Styling */
 .developers-container {
     text-align: center;
-    padding: 50px 20px;
+    padding: 60px 20px;
     font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    color: white;
 }
 
+/* 🔹 Title Styling */
 .title {
-    font-size: 2.5em;
+    font-size: 3em;
     font-weight: bold;
-    margin-bottom: 20px;
-    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, #ff00ff, #0073e6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 30px;
 }
 
 /* 🔹 Developer Card Grid Layout */
@@ -17,88 +24,112 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
 }
 
-/* 🔹 Developer Card Style */
+/* 🔹 Developer Card Base */
 .dev-card {
-    width: 320px;
-    background: rgba(255, 255, 255, 0.15);  /* Glassmorphism */
-    backdrop-filter: blur(10px);
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
+    width: 340px;
+    height: 420px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
     cursor: pointer;
-    transition: all 0.4s ease-in-out;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.5s ease-in-out, box-shadow 0.4s ease-in-out;
+    transform-style: preserve-3d;
 }
 
+/* 🔹 Hover Effects */
 .dev-card:hover {
-    transform: scale(1.05);
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(255, 0, 255, 0.2);
 }
 
-/* 🔹 Front Section (Visible Before Click) */
-.dev-front {
+/* 🔹 Front Side of the Card */
+.dev-front,
+.dev-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     padding: 20px;
+    transition: opacity 0.4s ease-in-out;
 }
 
-.dev-card img {
-    width: 100px;
-    height: 100px;
+/* 🔹 Front Side (Before Flip) */
+.dev-front {
+    background: linear-gradient(135deg, rgba(255, 0, 255, 0.15), rgba(0, 115, 230, 0.2));
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.dev-front img {
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
-    border: 3px solid #fff;
+    border: 3px solid white;
     margin-bottom: 10px;
     transition: transform 0.3s ease-in-out;
 }
 
 .dev-card:hover img {
-    transform: scale(1.1);
+    transform: scale(1.15);
 }
 
-.dev-card h2 {
-    font-size: 1.6em;
+.dev-front h2 {
+    font-size: 1.7em;
     font-weight: bold;
-    margin: 5px 0;
 }
 
-.dev-card p {
+.dev-front p {
     font-size: 1em;
     color: #ddd;
 }
 
-/* 🔹 GitHub Link Styling */
+/* 🔹 GitHub Link */
 .github-link {
     display: inline-block;
     margin-top: 10px;
     padding: 8px 15px;
-    background: #0073e6;
+    background: #ff00ff;
     color: white;
     font-weight: bold;
     text-decoration: none;
     border-radius: 5px;
-    transition: background 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out, transform 0.3s;
 }
 
 .github-link:hover {
-    background: #005bb5;
+    background: #0073e6;
+    transform: scale(1.05);
 }
 
-/* 🔹 Hidden Info (Expands on Click) */
+/* 🔹 Back Side (After Flip) */
 .dev-back {
-    background: #1e1e1e;
+    background: rgba(10, 10, 10, 0.95);
     color: white;
-    padding: 15px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    transform: rotateY(180deg);
+    opacity: 0;
+    padding: 25px;
 }
 
-/* 🔹 Expand Effect */
+.dev-card.active {
+    transform: rotateY(180deg);
+}
+
+.dev-card.active .dev-front {
+    opacity: 0;
+}
+
 .dev-card.active .dev-back {
-    max-height: 120px;
-    padding: 15px;
+    opacity: 1;
 }
 
 /* 🔹 Mobile Responsiveness */
