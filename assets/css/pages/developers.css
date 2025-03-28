@@ -1,8 +1,18 @@
+/* 🔹 Global Styling for the Developers Page */
 .developers-container {
     text-align: center;
     padding: 50px 20px;
+    font-family: 'Poppins', sans-serif;
 }
 
+.title {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* 🔹 Developer Card Grid Layout */
 .dev-grid {
     display: flex;
     flex-wrap: wrap;
@@ -10,48 +20,95 @@
     gap: 20px;
 }
 
+/* 🔹 Developer Card Style */
 .dev-card {
-    width: 300px;
-    background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    background: rgba(255, 255, 255, 0.15);  /* Glassmorphism */
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dev-card:hover {
+    transform: scale(1.05);
+}
+
+/* 🔹 Front Section (Visible Before Click) */
+.dev-front {
+    padding: 20px;
 }
 
 .dev-card img {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    margin-top: 15px;
+    border: 3px solid #fff;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.dev-card:hover img {
+    transform: scale(1.1);
 }
 
 .dev-card h2 {
-    font-size: 1.5em;
-    margin: 10px 0;
+    font-size: 1.6em;
+    font-weight: bold;
+    margin: 5px 0;
 }
 
 .dev-card p {
-    color: #555;
+    font-size: 1em;
+    color: #ddd;
 }
 
+/* 🔹 GitHub Link Styling */
 .github-link {
     display: inline-block;
-    margin: 10px 0;
-    color: #0073e6;
-    text-decoration: none;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: #0073e6;
+    color: white;
     font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
 }
 
+.github-link:hover {
+    background: #005bb5;
+}
+
+/* 🔹 Hidden Info (Expands on Click) */
 .dev-back {
-    background: #f8f9fa;
-    padding: 10px;
+    background: #1e1e1e;
+    color: white;
+    padding: 15px;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease-in-out;
+    transition: max-height 0.5s ease-in-out;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+/* 🔹 Expand Effect */
 .dev-card.active .dev-back {
-    max-height: 150px;
+    max-height: 120px;
+    padding: 15px;
+}
+
+/* 🔹 Mobile Responsiveness */
+@media (max-width: 768px) {
+    .dev-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dev-card {
+        width: 90%;
+    }
 }
