@@ -1,0 +1,26 @@
+---
+layout: default
+title: Developers
+---
+
+<section class="developers-container">
+    <h1 class="title">Meet Our Developers</h1>
+    <div class="dev-grid">
+        {% for dev in site.data.developers %}
+        <div class="dev-card" onclick="toggleProfile(this)">
+            <div class="dev-front">
+                <img src="{{ dev.image }}" alt="{{ dev.name }}">
+                <h2>{{ dev.name }}</h2>
+                <p>{{ dev.role }}</p>
+                <a href="{{ dev.github }}" target="_blank" class="github-link">GitHub</a>
+            </div>
+            <div class="dev-back">
+                <p>{{ dev.bio }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<script src="/assets/js/pages/developers.js"></script>
+<link rel="stylesheet" href="/assets/css/pages/developers.css">

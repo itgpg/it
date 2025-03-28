@@ -1,0 +1,11 @@
+- name: "Aayush Bankar"
+  role: "Lead Developer"
+  github: "https://github.com/AayushBankar"
+  bio: "Tech enthusiast, UI/UX lover, and cybersecurity explorer."
+  image: "/assets/images/dev-aayush.jpg"
+
+- name: "Divya Darji"
+  role: "Developer"
+  github: "https://github.com/divyadarji" # Replace with actual link
+  bio: "Passionate about web development and frontend design."
+  image: "/assets/images/dev-divya.jpg"
