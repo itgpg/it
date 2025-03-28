@@ -123,25 +123,70 @@ body {
 }
 
 /* ============================= */
-/* Social Links Styling */
+/* Social Links - Improved Styling */
 /* ============================= */
 
+.social-links {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
 .social-links a {
-    display: inline-block;
-    margin: 5px;
-    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     background: #007bff;
-    padding: 8px 12px;
-    border-radius: 8px;
+    color: white;
     font-weight: bold;
+    font-size: 0.9rem;
+    padding: 10px 15px;
+    border-radius: 8px;
     text-decoration: none;
     transition: all 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .social-links a:hover {
     background: #0056b3;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }
+
+/* Adding Specific Colors for Each Platform */
+.social-links a.github {
+    background: #24292e;
+}
+
+.social-links a.github:hover {
+    background: #1a1e22;
+}
+
+.social-links a.linkedin {
+    background: #0077b5;
+}
+
+.social-links a.linkedin:hover {
+    background: #005582;
+}
+
+.social-links a.website {
+    background: #6c757d;
+}
+
+.social-links a.website:hover {
+    background: #4e545a;
+}
+
+/* ============================= */
+/* Icon Styling */
+/* ============================= */
+
+.social-links a i {
+    font-size: 1rem;
+}
+
 
 
 /* ============================= */
