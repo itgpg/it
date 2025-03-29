@@ -1,100 +1,29 @@
-/* General Styling */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
+  font-family: sans-serif;
 }
 
-/* Navbar */
-.navbar {
-    background-color: #333;
-    color: white;
-    padding: 15px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.navbar h1 {
-    margin: 0;
-    font-size: 1.5rem;
+h1, h2, h3 {
+  color: #333;
 }
 
-/* Main Content */
-.main-container {
-    padding: 80px 20px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
 }
 
-/* Breadcrumb */
-#breadcrumb {
-    font-size: 14px;
-    margin-bottom: 15px;
+li {
+  margin-bottom: 5px;
 }
 
-#breadcrumb span {
-    cursor: pointer;
-    color: #007bff;
-}
-
-#breadcrumb span:hover {
-    text-decoration: underline;
-}
-
-/* File Container */
-#file-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
-}
-
-/* File Items */
-.file-item {
-    background: white;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.file-link {
-    text-decoration: none;
-    color: #333;
-    display: block;
-    padding: 10px;
-}
-
-.file-image,
-.file-pdf {
-    display: block;
-    font-size: 40px;
-    margin-bottom: 10px;
-}
-
-.file-image::before {
-    content: "🖼";
-}
-
-.file-pdf::before {
-    content: "📄";
-}
-
-/* Back Button */
-#back-btn {
-    display: none;
-    background: #007bff;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-#back-btn:hover {
-    background: #0056b3;
+#report-content {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
 }
