@@ -5,7 +5,7 @@ tmp/
 _site/
 
 # Bundler
-# /vendor/bundle
+/vendor/bundle
 
 # OS generated files
 .DS_Store
