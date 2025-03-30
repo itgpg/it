@@ -135,11 +135,11 @@ title: achievements
 
 <!-- END: NBA Update - Student Achievements, Certifications & Placements -->
 
-<!-- NEW: Top Performers Section (Dynamic Ordering Based on Time of Year) -->
+<!-- NEW: Top Performers Section (Ordered in Ascending Semester Order) -->
 <section class="container my-5 p-4 bg-white border rounded shadow-sm">
     <h2 class="mb-4 text-center text-warning">🌟 Top Performers (Semester-Wise)</h2>
 
-    {% assign sorted_semesters = site.data.toppers_list | sort: "term" | reverse %}
+    {% assign sorted_semesters = site.data.toppers_list | sort: "term" %}
     
     <!-- Separate odd and even semesters -->
     {% assign odd_semesters = "" | split: "," %}
@@ -157,7 +157,7 @@ title: achievements
     {% assign current_month = 'now' | date: "%m" | plus: 0 %}
 
     {% if current_month >= 1 and current_month <= 6 %}
-        <!-- Jan to June: Show odd semesters first (previous semester) -->
+        <!-- Jan to June: Show odd semesters first (in ascending order) -->
         {% for semester in odd_semesters %}
         <div class="mb-4">
             <h4 class="text-primary">{{ semester.term }}</h4>
@@ -215,7 +215,7 @@ title: achievements
         {% endfor %}
 
     {% else %}
-        <!-- July to December: Show even semesters first (previous semester) -->
+        <!-- July to December: Show even semesters first (in ascending order) -->
         {% for semester in even_semesters %}
         <div class="mb-4">
             <h4 class="text-primary">{{ semester.term }}</h4>
