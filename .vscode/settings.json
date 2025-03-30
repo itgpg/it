@@ -1,16 +1,6 @@
 {
     "liveServer.settings.port": 5501,
     "frontMatter.git.enabled": true,
-    "frontMatter.content.pageFolders": [
-        {
-            "title": "docs",
-            "path": "[[workspace]]/docs"
-        },
-        {
-            "title": "_events",
-            "path": "[[workspace]]/_events"
-        }
-    ],
     "[markdown]": {
     }
 }
