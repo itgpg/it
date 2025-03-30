@@ -1,0 +1,233 @@
+[
+    {
+        "branch": "211",
+        "term": "(211) SEM(1st)",
+        "toppers": [
+            {"rank": 1, "enrollment": "216230316001", "name": "HINGU RUDRA JITESHBHAI", "SPI": 9.74},
+            {"rank": 2, "enrollment": "216230316044", "name": "JADEJA MEETRAJSINH JAGDISH", "SPI": 9.11},
+            {"rank": 3, "enrollment": "216230316064", "name": "MANILAL DEVESHWAR TUSHARHAI", "SPI": 9.05},
+            {"rank": 4, "enrollment": "216230316129", "name": "BANJARA KARTIKEY CHETTRBHAI", "SPI": 8.53},
+            {"rank": 5, "enrollment": "216230316136", "name": "DHOT MEET DHAVAL", "SPI": 8.53}
+        ]
+    },
+    {
+        "branch": "211",
+        "term": "(211) SEM(3rd)",
+        "toppers": [
+            {"rank": 1, "enrollment": "206230316139", "name": "UPADHYAY DHARMIK MUKUNDBHAI", "SPI": 9.07},
+            {"rank": 2, "enrollment": "206230316006", "name": "PATEL MANGLAM MUKESHKUMA", "SPI": 8.90},
+            {"rank": 3, "enrollment": "206230316012", "name": "JADANI NANDANKUMAR DINESH", "SPI": 8.57},
+            {"rank": 4, "enrollment": "206230316080", "name": "PANCHAL HETMUKAR BHAVESHKI", "SPI": 8.57},
+            {"rank": 5, "enrollment": "206230316015", "name": "LATHYA RUSHABH PRAVINBHAI", "SPI": 8.43}
+        ]
+    },
+    {
+        "branch": "211",
+        "term": "(211) SEM(5th)",
+        "toppers": [
+            {"rank": 1, "enrollment": "196230316071", "name": "NAVYA SAHIL Dharmandirabhai", "SPI": 9.66},
+            {"rank": 2, "enrollment": "196230316124", "name": "RATHOD HANSHUMAN MANSIN", "SPI": 9.66},
+            {"rank": 3, "enrollment": "196230316002", "name": "AROLIYA JASH VIJAYBHAI", "SPI": 9.56},
+            {"rank": 4, "enrollment": "196230316123", "name": "RANA HARSH SHAILESHKUMAR", "SPI": 9.56},
+            {"rank": 5, "enrollment": "196230316042", "name": "JAGANI ISHAN JIGNESHKUMAR", "SPI": 9.44}
+        ]
+    },
+    {
+        "branch": "212",
+        "term": "(212) SEM(2nd)",
+        "toppers": [
+            {"rank": 1, "enrollment": "216230316044", "name": "JADEJA MEETRAJSINH JAGDISH", "SPI": 9.68},
+            {"rank": 2, "enrollment": "216230316001", "name": "HINGU RUDRA JITESHBHAI", "SPI": 9.50},
+            {"rank": 3, "enrollment": "216230316030", "name": "Kirtan Jaypushtha Patel", "SPI": 9.27},
+            {"rank": 4, "enrollment": "216230316043", "name": "Bundela Heml Krushalbaib", "SPI": 9.14},
+            {"rank": 5, "enrollment": "216230316016", "name": "CHAUDHARI RAJ SUNIL", "SPI": 8.73}
+        ]
+    },
+    {
+        "branch": "212",
+        "term": "(212) SEM(4th)",
+        "toppers": [
+            {"rank": 1, "enrollment": "206230316107", "name": "KANSARA HITANSH NITINKUMAR", "SPI": 9.41},
+            {"rank": 2, "enrollment": "206230316139", "name": "UPADHYAY DHARMIK MUKUNDBHAI", "SPI": 9.38},
+            {"rank": 3, "enrollment": "206230316138", "name": "PAWAR MITESH MANURAMJI", "SPI": 9.22},
+            {"rank": 4, "enrollment": "206230316161", "name": "SONI DIVYAM PRAKASHBHAI", "SPI": 9.19},
+            {"rank": 5, "enrollment": "206230316006", "name": "PATEL MANGLAM MUKESHKUMA", "SPI": 9.06}
+        ]
+    },
+    {
+        "branch": "212",
+        "term": "(212) SEM(6th)",
+        "toppers": [
+            {"rank": 1, "enrollment": "196230316002", "name": "AROLIYA JASH VIJAYBHAI", "SPI": 10.00},
+            {"rank": 1, "enrollment": "196230316071", "name": "NAVYA SAHIL Dharmandirabhai", "SPI": 10.00},
+            {"rank": 1, "enrollment": "196230316124", "name": "RATHOD HANSHUMAN MANSIN", "SPI": 10.00},
+            {"rank": 4, "enrollment": "196230316016", "name": "JANI PREET SHAILESHKUMAR", "SPI": 9.58},
+            {"rank": 4, "enrollment": "196230316191", "name": "MODI UTSAV NARESHRAJKUMAR", "SPI": 9.58}
+        ]
+    },
+    {
+        "branch": "221",
+        "term": "(221) SEM(1st)",
+        "toppers": [
+            {"rank": 1, "enrollment": "226230316016", "name": "BHAVAR HELI JIGNESHKUMAR", "SPI": 9.42},
+            {"rank": 2, "enrollment": "226230316157", "name": "PATEL YASH RAKESHKUMAR", "SPI": 9.37},
+            {"rank": 3, "enrollment": "226230316198", "name": "SHARMA RUSHI PARESHBHAI", "SPI": 9.21},
+            {"rank": 4, "enrollment": "226230316137", "name": "PATEL MANN VASANTBHAI", "SPI": 9.00},
+            {"rank": 4, "enrollment": "226230316166", "name": "PRAJAPATI ABHI DILIPKUMAR", "SPI": 9.00}
+        ]
+    },
+    {
+        "branch": "221",
+        "term": "(221) SEM(3rd)",
+        "toppers": [
+            {"rank": 1, "enrollment": "216230316001", "name": "HINGU RUDRA JITESHBHAI", "SPI": 9.81},
+            {"rank": 2, "enrollment": "216230316016", "name": "CHAUDHARI RAJ SUNIL", "SPI": 9.62},
+            {"rank": 3, "enrollment": "216230316044", "name": "JADEJA MEETRAJSINH JAGDISH", "SPI": 9.57},
+            {"rank": 4, "enrollment": "216230316064", "name": "Manilal Deveshwar Tusharbhai", "SPI": 9.19},
+            {"rank": 5, "enrollment": "216230316019", "name": "Samar Nitesh Chauhan", "SPI": 9.19}
+        ]
+    },
+    {
+        "branch": "221",
+        "term": "(221) SEM(5th)",
+        "toppers": [
+            {"rank": 1, "enrollment": "206230316161", "name": "SONI DIVYAM PRAKASHBHAI", "SPI": 9.78},
+            {"rank": 2, "enrollment": "206230316048", "name": "SUTHAR MAYANK RAJENDRAKUMAR", "SPI": 9.56},
+            {"rank": 3, "enrollment": "206230316015", "name": "LATHYA RUSHABH PRAVINBHAI", "SPI": 9.34},
+            {"rank": 4, "enrollment": "206230316016", "name": "JANI PREET SHAILESHKUMAR", "SPI": 9.34},
+            {"rank": 5, "enrollment": "206230316040", "name": "Parasna parth manishbhai", "SPI": 9.22}
+        ]
+    },
+    {
+        "branch": "222",
+        "term": "(222) SEM(2nd)",
+        "toppers": [
+            {"rank": 1, "enrollment": "236230316161", "name": "RABALE HITESHBHAI CHAGANDHA", "SPI": 9.00},
+            {"rank": 2, "enrollment": "236230316143", "name": "PATEL VRAJ BHOLABHAI", "SPI": 8.86},
+            {"rank": 3, "enrollment": "236230316133", "name": "PATEL KRISHIKUMAR MAHESHKUMAR", "SPI": 8.86},
+            {"rank": 4, "enrollment": "236230316098", "name": "PARMAR KATHYU PRIVANK", "SPI": 8.45},
+            {"rank": 5, "enrollment": "236230316168", "name": "SHAH DEV MITTAL", "SPI": 8.23}
+        ]
+    },
+    {
+        "branch": "222",
+        "term": "(222) SEM(4th)",
+        "toppers": [
+            {"rank": 1, "enrollment": "226230316127", "name": "PATEL KRINA VIPULKUMAR", "SPI": 9.47},
+            {"rank": 2, "enrollment": "226230316198", "name": "SHARMA KUSHI PARESHBHAI", "SPI": 9.21},
+            {"rank": 3, "enrollment": "226230316002", "name": "AGARWAL KARAN NARESHRAJA", "SPI": 9.00},
+            {"rank": 3, "enrollment": "226230316091", "name": "PANCHAL JAIMIN RAKESHKUMAR", "SPI": 9.00},
+            {"rank": 5, "enrollment": "226230316214", "name": "TIKE MANIKUMAR UMESH", "SPI": 8.95}
+        ]
+    },
+    {
+        "branch": "222",
+        "term": "(222) SEM(6th)",
+        "toppers": [
+            {"rank": 1, "enrollment": "206230316161", "name": "SONI DIVYAM PRAKASHBHAI", "SPI": 10.00},
+            {"rank": 1, "enrollment": "196230316071", "name": "NAVYA SAHIL Dharmandirabhai", "SPI": 10.00},
+            {"rank": 1, "enrollment": "196230316124", "name": "RATHOD HANSHUMAN MANSIN", "SPI": 10.00},
+            {"rank": 4, "enrollment": "206230316016", "name": "JANI PREET SHAILESHKUMAR", "SPI": 9.58},
+            {"rank": 4, "enrollment": "206230316191", "name": "MODI UTSAV NARESHRAJKUMAR", "SPI": 9.58}
+        ]
+    },
+    {
+        "branch": "231",
+        "term": "(231) SEM(1st)",
+        "toppers": [
+            {"rank": 1, "enrollment": "236230316161", "name": "RABALE HITESHBHAI CHAGANDHA", "SPI": 8.95},
+            {"rank": 2, "enrollment": "236230316085", "name": "PANCHAL ANITH HARESHKUMAR", "SPI": 8.89},
+            {"rank": 3, "enrollment": "236230316223", "name": "JADUNUYA MITSA CHETANBHAI", "SPI": 8.84},
+            {"rank": 4, "enrollment": "236230316186", "name": "SHAH DEV MITTAL", "SPI": 8.68},
+            {"rank": 5, "enrollment": "236230316143", "name": "PATEL VRAJ BHOLABHAI", "SPI": 8.58}
+        ]
+    },
+    {
+        "branch": "231",
+        "term": "(231) SEM(3rd)",
+        "toppers": [
+            {"rank": 1, "enrollment": "226230316168", "name": "PRAJAPATI BHARGAV ALPESHBHAI", "SPI": 9.48},
+            {"rank": 2, "enrollment": "226230316198", "name": "SHARMA KUSHI PARESHBHAI", "SPI": 9.29},
+            {"rank": 3, "enrollment": "226230316016", "name": "BHAVAR HELI JIGNESHKUMAR", "SPI": 9.05},
+            {"rank": 4, "enrollment": "226230316157", "name": "PATEL YASH RAKESHKUMAR", "SPI": 9.00},
+            {"rank": 5, "enrollment": "226230316091", "name": "PANCHAL JAIMIN RAKESHKUMAR", "SPI": 8.95}
+        ]
+    },
+    {
+        "branch": "231",
+        "term": "(231) SEM(5th)",
+        "toppers": [
+            {"rank": 1, "enrollment": "216230316001", "name": "HINGU RUDRA JITESHBHAI", "SPI": 9.80},
+            {"rank": 2, "enrollment": "216230316016", "name": "CHAUDHARI RAJ SUNIL", "SPI": 9.80},
+            {"rank": 3, "enrollment": "216230316044", "name": "JADEJA MEETRAJSINH JAGDISH", "SPI": 9.65},
+            {"rank": 4, "enrollment": "216230316030", "name": "Kirtan Jaypushtha Patel", "SPI": 9.30},
+            {"rank": 5, "enrollment": "216230316136", "name": "Dhot Meet Dhaval", "SPI": 9.30}
+        ]
+    },
+    {
+        "branch": "232",
+        "term": "(232) SEM(2nd)",
+        "toppers": [
+            {"rank": 1, "enrollment": "236230316161", "name": "RABALE HITESHBHAI CHAGANDHA", "SPI": 9.00},
+            {"rank": 2, "enrollment": "236230316143", "name": "PATEL VRAJ BHOLABHAI", "SPI": 8.86},
+            {"rank": 3, "enrollment": "236230316133", "name": "PATEL KRISHIKUMAR MAHESHKUMAR", "SPI": 8.86},
+            {"rank": 4, "enrollment": "236230316098", "name": "PARMAR KATHYU PRIVANK", "SPI": 8.45},
+            {"rank": 5, "enrollment": "236230316168", "name": "SHAH DEV MITTAL", "SPI": 8.23}
+        ]
+    },
+    {
+        "branch": "232",
+        "term": "(232) SEM(4th)",
+        "toppers": [
+            {"rank": 1, "enrollment": "226230316127", "name": "PATEL KRINA VIPULKUMAR", "SPI": 9.47},
+            {"rank": 2, "enrollment": "226230316198", "name": "SHARMA KUSHI PARESHBHAI", "SPI": 9.21},
+            {"rank": 3, "enrollment": "226230316002", "name": "AGARWAL KARAN NARESHRAJA", "SPI": 9.00},
+            {"rank": 3, "enrollment": "226230316091", "name": "PANCHAL JAIMIN RAKESHKUMAR", "SPI": 9.00},
+            {"rank": 5, "enrollment": "226230316214", "name": "TIKE MANIKUMAR UMESH", "SPI": 8.95}
+        ]
+    },
+    {
+        "branch": "232",
+        "term": "(232) SEM(6th)",
+        "toppers": [
+            {"rank": 1, "enrollment": "216230316044", "name": "JADEJA MEETRAJSINH JAGDISH", "SPI": 10.00},
+            {"rank": 2, "enrollment": "216230316001", "name": "HINGU RUDRA JITESHBHAI", "SPI": 9.68},
+            {"rank": 3, "enrollment": "216230316016", "name": "CHAUDHARI RAJ SUNIL", "SPI": 9.47},
+            {"rank": 4, "enrollment": "216230316136", "name": "Dhot Meet Dhaval", "SPI": 9.21},
+            {"rank": 5, "enrollment": "216230316171", "name": "PRAJAPATI AVIKUMAR SATISHBHAI", "SPI": 9.16}
+        ]
+    },
+    {
+        "branch": "241",
+        "term": "(241) SEM(1st)",
+        "toppers": [
+            {"enrollment": "246230316006", "name": "BANKAR AYUSHI AVINASH", "SPI": 9.33},
+            {"enrollment": "246230316058", "name": "HIMANSHU CHANDANANI", "SPI": 9.10},
+            {"enrollment": "246230316223", "name": "JADUNUYA MITSA CHETANBHAI", "SPI": 8.84},
+            {"enrollment": "246230316154", "name": "PRAJAPATI DEVARSH BHARATBHAI", "SPI": 8.52},
+            {"enrollment": "246230316167", "name": "RAMI PAYANMKUMAR VIPULKUMAR", "SPI": 8.24}
+        ]
+    },
+    {
+        "branch": "241",
+        "term": "(241) SEM(3rd)",
+        "toppers": [
+            {"enrollment": "236230316143", "name": "PATEL VRAJ BHOLABHAI", "SPI": 9.76},
+            {"enrollment": "236230316161", "name": "RABALE HITESHBHAI CHAGANDHA", "SPI": 9.62},
+            {"enrollment": "236230316223", "name": "JADUNUYA MITSA CHETANBHAI", "SPI": 9.52},
+            {"enrollment": "236230316044", "name": "GAUDISHA RAVINDERKUMAR", "SPI": 9.24},
+            {"enrollment": "236230316098", "name": "PARMAR KATHYU PRIVANK", "SPI": 9.14}
+        ]
+    },
+    {
+        "branch": "241",
+        "term": "(241) SEM(5th)",
+        "toppers": [
+            {"enrollment": "226230316080", "name": "MODI KRISHI MANISHKUMAR", "SPI": 9.15},
+            {"enrollment": "226230316127", "name": "PATEL KRINA VIPULKUMAR", "SPI": 9.05},
+            {"enrollment": "226230316107", "name": "KANSARA HITANSH NITINKUMAR", "SPI": 9.00},
+            {"enrollment": "226230316174", "name": "PRAJAPATI NIKUL HARSHADBHAI", "SPI": 8.90},
+            {"enrollment": "226230316168", "name": "PRAJAPATI BHARGAV ALPESHBHAI", "SPI": 8.85}
+        ]
+    }
+]

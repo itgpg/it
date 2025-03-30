@@ -1,6 +1,9 @@
 .
 ├── Gemfile
 ├── _config.yml
+├── _data
+│   ├── developers.yml
+│   └── toppers_list.json
 ├── _events
 │   ├── 2023-fullstack.md
 │   ├── 2023-ml-python.md
@@ -30,12 +33,16 @@
 │   │   ├── newsletters.css
 │   │   └── pages
 │   │       ├── academic-calendar.css
+│   │       ├── contributors.css
 │   │       ├── events.css
 │   │       ├── faculty-development.css
 │   │       ├── faculty.css
 │   │       ├── home.css
 │   │       └── study-materials.css
 │   ├── images
+│   │   ├── Mahi & Sweetu (1).png
+│   │   ├── aayush_pfp.jpeg
+│   │   ├── divya_pfp.jpeg
 │   │   ├── gpg-logo-mini.png
 │   │   └── gpg-logo.png
 │   └── js
@@ -49,8 +56,8 @@
 │       ├── main.js
 │       ├── pages
 │       │   ├── academic-calendar.js
+│       │   ├── contributors.js
 │       │   ├── events.js
-│       │   ├── faculty-development.js
 │       │   ├── faculty.js
 │       │   ├── newsletter.js
 │       │   └── study-materials.js
@@ -64,6 +71,8 @@
 │   │   └── index.html
 │   └── industrial-visit
 │       └── index.html
+├── contributors
+│   └── index.html
 ├── docs
 │   ├── DOCS.md
 │   └── README.md
@@ -87,4 +96,4 @@
 │       └── index.html
 └── tree.txt
 
-30 directories, 58 files
+32 directories, 65 files
