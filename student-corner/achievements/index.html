@@ -135,161 +135,52 @@ title: achievements
 
 <!-- END: NBA Update - Student Achievements, Certifications & Placements -->
 
-<!-- NEW: Top Performers Section (Dynamic Ordering Based on Time of Year) -->
+<!-- NEW: Top Performers Section (Manual Ordering) -->
 <section class="container my-5 p-4 bg-white border rounded shadow-sm">
     <h2 class="mb-4 text-center text-warning">🌟 Top Performers (Semester-Wise)</h2>
 
-    {% assign sorted_semesters = site.data.toppers_list | sort: "term" %}
-
-    <!-- Separate odd and even semesters -->
-    {% assign odd_semesters = "" | split: "," %}
-    {% assign even_semesters = "" | split: "," %}
-    
-    {% for semester in sorted_semesters %}
-        {% assign sem_number = semester.term | slice: -1, 1 | plus: 0 %}
-        {% if sem_number | modulo: 2 == 1 %}
-            {% assign odd_semesters = odd_semesters | push: semester %}
-        {% else %}
-            {% assign even_semesters = even_semesters | push: semester %}
-        {% endif %}
-    {% endfor %}
+    {% assign sorted_semesters = site.data.toppers_list %}
 
     {% assign current_month = 'now' | date: "%m" | plus: 0 %}
 
     {% if current_month >= 1 and current_month <= 6 %}
-        <!-- Jan to June: Show odd semesters first in order (1 → 3 → 5), then even (2 → 4 → 6) -->
-        {% for target_sem in "1,3,5" | split: "," %}
-            {% for semester in odd_semesters %}
-                {% assign sem_number = semester.term | slice: -1, 1 %}
-                {% if sem_number == target_sem %}
-                    <div class="mb-4">
-                        <h4 class="text-primary">{{ semester.term }}</h4>
-                        <div class="table-responsive">
-                            <table class="table table-striped table-bordered table-hover">
-                                <thead class="table-dark">
-                                    <tr>
-                                        <th>Rank</th>
-                                        <th>Enrollment</th>
-                                        <th>Name</th>
-                                        <th>SPI</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {% for topper in semester.toppers %}
-                                    <tr>
-                                        <td>{{ topper.rank }}</td>
-                                        <td>{{ topper.enrollment }}</td>
-                                        <td><strong>{{ topper.name }}</strong></td>
-                                        <td>{{ topper.SPI }}</td>
-                                    </tr>
-                                    {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                {% endif %}
-            {% endfor %}
-        {% endfor %}
-
-        {% for target_sem in "2,4,6" | split: "," %}
-            {% for semester in even_semesters %}
-                {% assign sem_number = semester.term | slice: -1, 1 %}
-                {% if sem_number == target_sem %}
-                    <div class="mb-4">
-                        <h4 class="text-primary">{{ semester.term }}</h4>
-                        <div class="table-responsive">
-                            <table class="table table-striped table-bordered table-hover">
-                                <thead class="table-dark">
-                                    <tr>
-                                        <th>Rank</th>
-                                        <th>Enrollment</th>
-                                        <th>Name</th>
-                                        <th>SPI</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {% for topper in semester.toppers %}
-                                    <tr>
-                                        <td>{{ topper.rank }}</td>
-                                        <td>{{ topper.enrollment }}</td>
-                                        <td><strong>{{ topper.name }}</strong></td>
-                                        <td>{{ topper.SPI }}</td>
-                                    </tr>
-                                    {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                {% endif %}
-            {% endfor %}
-        {% endfor %}
-
+        <!-- Jan to June: Show Odd Results First (1 → 3 → 5), then Even (2 → 4 → 6) -->
+        {% assign manual_order = "1,3,5,2,4,6" | split: "," %}
     {% else %}
-        <!-- July to December: Show even semesters first in order (2 → 4 → 6), then odd (1 → 3 → 5) -->
-        {% for target_sem in "2,4,6" | split: "," %}
-            {% for semester in even_semesters %}
-                {% assign sem_number = semester.term | slice: -1, 1 %}
-                {% if sem_number == target_sem %}
-                    <div class="mb-4">
-                        <h4 class="text-primary">{{ semester.term }}</h4>
-                        <div class="table-responsive">
-                            <table class="table table-striped table-bordered table-hover">
-                                <thead class="table-dark">
-                                    <tr>
-                                        <th>Rank</th>
-                                        <th>Enrollment</th>
-                                        <th>Name</th>
-                                        <th>SPI</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {% for topper in semester.toppers %}
-                                    <tr>
-                                        <td>{{ topper.rank }}</td>
-                                        <td>{{ topper.enrollment }}</td>
-                                        <td><strong>{{ topper.name }}</strong></td>
-                                        <td>{{ topper.SPI }}</td>
-                                    </tr>
-                                    {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                {% endif %}
-            {% endfor %}
-        {% endfor %}
-
-        {% for target_sem in "1,3,5" | split: "," %}
-            {% for semester in odd_semesters %}
-                {% assign sem_number = semester.term | slice: -1, 1 %}
-                {% if sem_number == target_sem %}
-                    <div class="mb-4">
-                        <h4 class="text-primary">{{ semester.term }}</h4>
-                        <div class="table-responsive">
-                            <table class="table table-striped table-bordered table-hover">
-                                <thead class="table-dark">
-                                    <tr>
-                                        <th>Rank</th>
-                                        <th>Enrollment</th>
-                                        <th>Name</th>
-                                        <th>SPI</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {% for topper in semester.toppers %}
-                                    <tr>
-                                        <td>{{ topper.rank }}</td>
-                                        <td>{{ topper.enrollment }}</td>
-                                        <td><strong>{{ topper.name }}</strong></td>
-                                        <td>{{ topper.SPI }}</td>
-                                    </tr>
-                                    {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                {% endif %}
-            {% endfor %}
-        {% endfor %}
+        <!-- July to Dec: Show Even Results First (2 → 4 → 6), then Odd (1 → 3 → 5) -->
+        {% assign manual_order = "2,4,6,1,3,5" | split: "," %}
     {% endif %}
+
+    {% for target_sem in manual_order %}
+        {% for semester in sorted_semesters %}
+            {% assign sem_number = semester.term | slice: -1, 1 %}
+            {% if sem_number == target_sem %}
+                <div class="mb-4">
+                    <h4 class="text-primary">{{ semester.term }}</h4>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Enrollment</th>
+                                    <th>Name</th>
+                                    <th>SPI</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for topper in semester.toppers %}
+                                <tr>
+                                    <td>{{ topper.rank }}</td>
+                                    <td>{{ topper.enrollment }}</td>
+                                    <td><strong>{{ topper.name }}</strong></td>
+                                    <td>{{ topper.SPI }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
 </section>
