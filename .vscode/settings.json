@@ -1,7 +1,16 @@
 {
     "liveServer.settings.port": 5501,
-    "frontMatter.framework.id": "jekyll",
-    "frontMatter.content.publicFolder": "assets",
-    "frontMatter.preview.host": "http://localhost:4000",
-    "frontMatter.git.enabled": true
+    "frontMatter.git.enabled": true,
+    "frontMatter.content.pageFolders": [
+        {
+            "title": "docs",
+            "path": "[[workspace]]/docs"
+        },
+        {
+            "title": "_events",
+            "path": "[[workspace]]/_events"
+        }
+    ],
+    "[markdown]": {
+    }
 }
