@@ -137,7 +137,50 @@ title: achievements
 
     {% assign sorted_semesters = site.data.toppers_list | sort: "term" | reverse %}
     
+    <!-- Separate odd and even semesters -->
+    {% assign odd_semesters = "" | split: "," %}
+    {% assign even_semesters = "" | split: "," %}
+    
     {% for semester in sorted_semesters %}
+        {% assign sem_number = semester.term | slice: -1, 1 | plus: 0 %}
+        {% if sem_number | modulo: 2 == 1 %}
+            {% assign odd_semesters = odd_semesters | push: semester %}
+        {% else %}
+            {% assign even_semesters = even_semesters | push: semester %}
+        {% endif %}
+    {% endfor %}
+
+    <!-- Display odd semesters first -->
+    {% for semester in odd_semesters %}
+    <div class="mb-4">
+        <h4 class="text-primary">{{ semester.term }}</h4>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Rank</th>
+                        <th>Enrollment</th>
+                        <th>Name</th>
+                        <th>SPI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for topper in semester.toppers %}
+                    <tr>
+                        <td>{{ topper.rank }}</td>
+                        <td>{{ topper.enrollment }}</td>
+                        <td><strong>{{ topper.name }}</strong></td>
+                        <td>{{ topper.SPI }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endfor %}
+
+    <!-- Display even semesters after odd semesters -->
+    {% for semester in even_semesters %}
     <div class="mb-4">
         <h4 class="text-primary">{{ semester.term }}</h4>
         <div class="table-responsive">
