@@ -1,0 +1,18 @@
+current directory: /media/legion/secondary/github-projects/it/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+/usr/bin/ruby3.3 -I/usr/lib/ruby/vendor_ruby extconf.rb
+creating Makefile
+
+current directory: /media/legion/secondary/github-projects/it/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250330-12018-xsz1bu sitelibdir\=./.gem.20250330-12018-xsz1bu clean
+
+current directory: /media/legion/secondary/github-projects/it/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250330-12018-xsz1bu sitelibdir\=./.gem.20250330-12018-xsz1bu
+compiling cparse.c
+linking shared-object racc/cparse.so
+
+current directory: /media/legion/secondary/github-projects/it/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250330-12018-xsz1bu sitelibdir\=./.gem.20250330-12018-xsz1bu install
+/usr/bin/install -c -m 0755 cparse.so ./.gem.20250330-12018-xsz1bu/racc
+
+current directory: /media/legion/secondary/github-projects/it/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250330-12018-xsz1bu sitelibdir\=./.gem.20250330-12018-xsz1bu clean
