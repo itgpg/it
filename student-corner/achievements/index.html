@@ -135,7 +135,9 @@ title: achievements
 <section class="container my-5 p-4 bg-white border rounded shadow-sm">
     <h2 class="mb-4 text-center text-warning">🌟 Top Performers (Semester-Wise)</h2>
 
-    {% for semester in site.data.toppers_list %}
+    {% assign sorted_semesters = site.data.toppers_list | sort: "term" | reverse %}
+    
+    {% for semester in sorted_semesters %}
     <div class="mb-4">
         <h4 class="text-primary">{{ semester.term }}</h4>
         <div class="table-responsive">
@@ -163,5 +165,6 @@ title: achievements
     </div>
     {% endfor %}
 </section>
+
 
 <!-- END: NBA Update - Student Achievements, Certifications & Placements -->
