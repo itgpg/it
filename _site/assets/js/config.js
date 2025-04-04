@@ -1,0 +1,48 @@
+const CONFIG = {
+    API_KEY: 'AIzaSyBd34cP4KHFKN0WyNNiqhlQ2HSM8j2tD_E', // Replace with your actual API key
+    FOLDER_IDS: {
+        python: '1SPAJ_Azd-kVEc7l7rrerpmeQOeZJO2Xw',
+        it: '1QvTM_Z80mrP7dTu9g9-dgGOdgtSzid-c',
+        maths: '1xIFEVMpiB2wZvJL3KVRQKEdcecfUskLs',
+        cse: '1O7ToNX0DIfhrB3K1ytSbPBxm8GhMNpqR',
+        ech: '1JM5fS8mss8ViwNaO7sLpn4QF5btEX9WB',
+        syllabusS2: '1qzlAm8Zi9RC11iwD2V2T0uU_8DMSlemE',
+        newsletters: '14OT-O9JooQKzKxxL2bhLUUZkdB3MOSf8',
+        faculty_development: '1yB9N4DKyGc3AL1EhGiPTgtpyPOlq8cvV' // New entry
+    },
+    PLAYLIST_IDS: {
+        python: 'PL5hA7O8RI2bPOSoX7l8zZIIuDQrc9b9wO',
+        advPython: 'PL5hA7O8RI2bMd6FrVKDz-VhKXNVezg_Ly',
+        it: 'PLZ3xYAWT5a-nskfWOvHd_Fvh4RZsedu7G',
+        networking: 'PL5hA7O8RI2bMBGjSduDQRYUCrNViAEee1',
+        enginnering_maths: 'PLs6nv4Vuoj-szyhRqc8PcTFTdFzDIJrfj',
+        FSD:'PLWPirh4EWFpG2b1L3CL-OAPYcM25jLjXH',
+        // Semester 3
+        data_structures: 'PLWKjhJtqVAbleDe3_ZA8h3AO2rXar-q2V', // Data Structures - Full Course Using C and C++
+        linux_operating_system: 'PLWKjhJtqVAbnupwRFOq9zGOWjdvPRtCmO', // Linux Operating System - Crash Course for Beginners
+        database_management: 'PLWKjhJtqVAbm5dir5TLEy2aZQMG7Jc3XB', // SQL Tutorial - Full Database Course for Beginners
+        fundamentals_of_software_development: 'PLWKjhJtqVAbm7h1x3g8Yt7k7pXT3a7V7h', // Software Development Course for Beginners
+        // Semester 4
+        object_oriented_programming_java: 'PLWKjhJtqVAbnklGh3XzZ4E8Jw9P9K2A1D', // Java Programming: Solving Problems with Software
+        fundamentals_of_machine_learning: 'PLWKjhJtqVAbm3m1QXg7EoSxKXWwRg8Zpq', // Machine Learning for Beginners
+        web_development_php: 'PLWKjhJtqVAbmGQoa6lN6a1xNq7kjP9B2h', // PHP Programming Language Tutorial - Full Course
+        // Semester 5
+        foundation_ai_ml: 'PLWKjhJtqVAbm3m1QXg7EoSxKXWwRg8Zpq', // Machine Learning for Beginners
+        mobile_computing_networks: 'PLWKjhJtqVAbnupwRFOq9zGOWjdvPRtCmO', // Linux Operating System - Crash Course for Beginners
+        advanced_java_programming: 'PLWKjhJtqVAbnklGh3XzZ4E8Jw9P9K2A1D', // Java Programming: Solving Problems with Software
+        // Semester 6
+        mobile_application_development: 'PLWKjhJtqVAbk3cFkeP2lQ6K6J9Z1nVU2q', // Android Development for Beginners - Full Course
+        cyber_security_digital_forensics: 'PLWKjhJtqVAbm3m1QXg7EoSxKXWwRg8Zpq', // Cyber Security Course for Beginners
+        cloud_data_center_technologies: 'PLWKjhJtqVAbm7h1x3g8Yt7k7pXT3a7V7h', // Cloud Computing Full Course
+        foundation_blockchain: 'PLWKjhJtqVAbm7h1x3g8Yt7k7pXT3a7V7h', // Blockchain Full Course
+        software_development: 'PLWKjhJtqVAbm7h1x3g8Yt7k7pXT3a7V7h', // Software Development Course for Beginners
+        // Add other playlist IDs as needed
+            
+    }
+};
+window.CONFIG = {
+    API_KEY: "AIzaSyBd34cP4KHFKN0WyNNiqhlQ2HSM8j2tD_E", // ✅ Ensure this key is correct
+    FOLDER_IDS: {
+        academic_calendar: "16a58BgCLN8h0SnGxjnYFGDdkfWqcuS49"
+    }
+};

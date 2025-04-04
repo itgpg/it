@@ -1,0 +1,212 @@
+/* ============================= */
+/* General Styling */
+/* ============================= */
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* ============================= */
+/* Header Section */
+/* ============================= */
+
+.contributors-header {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: white;
+    border-radius: 0 0 50% 50% / 5%;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contributors-header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+.contributors-header p {
+    font-size: 1.2rem;
+}
+
+/* ============================= */
+/* Section Styling */
+/* ============================= */
+
+.contributors-section {
+    margin: 60px auto;
+    max-width: 1100px;
+    text-align: center;
+}
+
+/* ============================= */
+/* Newsletter Team Styling */
+/* ============================= */
+
+.newsletter-team {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.newsletter-team img {
+    width: 280px;
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.team-info {
+    max-width: 400px;
+}
+
+.team-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.team-info p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* ============================= */
+/* Developer Cards Styling */
+/* ============================= */
+
+.developers {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.developer-card {
+    background: linear-gradient(135deg, #f9f9f9, #ffffff);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    width: 280px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.developer-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.developer-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid #007bff;
+}
+
+.developer-card h3 {
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+}
+
+.developer-card p {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* ============================= */
+/* Social Links - Improved Styling */
+/* ============================= */
+
+.social-links {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #007bff;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.social-links a:hover {
+    background: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Adding Specific Colors for Each Platform */
+.social-links a.github {
+    background: #24292e;
+}
+
+.social-links a.github:hover {
+    background: #1a1e22;
+}
+
+.social-links a.linkedin {
+    background: #0077b5;
+}
+
+.social-links a.linkedin:hover {
+    background: #005582;
+}
+
+.social-links a.website {
+    background: #6c757d;
+}
+
+.social-links a.website:hover {
+    background: #4e545a;
+}
+
+/* ============================= */
+/* Icon Styling */
+/* ============================= */
+
+.social-links a i {
+    font-size: 1rem;
+}
+
+
+
+/* ============================= */
+/* Animations */
+/* ============================= */
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contributors-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.contributors-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
