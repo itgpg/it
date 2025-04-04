@@ -16,6 +16,7 @@ const CONFIG = {
         it: 'PLZ3xYAWT5a-nskfWOvHd_Fvh4RZsedu7G',
         networking: 'PL5hA7O8RI2bMBGjSduDQRYUCrNViAEee1',
         enginnering_maths: 'PLs6nv4Vuoj-szyhRqc8PcTFTdFzDIJrfj',
+        gtu_maths_2 :'PLLfoR5ZJ0A_4ushGMb__Kvsk3ffqlrIr3',
         FSD:'PLWPirh4EWFpG2b1L3CL-OAPYcM25jLjXH',
         // Semester 3
         data_structures: 'PLWKjhJtqVAbleDe3_ZA8h3AO2rXar-q2V', // Data Structures - Full Course Using C and C++

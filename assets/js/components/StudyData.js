@@ -57,9 +57,13 @@ class StudyData {
                 },
                 'Applied Mathematics': {
                     modules: [{ 
-                        name: 'Applied Mathematics Playlist', 
+                        name: ' Tutorial book Playlist', 
                         playlistId: CONFIG.PLAYLIST_IDS.enginnering_maths 
-                    }]
+                    },
+                {
+                    name:'Playlist by gtu',
+                    playlistId: CONFIG.PLAYLIST_IDS.gtu_maths_2
+                }]
                 },
                 'FSD': {
                     modules: [{ 
