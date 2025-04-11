@@ -1,6 +1,10 @@
 .
 ├── Gemfile
+├── Gemfile.lock
 ├── _config.yml
+├── _data
+│   ├── developers.yml
+│   └── toppers_list.json
 ├── _events
 │   ├── 2023-fullstack.md
 │   ├── 2023-ml-python.md
@@ -9,7 +13,8 @@
 │   ├── 2024-generative-ai.md
 │   ├── 2024-linux-shell.md
 │   ├── 2024-startup-contribution.mD
-│   └── 2025-discovering-ai.md
+│   ├── 2025-discovering-ai.md
+│   └── 2025-visit-to-vidhan-sabha-of-gujarat.md
 ├── _includes
 │   └── components
 │       ├── footer.html
@@ -17,6 +22,99 @@
 ├── _layouts
 │   ├── default.html
 │   └── event.html
+├── _site
+│   ├── assets
+│   │   ├── css
+│   │   │   ├── components
+│   │   │   │   ├── footer.css
+│   │   │   │   ├── hero.css
+│   │   │   │   └── navbar.css
+│   │   │   ├── main.css
+│   │   │   ├── newsletters.css
+│   │   │   └── pages
+│   │   │       ├── academic-calendar.css
+│   │   │       ├── contributors.css
+│   │   │       ├── events.css
+│   │   │       ├── faculty-development.css
+│   │   │       ├── faculty.css
+│   │   │       ├── home.css
+│   │   │       └── study-materials.css
+│   │   ├── images
+│   │   │   ├── Mahi & Sweetu (1).png
+│   │   │   ├── aayush_pfp.jpeg
+│   │   │   ├── divya_pfp.jpeg
+│   │   │   ├── gpg-logo-mini.png
+│   │   │   └── gpg-logo.png
+│   │   └── js
+│   │       ├── components
+│   │       │   ├── StudyData.js
+│   │       │   ├── UIManager.js
+│   │       │   ├── YouTubeHandler.js
+│   │       │   └── hero.js
+│   │       ├── config.js
+│   │       ├── events.js
+│   │       ├── main.js
+│   │       ├── pages
+│   │       │   ├── academic-calendar.js
+│   │       │   ├── contributors.js
+│   │       │   ├── events.js
+│   │       │   ├── faculty.js
+│   │       │   ├── newsletter.js
+│   │       │   └── study-materials.js
+│   │       └── utils.js
+│   ├── co-curricular
+│   │   ├── events
+│   │   │   └── index.html
+│   │   ├── expert-lecture
+│   │   │   └── index.html
+│   │   ├── faculty-development
+│   │   │   └── index.html
+│   │   └── industrial-visit
+│   │       └── index.html
+│   ├── contributors
+│   │   └── index.html
+│   ├── docs
+│   │   ├── DOCS.md
+│   │   └── README.md
+│   ├── events
+│   │   ├── 2023-fullstack
+│   │   │   └── index.html
+│   │   ├── 2023-ml-python
+│   │   │   └── index.html
+│   │   ├── 2024-bootstrap
+│   │   │   └── index.html
+│   │   ├── 2024-ethical-hacking
+│   │   │   └── index.html
+│   │   ├── 2024-generative-ai
+│   │   │   └── index.html
+│   │   ├── 2024-linux-shell
+│   │   │   └── index.html
+│   │   ├── 2024-startup-contribution
+│   │   │   └── index.html
+│   │   ├── 2025-discovering-ai
+│   │   │   └── index.html
+│   │   └── 2025-visit-to-vidhan-sabha-of-gujarat
+│   │       └── index.html
+│   ├── events.html
+│   ├── faculty
+│   │   ├── faculty-achievements
+│   │   │   └── index.html
+│   │   └── faculty-info
+│   │       └── index.html
+│   ├── frontmatter.json
+│   ├── index.html
+│   ├── newsletter
+│   │   └── index.html
+│   ├── robots.txt
+│   ├── sitemap.xml
+│   ├── student-corner
+│   │   ├── academic-calendar
+│   │   │   └── index.html
+│   │   ├── achievements
+│   │   │   └── index.html
+│   │   └── study-material
+│   │       └── index.html
+│   └── tree.txt
 ├── accreditation
 │   ├── nba-2006
 │   └── nba-2022
@@ -30,12 +128,16 @@
 │   │   ├── newsletters.css
 │   │   └── pages
 │   │       ├── academic-calendar.css
+│   │       ├── contributors.css
 │   │       ├── events.css
 │   │       ├── faculty-development.css
 │   │       ├── faculty.css
 │   │       ├── home.css
 │   │       └── study-materials.css
 │   ├── images
+│   │   ├── Mahi & Sweetu (1).png
+│   │   ├── aayush_pfp.jpeg
+│   │   ├── divya_pfp.jpeg
 │   │   ├── gpg-logo-mini.png
 │   │   └── gpg-logo.png
 │   └── js
@@ -49,8 +151,8 @@
 │       ├── main.js
 │       ├── pages
 │       │   ├── academic-calendar.js
+│       │   ├── contributors.js
 │       │   ├── events.js
-│       │   ├── faculty-development.js
 │       │   ├── faculty.js
 │       │   ├── newsletter.js
 │       │   └── study-materials.js
@@ -64,6 +166,8 @@
 │   │   └── index.html
 │   └── industrial-visit
 │       └── index.html
+├── contributors
+│   └── index.html
 ├── docs
 │   ├── DOCS.md
 │   └── README.md
@@ -73,6 +177,7 @@
 │   │   └── index.html
 │   └── faculty-info
 │       └── index.html
+├── frontmatter.json
 ├── index.html
 ├── newsletter
 │   └── index.html
@@ -87,4 +192,4 @@
 │       └── index.html
 └── tree.txt
 
-30 directories, 58 files
+66 directories, 127 files
