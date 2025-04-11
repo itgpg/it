@@ -57,15 +57,26 @@ class StudyData {
                 },
                 'Applied Mathematics': {
                     modules: [{ 
-                        name: 'Applied Mathematics Playlist', 
+                        name: ' Tutorial book Playlist', 
                         playlistId: CONFIG.PLAYLIST_IDS.enginnering_maths 
-                    }]
+                    },
+                {
+                    name:'Playlist by gtu',
+                    playlistId: CONFIG.PLAYLIST_IDS.gtu_maths_2
+                }]
                 },
                 'FSD': {
                     modules: [{ 
                         name: 'fundamental of software development', 
                         playlistId: CONFIG.PLAYLIST_IDS.FSD
                     }]
+                },
+                'PYQ': { 
+                    modules: [
+                        { name: 'Advance Python', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Advance_python}`] },
+                        { name: 'Applied Maths ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Applied_maths}`] },
+                        { name: 'Modern physics', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Modern_physics}`] }
+                    ] 
                 }
             },
             semester3: {
