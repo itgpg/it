@@ -17,7 +17,7 @@ custom_js:
 <!-- Structured Data for Course Materials -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@context": "https://schema.org", 
   "@type": "Course",
   "name": "Information Technology Diploma",
   "description": "Study materials and resources for Information Technology diploma program",
@@ -53,42 +53,42 @@ custom_js:
                     <i class="fas fa-book"></i>
                 </div>
                 <h3>Semester 1</h3>
-                <span class="subject-count">3 Subjects</span>
+<span class="subject-count"></span>
             </div>
 <div class="semester-card" data-semester="semester2" id="semester2">
                 <div class="card-icon">
                     <i class="fas fa-book-open"></i>
                 </div>
                 <h3>Semester 2</h3>
-                <span class="subject-count">4 Subjects</span>
+<span class="subject-count"></span>
             </div>
             <div class="semester-card" data-semester="semester3">
                 <div class="card-icon">
                     <i class="fas fa-book-open"></i>
                 </div>
                 <h3>Semester 3</h3>
-                <span class="subject-count">5 Subjects</span>
+                <span class="subject-count"></span>
             </div>
             <div class="semester-card" data-semester="semester4">
                 <div class="card-icon">
                     <i class="fas fa-book-open"></i>
                 </div>
                 <h3>Semester 4</h3>
-                <span class="subject-count">4 Subjects</span>
+                <span class="subject-count"></span>
             </div>
             <div class="semester-card" data-semester="semester5">
                 <div class="card-icon">
                     <i class="fas fa-book-open"></i>
                 </div>
                 <h3>Semester 5</h3>
-                <span class="subject-count">6 Subjects</span>
+                <span class="subject-count"></span>
             </div>
             <div class="semester-card" data-semester="semester6">
                 <div class="card-icon">
                     <i class="fas fa-book-open"></i>
                 </div>
                 <h3>Semester 6</h3>
-                <span class="subject-count">4 Subjects</span>
+                <span class="subject-count"></span>
             </div>
             <!-- Add other semesters similarly -->
         </div>
@@ -114,6 +114,10 @@ custom_js:
 </section>
 
 <script>
+    </div>
+</section>
+
+<script>
     console.log('StudyData loaded:', !!StudyData);
     console.log('YouTubeHandler loaded:', !!YouTubeHandler);
     console.log('UIManager loaded:', !!UIManager);
@@ -122,6 +126,19 @@ custom_js:
 
 <!-- Debug Script -->
 <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const studyData = new StudyData();
+        const semesterCards = document.querySelectorAll('.semester-card');
+
+        semesterCards.forEach(card => {
+            const semester = card.dataset.semester;
+            const subjectCount = studyData.getSubjects(semester).length;
+            const subjectCountSpan = card.querySelector('.subject-count');
+            if (subjectCountSpan) {
+                subjectCountSpan.textContent = `${subjectCount} Subjects`;
+            }
+        });
+    });
     document.addEventListener('DOMContentLoaded', () => {
         console.log('Page loaded');
         // Add click event logging

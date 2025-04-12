@@ -11,8 +11,21 @@ const CONFIG = {
         faculty_development: '1yB9N4DKyGc3AL1EhGiPTgtpyPOlq8cvV' ,// New entry,
         Advance_python: '1SFSqASzR03MrKZ3neQFjxjBIhJVb6nUx',
         Applied_maths: '1TkyPmBgF9atrblZhIDwMcgKOB36FQTKN',
-        Modern_physics :'1KCKauTNQ8hyW-kj1sj-DPn1Zr9t_DpbC'
+        Modern_physics :'1KCKauTNQ8hyW-kj1sj-DPn1Zr9t_DpbC',
+        
+        Notes:{
+                Applied_maths:'1RI3gfrwmR-Muj8qujj2Wv_0mawZKDXxg',
+                english :{
+                    ES : '1ZxIE4Tjnsbl_VgnLY1b_4oy0dyjdzGWR',
+                    MPH : '1Cv82eCraCbeyBT_NVyMxDkOG2GB--E4G',
+                },
+                gujarati :{
+                    ES : '1PQ-HRdCURvnMYp274nppNjBvPGoMQSYf',
+                    MPH : '1w8mJkjdhw7lHJ_qxzMeuPGpRvWFL5QdL',
+                },
+            }
     },
+
     PLAYLIST_IDS: {
         python: 'PL5hA7O8RI2bPOSoX7l8zZIIuDQrc9b9wO',
         advPython: 'PL5hA7O8RI2bMd6FrVKDz-VhKXNVezg_Ly',
