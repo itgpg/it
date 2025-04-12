@@ -1,7 +1,7 @@
 ---
-title: "Full Stack Development - Opportunities"
-date: 2023-09-21
-excerpt: "Full Stack development tech talk by Mr. Jigar Thakkar."
+title: Full Stack Development - Opportunities
+date: 2025-03-30T11:51:20.672Z
+excerpt: Full Stack development tech talk by Mr. Jigar Thakkar.
 layout: event
 ---
 

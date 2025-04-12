@@ -1,100 +1,69 @@
-/* General Styling */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
+/* Faculty Development Page - GPG IT Styling */
+
+.faculty-container {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.8;
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Navbar */
-.navbar {
-    background-color: #333;
-    color: white;
-    padding: 15px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
+.faculty-container h2 {
+  color: #003366;
+  border-bottom: 3px solid #0056b3;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
 }
 
-.navbar h1 {
-    margin: 0;
-    font-size: 1.5rem;
+.faculty-container h3 {
+  color: #0056b3;
+  margin-top: 25px;
 }
 
-/* Main Content */
-.main-container {
-    padding: 80px 20px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+.faculty-container p {
+  font-size: 16px;
+  color: #333;
 }
 
-/* Breadcrumb */
-#breadcrumb {
-    font-size: 14px;
-    margin-bottom: 15px;
+.faculty-container ul {
+  padding-left: 20px;
+  margin-top: 10px;
 }
 
-#breadcrumb span {
-    cursor: pointer;
-    color: #007bff;
+.faculty-container ul li {
+  font-size: 16px;
+  background: #e6f0ff;
+  margin: 5px 0;
+  padding: 8px 12px;
+  border-left: 4px solid #0056b3;
+  border-radius: 5px;
+  list-style: none;
 }
 
-#breadcrumb span:hover {
-    text-decoration: underline;
+.faculty-container strong {
+  color: #003366;
 }
 
-/* File Container */
-#file-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
+.faculty-container .section {
+  background: white;
+  padding: 15px 20px;
+  margin-bottom: 25px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-/* File Items */
-.file-item {
-    background: white;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.file-link {
-    text-decoration: none;
-    color: #333;
-    display: block;
-    padding: 10px;
-}
-
-.file-image,
-.file-pdf {
-    display: block;
-    font-size: 40px;
-    margin-bottom: 10px;
-}
-
-.file-image::before {
-    content: "🖼";
-}
-
-.file-pdf::before {
-    content: "📄";
-}
-
-/* Back Button */
-#back-btn {
-    display: none;
-    background: #007bff;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-#back-btn:hover {
-    background: #0056b3;
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  .faculty-container {
+      padding: 15px;
+  }
+  .faculty-container h2 {
+      font-size: 22px;
+  }
+  .faculty-container h3 {
+      font-size: 18px;
+  }
 }
