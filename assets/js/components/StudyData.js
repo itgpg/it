@@ -67,7 +67,7 @@ class StudyData {
                     {
                         name :'notes-chapter-wise',
                         files : [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Notes.Applied_maths}`],
-                        description :'These notes are not given by the official teachers of Goverment PolyTechnic gandhinagar'
+                        description :'Please note: These materials have not been provided or officially endorsed by the faculty of Government Polytechnic Gandhinagar.'
                     }]
                 },
                 'FSD': {
@@ -80,24 +80,24 @@ class StudyData {
                     modules: [{ 
                         name: 'Notes-english', 
                         files:[`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Notes.english.ES}`],
-                        description :'These notes are not given by the official teachers of Goverment PolyTechnic gandhinagar'
+                        description :'Please note: These materials have not been provided or officially endorsed by the faculty of Government Polytechnic Gandhinagar.'
                     },
                 {
                         name: 'Notes-Gujarati',
                         files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Notes.gujarati.ES}`],
-                        description :'These notes are not given by the official teachers of Goverment PolyTechnic gandhinagar'
+                        description :'Please note: These materials have not been provided or officially endorsed by the faculty of Government Polytechnic Gandhinagar.'
                 }]
                 },
                 'Modern-physics':{
                     modules: [{ 
                         name: 'Notes-english', 
                         files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Notes.english.MPH}`],
-                        description :'These notes are not given by the official teachers of Goverment PolyTechnic gandhinagar'
+                        description :'Please note: These materials have not been provided or officially endorsed by the faculty of Government Polytechnic Gandhinagar.'
                     },
                 {
                         name: 'Notes-Gujarati',
                         files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Notes.gujarati.MPH}`],
-                        description :'These notes are not given by the official teachers of Goverment PolyTechnic gandhinagar'
+                        description :'Please note: These materials have not been provided or officially endorsed by the faculty of Government Polytechnic Gandhinagar.'
                     }]
                 },
                 'PYQ': { 
