@@ -89,6 +89,7 @@ class StudyMaterialsPage {
         });
 
         const modules = this.studyData.getModules(this.currentSemester, subject);
+        // Ensure modules include the description field
         this.ui.renderModules(modules);
     }
 

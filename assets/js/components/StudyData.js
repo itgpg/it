@@ -66,7 +66,8 @@ class StudyData {
                     },
                     {
                         name :'notes-chapter-wise',
-                        files : [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Notes.Applied_maths}`]
+                        files : [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Notes.Applied_maths}`],
+                        description :'These notes are not given by the official teachers of Goverment PolyTechnic gandhinagar'
                     }]
                 },
                 'FSD': {
@@ -78,21 +79,25 @@ class StudyData {
                 'Enviromental-sustainability': {
                     modules: [{ 
                         name: 'Notes-english', 
-                        files:[`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Notes.english.ES}`]
+                        files:[`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Notes.english.ES}`],
+                        description :'These notes are not given by the official teachers of Goverment PolyTechnic gandhinagar'
                     },
                 {
                         name: 'Notes-Gujarati',
-                        files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Notes.gujarati.ES}`]
+                        files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Notes.gujarati.ES}`],
+                        description :'These notes are not given by the official teachers of Goverment PolyTechnic gandhinagar'
                 }]
                 },
                 'Modern-physics':{
                     modules: [{ 
                         name: 'Notes-english', 
-                        files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Notes.english.MPH}`]
+                        files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Notes.english.MPH}`],
+                        description :'These notes are not given by the official teachers of Goverment PolyTechnic gandhinagar'
                     },
                 {
                         name: 'Notes-Gujarati',
-                        files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Notes.gujarati.MPH}`]
+                        files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Notes.gujarati.MPH}`],
+                        description :'These notes are not given by the official teachers of Goverment PolyTechnic gandhinagar'
                     }]
                 },
                 'PYQ': { 

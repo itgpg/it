@@ -29,6 +29,7 @@ class UIManager {
         return `
             <div class="module-card" data-module="${module.name}">
                 <h3 class="module-title">${module.name}</h3>
+                ${module.description ? `<p class="module-description">${module.description}</p>` : ''}
                 <div class="module-type">
                     <i class="fas fa-${isPlaylist ? 'play-circle' : 'file-alt'}"></i>
                     <span>${isPlaylist ? 'Video Playlist' : 'Study Material'}</span>
@@ -56,5 +57,4 @@ class UIManager {
         }
     }
 
-    // ... rest of the methods remain same
-} 
+}
