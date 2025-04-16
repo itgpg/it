@@ -114,9 +114,11 @@ This is the official website for the **Information Technology Department** of **
 
 ---
 
-## ✨ Solo Developer Contribution
+## ✨ DUO Developer Contribution
 The entire project — from ideation, coding, UI/UX flow, data structures, and deployment — is **single-handedly developed by:**
 ### 👨‍💻 **Aayush Bankar**
+and 
+### ** Divya Darji **
 
 **Key Areas:**
 - 📐 Complete web design and layout planning
