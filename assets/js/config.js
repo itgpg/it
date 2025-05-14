@@ -10,7 +10,8 @@ const CONFIG = {
         newsletters: '14OT-O9JooQKzKxxL2bhLUUZkdB3MOSf8',
         faculty_development: '1yB9N4DKyGc3AL1EhGiPTgtpyPOlq8cvV' ,// New entry,
         Advance_python: '1SFSqASzR03MrKZ3neQFjxjBIhJVb6nUx',
-        Applied_maths: '1TkyPmBgF9atrblZhIDwMcgKOB36FQTKN',
+        enginnering_maths_s2: '1TkyPmBgF9atrblZhIDwMcgKOB36FQTKN',
+        Applied_maths_s2: '1P0h7Ol7a1et5I2E3hWuMb5nW1mKrpIFA',
         Modern_physics :'1KCKauTNQ8hyW-kj1sj-DPn1Zr9t_DpbC',
         
         Notes:{

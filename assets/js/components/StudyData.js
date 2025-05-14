@@ -103,7 +103,8 @@ class StudyData {
                 'PYQ': { 
                     modules: [
                         { name: 'Advance Python', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Advance_python}`] },
-                        { name: 'Applied Maths ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Applied_maths}`] },
+                        { name: 'enginnering  Maths ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.enginnering_maths_s2}`] },
+                        { name: 'applied  Maths ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Applied_maths_s2}`] },
                         { name: 'Modern physics', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Modern_physics}`] }
                     ] 
                 }
