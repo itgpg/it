@@ -49,6 +49,14 @@ class StudyData {
                         files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.syllabusS2}`] 
                     }] 
                 },
+                'PYQ': { 
+                    modules: [
+                        { name: 'Advance Python', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Advance_python}`] },
+                        { name: 'enginnering  Maths ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.enginnering_maths_s2}`] },
+                        { name: 'applied  Maths ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Applied_maths_s2}`] },
+                        { name: 'Modern physics', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Modern_physics}`] }
+                    ] 
+                },
                 'Advanced Python': { 
                     modules: [{ 
                         name: 'Advanced Python Playlist', 
@@ -99,14 +107,6 @@ class StudyData {
                         files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Notes.gujarati.MPH}`],
                         description :'Please note: These materials have not been provided or officially endorsed by the faculty of Government Polytechnic Gandhinagar.'
                     }]
-                },
-                'PYQ': { 
-                    modules: [
-                        { name: 'Advance Python', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Advance_python}`] },
-                        { name: 'enginnering  Maths ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.enginnering_maths_s2}`] },
-                        { name: 'applied  Maths ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Applied_maths_s2}`] },
-                        { name: 'Modern physics', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Modern_physics}`] }
-                    ] 
                 }
             },
             semester3: {
