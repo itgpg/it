@@ -13,6 +13,7 @@ const CONFIG = {
         enginnering_maths_s2: '1TkyPmBgF9atrblZhIDwMcgKOB36FQTKN',
         Applied_maths_s2: '1P0h7Ol7a1et5I2E3hWuMb5nW1mKrpIFA',
         Modern_physics :'1KCKauTNQ8hyW-kj1sj-DPn1Zr9t_DpbC',
+        enviromental_sustainability :'1_a51gVjCkEhuLYsXRjHHRqi1VTyEkvYH' ,
         
         Notes:{
                 Applied_maths:'1RI3gfrwmR-Muj8qujj2Wv_0mawZKDXxg',
