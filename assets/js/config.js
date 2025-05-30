@@ -27,7 +27,11 @@ const CONFIG = {
                 },
             }
     },
-
+    yr_2024_2025:{
+        sem3:{
+            syllabs: '1Izl-nki7BKIvRyFJ_efTL18CiVKEzvyV'
+        }
+    },
     PLAYLIST_IDS: {
         python: 'PL5hA7O8RI2bPOSoX7l8zZIIuDQrc9b9wO',
         advPython: 'PL5hA7O8RI2bMd6FrVKDz-VhKXNVezg_Ly',
@@ -65,3 +69,4 @@ window.CONFIG = {
         academic_calendar: "16a58BgCLN8h0SnGxjnYFGDdkfWqcuS49"
     }
 };
+

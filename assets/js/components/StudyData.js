@@ -111,30 +111,13 @@ class StudyData {
                 }
             },
             semester3: {
-                'Data Structures': { 
+                'syllabus': {
                     modules: [{ 
-                        name: 'Data Structures Playlist', 
-                        playlistId: CONFIG.PLAYLIST_IDS.data_structures 
+                        name: 'Syllabus', 
+                        files: [`https://drive.google.com/drive/folders/${CONFIG.yr_2024_2025.sem3.syllabs}`] ,
+                        description: 'Syllabus for Semester 3 for year 2024-2025 , recheck the syllabus through the gtu official sources  before exam as it may change.'
                     }] 
                 },
-                'Object-Oriented Programming (OOP)': { 
-                    modules: [{ 
-                        name: 'OOP in C++ Playlist', 
-                        playlistId: CONFIG.PLAYLIST_IDS.oop 
-                    }] 
-                },
-                'Database Management Systems (DBMS)': {
-                    modules: [{ 
-                        name: 'DBMS Playlist', 
-                        playlistId: CONFIG.PLAYLIST_IDS.dbms 
-                    }]
-                },
-                'Operating Systems': {
-                    modules: [{ 
-                        name: 'Operating Systems Playlist', 
-                        playlistId: CONFIG.PLAYLIST_IDS.os 
-                    }]
-                }
             },
             semester4: {
                 'Software Engineering': { 
@@ -166,7 +149,7 @@ class StudyData {
                 'Machine Learning': { 
                     modules: [{ 
                         name: 'Machine Learning Playlist', 
-                        playlistId: CONFIG.PLAYLIST_IDS.machine_learning 
+                        playlistId: CONFIG.PLAYLIST_IDS.fundamentals_of_machine_learning
                     }] 
                 },
                 'Artificial Intelligence': { 
