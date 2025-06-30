@@ -6,7 +6,7 @@ const CONFIG = {
         maths: '1xIFEVMpiB2wZvJL3KVRQKEdcecfUskLs',
         cse: '1O7ToNX0DIfhrB3K1ytSbPBxm8GhMNpqR',
         ech: '1JM5fS8mss8ViwNaO7sLpn4QF5btEX9WB',
-        syllabusS2: '1qzlAm8Zi9RC11iwD2V2T0uU_8DMSlemE',
+        syllabusS2: '1qzlAm 8Zi9RC11iwD2V2T0uU_8DMSlemE',
         newsletters: '14OT-O9JooQKzKxxL2bhLUUZkdB3MOSf8',
         faculty_development: '1yB9N4DKyGc3AL1EhGiPTgtpyPOlq8cvV' ,// New entry,
         Advance_python: '1SFSqASzR03MrKZ3neQFjxjBIhJVb6nUx',
@@ -41,10 +41,7 @@ const CONFIG = {
         gtu_maths_2 :'PLLfoR5ZJ0A_4ushGMb__Kvsk3ffqlrIr3',
         FSD:'PLWPirh4EWFpG2b1L3CL-OAPYcM25jLjXH',
         // Semester 3
-        data_structures: 'PLWKjhJtqVAbleDe3_ZA8h3AO2rXar-q2V', // Data Structures - Full Course Using C and C++
-        linux_operating_system: 'PLWKjhJtqVAbnupwRFOq9zGOWjdvPRtCmO', // Linux Operating System - Crash Course for Beginners
-        database_management: 'PLWKjhJtqVAbm5dir5TLEy2aZQMG7Jc3XB', // SQL Tutorial - Full Database Course for Beginners
-        fundamentals_of_software_development: 'PLWKjhJtqVAbm7h1x3g8Yt7k7pXT3a7V7h', // Software Development Course for Beginners
+        digital_markteting : "PL5hA7O8RI2bMH9S_-KbY7K-73hlrAyTHF",
         // Semester 4
         object_oriented_programming_java: 'PLWKjhJtqVAbnklGh3XzZ4E8Jw9P9K2A1D', // Java Programming: Solving Problems with Software
         fundamentals_of_machine_learning: 'PLWKjhJtqVAbm3m1QXg7EoSxKXWwRg8Zpq', // Machine Learning for Beginners

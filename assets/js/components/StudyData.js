@@ -118,6 +118,13 @@ class StudyData {
                         description: 'Syllabus for Semester 3 for year 2024-2025 , recheck the syllabus through the gtu official sources  before exam as it may change.'
                     }] 
                 },
+                'Digital - Marketing': {
+                    modules: [{ 
+                        name: 'Video Playlist', 
+                        playlistId : CONFIG.PLAYLIST_IDS.digital_markteting,
+                        description: 'Digital Marketing Playlist for Semester 3, 2024-2025'
+                    }] 
+                },
             },
             semester4: {
                 'Software Engineering': { 
@@ -210,5 +217,9 @@ class StudyData {
 
     getModules(semester, subject) {
         return this.data[semester]?.[subject]?.modules || [];
+    }
+
+    cleanFilename(filename) {
+        return filename.replace(/^\.pdf|^\.[a-zA-Z]+/, '');
     }
 }
