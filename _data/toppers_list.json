@@ -166,5 +166,14 @@
             {"enrollment": "226230316174", "name": "PRAJAPATI NIKUL HARSHADBHAI", "SPI": 8.90},
             {"enrollment": "226230316168", "name": "PRAJAPATI BHARGAV ALPESHBHAI", "SPI": 8.85}
         ]
+    },
+    {
+        "branch": "2024",
+        "term": "(2024-25) | ( 242) SEM(2st)",
+        "toppers": [
+           {"enrollment": "246230316154","name": "PRAJAPATI DEVARSH BHARATBHAI" , "SPI": 8.70},
+           {"enrollment": "246230316167","name": "RAMI PAVANKUMAR VIPULKUMAR" , "SPI": 8.45},
+           {"enrollment": "246230316091","name": "NAKUM HARDIK BHIKHUBHAI" , "SPI": 8.15}
+        ]
     }
 ]
