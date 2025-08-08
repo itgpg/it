@@ -175,5 +175,27 @@
            {"enrollment": "246230316167","name": "RAMI PAVANKUMAR VIPULKUMAR" , "SPI": 8.45},
            {"enrollment": "246230316091","name": "NAKUM HARDIK BHIKHUBHAI" , "SPI": 8.15}
         ]
-    }
+    },
+    {
+        "branch": "2024",
+        "term": "(2024-25) | ( 242) SEM(4th)",
+        "toppers": [
+           {"enrollment": "236230316143","name": "PATEL VRAJ BHOLABHAI" , "SPI": 9.30},
+           {"enrollment": "236230316015","name": "BHATTI MO.VAZID MO.IDRISHMIYA" , "SPI": 9.11},
+           {"enrollment": "236230316197","name": "SONI JIMMYKUMAR NARESHKUMAR" , "SPI": 9.00},
+           {"enrollment": "236230316223","name": "ZANZRUKIYA MITSA CHETANBHAI" , "SPI": 9.00},
+           {"enrollment": "236230316142","name": "PATEL VISHWA AMRUTBHAI" , "SPI": 8.84}
+        ]
+    },   
+    {
+        "branch": "2024",
+        "term": "(2024-25) | ( 242) SEM(6th)",
+        "toppers": [
+           {"enrollment": "226330316198","name": "SHARMA KUSH PARESHBHAI" , "SPI": 9.74},
+           {"enrollment": "226230316121","name": "PATEL JEELKUMAR DASHARATHBHAI " , "SPI": 9.58},
+           {"enrollment": "226230316137","name": "PATEL MANN VASANTBHAI" , "SPI": 9.47},
+           {"enrollment": "226230316127","name": "PATEL KRINA VIPULKUMAR" , "SPI": 9.42},
+           {"enrollment": "226230316091","name": "PANCHAL JAIMIN RAKESHKUMAR" , "SPI": 9.16}
+        ]
+    } 
 ]

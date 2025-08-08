@@ -83,5 +83,6 @@
       ],
       "fields": []
     }
-  }
+  },
+  "frontMatter.git.enabled": true
 }
