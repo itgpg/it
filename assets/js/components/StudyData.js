@@ -20,12 +20,12 @@ class StudyData {
                         }
                     ] 
                 },
-                'Mathematics 1': {
-                    modules: [{ 
-                        name: 'Mathematics 1 Playlist', 
-                        playlistId: CONFIG.PLAYLIST_IDS.maths 
-                    }]
-                },
+                // 'Mathematics 1': {
+                //     modules: [{ 
+                //         name: 'Mathematics 1 Playlist', 
+                //         playlistId: CONIFG.PLAYLIST_IDS.python
+                //     }]
+                // },
                 'Communication Skills': {
                     modules: [{ 
                         name: 'Communication Skills Resources', 
