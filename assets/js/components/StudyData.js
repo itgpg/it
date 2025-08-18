@@ -20,16 +20,17 @@ class StudyData {
                         }
                     ] 
                 },
-                // 'Mathematics 1': {
-                //     modules: [{ 
-                //         name: 'Mathematics 1 Playlist', 
-                //         playlistId: CONIFG.PLAYLIST_IDS.python
-                //     }]
-                // },
+                'Mathematics 1': {
+                    modules: [{ 
+                        name: 'Mathematics 1 Playlist', 
+                        playlistId: CONFIG.PLAYLIST_IDS.enginnering_maths
+                        // playlistId: '1xIFEVMpiB2wZvJL3KVRQKEdcecfUskLs'
+                    }]
+                },
                 'Communication Skills': {
                     modules: [{ 
                         name: 'Communication Skills Resources', 
-                        files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.communication_skills}`] 
+                        files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.cse}`] 
                     }]
                 },
                 'PYQ': { 
