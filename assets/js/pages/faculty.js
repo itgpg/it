@@ -109,8 +109,12 @@ class FacultyPage {
     }
 
     renderFacultyCard(faculty) {
-        return `
+            return `
             <div class="faculty-card">
+                <div class="faculty-image">
+                    <img src="../../assets/images/faculty_imgs/${faculty.name.toLowerCase().replace(/[ .]/g, '_')}.png" alt="${faculty.name}" 
+                         onerror="this.src='../../assets/images/faculty_imgs/default_png.png'">
+                </div>
                 <div class="faculty-info">
                     <h3 class="faculty-name">${faculty.name}</h3>
                     <p class="faculty-designation">${faculty.designation}</p>
@@ -148,4 +152,4 @@ class FacultyPage {
 document.addEventListener('DOMContentLoaded', () => {
     const facultyPage = new FacultyPage();
     facultyPage.init();
-}); 
+});

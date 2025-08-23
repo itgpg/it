@@ -30,6 +30,19 @@
     border-radius: 12px;
     box-shadow: var(--shadow-sm);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Ensures image corners don't overflow rounded card */
+}
+
+.faculty-image {
+    height: 250px;
+    background: #f1f5f9;
+}
+
+.faculty-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-bottom: 1px solid #e2e8f0;
 }
 
 .faculty-card:hover {
