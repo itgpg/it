@@ -58,7 +58,7 @@ class YouTubeHandler {
         `;
     }
     
-static async function getAllVideos(playlistId) {
+static async getAllVideos(playlistId) {
   let videos = [];
   let pageToken;
   
