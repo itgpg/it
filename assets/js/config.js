@@ -57,6 +57,31 @@ const CONFIG = {
         foundation_blockchain: 'PLWKjhJtqVAbm7h1x3g8Yt7k7pXT3a7V7h', // Blockchain Full Course
         software_development: 'PLWKjhJtqVAbm7h1x3g8Yt7k7pXT3a7V7h', // Software Development Course for Beginners
         // Add other playlist IDs as needed
+
+
+
+
+        debugging:"PLVk47Sxy_0miPj7yUrffk447sDf7_NRM9",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             
     }
 };

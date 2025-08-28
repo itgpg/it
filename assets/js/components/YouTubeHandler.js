@@ -2,7 +2,7 @@ class YouTubeHandler {
     static async fetchPlaylistVideos(playlistId) {
         try {
             const response = await fetch(
-                `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${playlistId}&key=${CONFIG.API_KEY}`
+                `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=60&playlistId=${playlistId}&key=${CONFIG.API_KEY}`
             );
             
             if (!response.ok) {
