@@ -1,8 +1,9 @@
 # 📚 Technical Documentation - IT Department Website (By Aayush Bankar)
 
 ## 👨‍💻 Developer:
-- **Name:** Aayush Bankar
-- **Role:** Solo Developer (Web Developer, Frontend Architect, API Integrator)
+- **Name:** divya darji  
+- **Name:** Aayush Bankar 
+ 
 
 ---
 
@@ -69,4 +70,4 @@ The complete project — from design, development, optimization to deployment �
 ---
 
 ## 📌 Note:
-This project is open-source but requires proper credit to **Aayush Bankar** for any reuse, modification, or deployment.
+This project is open-source but requires proper credit to **Aayush Bankar** and **divya darji** for any reuse, modification, or deployment.
