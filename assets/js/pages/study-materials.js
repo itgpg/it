@@ -104,7 +104,6 @@ class StudyMaterialsPage {
         try {
             if (selectedModule.playlistId) {
                 const videos = await YouTubeHandler.fetchPlaylistVideos(selectedModule.playlistId);
-                // const videos = await YouTubeHandler.getAllVideos(selectedModule.playlistId);
                 const content = videos.map(video => YouTubeHandler.renderVideoCard(video)).join('');
                 this.ui.showMaterials(content);
             } else if (selectedModule.files) {

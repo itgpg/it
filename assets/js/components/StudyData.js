@@ -125,14 +125,15 @@ class StudyData {
                         playlistId : CONFIG.PLAYLIST_IDS.digital_markteting,
                         description: 'Digital Marketing Playlist for Semester 3, 2024-2025'
                     }] 
-                },'debugging':{
-                    modules :[
-                        {
-                            name: 'cideo Playlist',
-                            playlistId : CONFIG.PLAYLIST_IDS.debugging
-                        }
-                    ]
-                }
+                },
+                // 'debugging':{
+                //     modules :[
+                //         {
+                //             name: 'cideo Playlist',
+                //             playlistId : CONFIG.PLAYLIST_IDS.debugging
+                //         }
+                //     ]
+                // }
 
             },
             semester4: {

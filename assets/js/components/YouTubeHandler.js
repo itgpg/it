@@ -66,4 +66,31 @@ class YouTubeHandler {
         `;
     }
 
+    
+// static async getAllVideos(playlistId) {
+//   let videos = [];
+//   let pageToken;
+  
+//   while (true) {
+//     const url = new URL("https://www.googleapis.com/youtube/v3/playlistItems");
+//     url.search = new URLSearchParams({
+//       part: "snippet",
+//       maxResults: "50",
+//       playlistId,
+//       key: CONFIG.API_KEY,
+//       pageToken: pageToken || ""
+//     });
+
+//     const response = await fetch(url);
+//     const data = await response.json();
+
+//     videos.push(...data.items);
+
+//     if (!data.nextPageToken) break;
+//     pageToken = data.nextPageToken;
+//   }
+
+//   return videos;
+// }
+
 } 
