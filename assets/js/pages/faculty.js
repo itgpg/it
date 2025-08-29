@@ -7,6 +7,13 @@ const facultyMembers = [
         shortName:"HRP"
     },
     {
+        name: "Mr. Nareshkumar Dayabhai Sosa",
+        designation: "Lecturer",
+        qualification: "Post. Graduation",
+        email: "ndsosa.gp@gmail.com",
+        shortName:"NDS"
+    },
+    {
         name: "Mr. Vipul Harshadray Punasanwala",
         designation: "Lecturer",
         qualification: "Post Graduation",
@@ -48,13 +55,7 @@ const facultyMembers = [
         email: "ankitdidwania.office@gmail.com",
         shortName:"ASD"
     },
-    {
-        name: "Mr. Nareshkumar Dayabhai Sosa",
-        designation: "Lecturer",
-        qualification: "Post. Graduation",
-        email: "ndsosa.gp@gmail.com",
-        shortName:"NDS"
-    },
+   
     {
         name: "Dr. Keyurbhai Arvindbhai Jani",
         designation: "Lecturer",
