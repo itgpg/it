@@ -58,30 +58,30 @@ class YouTubeHandler {
         `;
     }
     
-static async getAllVideos(playlistId) {
-  let videos = [];
-  let pageToken;
+// static async getAllVideos(playlistId) {
+//   let videos = [];
+//   let pageToken;
   
-  while (true) {
-    const url = new URL("https://www.googleapis.com/youtube/v3/playlistItems");
-    url.search = new URLSearchParams({
-      part: "snippet",
-      maxResults: "50",
-      playlistId,
-      key: CONFIG.API_KEY,
-      pageToken: pageToken || ""
-    });
+//   while (true) {
+//     const url = new URL("https://www.googleapis.com/youtube/v3/playlistItems");
+//     url.search = new URLSearchParams({
+//       part: "snippet",
+//       maxResults: "50",
+//       playlistId,
+//       key: CONFIG.API_KEY,
+//       pageToken: pageToken || ""
+//     });
 
-    const response = await fetch(url);
-    const data = await response.json();
+//     const response = await fetch(url);
+//     const data = await response.json();
 
-    videos.push(...data.items);
+//     videos.push(...data.items);
 
-    if (!data.nextPageToken) break;
-    pageToken = data.nextPageToken;
-  }
+//     if (!data.nextPageToken) break;
+//     pageToken = data.nextPageToken;
+//   }
 
-  return videos;
-}
+//   return videos;
+// }
 
 } 
