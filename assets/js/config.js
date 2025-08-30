@@ -1,20 +1,31 @@
 const CONFIG = {
     API_KEY: 'AIzaSyBd34cP4KHFKN0WyNNiqhlQ2HSM8j2tD_E', // Replace with your actual API key
     FOLDER_IDS: {
-        python: '1SPAJ_Azd-kVEc7l7rrerpmeQOeZJO2Xw',
-        it: '1QvTM_Z80mrP7dTu9g9-dgGOdgtSzid-c',
-        maths: '1xIFEVMpiB2wZvJL3KVRQKEdcecfUskLs',
-        cse: '1O7ToNX0DIfhrB3K1ytSbPBxm8GhMNpqR',
-        ech: '1JM5fS8mss8ViwNaO7sLpn4QF5btEX9WB',
         syllabusS2: '1qzlAm 8Zi9RC11iwD2V2T0uU_8DMSlemE',
         newsletters: '14OT-O9JooQKzKxxL2bhLUUZkdB3MOSf8',
         faculty_development: '1yB9N4DKyGc3AL1EhGiPTgtpyPOlq8cvV' ,// New entry,
-        Advance_python: '1SFSqASzR03MrKZ3neQFjxjBIhJVb6nUx',
-        enginnering_maths_s2: '1TkyPmBgF9atrblZhIDwMcgKOB36FQTKN',
-        Applied_maths_s2: '1P0h7Ol7a1et5I2E3hWuMb5nW1mKrpIFA',
-        Modern_physics :'1KCKauTNQ8hyW-kj1sj-DPn1Zr9t_DpbC',
-        enviromental_sustainability :'1_a51gVjCkEhuLYsXRjHHRqi1VTyEkvYH' ,
         
+        pyq : {
+            sem_1:{
+                python: '1SPAJ_Azd-kVEc7l7rrerpmeQOeZJO2Xw',
+                it: '1QvTM_Z80mrP7dTu9g9-dgGOdgtSzid-c',
+                maths: '1xIFEVMpiB2wZvJL3KVRQKEdcecfUskLs',
+                cse: '1O7ToNX0DIfhrB3K1ytSbPBxm8GhMNpqR',
+                ech: '1JM5fS8mss8ViwNaO7sLpn4QF5btEX9WB',
+                
+            },
+            sem_2:{
+                Advance_python: '1SFSqASzR03MrKZ3neQFjxjBIhJVb6nUx',
+                enginnering_maths_s2: '1TkyPmBgF9atrblZhIDwMcgKOB36FQTKN',
+                Applied_maths_s2: '1P0h7Ol7a1et5I2E3hWuMb5nW1mKrpIFA',
+                Modern_physics :'1KCKauTNQ8hyW-kj1sj-DPn1Zr9t_DpbC',
+                enviromental_sustainability :'1_a51gVjCkEhuLYsXRjHHRqi1VTyEkvYH' ,
+                
+            },
+            sem_3:{
+                
+            }
+        },
         Notes:{
                 Applied_maths:'1RI3gfrwmR-Muj8qujj2Wv_0mawZKDXxg',
                 english :{
@@ -27,6 +38,8 @@ const CONFIG = {
                 },
             }
     },
+
+
     yr_2024_2025:{
         sem3:{
             syllabs: '1Izl-nki7BKIvRyFJ_efTL18CiVKEzvyV'
