@@ -28,11 +28,11 @@ const CONFIG = {
 //   1Epp-_61b6_bCZfW98MBAB0wNwHTBIC48 -> edm
 //    1viHPIpIpI_PswBzAyMMS8QUAsOF1p4Vh  -> oopj
 //     1zkn4Lq-lob58TDgSb0KwSkTBN3VffS_h -> os 
-                dbms: '1sWvegnzI20APrfIt07frmMX3ZXse4MLN',
-                dsp: '1rKihco_dxwB9gB9xKAW96U8WaS9s8SX9',
-                edm: '1Epp-_61b6_bCZfW98MBAB0wNwHTBIC48',
-                oopj: '1viHPIpIpI_PswBzAyMMS8QUAsOF1p4Vh',
-                os: '1zkn4Lq-lob58TDgSb0KwSkTBN3VffS_h'
+                os: '1sWvegnzI20APrfIt07frmMX3ZXse4MLN',
+                dbms: '1rKihco_dxwB9gB9xKAW96U8WaS9s8SX9',
+                dsp: '1Epp-_61b6_bCZfW98MBAB0wNwHTBIC48',
+                edm: '1viHPIpIpI_PswBzAyMMS8QUAsOF1p4Vh',
+                oopj: '1zkn4Lq-lob58TDgSb0KwSkTBN3VffS_h'
                 
 
 

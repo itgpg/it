@@ -126,6 +126,15 @@ class StudyData {
                         description: 'Digital Marketing Playlist for Semester 3, 2024-2025'
                     }] 
                 },
+                'PYQ': { 
+                    modules: [
+                        { name: 'Database management system ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_3.dbms}`] },
+                        { name: 'Data structure with python  ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_3.dsp}`] },
+                        { name: 'operating system ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_3. os}`] },
+                        { name: 'digital marketing', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_3.edm}`] },
+                        { name: 'oopj', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_3.oopj}`] }
+                    ] 
+                }
                 // 'debugging':{
                 //     modules :[
                 //         {
@@ -233,3 +242,5 @@ class StudyData {
         return filename.replace(/^\.pdf|^\.[a-zA-Z]+/, '');
     }
 }
+
+
