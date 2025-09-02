@@ -62,7 +62,7 @@ async function fetchImages(folderId) {
     return [];
   }
   const data = await r.json();
-  console.log(length(data.files))
+  // console.log(length(data.files))
   return Array.isArray(data.files) ? data.files : [];
 }
 
