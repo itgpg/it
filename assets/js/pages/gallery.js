@@ -4,13 +4,13 @@
 console.log("Gallery script loaded");
 
 const apiKey  = 'AIzaSyBd34cP4KHFKN0WyNNiqhlQ2HSM8j2tD_E';
-const folderId = '1-jLcnplBxED5CegDcRmUIC4p2BGa2gu7';
+const folderId = '1vXU0cCwrYplFhmrGLu3MYuf1fVJeylWQ';
 
 // Prefer inserting into #gallery-sections (from your index.html). Fallback to #dynamic-gallery.
-const sectionsRoot =
+const sectionsRoot =                                                                            
   document.getElementById('gallery-sections') ||
   document.getElementById('dynamic-gallery') ||
-  document.body;
+  document.body;                                                                                                                                                                                                  
 
 // ---------- Helpers ---------------------------------------------------------
 
@@ -45,6 +45,7 @@ async function fetchSubfolders(parentId) {
     return [];
   }
   const data = await r.json();
+  // console.log(data)
   return Array.isArray(data.files) ? data.files : [];
 }
 
@@ -61,6 +62,7 @@ async function fetchImages(folderId) {
     return [];
   }
   const data = await r.json();
+  // console.log(length(data.files))
   return Array.isArray(data.files) ? data.files : [];
 }
 
@@ -177,7 +179,7 @@ function initInfiniteScroller(track, speed = 20) {
 function createFolderSection(folderName, folderId, images) {
   const section = document.createElement('section');
   section.className = 'gallery-section';
-  section.style.marginBlock = '24px';
+  section.style.marginBlock = '24px'; 
 
   const title = document.createElement('h2');
   title.textContent = folderName;
