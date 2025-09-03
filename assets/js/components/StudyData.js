@@ -131,8 +131,8 @@ class StudyData {
                         { name: 'Database management system ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_3.dbms}`] },
                         { name: 'Data structure with python  ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_3.dsp}`] },
                         { name: 'operating system ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_3. os}`] },
-                        { name: 'digital marketing', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_3.edm}`] },
-                        { name: 'oopj', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_3.oopj}`] }
+                        // { name: 'digital marketing', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_3.edm}`] },
+                        // { name: 'oopj', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_3.oopj}`] }
                     ] 
                 }
                 // 'debugging':{
