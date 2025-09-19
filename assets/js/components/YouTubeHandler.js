@@ -1,27 +1,35 @@
 class YouTubeHandler {
     static async fetchPlaylistVideos(playlistId) {
+        let allVideos = [];
+        let nextPageToken = "";
+
         try {
-            const response = await fetch(
-                `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=60&playlistId=${playlistId}&key=${CONFIG.API_KEY}`
-            );
-            
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            
-            const data = await response.json();
-            
-            if (!data.items) {
-                console.warn(`No videos found for playlist: ${playlistId}`);
-                return [];
-            }
-            
-            return data.items.map(item => ({
-                title: item.snippet.title,
-                videoId: item.snippet.resourceId.videoId
-            }));
+            do {
+                const response = await fetch(
+                    `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${playlistId}&key=${CONFIG.API_KEY}&pageToken=${nextPageToken}`
+                );
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+
+                if (data.items && data.items.length > 0) {
+                    allVideos = allVideos.concat(
+                        data.items.map(item => ({
+                            title: item.snippet.title,
+                            videoId: item.snippet.resourceId.videoId
+                        }))
+                    );
+                }
+
+                nextPageToken = data.nextPageToken || "";
+            } while (nextPageToken);
+
+            return allVideos;
         } catch (error) {
-            console.error('Error fetching playlist:', error);
+            console.error("Error fetching playlist:", error);
             return [];
         }
     }
@@ -57,4 +65,32 @@ class YouTubeHandler {
             </div>
         `;
     }
+
+    
+// static async getAllVideos(playlistId) {
+//   let videos = [];
+//   let pageToken;
+  
+//   while (true) {
+//     const url = new URL("https://www.googleapis.com/youtube/v3/playlistItems");
+//     url.search = new URLSearchParams({
+//       part: "snippet",
+//       maxResults: "50",
+//       playlistId,
+//       key: CONFIG.API_KEY,
+//       pageToken: pageToken || ""
+//     });
+
+//     const response = await fetch(url);
+//     const data = await response.json();
+
+//     videos.push(...data.items);
+
+//     if (!data.nextPageToken) break;
+//     pageToken = data.nextPageToken;
+//   }
+
+//   return videos;
+// }
+
 } 

@@ -28,3 +28,4 @@ Disallow: /.git/
 Disallow: /.github/
 Disallow: /vendor/
 Disallow: /.bundle/ 
+Disallow: /it/contributors

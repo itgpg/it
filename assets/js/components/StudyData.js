@@ -35,11 +35,11 @@ class StudyData {
                 },
                 'PYQ': { 
                     modules: [
-                        { name: 'CSE PYQ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.cse}`] },
-                        { name: 'Python Programming PYQ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.python}`] },
-                        { name: 'ITS PYQ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.it}`] },
-                        { name: 'ECH PYQ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.ech}`] },
-                        { name: 'Maths PYQ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.maths}`] }
+                        { name: 'CSE PYQ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_1.cse}`] },
+                        { name: 'Python Programming PYQ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_1.python}`] },
+                        { name: 'ITS PYQ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_1.it}`] },
+                        { name: 'ECH PYQ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_1.ech}`] },
+                        { name: 'Maths PYQ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_1.maths}`] }
                     ] 
                 }
             },
@@ -52,11 +52,11 @@ class StudyData {
                 },
                 'PYQ': { 
                     modules: [
-                        { name: 'Advance Python', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Advance_python}`] },
-                        { name: 'enginnering  Maths ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.enginnering_maths_s2}`] },
-                        { name: 'applied  Maths ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Applied_maths_s2}`] },
-                        { name: 'Modern physics', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.Modern_physics}`] },
-                        { name: 'Enviromental Sustainability ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.enviromental_sustainability}`] }
+                        { name: 'Advance Python', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_2.Advance_python}`] },
+                        { name: 'enginnering  Maths ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_2.enginnering_maths_s2}`] },
+                        { name: 'applied  Maths ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_2.Applied_maths_s2}`] },
+                        { name: 'Modern physics', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_2.Modern_physics}`] },
+                        { name: 'Enviromental Sustainability ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_2.enviromental_sustainability}`] }
                     ] 
                 },
                 'Advanced Python': { 
@@ -125,14 +125,24 @@ class StudyData {
                         playlistId : CONFIG.PLAYLIST_IDS.digital_markteting,
                         description: 'Digital Marketing Playlist for Semester 3, 2024-2025'
                     }] 
-                },'debugging':{
-                    modules :[
-                        {
-                            name: 'cideo Playlist',
-                            playlistId : CONFIG.PLAYLIST_IDS.debugging
-                        }
-                    ]
+                },
+                'PYQ': { 
+                    modules: [
+                        { name: 'Database management system ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_3.dbms}`] },
+                        { name: 'Data structure with python  ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_3.dsp}`] },
+                        { name: 'operating system ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_3. os}`] },
+                        // { name: 'digital marketing', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_3.edm}`] },
+                        // { name: 'oopj', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_3.oopj}`] }
+                    ] 
                 }
+                // 'debugging':{
+                //     modules :[
+                //         {
+                //             name: 'cideo Playlist',
+                //             playlistId : CONFIG.PLAYLIST_IDS.debugging
+                //         }
+                //     ]
+                // }
 
             },
             semester4: {
@@ -232,3 +242,5 @@ class StudyData {
         return filename.replace(/^\.pdf|^\.[a-zA-Z]+/, '');
     }
 }
+
+

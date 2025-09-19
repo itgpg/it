@@ -1,8 +1,10 @@
 # 🚀 IT Department Website - Government Polytechnic Gandhinagar (Developed by Aayush Bankar and Divya Darji )
 
-This is the official website for the **Information Technology Department** of **Government Polytechnic Gandhinagar**, developed entirely by **Aayush Bankar and divya Darji **.
 
-🧠 **Developer:** Aayush Bankar   & Divya Darji  
+This is the official website for the **Information Technology Department** of **Government Polytechnic Gandhinagar**, developed entirely by **Aayush Bankar** & **divya darji**.
+
+🧠 **Developer:** Aayush Bankar  & divya darji 
+
 📍 **Location:** Gandhinagar, Gujarat, India  
 📂 **GitHub:** [https://github.com/itgpg/it](https://github.com/itgpg/it)  
 🌐 **Live Site:** [https://itgpg.github.io/it/](https://itgpg.github.io/it/)
@@ -118,7 +120,7 @@ This is the official website for the **Information Technology Department** of **
 The entire project — from ideation, coding, UI/UX flow, data structures, and deployment — is **single-handedly developed by:**
 ### 👨‍💻 **Aayush Bankar**
 and 
-### ** Divya Darji **
+### **Divya Darji**
 
 **Key Areas:**
 - 📐 Complete web design and layout planning

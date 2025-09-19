@@ -11,7 +11,7 @@
           "name": "title",
           "type": "string"
         },
-        {
+        { 
           "title": "Description",
           "name": "description",
           "type": "string"

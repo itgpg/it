@@ -48,6 +48,7 @@ const facultyMembers = [
         email: "ankitdidwania.office@gmail.com",
         shortName:"ASD"
     },
+
     {
         name: "Mr. Nareshkumar Dayabhai Sosa",
         designation: "Lecturer",

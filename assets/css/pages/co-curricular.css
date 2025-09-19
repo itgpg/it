@@ -1,0 +1,183 @@
+/* Co-Curricular Activities Page Styles */
+
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #0d6efd, #6610f2) !important;
+}
+
+.activity-card {
+    transition: all 0.3s ease;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.activity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+.activity-icon {
+    font-size: 3rem;
+    color: #0d6efd;
+    transition: all 0.3s ease;
+}
+
+.activity-card:hover .activity-icon {
+    transform: scale(1.1);
+    color: #6610f2;
+}
+
+.certificate-card {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border: 2px solid #0d6efd !important;
+}
+
+.certificate-card .activity-icon {
+    color: #28a745;
+}
+
+.certificate-card:hover {
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    border-color: #28a745 !important;
+}
+
+.stats-card {
+    background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+    border: 2px solid #ff9800 !important;
+}
+
+.stats-card .activity-icon {
+    color: #ff9800;
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: #0d6efd;
+    transition: all 0.3s ease;
+}
+
+.feature-icon:hover {
+    transform: scale(1.1);
+    color: #6610f2;
+}
+
+/* Button animations */
+.btn {
+    transition: all 0.3s ease;
+    border-radius: 0.5rem;
+    font-weight: 500;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    border: none;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0b5ed7, #5a0fc8);
+}
+
+.btn-outline-primary {
+    border: 2px solid #0d6efd;
+    color: #0d6efd;
+}
+
+.btn-outline-primary:hover {
+    background: #0d6efd;
+    border-color: #0d6efd;
+    color: white;
+}
+
+/* Card hover effects */
+.card {
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .activity-icon {
+        font-size: 2.5rem;
+    }
+    
+    .feature-icon {
+        font-size: 2rem;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .card-body {
+        padding: 1.5rem;
+    }
+}
+
+/* Animation for page load */
+.fade-in {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Staggered animation for cards */
+.activity-card:nth-child(1) { animation-delay: 0.1s; }
+.activity-card:nth-child(2) { animation-delay: 0.2s; }
+.activity-card:nth-child(3) { animation-delay: 0.3s; }
+.activity-card:nth-child(4) { animation-delay: 0.4s; }
+.activity-card:nth-child(5) { animation-delay: 0.5s; }
+.activity-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Gradient text effect */
+.text-gradient {
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Pulse animation for important elements */
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Custom scrollbar for better UX */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #0b5ed7, #5a0fc8);
+}
