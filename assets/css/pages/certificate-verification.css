@@ -221,27 +221,119 @@
     background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
 
-/* Responsive Design */
+/* Responsive Design - Mobile First Approach */
 @media (max-width: 768px) {
     .certificate-icon {
         font-size: 3rem;
     }
     
-    .display-4 {
+    .display-5 {
         font-size: 2rem;
     }
     
+    .lead {
+        font-size: 1rem;
+    }
+    
     .card-body {
-        padding: 1.5rem;
+        padding: 1rem;
+    }
+    
+    /* Stack input group vertically on mobile - more specific selectors */
+    #certificateForm .input-group.input-group-lg {
+        flex-direction: column !important;
+        width: 100%;
+    }
+    
+    #certificateForm .input-group.input-group-lg .input-group-text {
+        border-radius: 0.5rem 0.5rem 0 0 !important;
+        border-right: 2px solid #0d6efd !important;
+        border-bottom: none !important;
+        justify-content: center;
+        min-width: auto;
+        width: 100%;
+    }
+    
+    #certificateForm .input-group.input-group-lg .form-control.form-control-lg {
+        border-radius: 0 0 0.5rem 0.5rem !important;
+        border-top: none !important;
+        border-left: 2px solid #e9ecef !important;
+        min-width: auto;
+        width: 100%;
+    }
+    
+    #certificateForm .input-group.input-group-lg .btn.btn-primary.btn-lg {
+        border-radius: 0.5rem !important;
+        margin-top: 0.5rem;
+        width: 100%;
+        border: 2px solid #0d6efd !important;
     }
     
     .input-group-lg .form-control {
         font-size: 1rem;
+        padding: 0.75rem;
     }
     
     .btn-lg {
         padding: 0.75rem 1.5rem;
         font-size: 1rem;
+    }
+    
+    /* Compact form layout for mobile */
+    #certificateForm .mb-3 {
+        margin-bottom: 0.75rem !important;
+    }
+    
+    #certificateForm .form-label {
+        font-size: 0.9rem;
+        margin-bottom: 0.25rem;
+    }
+    
+    .form-text {
+        font-size: 0.8rem;
+    }
+    
+    .quick-examples {
+        margin-top: 0.5rem;
+    }
+    
+    .quick-examples .badge {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.6rem;
+    }
+    
+    /* Certificate result layout for mobile */
+    #certificateResult .row {
+        flex-direction: column;
+    }
+    
+    #certificateResult .col-md-6 {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+    
+    #certificateResult .col-md-6:last-child {
+        margin-bottom: 0;
+    }
+    
+    /* Button spacing for mobile */
+    .d-grid.gap-2 {
+        gap: 0.75rem !important;
+    }
+    
+    /* Header adjustments */
+    .card-header h4 {
+        font-size: 1.25rem;
+    }
+    
+    /* Loading state adjustments */
+    #loadingState {
+        padding: 2rem 1rem;
+    }
+    
+    #loadingState .spinner-border {
+        width: 2.5rem;
+        height: 2.5rem;
     }
 }
 
