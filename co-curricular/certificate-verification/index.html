@@ -1,0 +1,149 @@
+---
+layout: default
+title: Certificate Verification
+description: "Verify and download your workshop certificates using your certificate ID"
+custom_css: ["/assets/css/pages/certificate-verification.css"]
+custom_js: ["/assets/js/pages/certificate-verification.js"]
+---
+
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+
+      <!-- Header -->
+      <div class="text-center mb-4">
+        <div class="certificate-icon mb-2"><i class="fas fa-certificate"></i></div>
+        <h1 class="display-5 fw-bold text-primary">Certificate Verification</h1>
+        <p class="lead text-muted">Verify and download your workshop certificate using your certificate ID</p>
+      </div>
+
+      <!-- Form Card (state: form) -->
+      <div id="formCard" class="card shadow-lg border-0 mb-4">
+        <div class="card-header bg-primary text-white">
+          <h4 class="mb-0"><i class="fas fa-search me-2"></i>Verify Certificate</h4>
+        </div>
+        <div class="card-body">
+          <form id="certificateForm" class="needs-validation" novalidate>
+            <div class="mb-3">
+              <label for="certificateId" class="form-label fw-semibold">
+                Certificate ID (format: GPGMMYYYYNNN)
+              </label>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text bg-primary text-white">
+                  <i class="fas fa-id-card"></i>
+                </span>
+                <input
+                  type="text"
+                  id="certificateId"
+                  class="form-control form-control-lg"
+                  placeholder="e.g., GPG092025004"
+                  aria-label="Certificate ID"
+                  required
+                  pattern="^GPG\d{2}\d{4}\d{3}$"
+                />
+                <button id="verifyBtn" class="btn btn-primary btn-lg" type="submit">
+                  <i class="fas fa-search me-2"></i>Verify
+                </button>
+              </div>
+              <div class="form-text mt-2">
+                Format: <code>GPG + month(MM) + year(YYYY) + 3-digit id</code>
+              </div>
+              <div class="invalid-feedback" id="certificateError">
+                Please enter a valid Certificate ID: GPGMMYYYYNNN
+              </div>
+            </div>
+
+            <!-- Quick examples -->
+            <div class="quick-examples mt-2">
+              <small class="text-muted">Examples:</small>
+              <div class="d-flex flex-wrap gap-2 mt-2">
+                <span class="badge bg-light text-dark border example-badge">GPG092025001</span>
+                <span class="badge bg-light text-dark border example-badge">GPG092025004</span>
+                <span class="badge bg-light text-dark border example-badge">GPG032025100</span>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Loading State -->
+      <div id="loadingState" class="text-center py-4 d-none">
+        <div class="spinner-border text-primary mb-3" role="status"><span class="visually-hidden">Loading...</span></div>
+        <h5 class="mb-1">Verifying certificate...</h5>
+        <p class="text-muted mb-0">Searching drive for your certificate</p>
+      </div>
+
+      <!-- Certificate Found -->
+      <div id="certificateResult" class="d-none">
+        <div class="card shadow-lg border-0 mb-4">
+          <div class="card-header bg-success text-white">
+            <h4 class="mb-0"><i class="fas fa-check-circle me-2"></i>Certificate Found</h4>
+          </div>
+          <div class="card-body">
+            <div class="row gx-4">
+              <div class="col-md-6">
+                <h6>Details</h6>
+                <ul class="list-unstyled mb-0">
+                  <li><strong>Certificate ID:</strong> <span id="foundCertId"></span></li>
+                  <li><strong>File name:</strong> <span id="workshopName"></span></li>
+                  <li><strong>Last modified:</strong> <span id="workshopDate"></span></li>
+                  <li><strong>Status:</strong> <span class="badge bg-success">Verified</span></li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <h6>Actions</h6>
+                <div class="d-grid gap-2">
+                  <button id="viewBtn" class="btn btn-info">
+                    <i class="fas fa-eye me-2"></i>View Certificate
+                  </button>
+                  <button id="downloadBtn" class="btn btn-primary">
+                    <i class="fas fa-download me-2"></i>Download Now
+                  </button>
+                  <button class="btn btn-outline-secondary try-again-btn">
+                    <i class="fas fa-search me-2"></i>Search Another ID
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate Not Found -->
+      <div id="certificateNotFound" class="d-none">
+        <div class="card shadow-sm border-0 mb-4">
+          <div class="card-header bg-warning text-dark">
+            <h5 class="mb-0"><i class="fas fa-exclamation-triangle me-2"></i>Certificate Not Found</h5>
+          </div>
+          <div class="card-body">
+            <p class="mb-2">We couldn't find a certificate matching that ID in the selected folder structure.</p>
+            <ul>
+              <li>Confirm the Certificate ID is correct</li>
+              <li>Confirm the certificate has been uploaded</li>
+            </ul>
+            <div class="d-grid gap-2 mt-3">
+              <button class="btn btn-primary try-again-btn">Try Again</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Error State -->
+      <div id="errorState" class="d-none">
+        <div class="card shadow-sm border-0 mb-4">
+          <div class="card-header bg-danger text-white">
+            <h5 class="mb-0"><i class="fas fa-times-circle me-2"></i>Verification Error</h5>
+          </div>
+          <div class="card-body">
+            <p class="mb-2">An error occurred while trying to verify your certificate. Check console logs for details.</p>
+            <div class="d-grid gap-2 mt-3">
+              <button class="btn btn-primary try-again-btn">Try Again</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

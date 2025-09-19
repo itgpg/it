@@ -1,0 +1,294 @@
+/* Certificate Verification Page Styles */
+
+.certificate-icon {
+    font-size: 4rem;
+    color: #0d6efd;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.verification-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 2px 10px rgba(40, 167, 69, 0.3);
+}
+
+.verification-badge i {
+    font-size: 1.1rem;
+}
+
+/* Form Styling */
+#certificateForm .input-group {
+    flex-wrap: nowrap;
+}
+
+#certificateForm .form-control {
+    border-radius: 0.5rem;
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+    min-width: 200px; /* Prevent excessive elongation */
+    flex: 1; /* Allow flexible growth */
+}
+
+#certificateForm .form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+    transform: translateY(-1px);
+}
+
+#certificateForm .input-group-text {
+    border-radius: 0.5rem 0 0 0.5rem;
+    border: 2px solid #0d6efd;
+    border-right: none;
+    min-width: 50px; /* Fixed width for icon */
+}
+
+#certificateForm .btn {
+    border-radius: 0 0.5rem 0.5rem 0;
+    border: 2px solid #0d6efd;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+#certificateForm .btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+}
+
+/* Quick Examples */
+.quick-examples .badge {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.quick-examples .badge:hover {
+    background-color: #0d6efd !important;
+    color: white !important;
+    transform: translateY(-1px);
+}
+
+/* Loading State */
+#loadingState .spinner-border {
+    width: 3rem;
+    height: 3rem;
+    border-width: 0.3rem;
+}
+
+/* Certificate Result Cards */
+.card {
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem; /* Add margin to prevent footer overlap */
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card-header {
+    border-radius: 1rem 1rem 0 0 !important;
+    border: none;
+}
+
+.card-body {
+    padding: 1.5rem; /* Reduced padding to make card more compact */
+    overflow: hidden; /* Prevent content overflow */
+}
+
+/* Form card specific styling */
+#formCard .card-body {
+    padding: 1.5rem; /* Compact padding for form card */
+}
+
+/* Ensure proper spacing for the certificate verification page */
+.container.mt-5 {
+    min-height: auto; /* Remove fixed height to prevent stretching */
+    padding-bottom: 2rem; /* Reduced padding at bottom */
+}
+
+/* Compact form layout */
+#certificateForm .mb-3 {
+    margin-bottom: 1rem !important;
+}
+
+#certificateForm .form-label {
+    margin-bottom: 0.5rem;
+}
+
+#certificateForm .form-text {
+    margin-top: 0.5rem;
+}
+
+.quick-examples {
+    margin-top: 0.5rem;
+}
+
+/* Success State */
+#certificateResult .card-header {
+    background: linear-gradient(135deg, #28a745, #20c997) !important;
+}
+
+/* Error States */
+#certificateNotFound .card-header {
+    background: linear-gradient(135deg, #dc3545, #e74c3c) !important;
+}
+
+#errorState .card-header {
+    background: linear-gradient(135deg, #ffc107, #f39c12) !important;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    border: none;
+    box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0b5ed7, #5a0fc8);
+    box-shadow: 0 6px 20px rgba(13, 110, 253, 0.4);
+}
+
+.btn-outline-primary {
+    border: 2px solid #0d6efd;
+    color: #0d6efd;
+}
+
+.btn-outline-primary:hover {
+    background: #0d6efd;
+    border-color: #0d6efd;
+    transform: translateY(-1px);
+}
+
+/* QR Code Modal */
+#qrModal .modal-content {
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+#qrCodeContainer {
+    padding: 1rem;
+    background: white;
+    border-radius: 0.5rem;
+    display: inline-block;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Help Section */
+.help-section {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 1rem;
+}
+
+/* Form Validation */
+.was-validated .form-control:valid {
+    border-color: #28a745;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='m2.3 6.73.94-.94 1.5 1.5 3-3L8.5 3.5 4.5 7.5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.was-validated .form-control:invalid {
+    border-color: #dc3545;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath d='m5.8 4.6 1.4 1.4 1.4-1.4'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .certificate-icon {
+        font-size: 3rem;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .card-body {
+        padding: 1.5rem;
+    }
+    
+    .input-group-lg .form-control {
+        font-size: 1rem;
+    }
+    
+    .btn-lg {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* Animation for state transitions */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Certificate preview styles */
+.certificate-preview {
+    max-width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.certificate-preview:hover {
+    transform: scale(1.02);
+}
+
+/* Loading animation for buttons */
+.btn.loading {
+    position: relative;
+    color: transparent;
+}
+
+.btn.loading::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+    border: 2px solid transparent;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: button-loading-spinner 1s ease infinite;
+}
+
+@keyframes button-loading-spinner {
+    from { transform: rotate(0turn); }
+    to { transform: rotate(1turn); }
+}
