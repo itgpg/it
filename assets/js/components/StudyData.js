@@ -146,30 +146,13 @@ class StudyData {
 
             },
             semester4: {
-                'Software Engineering': { 
+            'syllabus': {
                     modules: [{ 
-                        name: 'Software Engineering Playlist', 
-                        playlistId: CONFIG.PLAYLIST_IDS.software_engineering 
+                        name: 'Syllabus', 
+                        files: [`https://drive.google.com/drive/folders/${CONFIG.yr_2025_2026.sem4.syllabus}`] ,
+                        description: 'Syllabus for Semester 4 for year 2025-2026 , recheck the syllabus through the gtu official sources  before exam as it may change.'
                     }] 
                 },
-                'Computer Networks': { 
-                    modules: [{ 
-                        name: 'Computer Networks Playlist', 
-                        playlistId: CONFIG.PLAYLIST_IDS.computer_networks 
-                    }] 
-                },
-                'Web Development': {
-                    modules: [{ 
-                        name: 'Web Development Playlist', 
-                        playlistId: CONFIG.PLAYLIST_IDS.web_dev 
-                    }]
-                },
-                'Cybersecurity Fundamentals': {
-                    modules: [{ 
-                        name: 'Cybersecurity Basics', 
-                        playlistId: CONFIG.PLAYLIST_IDS.cybersecurity 
-                    }]
-                }
             },
             semester5: {
                 'Machine Learning': { 
