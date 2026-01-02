@@ -1,7 +1,7 @@
 const CONFIG = {
     API_KEY: 'AIzaSyBd34cP4KHFKN0WyNNiqhlQ2HSM8j2tD_E', // Replace with your actual API key
     FOLDER_IDS: {
-        syllabusS2: '1qzlAm 8Zi9RC11iwD2V2T0uU_8DMSlemE',
+        syllabusS2: '1qzlAm8Zi9RC11iwD2V2T0uU_8DMSlemE',
         newsletters: '14OT-O9JooQKzKxxL2bhLUUZkdB3MOSf8',
         faculty_development: '1yB9N4DKyGc3AL1EhGiPTgtpyPOlq8cvV',// New entry,
 
