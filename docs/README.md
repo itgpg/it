@@ -19,6 +19,33 @@ This is the official website for the **Information Technology Department** of **
 ✅ Fully responsive and mobile-friendly  
 ✅ SEO optimized with sitemap and robots.txt  
 
+## 🚀 How to Run Locally
+
+### Prerequisites
+- **Ruby** (version 2.7 or higher)
+- **Bundler** (`gem install bundler`)
+- **Jekyll** (`gem install jekyll`)
+
+### Installation
+1.  **Clone the repository**:
+    ```bash
+    git clone https://github.com/itgpg/it.git
+    cd it
+    ```
+2.  **Install dependencies**:
+    ```bash
+    bundle install
+    ```
+
+### Running the Server
+To start the local development server, run:
+```bash
+bundle exec jekyll serve --port 4000 --host 0.0.0.0
+```
+
+Once the server is running, verify the setup by visiting:  
+👉 **[http://localhost:4000/it/](http://localhost:4000/it/)**
+
 ---
 
 ## 🏗️ Project Structure
