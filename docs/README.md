@@ -141,6 +141,14 @@ Once the server is running, verify the setup by visiting:
 - Deployment on GitHub Pages
 - Project Planning, Architecture Design, and Execution
 
+## 🎨 UI/UX Enhancements (v2.0 Update)
+- **Premium Study Materials Interface**:
+    - **Two-Column Layout**: Glassmorphism-style sidebar for subjects and full-width content area.
+    - **Inline Expansion**: Seamless viewing of videos and files without page reloads.
+    - **Visual Action Buttons**: Dedicated "Watch" and "Download" buttons with brand-specific styling.
+    - **Keyboard Navigation**: Full support for arrow keys, enter, and escape for power users.
+    - **Pagination**: Optimized loading for large playlists.
+
 ---
 
 ## ✨ DUO Developer Contribution

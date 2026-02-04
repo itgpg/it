@@ -14,138 +14,85 @@ custom_js:
   - assets/js/pages/study-materials.js
 ---
 
-<!-- Structured Data for Course Materials -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org", 
-  "@type": "Course",
-  "name": "Information Technology Diploma",
-  "description": "Study materials and resources for Information Technology diploma program",
-  "provider": {
-    "@type": "EducationalOrganization",
-    "name": "Government Polytechnic Gandhinagar",
-    "department": "Information Technology Department"
-  },
-  "educationalLevel": "Diploma",
-  "teaches": "Information Technology"
-}
-</script>
-
-<section class="materials-header">
-    <div class="container">
-        <div class="dept-badge">
-            <!-- <img src="{{ '/assets/images/gpg-logo.png' | relative_url }}" alt="GPG Logo" class="dept-logo"> -->
-            <div class="dept-info">
-                <span class="institute">Government Polytechnic Gandhinagar</span>
-                <span class="university">Gujarat Technological University</span>
-            </div>
-        </div>
-        <h1 class="section-title">Study Materials</h1>
-    </div>
-</section>
-
 <section class="materials-section">
-    <div class="container">
-        <!-- Semester Cards -->
-        <div class="semester-cards">
-<div class="semester-card active" data-semester="semester1" id="semester1">
-                <div class="card-icon">
-                    <i class="fas fa-book"></i>
-                </div>
-                <h3>Semester 1</h3>
-<span class="subject-count"></span>
-            </div>
-<div class="semester-card" data-semester="semester2" id="semester2">
-                <div class="card-icon">
-                    <i class="fas fa-book-open"></i>
-                </div>
-                <h3>Semester 2</h3>
-<span class="subject-count"></span>
-            </div>
-            <div class="semester-card" data-semester="semester3">
-                <div class="card-icon">
-                    <i class="fas fa-book-open"></i>
-                </div>
-                <h3>Semester 3</h3>
-                <span class="subject-count"></span>
-            </div>
-            <div class="semester-card" data-semester="semester4">
-                <div class="card-icon">
-                    <i class="fas fa-book-open"></i>
-                </div>
-                <h3>Semester 4</h3>
-                <span class="subject-count"></span>
-            </div>
-            <div class="semester-card" data-semester="semester5">
-                <div class="card-icon">
-                    <i class="fas fa-book-open"></i>
-                </div>
-                <h3>Semester 5</h3>
-                <span class="subject-count"></span>
-            </div>
-            <div class="semester-card" data-semester="semester6">
-                <div class="card-icon">
-                    <i class="fas fa-book-open"></i>
-                </div>
-                <h3>Semester 6</h3>
-                <span class="subject-count"></span>
-            </div>
-            <!-- Add other semesters similarly -->
-        </div>
-
-        <!-- Subject Navigation -->
-        <div class="subject-navigation">
-            <div class="subject-tabs">
-                <!-- Tabs will be populated by JavaScript -->
-            </div>
-            
-            <div class="subject-content">
-                <!-- Module cards will be populated here -->
-            </div>
-        </div>
-
-        <!-- Materials Display -->
-        <div id="materials-section" style="display: none;">
-            <div class="row" id="videosGrid">
-                <!-- Materials will be loaded here -->
-            </div>
-        </div>
+  <div class="container-wide">
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <h1 class="page-title">Study Materials</h1>
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" id="searchInput" placeholder="Search subjects, modules..." autocomplete="off" />
+        <kbd class="search-hint">/</kbd>
+      </div>
     </div>
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs" id="breadcrumbs">
+      <span>Study Materials</span>
+      <span class="separator">/</span>
+      <span class="current">Semester 1</span>
+    </nav>
+
+    <!-- Semester Tabs -->
+    <div class="semester-tabs" id="semesterTabs">
+      <button class="semester-tab active" data-semester="semester1"><i class="fas fa-book"></i> Sem 1</button>
+      <button class="semester-tab" data-semester="semester2"><i class="fas fa-book-open"></i> Sem 2</button>
+      <button class="semester-tab" data-semester="semester3"><i class="fas fa-graduation-cap"></i> Sem 3</button>
+      <button class="semester-tab" data-semester="semester4"><i class="fas fa-laptop-code"></i> Sem 4</button>
+      <button class="semester-tab" data-semester="semester5"><i class="fas fa-code"></i> Sem 5</button>
+      <button class="semester-tab" data-semester="semester6"><i class="fas fa-rocket"></i> Sem 6</button>
+      <div class="keyboard-hints">
+        <span class="kbd-hint"><kbd>←</kbd><kbd>→</kbd> Semesters</span>
+        <span class="kbd-hint"><kbd>↑</kbd><kbd>↓</kbd> Subjects</span>
+        <span class="kbd-hint"><kbd>Enter</kbd> Open</span>
+        <span class="kbd-hint"><kbd>Esc</kbd> Back</span>
+      </div>
+    </div>
+
+    <!-- Two Column Layout -->
+    <div class="study-grid">
+      <!-- Subject Sidebar -->
+      <aside class="subject-sidebar">
+        <div class="sidebar-header">
+          <h3>Subjects</h3>
+        </div>
+        <div class="subject-list" id="subjectList">
+          <!-- JS populates -->
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Content Header -->
+        <div class="content-header" id="contentHeader">
+          <h2 id="currentSubjectTitle">Select a subject</h2>
+        </div>
+
+        <!-- Modules View -->
+        <div class="modules-view" id="modulesView">
+          <div class="module-grid" id="moduleGrid">
+            <!-- JS populates -->
+          </div>
+        </div>
+
+        <!-- Materials View (inline) -->
+        <div class="materials-view" id="materialsView" style="display: none;">
+          <div class="materials-nav">
+            <button class="back-btn" id="backBtn">
+              <i class="fas fa-arrow-left"></i> Back
+            </button>
+            <span class="material-count" id="materialCount"></span>
+          </div>
+          <div class="materials-grid" id="materialsGrid">
+            <!-- JS populates -->
+          </div>
+          <div class="load-more-wrap" id="loadMoreWrap" style="display: none;">
+            <button class="btn btn-load-more" id="loadMoreBtn">
+              <i class="fas fa-chevron-down"></i> Load More
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
 </section>
-
-</div>
-</section>
-
-<!-- <script>
-    console.log('StudyData loaded:', !!StudyData);
-    console.log('YouTubeHandler loaded:', !!YouTubeHandler);
-    console.log('UIManager loaded:', !!UIManager);
-    console.log('StudyMaterialsPage loaded:', !!StudyMaterialsPage);
-</script> -->
-
-<!-- // Debug Script -->
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const studyData = new StudyData();
-        const semesterCards = document.querySelectorAll('.semester-card');
-
-        semesterCards.forEach(card => {
-            const semester = card.dataset.semester;
-            const subjectCount = studyData.getSubjects(semester).length;
-            const subjectCountSpan = card.querySelector('.subject-count');
-            if (subjectCountSpan) {
-                subjectCountSpan.textContent = `${subjectCount} Subjects`;
-            }
-        });
-    });
-    document.addEventListener('DOMContentLoaded', () => {
-        console.log('Page loaded');
-        // Add click event logging
-        document.querySelectorAll('.semester-card').forEach(card => {
-            console.log('Found semester card:', card.dataset.semester);
-            card.addEventListener('click', (e) => {
-                console.log('Semester clicked:', e.currentTarget.dataset.semester);
-            });
-        });
-    });
-</script>
