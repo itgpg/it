@@ -34,10 +34,13 @@ const CONFIG = {
                 dsp: '1Epp-_61b6_bCZfW98MBAB0wNwHTBIC48',
                 edm: '1viHPIpIpI_PswBzAyMMS8QUAsOF1p4Vh',
                 oopj: '1zkn4Lq-lob58TDgSb0KwSkTBN3VffS_h'
-
-
-
-
+            },
+            sem_4: {
+                csdf:'11KmApu8rlhekw9R9mapLsw7zAJPkjwtw',
+                dmw:'1PBnsf6-UMIiYsEwALYWJ7_0xBbRfO2Ez',
+                mcn:'1CAyBBW362FfhO0fBD_LwOi_GK4FJEK1b',
+                fml:'1UONtiQfMBiJbO4QkZ2-ejmcDfohe8Vp-',
+                es:'1k3GCTqT9CCSSkhvEUDsPzvunu2BjtEOd'
             }
         },
         Notes: {

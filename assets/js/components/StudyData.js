@@ -153,6 +153,15 @@ class StudyData {
                         description: 'Syllabus for Semester 4 for year 2025-2026 , recheck the syllabus through the gtu official sources  before exam as it may change.'
                     }]
                 },
+                'PYQ': {
+                    modules: [
+                        { name: 'Mobile Computing and Networks', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_4.mcn}`] },
+                        { name: 'Fundamental of Machine Learning', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_4.fml}`] },
+                        { name: 'Cyber Security and Digital Forensics', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_4.csdfs}`] },
+                        { name: 'Data Mining and Warehousing', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_4.dmw}`] },
+                        { name: 'Entrepreneurship & Start-up', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_4.es}`] },
+                    ]
+                }
             },
             semester5: {
                 'Machine Learning': {
