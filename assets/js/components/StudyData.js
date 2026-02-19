@@ -161,6 +161,13 @@ class StudyData {
                         { name: 'Data Mining and Warehousing', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_4.dmw}`] },
                         { name: 'Entrepreneurship & Start-up', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_4.es}`] },
                     ]
+                },
+                'UI / UX ': {
+                    modules: [{
+                        name: 'Video Playlist',
+                        playlistId: CONFIG.PLAYLIST_IDS.ui_ux,
+                        description: 'UI / UX Playlist for Semester 4, 2025-2026'
+                    }]
                 }
             },
             semester5: {

@@ -94,7 +94,7 @@ const CONFIG = {
         software_development: 'PLWKjhJtqVAbm7h1x3g8Yt7k7pXT3a7V7h', // Software Development Course for Beginners
         // Add other playlist IDs as needed
 
-
+        ui_ux : 'PL5hA7O8RI2bPfFNLPitu1fZPI9J0y7Yqa'
 
 
         // debugging:"PLVk47Sxy_0miPj7yUrffk447sDf7_NRM9",
