@@ -19,6 +19,33 @@ This is the official website for the **Information Technology Department** of **
 ✅ Fully responsive and mobile-friendly  
 ✅ SEO optimized with sitemap and robots.txt  
 
+## 🚀 How to Run Locally
+
+### Prerequisites
+- **Ruby** (version 2.7 or higher)
+- **Bundler** (`gem install bundler`)
+- **Jekyll** (`gem install jekyll`)
+
+### Installation
+1.  **Clone the repository**:
+    ```bash
+    git clone https://github.com/itgpg/it.git
+    cd it
+    ```
+2.  **Install dependencies**:
+    ```bash
+    bundle install
+    ```
+
+### Running the Server
+To start the local development server, run:
+```bash
+bundle exec jekyll serve --port 4000 --host 0.0.0.0
+```
+
+Once the server is running, verify the setup by visiting:  
+👉 **[http://localhost:4000/it/](http://localhost:4000/it/)**
+
 ---
 
 ## 🏗️ Project Structure
@@ -113,6 +140,14 @@ This is the official website for the **Information Technology Department** of **
 - SEO Optimization (Sitemap, Robots)
 - Deployment on GitHub Pages
 - Project Planning, Architecture Design, and Execution
+
+## 🎨 UI/UX Enhancements (v2.0 Update)
+- **Premium Study Materials Interface**:
+    - **Two-Column Layout**: Glassmorphism-style sidebar for subjects and full-width content area.
+    - **Inline Expansion**: Seamless viewing of videos and files without page reloads.
+    - **Visual Action Buttons**: Dedicated "Watch" and "Download" buttons with brand-specific styling.
+    - **Keyboard Navigation**: Full support for arrow keys, enter, and escape for power users.
+    - **Pagination**: Optimized loading for large playlists.
 
 ---
 

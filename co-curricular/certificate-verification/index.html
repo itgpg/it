@@ -46,8 +46,12 @@ custom_js: ["/assets/js/pages/certificate-verification.js"]
                   <i class="fas fa-search me-2"></i>Verify
                 </button>
               </div>
-              <div class="form-text mt-2">
-                Format: <code>GPG + month(MM) + year(YYYY) + 3-digit id</code>
+<div class="form-text mt-3 text-center text-sm-start">
+                <div class="format-text-container">
+                  <i class="fas fa-info-circle me-1 small"></i>
+                  <span class="me-2 fw-bold small text-uppercase" style="letter-spacing: 0.5px; opacity: 0.8;">Format:</span>
+                  <code class="format-code">GPG + month(MM) + year(YYYY) + 3-digit id</code>
+                </div>
               </div>
               <div class="invalid-feedback" id="certificateError">
                 Please enter a valid Certificate ID: GPGMMYYYYNNN

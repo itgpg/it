@@ -50,19 +50,22 @@ class YouTubeHandler {
     }
 
     static renderVideoCard(video) {
+        const thumbnailUrl = `https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg`;
         return `
-            <div class="col-md-4 col-sm-6 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">${video.title}</h5>
-                        <a href="https://www.youtube.com/watch?v=${video.videoId}" 
-                           class="btn btn-primary" 
-                           target="_blank">
-                           Watch Video
-                        </a>
+            <a href="https://www.youtube.com/watch?v=${video.videoId}" 
+               class="material-card video-card" 
+               target="_blank"
+               rel="noopener noreferrer">
+                <div class="video-thumbnail">
+                    <img src="${thumbnailUrl}" alt="${video.title}" loading="lazy">
+                    <div class="play-overlay">
+                        <i class="fas fa-play"></i>
                     </div>
                 </div>
-            </div>
+                <div class="card-body">
+                    <h5 class="card-title">${video.title}</h5>
+                </div>
+            </a>
         `;
     }
 
