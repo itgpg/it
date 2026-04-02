@@ -172,57 +172,10 @@ class StudyData {
                 }
             },
             semester5: {
-                'Machine Learning': { 
-                    modules: [{ 
-                        name: 'Machine Learning Playlist', 
-                        playlistId: CONFIG.PLAYLIST_IDS.fundamentals_of_machine_learning
-                    }] 
-                },
-                'Artificial Intelligence': { 
-                    modules: [{ 
-                        name: 'Artificial Intelligence Playlist', 
-                        playlistId: CONFIG.PLAYLIST_IDS.ai 
-                    }] 
-                },
-                'Cloud Computing': {
-                    modules: [{ 
-                        name: 'Cloud Computing Playlist', 
-                        playlistId: CONFIG.PLAYLIST_IDS.cloud 
-                    }]
-                },
-                'Mobile App Development': {
-                    modules: [{ 
-                        name: 'Mobile App Development', 
-                        playlistId: CONFIG.PLAYLIST_IDS.mobile_dev 
-                    }]
-                }
+                
             },
             semester6: {
-                'Blockchain Technology': { 
-                    modules: [{ 
-                        name: 'Blockchain Playlist', 
-                        playlistId: CONFIG.PLAYLIST_IDS.blockchain 
-                    }] 
-                },
-                'Big Data & Analytics': { 
-                    modules: [{ 
-                        name: 'Big Data Analytics Playlist', 
-                        playlistId: CONFIG.PLAYLIST_IDS.big_data 
-                    }] 
-                },
-                'Internet of Things (IoT)': {
-                    modules: [{ 
-                        name: 'IoT Playlist', 
-                        playlistId: CONFIG.PLAYLIST_IDS.iot 
-                    }]
-                },
-                'Capstone Project': {
-                    modules: [{ 
-                        name: 'Project Guidelines & Resources', 
-                        files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.project}`] 
-                    }]
-                }
-            }
+                
         };
     }
 

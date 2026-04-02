@@ -72,39 +72,6 @@ const CONFIG = {
         object_oriented_programming_java: 'PLWKjhJtqVAbnklGh3XzZ4E8Jw9P9K2A1D', // Java Programming: Solving Problems with Software
         fundamentals_of_machine_learning: 'PLWKjhJtqVAbm3m1QXg7EoSxKXWwRg8Zpq', // Machine Learning for Beginners
         web_development_php: 'PLWKjhJtqVAbmGQoa6lN6a1xNq7kjP9B2h', // PHP Programming Language Tutorial - Full Course
-        // Semester 5
-        foundation_ai_ml: 'PLWKjhJtqVAbm3m1QXg7EoSxKXWwRg8Zpq', // Machine Learning for Beginners
-        mobile_computing_networks: 'PLWKjhJtqVAbnupwRFOq9zGOWjdvPRtCmO', // Linux Operating System - Crash Course for Beginners
-        advanced_java_programming: 'PLWKjhJtqVAbnklGh3XzZ4E8Jw9P9K2A1D', // Java Programming: Solving Problems with Software
-        // Semester 6
-        mobile_application_development: 'PLWKjhJtqVAbk3cFkeP2lQ6K6J9Z1nVU2q', // Android Development for Beginners - Full Course
-        cyber_security_digital_forensics: 'PLWKjhJtqVAbm3m1QXg7EoSxKXWwRg8Zpq', // Cyber Security Course for Beginners
-        cloud_data_center_technologies: 'PLWKjhJtqVAbm7h1x3g8Yt7k7pXT3a7V7h', // Cloud Computing Full Course
-        foundation_blockchain: 'PLWKjhJtqVAbm7h1x3g8Yt7k7pXT3a7V7h', // Blockchain Full Course
-        software_development: 'PLWKjhJtqVAbm7h1x3g8Yt7k7pXT3a7V7h', // Software Development Course for Beginners
-        // Add other playlist IDs as needed
-
-
-
-
-        // debugging:"PLVk47Sxy_0miPj7yUrffk447sDf7_NRM9",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
