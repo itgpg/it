@@ -139,6 +139,15 @@ class StudyMaterialsPage {
         if (!selectedModule) return;
 
         this.showMaterials(moduleName);
+        
+        const cacheKey = `cache_${this.currentSemester}_${this.currentSubject}_${moduleName}`;
+        const cachedData = sessionStorage.getItem(cacheKey);
+        
+        if (cachedData) {
+            this.allItems = JSON.parse(cachedData);
+            this.displayItems();
+            return;
+        }
 
         try {
             if (selectedModule.playlistId) {
@@ -165,6 +174,8 @@ class StudyMaterialsPage {
                 }
                 this.allItems = allFiles;
             }
+            
+            sessionStorage.setItem(cacheKey, JSON.stringify(this.allItems));
             this.displayItems();
         } catch (error) {
             console.error('Error:', error);
