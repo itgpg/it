@@ -7,12 +7,14 @@ custom_css:
   - assets/css/pages/study-materials.css
   - assets/css/components/navbar.css
 custom_js:
-  - assets/js/config.js
   - assets/js/components/StudyData.js
   - assets/js/components/YouTubeHandler.js
   - assets/js/components/UIManager.js
   - assets/js/pages/study-materials.js
 ---
+<script>
+  window.CONFIG = {{ site.data.site_config | jsonify }};
+</script>
 
 <section class="materials-section">
   <div class="container-wide">

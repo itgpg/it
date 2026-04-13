@@ -5,8 +5,6 @@ description: Meet our experienced faculty members at the IT Department of Govern
 keywords: GPG IT faculty, IT professors Gandhinagar, Government Polytechnic Gandhinagar faculty, IT department staff, polytechnic teachers
 custom_css:
   - assets/css/pages/faculty.css
-custom_js:
-  - assets/js/pages/faculty.js 
 ---
 
 <!-- Structured Data for Faculty List -->
@@ -47,9 +45,30 @@ custom_js:
 <section class="faculty-grid">
     <div class="container">
         <div class="faculty-members">
-            <!-- Faculty cards content -->
+            {% for faculty in site.data.faculty %}
+            {% assign shortNameLower = faculty.shortName | downcase %}
+            <div class="faculty-card">
+                <div class="faculty-image">
+                    <img src="{{ '/assets/images/faculty_imgs/' | append: shortNameLower | append: '.jpeg' | relative_url }}" alt="{{ faculty.name }}" 
+                         onerror="this.src='{{ '/assets/images/faculty_imgs/default_png.png' | relative_url }}'">
+                </div>
+                <div class="faculty-info">
+                    <h3 class="faculty-name">{{ faculty.name }}</h3>
+                    <p class="faculty-designation">{{ faculty.designation }}</p>
+                    <div class="faculty-details">
+                        <div class="detail-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>{{ faculty.qualification }}</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:{{ faculty.email }}" class="faculty-email">{{ faculty.email }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
-<script src="{{ '/assets/js/pages/faculty.js' | relative_url }}"></script>
 
