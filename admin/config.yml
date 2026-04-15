@@ -1,0 +1,71 @@
+backend:
+  name: github
+  repo: itgpg/it
+  branch: refactor-architecture
+
+# Where media files (images) will be stored
+media_folder: "assets/images"
+public_folder: "/it/assets/images"
+
+# Site URL for local previews
+site_url: https://itgpg.github.io/it
+display_url: https://itgpg.github.io/it
+logo_url: https://itgpg.github.io/it/assets/images/gpg-logo.png
+
+# Collections
+collections:
+  # ──────────────────────────────────
+  # Faculty Members (_data/faculty.json)
+  # ──────────────────────────────────
+  - name: "faculty"
+    label: "Faculty Members"
+    file: "_data/faculty.json"
+    description: "Add, remove, or edit faculty members. Changes will appear on the Faculty Info page."
+    fields:
+      - label: "Faculty Members"
+        name: "items"
+        widget: "list"
+        fields:
+          - { label: "Full Name", name: "name", widget: "string" }
+          - { label: "Designation", name: "designation", widget: "select", options: ["I/C HOD", "HOD", "Lecturer", "Lab Assistant", "Guest Faculty"] }
+          - { label: "Qualification", name: "qualification", widget: "select", options: ["Doctorate", "Post. Graduation", "Post Graduation", "Post Graduate", "Graduation"] }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Short Name (3 letters, used for photo filename)", name: "shortName", widget: "string", pattern: ['^[A-Z]{2,4}$', "Must be 2-4 UPPERCASE letters (e.g. HRP)"] }
+
+  # ──────────────────────────────────
+  # Site Configuration (_data/site_config.yml)
+  # ──────────────────────────────────
+  - name: "site_config"
+    label: "Site Configuration"
+    file: "_data/site_config.yml"
+    description: "Manage Google API Key, Drive Folder IDs, and YouTube Playlist IDs. Be careful editing this."
+    fields:
+      - { label: "Google API Key", name: "API_KEY", widget: "string" }
+      - label: "Folder IDs"
+        name: "FOLDER_IDS"
+        widget: "object"
+        fields:
+          - { label: "Syllabus S2", name: "syllabusS2", widget: "string", required: false }
+          - { label: "Newsletters", name: "newsletters", widget: "string", required: false }
+          - { label: "Faculty Development", name: "faculty_development", widget: "string", required: false }
+          - { label: "Academic Calendar", name: "academic_calendar", widget: "string", required: false }
+          - { label: "Certificates", name: "certificates", widget: "string", required: false }
+
+  # ──────────────────────────────────
+  # Toppers List (_data/toppers_list.json)
+  # ──────────────────────────────────
+  - name: "toppers"
+    label: "Toppers List"
+    file: "_data/toppers_list.json"
+    description: "Manage the semester-wise toppers data."
+    fields:
+      - label: "Toppers"
+        name: "items"
+        widget: "list"
+        fields:
+          - { label: "Student Name", name: "name", widget: "string" }
+          - { label: "Enrollment No", name: "enrollment", widget: "string" }
+          - { label: "SPI", name: "spi", widget: "string" }
+          - { label: "CPI", name: "cpi", widget: "string", required: false }
+          - { label: "Semester", name: "semester", widget: "number" }
+          - { label: "Batch", name: "batch", widget: "string" }
