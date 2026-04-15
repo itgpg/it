@@ -2,6 +2,8 @@ backend:
   name: github
   repo: itgpg/it
   branch: refactor-architecture
+  auth_type: pkce
+  app_id: Ov23liS3ZVIS376UD1FJ
 
 media_folder: "assets/images"
 public_folder: "/it/assets/images"
