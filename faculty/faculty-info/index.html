@@ -45,7 +45,7 @@ custom_css:
 <section class="faculty-grid">
     <div class="container">
         <div class="faculty-members">
-            {% for faculty in site.data.faculty %}
+            {% for faculty in site.data.faculty.faculty %}
             {% assign shortNameLower = faculty.shortName | downcase %}
             <div class="faculty-card">
                 <div class="faculty-image">

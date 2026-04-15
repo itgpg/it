@@ -12,44 +12,120 @@ logo_url: https://itgpg.github.io/it/assets/images/gpg-logo.png
 
 collections:
   # ──────────────────────────────────
-  # Faculty Members
+  # Events (folder-based, each event = one markdown file)
   # ──────────────────────────────────
-  - name: "faculty"
-    label: "Faculty Members"
+  - name: "events"
+    label: "📅 Events"
+    folder: "_events"
+    create: true
+    slug: "{{year}}-{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Event Title", name: "title", widget: "string" }
+      - { label: "Event Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Short Description", name: "excerpt", widget: "string" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "event" }
+      - { label: "Event Details", name: "body", widget: "markdown" }
+
+  # ──────────────────────────────────
+  # Faculty Members (single JSON file)
+  # ──────────────────────────────────
+  - name: "settings"
+    label: "⚙️ Site Data"
     files:
       - name: "faculty_list"
-        label: "Faculty List"
+        label: "👨‍🏫 Faculty Members"
         file: "_data/faculty.json"
-        description: "Add, remove, or edit faculty members."
+        description: "Add, remove, or reorder faculty members. Photo filename must match ShortName in lowercase (e.g. HRP → hrp.jpeg)"
         fields:
-          - label: "Faculty Members"
-            name: "items"
+          - label: "Faculty"
+            name: "faculty"
             widget: "list"
+            label_singular: "Faculty Member"
+            summary: "{{fields.name}} — {{fields.designation}}"
             fields:
-              - { label: "Full Name", name: "name", widget: "string" }
+              - { label: "Full Name", name: "name", widget: "string", hint: "e.g. Ms. Hiralben Ravindrakumar Patel" }
               - { label: "Designation", name: "designation", widget: "select", options: ["I/C HOD", "HOD", "Lecturer", "Lab Assistant", "Guest Faculty"] }
               - { label: "Qualification", name: "qualification", widget: "select", options: ["Doctorate", "Post. Graduation", "Post Graduation", "Post Graduate", "Graduation"] }
               - { label: "Email", name: "email", widget: "string" }
-              - { label: "Short Name (used for photo filename)", name: "shortName", widget: "string", pattern: ['^[A-Z]{2,4}$', "Must be 2-4 UPPERCASE letters (e.g. HRP)"] }
+              - { label: "Short Name (2-4 UPPERCASE letters, used for photo)", name: "shortName", widget: "string", hint: "Photo file: assets/images/faculty_imgs/{shortname_lowercase}.jpeg" }
 
-  # ──────────────────────────────────
-  # Site Configuration
-  # ──────────────────────────────────
-  - name: "config"
-    label: "Site Configuration"
-    files:
+      # ──────────────────────────────────
+      # Google Drive & YouTube Configuration
+      # ──────────────────────────────────
       - name: "site_config"
-        label: "API Keys & Drive Folder IDs"
+        label: "🔑 API Keys & Drive Folders"
         file: "_data/site_config.yml"
-        description: "Manage Google API Key and Drive Folder IDs."
+        description: "⚠️ Be careful! Wrong IDs will break the Study Materials page."
         fields:
-          - { label: "Google API Key", name: "API_KEY", widget: "string" }
-          - label: "Folder IDs"
+          - { label: "Google API Key", name: "API_KEY", widget: "string", hint: "Get from Google Cloud Console → APIs & Services → Credentials" }
+          - label: "Drive Folder IDs"
             name: "FOLDER_IDS"
             widget: "object"
+            collapsed: true
             fields:
-              - { label: "Syllabus S2", name: "syllabusS2", widget: "string", required: false }
-              - { label: "Newsletters", name: "newsletters", widget: "string", required: false }
-              - { label: "Faculty Development", name: "faculty_development", widget: "string", required: false }
-              - { label: "Academic Calendar", name: "academic_calendar", widget: "string", required: false }
-              - { label: "Certificates", name: "certificates", widget: "string", required: false }
+              - { label: "Syllabus S2 Folder", name: "syllabusS2", widget: "string", required: false }
+              - { label: "Newsletters Folder", name: "newsletters", widget: "string", required: false }
+              - { label: "Faculty Development Folder", name: "faculty_development", widget: "string", required: false }
+              - { label: "Academic Calendar Folder", name: "academic_calendar", widget: "string", required: false }
+              - { label: "Certificates Folder", name: "certificates", widget: "string", required: false }
+              - label: "PYQ Folders (Previous Year Questions)"
+                name: "pyq"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - label: "Semester 1"
+                    name: "sem_1"
+                    widget: "object"
+                    collapsed: true
+                    fields:
+                      - { label: "Python", name: "python", widget: "string", required: false }
+                      - { label: "IT", name: "it", widget: "string", required: false }
+                      - { label: "Maths", name: "maths", widget: "string", required: false }
+                      - { label: "CSE", name: "cse", widget: "string", required: false }
+                      - { label: "ECH", name: "ech", widget: "string", required: false }
+                  - label: "Semester 2"
+                    name: "sem_2"
+                    widget: "object"
+                    collapsed: true
+                    fields:
+                      - { label: "Advance Python", name: "Advance_python", widget: "string", required: false }
+                      - { label: "Engineering Maths S2", name: "enginnering_maths_s2", widget: "string", required: false }
+                      - { label: "Applied Maths S2", name: "Applied_maths_s2", widget: "string", required: false }
+                      - { label: "Modern Physics", name: "Modern_physics", widget: "string", required: false }
+                      - { label: "Environmental Sustainability", name: "enviromental_sustainability", widget: "string", required: false }
+                  - label: "Semester 3"
+                    name: "sem_3"
+                    widget: "object"
+                    collapsed: true
+                    fields:
+                      - { label: "OS", name: "os", widget: "string", required: false }
+                      - { label: "DBMS", name: "dbms", widget: "string", required: false }
+                      - { label: "DSP", name: "dsp", widget: "string", required: false }
+                      - { label: "EDM", name: "edm", widget: "string", required: false }
+                      - { label: "OOPJ", name: "oopj", widget: "string", required: false }
+                  - label: "Semester 4"
+                    name: "sem_4"
+                    widget: "object"
+                    collapsed: true
+                    fields:
+                      - { label: "CSDF", name: "csdf", widget: "string", required: false }
+                      - { label: "DMW", name: "dmw", widget: "string", required: false }
+                      - { label: "MCN", name: "mcn", widget: "string", required: false }
+                      - { label: "FML", name: "fml", widget: "string", required: false }
+                      - { label: "ES", name: "es", widget: "string", required: false }
+          - label: "YouTube Playlist IDs"
+            name: "PLAYLIST_IDS"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Python", name: "python", widget: "string", required: false }
+              - { label: "Advanced Python", name: "advPython", widget: "string", required: false }
+              - { label: "IT Systems", name: "it", widget: "string", required: false }
+              - { label: "Networking", name: "networking", widget: "string", required: false }
+              - { label: "Engineering Maths", name: "enginnering_maths", widget: "string", required: false }
+              - { label: "GTU Maths 2", name: "gtu_maths_2", widget: "string", required: false }
+              - { label: "FSD", name: "FSD", widget: "string", required: false }
+              - { label: "Digital Marketing", name: "digital_markteting", widget: "string", required: false }
+              - { label: "UI/UX", name: "ui_ux", widget: "string", required: false }
+              - { label: "Machine Learning", name: "fundamentals_of_machine_learning", widget: "string", required: false }
