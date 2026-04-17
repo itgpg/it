@@ -6,6 +6,7 @@ FOLDER_IDS:
   faculty_development: '1yB9N4DKyGc3AL1EhGiPTgtpyPOlq8cvV'
   academic_calendar: '16a58BgCLN8h0SnGxjnYFGDdkfWqcuS49'
   certificates: '1vXU0cCwrYplFhmrGLu3MYuf1fVJeylWQ'
+  gallery: 'YOUR_GALLERY_FOLDER_ID'
   
   pyq:
     sem_1:

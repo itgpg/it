@@ -3,8 +3,8 @@
 
 console.log("Gallery script loaded");
 
-const apiKey  = 'AIzaSyBd34cP4KHFKN0WyNNiqhlQ2HSM8j2tD_E';
-const folderId = '1vXU0cCwrYplFhmrGLu3MYuf1fVJeylWQ';
+const apiKey  = window.CONFIG.API_KEY;
+const folderId = window.CONFIG.FOLDER_IDS.gallery;
 
 // Prefer inserting into #gallery-sections (from your index.html). Fallback to #dynamic-gallery.
 const sectionsRoot =                                                                            

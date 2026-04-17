@@ -7,8 +7,8 @@
 */
 
 const CONFIG = {
-  API_KEY: 'AIzaSyBd34cP4KHFKN0WyNNiqhlQ2HSM8j2tD_E',
-  ROOT_FOLDER_ID: '1HRuMCr20_SyYzre3OruHqLWknWIIc_tW'
+  API_KEY: window.CONFIG.API_KEY,
+  ROOT_FOLDER_ID: window.CONFIG.FOLDER_IDS.certificates
 };
 
 console.log('Certificate Verification script loaded');
