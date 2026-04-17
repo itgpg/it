@@ -1,37 +1,60 @@
-# IT Department Website - Government Polytechnic Gandhinagar
+# 🚀 IT Department Website - Government Polytechnic Gandhinagar
 
-Welcome to the open-source repository for the Information Technology Department website of Government Polytechnic Gandhinagar (GP Gandhinagar).
+Welcome to the official, open-source repository for the Information Technology Department website of Government Polytechnic Gandhinagar (GP Gandhinagar).
 
-## Architecture & Tech Stack
+**Developed by:** Government Polytechnic Gandhinagar IT Department
 
-This project is built for **extreme maintainability, zero hosting costs, and high performance**.
-
-*   **Framework**: [Jekyll](https://jekyllrb.com/) (Static Site Generator)
-*   **Hosting**: GitHub Pages
-*   **Styling**: Custom CSS and Bootstrap Grid
-*   **Content Management System**: Hybrid "Serverless CMS" Architecture
-    *   *Static Content*: Formatted via `_data/` JSON and YAML files for SEO.
-    *   *Volatile Content (Study Materials)*: Dynamically fetched via Google Drive API and YouTube API directly to the client browser using an optimized `sessionStorage` caching mechanism.
-
-## Project Structure
-
-*   `_data/` - Contains all configuration (API keys, Folder IDs) and site data (Faculty, Toppers). **Edit these files to update the site.**
-*   `_includes/` - Reusable UI HTML components (Hero section, Footers, Navbars) for safe editing.
-*   `assets/images/` - Site photography, graphics, and faculty headshots.
-*   `assets/js/` - Logic for the Google Drive integration and UI Management.
-
-## Legacy Maintenance
-
-If you have been assigned to maintain this website, please read the `MAINTAINING.md` document located in this repository. It provides a comprehensive, non-technical guide on how to safely update the Google Drive study materials and add new faculty members without risking code breakage.
-
-## Contributing
-
-We welcome contributions from students and faculty! If you spot a bug or want to add a feature:
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/your-feature`).
-3. Commit your changes (`git commit -m 'Add new feature'`).
-4. Push to the branch (`git push origin feature/your-feature`).
-5. Open a Pull Request.
+📍 **Location:** Gandhinagar, Gujarat, India  
+📂 **GitHub:** [https://github.com/itgpg/it](https://github.com/itgpg/it)  
+🌐 **Live Site:** [https://itgpg.github.io/it/](https://itgpg.github.io/it/)
 
 ---
-**Designed and Developed natively by the 2024-2025 IT Department Core Team.**
+
+## 🏛️ Architecture & Tech Stack: The "Thick-Client Serverless" Model
+
+This project is built around extremely strict constraints: **Zero Budget (₹0) and Zero Backend Hosting**. 
+The architecture bypasses the need for costly VPS/SQL servers by delegating data-management to free-tier cloud platforms and utilizing the student's own browser to process the API requests.
+
+*   **Framework**: [Jekyll](https://jekyllrb.com/) (Static Site Generator)
+*   **Hosting**: Native GitHub Pages (Root deployment to preserve existing routing)
+*   **Styling**: Custom Vanilla CSS with Bootstrap Grid
+*   **Headless CMS Integrations**:
+    *   *Static Content*: Faculty structures, configs, and layouts are built via `_data/` JSON and YAML files for SEO.
+    *   *Volatile Real-Time Content*: Dynamically fetched using Google Drive API and YouTube API.
+*   **Performance Routing Mitigation**: To bypass Google API quota exhaustion from repeated campus clicks, the browser `sessionStorage` interface intercepts requests and caches payloads, yielding massive speed boosts while preserving the free tier.
+
+## 🏗️ Project Structure
+
+*   `_data/` - "Zero-JS Setup": Contains all configurations (`site_config.yml`), playlist IDs, folder IDs, and static site data (`faculty.json`). **Maintainers update these YAML/JSON files, avoiding JavaScript crashes.**
+*   `_includes/` - Segmented, reusable UI HTML components (Hero section, Stats, Vision/Mission bounds, Footers, Navbars).
+*   `assets/images/` - Site photography, graphics, and meticulously formatted faculty headshots (`shortName.jpeg`).
+*   `assets/js/` - The core engine of this platform. It handles the thick-client Google Drive queries, YouTube extraction algorithms, and UI state hydration.
+
+## 📚 Technical Documentation
+
+For a highly detailed breakthrough of the engineering logic, the problems encountered, and the workarounds implemented by the core developer pair, please read:
+👉 **[docs/DOCS.md](docs/DOCS.md)**
+
+If you are a student or faculty member taking over the repository updates:
+👉 **[MAINTAINING.md](MAINTAINING.md)** provides a step-by-step un-technical guide for legacy handoffs.
+
+---
+
+## 🚀 How to Run Locally
+
+### Prerequisites
+- **Ruby** (version 2.7 or higher)
+- **Bundler** (`gem install bundler`)
+- **Jekyll** (`gem install jekyll`)
+
+### Installation & Server
+1. Clone: `git clone https://github.com/itgpg/it.git && cd it`
+2. Install: `bundle install`
+3. Serve: `bundle exec jekyll serve --port 4000 --host 0.0.0.0`
+4. Access at: [http://localhost:4000/](http://localhost:4000/)
+
+## ✨ Developer Contribution & Licensing
+
+The entire project — from zero-budget scalable architecture design, UI/UX interface planning, custom JavaScript APIs, and deployment configurations — was engineered natively by the **IT Department Core Development Team (2024-2025)**.
+
+*Licensed under MIT - Free to use with required developer credit.*

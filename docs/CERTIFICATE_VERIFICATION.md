@@ -79,8 +79,8 @@ Your Root Folder (YOUR_FOLDER_ID)
 
 ### API Integration
 - Uses Google Drive API v3
-- API Key: `AIzaSyBd34cP4KHFKN0WyNNiqhlQ2HSM8j2tD_E`
-- Root Folder ID: `1vXU0cCwrYplFhmrGLu3MYuf1fVJeylWQ`
+- API Key: Controlled globally through `_data/site_config.yml`
+- Root Folder ID: Controlled globally through `_data/site_config.yml`
 
 ### Dependencies
 - Bootstrap 5.3.0
@@ -108,22 +108,14 @@ Your Root Folder (YOUR_FOLDER_ID)
 
 ## Customization
 
-### Changing API Key
-Update the `API_KEY` in `/assets/js/pages/certificate-verification.js`:
-```javascript
-const CONFIG = {
-    API_KEY: 'YOUR_NEW_API_KEY',
-    // ...
-};
-```
+### Changing API Key & Root Folder
+As part of the Zero-JS architecture, API variables are strictly maintained securely in `_data/site_config.yml`. Do not edit the raw `.js` logic files.
 
-### Changing Root Folder
-Update the `ROOT_FOLDER_ID` in the same file:
-```javascript
-const CONFIG = {
-    ROOT_FOLDER_ID: 'YOUR_FOLDER_ID',
-    // ...
-};
+Modify `_data/site_config.yml`:
+```yaml
+API_KEY: "YOUR_NEW_API_KEY"
+FOLDER_IDS:
+  certificates: "YOUR_NEW_ROOT_FOLDER_ID"
 ```
 
 ### Styling
