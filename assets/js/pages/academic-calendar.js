@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Ensure CONFIG and API_KEY exist
-    if (!window.CONFIG || !CONFIG.API_KEY) {
+    if (typeof CONFIG === 'undefined' || !CONFIG.API_KEY) {
         console.error("❌ Google Drive API Key is missing in config.js");
         return;
     }
