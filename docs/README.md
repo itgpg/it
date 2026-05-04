@@ -1,15 +1,22 @@
-# 📚 IT Department Technical Wiki
+# 📚 Documentation Index
 
-Welcome to the internal engineering wiki for the Government Polytechnic Gandhinagar IT Department Website. 
+Technical documentation for the **ITGPG Website** — the IT Department portal of Government Polytechnic Gandhinagar.
 
-This directory contains in-depth technical documentation detailing the system architecture, constraints, integrations, and operational guides required to cleanly maintain the repository long-term.
+## Docs
 
-## Documentation Index
+| Document | Description | Audience |
+|----------|-------------|----------|
+| [Architecture](ARCHITECTURE.md) | System design, file structure, data flow, and integration patterns | Developers |
+| [Content Guide](CONTENT_GUIDE.md) | How to update faculty, study materials, playlists, and events without writing code | Maintainers / Faculty |
+| [Certificate System](CERTIFICATE_SYSTEM.md) | Certificate verification engine — ID format, Drive structure, and search flow | Developers / Admins |
 
-### 🏗️ Architecture & Systems
-* **[System Architecture Deep Dive](DOCS.md)** - A highly granular breakdown of the $0 budget Thick-Client Serverless model, Javascript session caching mitigations, and Google Drive logic as a Headless Content Management System.
-* **[Certificate Verification Engine](CERTIFICATE_VERIFICATION.md)** - Details the structural logic, dynamic endpoints, and environment setup required for the real-time digital certificate verification querying tool.
-* **[Certificate Validation Flowchart](CERTIFICATE_SYSTEM_FLOW.md)** - Visual states and user paths mapping out the verification search algorithms.
+## Quick Links
 
-### 🛠️ Operation & Content Management
-* **[Adding New Content Guide](ADDING_NEW_CONTENT.md)** - A highly visual, step-by-step tutorial dictating exactly how to update Faculty profiles, Google Drive folder integrations, and YouTube study playlists securely **without writing any code**.
+- **Live Site**: [itgpg.github.io/it](https://itgpg.github.io/it/)
+- **Repository**: [github.com/itgpg/it](https://github.com/itgpg/it)
+- **Root README**: [../README.md](../README.md)
+- **Maintainer Quick-Start**: [../MAINTAINING.md](../MAINTAINING.md)
+
+## Archived
+
+Previous documentation (pre-refactor) is preserved in [`archived/`](archived/) for historical reference.

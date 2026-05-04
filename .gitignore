@@ -14,12 +14,11 @@ Thumbs.db
 # Editor/IDE generated files
 .idea/
 .vscode/
+.ruby-lsp/
+.frontmatter/
 
-
-#zip files
-.zip
-.7z
-it.zip
-
+# Archives
+*.zip
+*.7z
 
 .antigravity
