@@ -171,28 +171,11 @@ class StudyData {
                 }
             },
             semester5: {
-                'Machine Learning': {
+                'Syllabus': {
                     modules: [{
-                        name: 'Machine Learning Playlist',
-                        playlistId: CONFIG.PLAYLIST_IDS.fundamentals_of_machine_learning
-                    }]
-                },
-                'Artificial Intelligence': {
-                    modules: [{
-                        name: 'Artificial Intelligence Playlist',
-                        playlistId: CONFIG.PLAYLIST_IDS.ai
-                    }]
-                },
-                'Cloud Computing': {
-                    modules: [{
-                        name: 'Cloud Computing Playlist',
-                        playlistId: CONFIG.PLAYLIST_IDS.cloud
-                    }]
-                },
-                'Mobile App Development': {
-                    modules: [{
-                        name: 'Mobile App Development',
-                        playlistId: CONFIG.PLAYLIST_IDS.mobile_dev
+                        name: 'Syllabus',
+                        files: [`https://drive.google.com/drive/folders/${CONFIG.yr_2025_2026.sem5.syllabus}`],
+                        description: 'Syllabus for Semester 5 for year 2025-2026, recheck the syllabus through the GTU official sources before exams as it may change.'
                     }]
                 }
             },

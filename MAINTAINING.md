@@ -40,11 +40,37 @@ If the key expires:
 
 ## Local Development
 
+### Environment Setup
+
+This project uses modern Jekyll 4.x for local development. This ensures compatibility with modern Ruby runtimes (Ruby 3.x/4.x) by avoiding legacy C-extension gems (like `yajl-ruby` and `posix-spawn`) packaged in the old `github-pages` gem.
+
+#### 1. System Prerequisites
+
+Before running `bundle install`, ensure your system has Ruby development headers and build tools installed:
+
+*   **Fedora / RHEL:**
+    ```bash
+    sudo dnf install -y ruby-devel gcc gcc-c++ make redhat-rpm-config
+    ```
+*   **Ubuntu / Debian:**
+    ```bash
+    sudo apt install -y ruby-dev build-essential
+    ```
+*   **macOS (via Homebrew):**
+    ```bash
+    brew install ruby
+    ```
+
+#### 2. Run the Site Locally
+
 ```bash
-# Prerequisites: Ruby 2.7+, Bundler
+# Install bundler if you haven't already
 gem install bundler
-git clone https://github.com/itgpg/it.git && cd it
+
+# Install dependencies (runs locally in ./vendor/bundle)
 bundle install
+
+# Run the local server with live reloading
 bundle exec jekyll serve --livereload
 # Open http://localhost:4000/it/
 ```
