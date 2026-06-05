@@ -180,30 +180,7 @@ class StudyData {
                 }
             },
             semester6: {
-                'Blockchain Technology': {
-                    modules: [{
-                        name: 'Blockchain Playlist',
-                        playlistId: CONFIG.PLAYLIST_IDS.blockchain
-                    }]
-                },
-                'Big Data & Analytics': {
-                    modules: [{
-                        name: 'Big Data Analytics Playlist',
-                        playlistId: CONFIG.PLAYLIST_IDS.big_data
-                    }]
-                },
-                'Internet of Things (IoT)': {
-                    modules: [{
-                        name: 'IoT Playlist',
-                        playlistId: CONFIG.PLAYLIST_IDS.iot
-                    }]
-                },
-                'Capstone Project': {
-                    modules: [{
-                        name: 'Project Guidelines & Resources',
-                        files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.project}`]
-                    }]
-                }
+                
             }
         };
     }
