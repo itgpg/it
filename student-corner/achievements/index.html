@@ -1,11 +1,15 @@
 ---
 layout: default
 title: Student Achievements & Placements | IT Department
-description: View student placement records, IIT Bombay Spoken Tutorial certifications, and academic achievements of IT Department students at Government Polytechnic Gandhinagar.
+description: View student placement records, Spoken Tutorial certifications, and academic achievements of IT Department students at GP Gandhinagar.
 keywords: ITGPG student achievements, IT diploma placements Gujarat, Government Polytechnic Gandhinagar placements, Spoken Tutorial certification GPG
 ---
 
 <!-- START: NBA Update - Student Achievements, Certifications & Placements (2025) -->
+
+<div class="container mt-5 text-center">
+    <h1 class="display-5 fw-bold text-primary">Student Placements & Achievements</h1>
+</div>
 
 <section class="container my-5 p-4 bg-light rounded shadow">
     <h2 class="mb-4 text-center text-primary">🎓 Student Placement & Higher Studies</h2>
@@ -61,7 +65,7 @@ keywords: ITGPG student achievements, IT diploma placements Gujarat, Government 
 
     <div class="row">
         <div class="col-md-6">
-            <h5>Linux Course Participants:</h5>
+            <h3 class="h5">Linux Course Participants:</h3>
             <ul>
                 <li>Urvashi Soni</li>
                 <li>Hiren Baria</li>
@@ -87,7 +91,7 @@ keywords: ITGPG student achievements, IT diploma placements Gujarat, Government 
         </div>
 
         <div class="col-md-6">
-            <h5>HTML Course Participants:</h5>
+            <h3 class="h5">HTML Course Participants:</h3>
             <ul>
                 <li><strong style="color: darkred;">Aayush Bankar</strong></li>
                 <li><strong style="color: rgb(179, 3, 135);">Divya Darji</strong></li>
@@ -145,7 +149,7 @@ keywords: ITGPG student achievements, IT diploma placements Gujarat, Government 
 
     {% for semester in sorted_semesters %}
     <div class="mb-4">
-        <h4 class="text-primary">{{semester.term}}</h4>
+        <h3 class="text-primary h4">{{semester.term}}</h3>
         <div class="table-responsive">
             <table class="table table-striped table-bordered table-hover">
                 <thead class="table-dark">

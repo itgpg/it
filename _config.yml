@@ -1,7 +1,8 @@
 title: ITGPG — IT Department | Government Polytechnic Gandhinagar
-description: Official website of the Information Technology Department at Government Polytechnic Gandhinagar (ITGPG). Access study materials, faculty info, events, certificates, and placement records for IT diploma courses under GTU.
+description: Official website of the IT Department at Government Polytechnic Gandhinagar (ITGPG). Find GTU study materials, faculty details, events, and placement records.
 baseurl: "/it"
 url: "https://itgpg.github.io"
+keywords: "ITGPG, Government Polytechnic Gandhinagar IT Department, GPG IT Department, IT diploma Gujarat, polytechnic Gandhinagar, GTU affiliated college, best IT college Gujarat, study materials IT diploma"
 
 # Build settings
 markdown: kramdown

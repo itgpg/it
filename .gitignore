@@ -22,3 +22,4 @@ Thumbs.db
 *.7z
 
 .antigravity
+/artifacts/

@@ -15,7 +15,7 @@ custom_js: ["/assets/js/pages/events.js"]
         <div class="col-md-4 mb-4">
             <div class="card shadow-sm">
                 <div class="card-body">
-                    <h5 class="card-title">{{ event.title }}</h5>
+                    <h2 class="card-title h5">{{ event.title }}</h2>
                     <p class="card-text"><strong>Date:</strong> {{ event.date | date: "%B %d, %Y" }}</p>
                     <p class="card-text">{{ event.excerpt }}</p>
                     <a href="{{ event.url | relative_url }}" class="btn btn-primary">Read More</a>

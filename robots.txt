@@ -23,9 +23,8 @@ Allow: /
 Crawl-delay: 1
 
 # Block specific paths
-Disallow: /assets/js/
-Disallow: /.git/
-Disallow: /.github/
-Disallow: /vendor/
-Disallow: /.bundle/ 
-Disallow: /it/contributors
+Disallow: /it/assets/js/
+Disallow: /it/.git/
+Disallow: /it/.github/
+Disallow: /it/vendor/
+Disallow: /it/.bundle/

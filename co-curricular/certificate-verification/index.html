@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Certificate Verification Portal | IT Department
-description: Verify and download your workshop certificates issued by the IT Department at Government Polytechnic Gandhinagar. Enter your GPG certificate ID to instantly access your digital certificate.
+description: Verify and download digital workshop certificates issued by the IT Department at Government Polytechnic Gandhinagar. Enter your Certificate ID to verify.
 keywords: ITGPG certificate verification, GPG workshop certificate download, verify certificate Government Polytechnic Gandhinagar, digital certificate IT department
 custom_css: ["/assets/css/pages/certificate-verification.css"]
 custom_js: ["/assets/js/pages/certificate-verification.js"]
@@ -22,7 +22,7 @@ custom_js: ["/assets/js/pages/certificate-verification.js"]
       <!-- Form Card (state: form) -->
       <div id="formCard" class="card shadow-lg border-0 mb-4">
         <div class="card-header bg-primary text-white">
-          <h4 class="mb-0"><i class="fas fa-search me-2"></i>Verify Certificate</h4>
+          <h2 class="h5 mb-0"><i class="fas fa-search me-2"></i>Verify Certificate</h2>
         </div>
         <div class="card-body">
           <form id="certificateForm" class="needs-validation" novalidate>
@@ -75,7 +75,7 @@ custom_js: ["/assets/js/pages/certificate-verification.js"]
       <!-- Loading State -->
       <div id="loadingState" class="text-center py-4 d-none">
         <div class="spinner-border text-primary mb-3" role="status"><span class="visually-hidden">Loading...</span></div>
-        <h5 class="mb-1">Verifying certificate...</h5>
+        <div class="h5 mb-1 fw-bold text-dark">Verifying certificate...</div>
         <p class="text-muted mb-0">Searching drive for your certificate</p>
       </div>
 
@@ -83,12 +83,12 @@ custom_js: ["/assets/js/pages/certificate-verification.js"]
       <div id="certificateResult" class="d-none">
         <div class="card shadow-lg border-0 mb-4">
           <div class="card-header bg-success text-white">
-            <h4 class="mb-0"><i class="fas fa-check-circle me-2"></i>Certificate Found</h4>
+            <h2 class="h5 mb-0"><i class="fas fa-check-circle me-2"></i>Certificate Found</h2>
           </div>
           <div class="card-body">
             <div class="row gx-4">
               <div class="col-md-6">
-                <h6>Details</h6>
+                <h3 class="h6 mb-2">Details</h3>
                 <ul class="list-unstyled mb-0">
                   <li><strong>Certificate ID:</strong> <span id="foundCertId"></span></li>
                   <li><strong>File name:</strong> <span id="workshopName"></span></li>
@@ -97,7 +97,7 @@ custom_js: ["/assets/js/pages/certificate-verification.js"]
                 </ul>
               </div>
               <div class="col-md-6">
-                <h6>Actions</h6>
+                <h3 class="h6 mb-2">Actions</h3>
                 <div class="d-grid gap-2">
                   <button id="viewBtn" class="btn btn-info">
                     <i class="fas fa-eye me-2"></i>View Certificate
@@ -119,7 +119,7 @@ custom_js: ["/assets/js/pages/certificate-verification.js"]
       <div id="certificateNotFound" class="d-none">
         <div class="card shadow-sm border-0 mb-4">
           <div class="card-header bg-warning text-dark">
-            <h5 class="mb-0"><i class="fas fa-exclamation-triangle me-2"></i>Certificate Not Found</h5>
+            <h2 class="h5 mb-0"><i class="fas fa-exclamation-triangle me-2"></i>Certificate Not Found</h2>
           </div>
           <div class="card-body">
             <p class="mb-2">We couldn't find a certificate matching that ID in the selected folder structure.</p>
@@ -138,7 +138,7 @@ custom_js: ["/assets/js/pages/certificate-verification.js"]
       <div id="errorState" class="d-none">
         <div class="card shadow-sm border-0 mb-4">
           <div class="card-header bg-danger text-white">
-            <h5 class="mb-0"><i class="fas fa-times-circle me-2"></i>Verification Error</h5>
+            <h2 class="h5 mb-0"><i class="fas fa-times-circle me-2"></i>Verification Error</h2>
           </div>
           <div class="card-body">
             <p class="mb-2">An error occurred while trying to verify your certificate. Check console logs for details.</p>
