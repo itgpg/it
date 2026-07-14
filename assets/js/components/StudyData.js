@@ -27,12 +27,6 @@ class StudyData {
                         // playlistId: '1xIFEVMpiB2wZvJL3KVRQKEdcecfUskLs'
                     }]
                 },
-                'Communication Skills': {
-                    modules: [{
-                        name: 'Communication Skills Resources',
-                        files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.cse}`]
-                    }]
-                },
                 'PYQ': {
                     modules: [
                         { name: 'CSE PYQ', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_1.cse}`] },
@@ -115,7 +109,7 @@ class StudyData {
                 'syllabus': {
                     modules: [{
                         name: 'Syllabus',
-                        files: [`https://drive.google.com/drive/folders/${CONFIG.yr_2024_2025.sem3.syllabs}`],
+                        files: [`https://drive.google.com/drive/folders/${CONFIG.yr_2024_2025.sem3.syllabus}`],
                         description: 'Syllabus for Semester 3 for year 2024-2025 , recheck the syllabus through the gtu official sources  before exam as it may change.'
                     }]
                 },
@@ -157,7 +151,7 @@ class StudyData {
                     modules: [
                         { name: 'Mobile Computing and Networks', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_4.mcn}`] },
                         { name: 'Fundamental of Machine Learning', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_4.fml}`] },
-                        { name: 'Cyber Security and Digital Forensics', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_4.csdfs}`] },
+                        { name: 'Cyber Security and Digital Forensics', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_4.csdf}`] },
                         { name: 'Data Mining and Warehousing', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_4.dmw}`] },
                         { name: 'Entrepreneurship & Start-up', files: [`https://drive.google.com/drive/folders/${CONFIG.FOLDER_IDS.pyq.sem_4.es}`] },
                     ]

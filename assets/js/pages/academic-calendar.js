@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const API_KEY = CONFIG.API_KEY; // ✅ Correct way to fetch the API key
-    const PARENT_FOLDER_ID = "16a58BgCLN8h0SnGxjnYFGDdkfWqcuS49"; // Root folder with year folders
+    const PARENT_FOLDER_ID = CONFIG.FOLDER_IDS.academic_calendar; // Root folder with year folders
 
     const yearDropdown = document.getElementById("yearDropdown");
     const yearList = document.getElementById("yearList");

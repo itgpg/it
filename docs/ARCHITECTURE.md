@@ -1,258 +1,143 @@
-# System Architecture
+# System Architecture Deep Dive
 
 ## Overview
 
-The ITGPG website is a **static Jekyll site** hosted on GitHub Pages that acts as a thick-client application. All dynamic data (study materials, certificates, newsletters, gallery images) is fetched client-side from Google Drive and YouTube APIs — there is no backend server.
+The ITGPG website operates on a **Thick-Client Serverless Architecture**. It functions as a static Jekyll site hosted on GitHub Pages, but acts as a dynamic application in the browser.
 
-**Key constraint**: Zero budget. No VPS, no database, no cloud functions.
+To maintain a **$0 infrastructure budget**, all data fetching (study materials, certificates, newsletters, gallery images) is offloaded to the user's browser, pulling directly from Google Drive and YouTube APIs.
 
-```
-┌──────────────────────────────────────────────────────┐
-│                    GitHub Pages                       │
-│              (Static HTML/CSS/JS host)                │
-└──────────────────┬───────────────────────────────────┘
-                   │ serves
-                   ▼
-┌──────────────────────────────────────────────────────┐
-│               Student's Browser                       │
-│  ┌─────────────┐  ┌──────────────┐  ┌──────────────┐ │
-│  │  Jekyll HTML │  │  JavaScript  │  │ sessionStorage│ │
-│  │  (static)    │  │  (API calls) │  │  (cache)      │ │
-│  └─────────────┘  └──────┬───────┘  └──────────────┘ │
-└──────────────────────────┼───────────────────────────┘
-                           │ fetch()
-              ┌────────────┼────────────┐
-              ▼            ▼            ▼
-        Google Drive   YouTube API   Google Drive
-        (PDFs, certs)  (playlists)   (gallery imgs)
+---
+
+## 1. Core Architecture
+
+```mermaid
+graph TD
+    subgraph "Hosting Layer (Free)"
+        GitHubPages[GitHub Pages]
+    end
+
+    subgraph "Client Layer (Student's Browser)"
+        UI[Static HTML/CSS]
+        JS[JavaScript Engine]
+        Cache[(sessionStorage)]
+    end
+
+    subgraph "Database Layer (Free)"
+        Drive[Google Drive API]
+        YouTube[YouTube Data API]
+    end
+
+    GitHubPages -- Serves static assets --> UI
+    UI -- Executes --> JS
+    JS -- Fetches data --> Drive
+    JS -- Fetches data --> YouTube
+    JS -- Caches response --> Cache
+    Cache -- Returns instant data --> UI
 ```
 
 ---
 
-## Project Structure
+## 2. Build Pipeline
 
+The project uses Jekyll to compile Markdown and Liquid templates into static HTML.
+
+```mermaid
+flowchart LR
+    A[Markdown Events] -->|Jekyll Build| D[Static HTML]
+    B[_data/ YAML Config] -->|Liquid Injection| E[config.js]
+    C[_includes / _layouts] -->|Jekyll Build| D
+    D --> F[Deployed to GitHub Pages]
+    E --> F
 ```
-it/
-├── _config.yml                  # Jekyll config (baseurl, plugins, collections, defaults)
-├── Gemfile                      # Ruby deps (github-pages, wdm)
-├── index.html                   # Home page (includes hero, stats, about, contact)
-│
-├── _data/                       # ⭐ Zero-JS config hub — maintainers edit ONLY these files
-│   ├── site_config.yml          # API key, all Drive folder IDs, YouTube playlist IDs
-│   ├── faculty.json             # Faculty profiles (name, designation, shortName, etc.)
-│   └── toppers_list.json        # Student achievement records
-│
-├── _layouts/
-│   ├── default.html             # Master layout (SEO meta, OG tags, JSON-LD, CSS/JS injection)
-│   └── event.html               # Event detail page layout
-│
-├── _includes/
-│   ├── home/                    # Home page partials
-│   │   ├── hero.html            # Landing hero section
-│   │   ├── about.html           # Vision/mission section
-│   │   ├── stats.html           # Key stats counters
-│   │   └── contact.html         # Contact info section
-│   └── components/              # Shared components
-│       ├── navbar.html          # Site-wide navigation bar
-│       └── footer.html          # Site-wide footer
-│
-├── assets/
-│   ├── images/
-│   │   ├── gpg-logo.png         # Main logo
-│   │   ├── gpg-logo-mini.png    # Navbar logo
-│   │   ├── favicon.png          # Favicon
-│   │   ├── apple-touch-icon.png # Apple touch icon
-│   │   ├── contributors/        # Contributor profile photos
-│   │   └── faculty_imgs/        # Faculty headshots (named by shortName, e.g. asp.jpeg)
-│   ├── css/
-│   │   ├── main.css             # Global styles
-│   │   ├── components/          # Component-scoped styles
-│   │   │   ├── navbar.css
-│   │   │   ├── footer.css
-│   │   │   ├── hero.css
-│   │   │   └── gallery.css
-│   │   └── pages/               # Page-scoped styles
-│   │       ├── study-materials.css
-│   │       ├── certificate-verification.css
-│   │       ├── events.css
-│   │       ├── faculty.css
-│   │       ├── newsletters.css
-│   │       ├── academic-calendar.css
-│   │       ├── co-curricular.css
-│   │       ├── contributors.css
-│   │       ├── faculty-development.css
-│   │       └── links.css
-│   └── js/
-│       ├── config.js            # Liquid template → injects site_config.yml as window.CONFIG
-│       ├── main.js              # Bootstrap tooltips/popovers init, smooth scrolling
-│       ├── components/
-│       │   ├── StudyData.js     # Semester/subject/module data structure (reads from CONFIG)
-│       │   ├── YouTubeHandler.js # YouTube playlist fetcher + Drive file fetcher
-│       │   └── hero.js          # Hero section interactivity
-│       └── pages/
-│           ├── study-materials.js       # Study materials page controller
-│           ├── gallery.js               # Gallery — fetches images from Drive folders
-│           ├── certificate-verification.js  # Certificate lookup engine
-│           ├── newsletter.js            # Newsletter PDF listing from Drive
-│           ├── academic-calendar.js     # Academic calendar PDFs from Drive
-│           ├── events.js                # Event page rendering
-│           └── contributors.js          # Contributors page
-│
-├── _events/                     # Jekyll collection — event markdown files
-│   ├── 2025-discovering-ai.md
-│   ├── 2024-ethical-hacking.md
-│   └── ...
-│
-├── gallery/index.html           # Gallery page
-├── faculty/
-│   ├── faculty-info/            # Faculty profiles page
-│   └── faculty-achievements/    # Faculty achievements page
-├── newsletter/index.html        # Newsletter listing page
-├── co-curricular/
-│   ├── index.html               # Co-curricular hub page
-│   ├── events/                  # Events listing
-│   ├── expert-lecture/          # Expert lectures
-│   ├── faculty-development/     # FDP records
-│   ├── industrial-visit/        # IV records
-│   └── certificate-verification/index.html  # Certificate verifier
-├── student-corner/
-│   ├── study-material/          # Study materials portal
-│   ├── academic-calendar/       # Academic calendar viewer
-│   └── achievements/            # Student achievements
-├── links/index.html             # Useful links page
-├── contributors/index.html      # Project contributors
-│
-├── docs/                        # ← You are here
-├── robots.txt                   # Search crawler directives
-└── sitemap.xml                  # Sitemap for SEO
+
+1. **Jekyll Execution**: Merges `_layouts/default.html` with individual pages.
+2. **Configuration Compilation**: `_data/site_config.yml` is parsed and serialized into a raw JavaScript object in `assets/js/config.js` via Liquid (`{{ site.data.site_config | jsonify }}`).
+3. **Deployment**: Pushed to the `gh-pages` branch or served directly via GitHub Actions.
+
+---
+
+## 3. Runtime & Request Lifecycle
+
+When a student visits a dynamic page (e.g., Study Materials):
+
+```mermaid
+sequenceDiagram
+    participant Student
+    participant Browser
+    participant SessionStorage
+    participant GoogleAPI
+
+    Student->>Browser: Clicks "Semester 5 - AI"
+    Browser->>SessionStorage: Check cache for 'sem5_ai'
+    
+    alt Cache Hit
+        SessionStorage-->>Browser: Return cached JSON
+    else Cache Miss
+        Browser->>GoogleAPI: fetch(Folder ID)
+        GoogleAPI-->>Browser: Return File List (JSON)
+        Browser->>SessionStorage: Save JSON to cache
+    end
+    
+    Browser->>Browser: Parse JSON, strip extensions
+    Browser->>Browser: Inject HTML elements into DOM
+    Browser-->>Student: Display Study Materials
 ```
 
 ---
 
-## Data Flow
+## 4. Configuration System
 
-### The Config Pipeline
+To isolate content managers from JavaScript logic, a strict "Zero-JS" pattern is enforced.
 
-All API keys and external resource IDs live in one file: `_data/site_config.yml`.
-
-```
-_data/site_config.yml          (YAML — human-editable)
-        │
-        │  Jekyll build (Liquid: {{ site.data.site_config | jsonify }})
-        ▼
-assets/js/config.js            (compiled to raw JS)
-        │
-        │  <script> tag in default.html
-        ▼
-window.CONFIG                  (global JS object available to all page scripts)
-        │
-        ├─→ CONFIG.API_KEY              → used by all Google API fetch() calls
-        ├─→ CONFIG.FOLDER_IDS.xxx       → Google Drive folder IDs
-        ├─→ CONFIG.PLAYLIST_IDS.xxx     → YouTube playlist IDs
-        └─→ CONFIG.yr_XXXX_XXXX.semX   → Year-specific syllabus folders
-```
-
-### Custom CSS/JS Injection
-
-Pages declare dependencies in their front-matter:
+All IDs (Drive folders, YouTube playlists, API keys) live in `_data/site_config.yml`.
 
 ```yaml
----
-custom_css:
-  - /assets/css/pages/study-materials.css
-custom_js:
-  - /assets/js/components/StudyData.js
-  - /assets/js/components/YouTubeHandler.js
-  - /assets/js/pages/study-materials.js
----
+# _data/site_config.yml
+API_KEY: "AIzaSy..."
+FOLDER_IDS:
+  certificates: "1vXU0c..."
 ```
 
-The `default.html` layout iterates these arrays to inject `<link>` and `<script>` tags.
+This is automatically injected into the global `window.CONFIG` object at build time, allowing the JS to access it dynamically without hardcoded values.
 
 ---
 
-## Google Drive Integration
+## 5. JavaScript Architecture
 
-### Pattern: Folder → API → DOM
+The JS layer is highly componentized:
+- **`config.js`**: Holds the global `CONFIG` object.
+- **`YouTubeHandler.js`**: Standardized fetch wrapper for YouTube Data API v3 and Google Drive v3 API.
+- **Page Controllers** (`events.js`, `certificate-verification.js`): Page-specific logic that maps API responses to the DOM.
 
-Every dynamic page follows the same pattern:
-
-1. Read folder ID from `window.CONFIG`
-2. `fetch()` the Google Drive v3 API: list files in that folder
-3. Parse the JSON response
-4. Render items into the DOM
-
-### sessionStorage Caching
-
-To prevent Google API quota exhaustion (especially with 50+ students clicking simultaneously), all fetched data is cached in `sessionStorage`:
-
-```javascript
-const cacheKey = `cache_${semester}_${subject}_${module}`;
-const cached = sessionStorage.getItem(cacheKey);
-
-if (cached) {
-    // 0ms render — no network request
-    this.allItems = JSON.parse(cached);
-} else {
-    // Fetch from API, then cache
-    const data = await fetchFromDrive(folderId);
-    sessionStorage.setItem(cacheKey, JSON.stringify(data));
-}
-```
-
-Cache persists for the browser tab session. Closing the tab clears the cache, ensuring freshness.
+### Caching Strategy
+To prevent Google API quota exhaustion (e.g., 50 students clicking folders simultaneously), aggressive caching is implemented via `sessionStorage`. Data is cached for the lifecycle of the browser tab.
 
 ---
 
-## YouTube Integration
+## 6. CSS Architecture
 
-`YouTubeHandler.js` provides two static methods:
+We use **Vanilla CSS** with **Bootstrap 5.3** handling the grid system and basic utility classes.
 
-| Method | API | Purpose |
-|--------|-----|---------|
-| `fetchPlaylistVideos(playlistId)` | YouTube Data API v3 | Fetches all videos from a playlist (handles pagination via `nextPageToken`) |
-| `fetchFileName(folderId)` | Google Drive v3 | Lists files in a Drive folder (used for study material PDFs) |
-
-Both use `CONFIG.API_KEY` for authentication.
+Styles are heavily scoped to prevent bleed:
+- `main.css`: Global variables (colors, fonts).
+- `components/`: Navbar, footer, hero section.
+- `pages/`: Specific page styles (e.g., `certificate-verification.css` holds the confetti animation logic).
 
 ---
 
-## SEO Strategy
+## 7. Limitations & Technical Debt
 
-Implemented in `_layouts/default.html`:
+### Limitations
+- **API Quotas**: Relying entirely on client-side fetching means that if usage spikes massively, the Google API daily quota could be exceeded, temporarily breaking dynamic pages.
+- **SEO for Dynamic Content**: Because study materials are loaded via JS, search engine crawlers will not index the individual PDF links. (We mitigate this by heavily indexing the static pages).
 
-| Technique | Implementation |
-|-----------|---------------|
-| Title suffix | `{{ page.title }} \| ITGPG` on every page |
-| Meta description | Per-page via front-matter `description` field |
-| Meta keywords | Per-page via front-matter `keywords` field |
-| Open Graph tags | `og:title`, `og:description`, `og:image`, `og:url` |
-| Twitter Cards | `summary_large_image` card type |
-| JSON-LD | `EducationalOrganization` schema on every page + detailed schema on home |
-| Canonical URL | Auto-generated from `site.url + site.baseurl + page.url` |
-| Sitemap | `jekyll-sitemap` plugin generates `sitemap.xml` |
-| Robots | Custom `robots.txt` |
+### Known Technical Debt
+- **No Global Error Boundaries**: If `window.CONFIG` fails to load, subsequent JS files will throw undefined errors.
 
 ---
 
-## External Dependencies
+## 8. Future Improvements
 
-| Dependency | Version | Loaded Via |
-|------------|---------|------------|
-| Bootstrap CSS | 5.3.0 | CDN (cloudflare) |
-| Bootstrap JS | 5.3.0 | CDN (cloudflare) |
-| Font Awesome | 6.0.0 | CDN (cloudflare) |
-| Google APIs JS | latest | CDN (apis.google.com) — gallery page only |
-| QRCode.js | latest | CDN — certificate page only |
-| Jekyll | via github-pages gem | Local build / GitHub Actions |
-| jekyll-sitemap | via github-pages | Plugin |
-| jekyll-seo-tag | via github-pages | Plugin |
-
----
-
-## Known Issues / TODOs
-
-- **`academic-calendar.js` line 9**: Parent folder ID (`16a58BgCLN8h0SnGxjnYFGDdkfWqcuS49`) is hardcoded instead of reading from `CONFIG.FOLDER_IDS.academic_calendar`. Should be refactored for consistency.
-- **Gallery folder ID**: Currently set to the same value as `certificates` in `site_config.yml`. Needs to be configured with the actual gallery Drive folder.
-- **Semester 5 & 6 data in `StudyData.js`**: References playlist IDs (`CONFIG.PLAYLIST_IDS.ai`, `.cloud`, `.mobile_dev`, `.blockchain`, `.big_data`, `.iot`) and folder IDs (`CONFIG.FOLDER_IDS.project`) that don't exist in `site_config.yml`. These will fail silently.
-- **`FOLDER_IDS.cse`** referenced in `StudyData.js` line 33 doesn't exist as a top-level key — only exists under `pyq.sem_1.cse`.
+1. **Proxy Server (Cloudflare Workers)**: If API quotas become an issue, we can route Google API requests through a free Cloudflare Worker to cache requests globally, reducing hits to Google.
+2. **Strict Typings**: Converting the JS components to TypeScript (or adding JSDoc comments) to prevent runtime errors when `site_config.yml` shapes change.
+3. **Automated E2E Testing**: Implementing Cypress or Playwright to simulate navigating folders to catch silent API failures before users notice them.
