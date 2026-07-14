@@ -1,0 +1,52 @@
+name: Pull Request QA
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate-data:
+    name: 1. Validate Config & Data
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Run Data Validation Script
+        run: python scripts/validate_data.py
+
+  link-checker:
+    name: 2. Build & Check Links
+    runs-on: ubuntu-latest
+    # Needs validate-data to pass first
+    needs: validate-data
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Build Jekyll Site
+        run: bundle exec jekyll build
+
+      - name: Install HTMLProofer
+        run: gem install html-proofer
+
+      - name: Run HTMLProofer (Internal Links Only)
+        run: htmlproofer ./_site --disable-external
