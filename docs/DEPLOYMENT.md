@@ -25,7 +25,7 @@ If you push a change and it doesn't appear on the live site:
 If the deployment action fails, click on the failed run to view the logs. Common reasons include:
 
 - **YAML Syntax Errors**: You forgot a space, quote, or bracket in `_data/site_config.yml` or a markdown file's front-matter.
-- **Liquid Tag Errors**: A broken `{% include %}` tag or missing variable reference.
+- **Liquid Tag Errors**: A broken `{% raw %}{% include %}{% endraw %}` tag or missing variable reference.
 
 Fix the syntax error on your local machine, test via `bundle exec jekyll serve`, and push the fix to trigger a new deployment.
 
