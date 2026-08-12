@@ -408,6 +408,34 @@
     background: #10b981;
 }
 
+.module-description {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin: 0.5rem 0 0;
+    line-height: 1.4;
+}
+
+.module-description-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.875rem 1.25rem;
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    border-radius: 12px;
+    color: #0369a1;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.module-description-notice i {
+    font-size: 1rem;
+    margin-top: 0.15rem;
+    color: #0284c7;
+    flex-shrink: 0;
+}
+
 .module-actions {
     margin-top: 1rem;
 }

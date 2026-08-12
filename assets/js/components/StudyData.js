@@ -172,15 +172,22 @@ class StudyData {
                         description: 'Syllabus for Semester 5 for year 2025-2026, recheck the syllabus through the GTU official sources before exams as it may change.'
                     }]
                 },
-                'aipd': {
-                    modules: [{
-                        name: 'Notes',
-                        files: [`https://docs.google.com/document/d/${CONFIG.FOLDER_IDS.Notes.AIPD}/edit?tab=t.0`]
-                    }]
+                'AIPD': {
+                    modules: [
+                        {
+                            name: 'AIPD Notes (Drive Folder)',
+                            files: [`https://drive.google.com/drive/folders/${CONFIG.yr_2025_2026.sem5.AIPD}`]
+                        },
+                        {
+                            name: 'Faculty Live Word Doc',
+                            files: [`https://docs.google.com/document/d/${CONFIG.FOLDER_IDS.Notes.AIPD}/edit?tab=t.0`],
+                            description: "This is a Word file directly updated by faculty, so if you can't access it please contact the faculty."
+                        }
+                    ]
                 }
             },
             semester6: {
-                
+
             }
         };
     }
@@ -201,5 +208,3 @@ class StudyData {
         return filename.replace(/^\.pdf|^\.[a-zA-Z]+/, '');
     }
 }
-
-

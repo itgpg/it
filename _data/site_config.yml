@@ -7,7 +7,7 @@ FOLDER_IDS:
   academic_calendar: '16a58BgCLN8h0SnGxjnYFGDdkfWqcuS49'
   certificates: '1vXU0cCwrYplFhmrGLu3MYuf1fVJeylWQ'
   gallery: '1vXU0cCwrYplFhmrGLu3MYuf1fVJeylWQ'
-  
+
   pyq:
     sem_1:
       python: '1SPAJ_Azd-kVEc7l7rrerpmeQOeZJO2Xw'
@@ -33,7 +33,7 @@ FOLDER_IDS:
       mcn: '1CAyBBW362FfhO0fBD_LwOi_GK4FJEK1b'
       fml: '1UONtiQfMBiJbO4QkZ2-ejmcDfohe8Vp-'
       es: '1k3GCTqT9CCSSkhvEUDsPzvunu2BjtEOd'
-      
+
   Notes:
     AIPD: '1qFeDy88uMM6thoNU9fy6xy4ohzO3bolMJeIFijF_mbU'
     Applied_maths: '1RI3gfrwmR-Muj8qujj2Wv_0mawZKDXxg'
@@ -53,6 +53,7 @@ yr_2025_2026:
     syllabus: '1nUND77k1CXaZNv6yjDTX8PSW3-3I3iCB'
   sem5:
     syllabus: '1L57gHa0FyEQBNjZ8aoU0KnL6MX9R1Rav'
+    AIPD: '1tPzQopeOLOV7VF0_Y7ZLtGN4w95Tbrsu'
 
 
 PLAYLIST_IDS:

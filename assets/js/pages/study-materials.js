@@ -119,6 +119,7 @@ class StudyMaterialsPage {
                         <div class="module-info">
                             <h3 class="module-title">${module.name}</h3>
                             <span class="module-type">${isPlaylist ? 'Video Playlist' : 'Study Files'}</span>
+                            ${module.description ? `<p class="module-description">${module.description}</p>` : ''}
                         </div>
                     </div>
                     <div class="module-actions">
@@ -138,7 +139,7 @@ class StudyMaterialsPage {
 
         if (!selectedModule) return;
 
-        this.showMaterials(moduleName);
+        this.showMaterials(selectedModule);
         
         const cacheKey = `cache_${this.currentSemester}_${this.currentSubject}_${moduleName}`;
         const cachedData = sessionStorage.getItem(cacheKey);
@@ -161,14 +162,21 @@ class StudyMaterialsPage {
                         const files = await YouTubeHandler.fetchFileName(folderId);
                         allFiles.push(...files.map(f => this.renderFileItem(f)));
                     } else {
+                        const isDoc = file.includes('docs.google.com/document');
+                        const iconClass = isDoc ? 'fa-file-word' : 'fa-folder-open';
+                        const metaText = isDoc ? 'Google Doc' : 'Google Drive';
                         allFiles.push(`
-                            <a href="${file}" class="file-card" target="_blank" rel="noopener noreferrer">
-                                <div class="file-icon"><i class="fas fa-folder-open"></i></div>
+                            <div class="file-card">
+                                <div class="file-icon"><i class="fas ${iconClass}"></i></div>
                                 <div class="file-info">
                                     <div class="file-name">${selectedModule.name}</div>
-                                    <div class="file-meta">Google Drive</div>
+                                    <div class="file-meta">${metaText}</div>
                                 </div>
-                            </a>
+                                <a href="${file}" class="file-action" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Open</span>
+                                </a>
+                            </div>
                         `);
                     }
                 }
@@ -266,9 +274,25 @@ class StudyMaterialsPage {
         this.updateBreadcrumbs();
     }
 
-    showMaterials(title) {
+    showMaterials(selectedModule) {
+        const description = typeof selectedModule === 'object' ? selectedModule?.description : null;
+        
         this.modulesView.style.display = 'none';
         this.materialsView.style.display = 'block';
+
+        const existingNotice = this.materialsView.querySelector('.module-description-notice');
+        if (existingNotice) existingNotice.remove();
+
+        if (description) {
+            const noticeHtml = `
+                <div class="module-description-notice">
+                    <i class="fas fa-info-circle"></i>
+                    <span>${description}</span>
+                </div>
+            `;
+            this.materialsGrid.insertAdjacentHTML('beforebegin', noticeHtml);
+        }
+
         this.materialsGrid.innerHTML = '<div class="loading">Loading</div>';
         this.loadMoreWrap.style.display = 'none';
         this.allItems = [];
